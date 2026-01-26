@@ -10,6 +10,7 @@ const featuredProjects: Project[] = [
       "Digitizing and translating rare Hermetic, alchemical, and mystical texts. 100+ books from the pre-1650 era, including works on kabbalah, neoplatonism, and natural magic.",
     category: "Esoteric",
     tags: ["Next.js", "MongoDB", "Gemini OCR", "Digital Humanities"],
+    image: "/images/projects/source-library.jpg",
     featured: true,
   },
   {
@@ -19,6 +20,7 @@ const featuredProjects: Project[] = [
       "AI-powered learning management system where AI generates standards-aligned content and humans curate. Inverting the traditional LMS paradigm.",
     category: "Education",
     tags: ["Next.js", "PostgreSQL", "Prisma", "AI"],
+    image: "/images/projects/playpowerlearn.png",
     featured: true,
   },
   {
@@ -36,6 +38,7 @@ const featuredProjects: Project[] = [
       "Educational 3D games with professional voice acting. Gamified learning through Three.js visualizations and immersive problem-solving.",
     category: "Education",
     tags: ["Three.js", "ElevenLabs", "Interactive"],
+    image: "/images/projects/steamquest.png",
   },
   {
     slug: "babysees",
@@ -44,6 +47,7 @@ const featuredProjects: Project[] = [
       "Visual vocabulary books for toddlers featuring complex imagery: fractals, honeycombs, nebulae, microscopic structures. Plus decodable readers for early literacy.",
     category: "Books",
     tags: ["AI Art", "Early Learning", "Science of Reading"],
+    image: "/images/projects/babysees.jpg",
   },
   {
     slug: "neuroux",

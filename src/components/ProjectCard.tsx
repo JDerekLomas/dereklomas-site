@@ -33,9 +33,9 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       href={`/projects/${project.slug}`}
       className={`card block no-underline group ${featured ? "md:col-span-2" : ""}`}
     >
-      {/* Image placeholder */}
+      {/* Image */}
       {project.image ? (
-        <div className="aspect-video bg-warm rounded overflow-hidden mb-4 -mx-6 -mt-6">
+        <div className="aspect-video bg-warm rounded-t-lg overflow-hidden mb-4 -mx-6 -mt-6">
           <img
             src={project.image}
             alt={project.title}
@@ -43,7 +43,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           />
         </div>
       ) : (
-        <div className="aspect-video bg-warm rounded flex items-center justify-center mb-4 -mx-6 -mt-6 border-b border-light">
+        <div className="aspect-video bg-warm rounded-t-lg flex items-center justify-center mb-4 -mx-6 -mt-6 border-b border-light">
           <span className="font-display text-4xl text-faint opacity-30">
             {project.title.charAt(0)}
           </span>
