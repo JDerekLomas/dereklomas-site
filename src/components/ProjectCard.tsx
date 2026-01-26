@@ -16,28 +16,26 @@ interface ProjectCardProps {
   featured?: boolean;
 }
 
-const categoryColors: Record<string, string> = {
-  AI: "bg-violet/10 text-violet",
-  Education: "bg-sage/20 text-sage",
-  Books: "bg-gold/20 text-gold",
-  Research: "bg-slate/20 text-slate",
-  Music: "bg-rust/10 text-rust",
-  Esoteric: "bg-gold/20 text-gold",
+const categoryBadge: Record<string, string> = {
+  AI: "badge-violet",
+  Education: "badge-sage",
+  Books: "badge-gold",
+  Research: "badge-slate",
+  Music: "badge-rust",
+  Esoteric: "badge-gold",
 };
 
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
-  const categoryStyle = categoryColors[project.category] || "bg-text-muted/10 text-text-muted";
+  const badgeClass = categoryBadge[project.category] || "badge-slate";
 
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className={`group block bg-card rounded-lg border border-[var(--border-color)] overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-rust/30 ${
-        featured ? "md:col-span-2" : ""
-      }`}
+      className={`card block no-underline group ${featured ? "md:col-span-2" : ""}`}
     >
       {/* Image placeholder */}
       {project.image ? (
-        <div className="aspect-video bg-warm overflow-hidden">
+        <div className="aspect-video bg-warm rounded overflow-hidden mb-4 -mx-6 -mt-6">
           <img
             src={project.image}
             alt={project.title}
@@ -45,43 +43,33 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           />
         </div>
       ) : (
-        <div className="aspect-video bg-gradient-to-br from-warm to-paper flex items-center justify-center">
-          <span className="text-text-faint font-[family-name:var(--font-cormorant)] text-4xl opacity-30">
+        <div className="aspect-video bg-warm rounded flex items-center justify-center mb-4 -mx-6 -mt-6 border-b border-light">
+          <span className="font-display text-4xl text-faint opacity-30">
             {project.title.charAt(0)}
           </span>
         </div>
       )}
 
-      {/* Content */}
-      <div className="p-6">
-        {/* Category badge */}
-        <span
-          className={`inline-block px-2.5 py-1 rounded-full text-xs font-[family-name:var(--font-inter)] font-medium ${categoryStyle}`}
-        >
-          {project.category}
-        </span>
+      {/* Category badge */}
+      <span className={`badge ${badgeClass}`}>{project.category}</span>
 
-        {/* Title */}
-        <h3 className="mt-3 font-[family-name:var(--font-cormorant)] text-xl font-semibold text-text-primary group-hover:text-rust transition-colors">
-          {project.title}
-        </h3>
+      {/* Title */}
+      <h3 className="mt-3 text-xl font-medium group-hover:text-rust transition-colors">
+        {project.title}
+      </h3>
 
-        {/* Description */}
-        <p className="mt-2 text-text-secondary text-sm leading-relaxed line-clamp-2">
-          {project.description}
-        </p>
+      {/* Description */}
+      <p className="mt-2 text-secondary text-sm leading-relaxed line-clamp-2">
+        {project.description}
+      </p>
 
-        {/* Tags */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.slice(0, 3).map((tag) => (
-            <span
-              key={tag}
-              className="text-xs text-text-muted font-[family-name:var(--font-inter)]"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>
+      {/* Tags */}
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="text-xs text-muted font-sans">
+            #{tag}
+          </span>
+        ))}
       </div>
     </Link>
   );

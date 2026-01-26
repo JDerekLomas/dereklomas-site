@@ -59,43 +59,32 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Subtle gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-warm via-background to-background" />
-
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-warm">
         {/* Content */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+        <div className="relative z-10 container-medium py-24 text-center">
           <div className="stagger-children">
             {/* Overline */}
-            <p className="font-[family-name:var(--font-inter)] text-sm text-text-muted uppercase tracking-widest mb-6">
-              AI · Education · Digital Humanities
-            </p>
+            <p className="label mb-6">AI · Education · Digital Humanities</p>
 
             {/* Main heading */}
-            <h1 className="font-[family-name:var(--font-cormorant)] text-5xl md:text-7xl font-medium text-text-primary leading-tight text-balance">
+            <h1 className="text-5xl md:text-7xl font-medium leading-tight">
               Enhancing wellbeing through
               <br />
               <span className="text-rust">intelligent design</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-8 text-xl md:text-2xl text-text-secondary leading-relaxed max-w-2xl mx-auto text-balance">
+            <p className="mt-8 text-xl md:text-2xl text-secondary leading-relaxed max-w-2xl mx-auto">
               I build AI systems for learning, digitize ancient manuscripts, and
               create tools that make human potential more accessible.
             </p>
 
             {/* CTA buttons */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center px-8 py-3 bg-rust text-white font-[family-name:var(--font-inter)] text-sm font-medium rounded-lg hover:bg-rust-hover transition-colors"
-              >
+              <Link href="/projects" className="btn-primary">
                 View Projects
               </Link>
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center px-8 py-3 border border-[var(--border-color)] text-text-secondary font-[family-name:var(--font-inter)] text-sm font-medium rounded-lg hover:border-rust hover:text-rust transition-colors"
-              >
+              <Link href="/about" className="btn-secondary">
                 About Me
               </Link>
             </div>
@@ -111,7 +100,7 @@ export default function Home() {
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="text-text-muted"
+            className="text-muted"
           >
             <path d="M12 5v14M5 12l7 7 7-7" />
           </svg>
@@ -119,21 +108,19 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24">
+        <div className="container-wide">
           {/* Section header */}
           <div className="flex items-end justify-between mb-12">
             <div>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium text-text-primary">
-                Featured Work
-              </h2>
-              <p className="mt-2 text-text-secondary">
+              <h2 className="text-3xl md:text-4xl font-medium">Featured Work</h2>
+              <p className="mt-2 text-secondary">
                 From ancient manuscripts to AI-powered education
               </p>
             </div>
             <Link
               href="/projects"
-              className="hidden sm:flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
+              className="hidden sm:flex items-center gap-2 text-rust font-sans text-sm font-medium no-underline hover:gap-3 transition-all"
             >
               View all projects
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -157,7 +144,7 @@ export default function Home() {
           <div className="mt-8 text-center sm:hidden">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium"
+              className="inline-flex items-center gap-2 text-rust font-sans text-sm font-medium no-underline"
             >
               View all projects
               <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -169,13 +156,13 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 px-6 bg-warm">
-        <div className="max-w-4xl mx-auto text-center">
-          <blockquote className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl text-text-primary leading-relaxed italic">
+      <section className="py-24 bg-warm">
+        <div className="container-narrow text-center">
+          <blockquote className="text-2xl md:text-3xl leading-relaxed italic">
             "My personal mission is to enhance global wellbeing through
             artificial intelligence and humanistic design."
           </blockquote>
-          <p className="mt-6 text-text-secondary font-[family-name:var(--font-inter)] text-sm">
+          <p className="mt-6 text-secondary font-sans text-sm">
             From research on resonance in interaction design to AI systems that
             measurably improve student motivation and learning.
           </p>
@@ -183,64 +170,44 @@ export default function Home() {
       </section>
 
       {/* Stats/Credentials Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24">
+        <div className="container-wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-rust">
-                5M+
-              </p>
-              <p className="mt-2 text-text-secondary text-sm">
-                Students reached
-              </p>
+              <p className="text-4xl md:text-5xl font-semibold text-rust">5M+</p>
+              <p className="mt-2 text-secondary text-sm">Students reached</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-rust">
-                35+
-              </p>
-              <p className="mt-2 text-text-secondary text-sm">
-                Educational games
-              </p>
+              <p className="text-4xl md:text-5xl font-semibold text-rust">35+</p>
+              <p className="mt-2 text-secondary text-sm">Educational games</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-rust">
-                100+
-              </p>
-              <p className="mt-2 text-text-secondary text-sm">
-                Manuscripts digitized
-              </p>
+              <p className="text-4xl md:text-5xl font-semibold text-rust">100+</p>
+              <p className="mt-2 text-secondary text-sm">Manuscripts digitized</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-semibold text-rust">
-                100K+
-              </p>
-              <p className="mt-2 text-text-secondary text-sm">
-                Learners in experiments
-              </p>
+              <p className="text-4xl md:text-5xl font-semibold text-rust">100K+</p>
+              <p className="mt-2 text-secondary text-sm">Learners in experiments</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Lab Preview Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-background to-warm">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-24 bg-warm">
+        <div className="container-wide">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-3 py-1 bg-violet/10 text-violet text-xs font-[family-name:var(--font-inter)] font-medium rounded-full mb-4">
-                Interactive Experiments
-              </span>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium text-text-primary">
-                The Lab
-              </h2>
-              <p className="mt-4 text-text-secondary leading-relaxed">
+              <span className="badge badge-violet mb-4">Interactive Experiments</span>
+              <h2 className="text-3xl md:text-4xl font-medium">The Lab</h2>
+              <p className="mt-4 text-secondary leading-relaxed">
                 Explore interactive visualizations, 3D experiments, and
                 prototypes. From D3.js data stories to Three.js immersive
                 experiences.
               </p>
               <Link
                 href="/lab"
-                className="inline-flex items-center gap-2 mt-6 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
+                className="inline-flex items-center gap-2 mt-6 text-rust font-sans text-sm font-medium no-underline hover:gap-3 transition-all"
               >
                 Enter the lab
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
@@ -248,8 +215,8 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-            <div className="aspect-video bg-card rounded-lg border border-[var(--border-color)] flex items-center justify-center">
-              <p className="text-text-muted font-[family-name:var(--font-inter)] text-sm">
+            <div className="card-warm aspect-video flex items-center justify-center">
+              <p className="text-muted font-sans text-sm">
                 Interactive demo coming soon
               </p>
             </div>

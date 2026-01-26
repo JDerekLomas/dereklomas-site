@@ -17,29 +17,30 @@ export function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-[var(--border-color)]">
-      <nav className="max-w-6xl mx-auto px-6 py-4">
+    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-light">
+      <nav className="container-wide py-4">
         <div className="flex items-center justify-between">
           {/* Logo / Name */}
-          <Link
-            href="/"
-            className="font-[family-name:var(--font-cormorant)] text-2xl font-semibold text-text-primary hover:text-rust transition-colors"
-          >
+          <Link href="/" className="font-display text-2xl font-medium no-underline">
             Derek Lomas
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8 font-[family-name:var(--font-inter)] text-sm">
+          <ul className="hidden md:flex items-center gap-8 font-sans text-sm">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`transition-colors ${
-                    pathname === item.href ||
-                    (item.href !== "/" && pathname.startsWith(item.href))
+                  className={`no-underline transition-colors ${
+                    isActive(item.href)
                       ? "text-rust font-medium"
-                      : "text-text-secondary hover:text-rust"
+                      : "text-secondary hover:text-rust"
                   }`}
                 >
                   {item.label}
@@ -51,7 +52,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-text-secondary hover:text-text-primary"
+            className="md:hidden p-2 text-secondary hover:text-primary"
             aria-label="Toggle menu"
           >
             <svg
@@ -82,17 +83,16 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <ul className="md:hidden mt-4 pb-4 space-y-4 font-[family-name:var(--font-inter)] text-sm border-t border-[var(--border-color)] pt-4">
+          <ul className="md:hidden mt-4 pb-4 space-y-4 font-sans text-sm border-t border-light pt-4">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block transition-colors ${
-                    pathname === item.href ||
-                    (item.href !== "/" && pathname.startsWith(item.href))
+                  className={`block no-underline transition-colors ${
+                    isActive(item.href)
                       ? "text-rust font-medium"
-                      : "text-text-secondary hover:text-rust"
+                      : "text-secondary hover:text-rust"
                   }`}
                 >
                   {item.label}
