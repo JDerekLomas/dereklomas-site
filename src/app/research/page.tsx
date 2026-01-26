@@ -486,6 +486,22 @@ const supervisedStudents = [
     title: "How Might Human Experience Inform AI Systems?",
     description: "Investigated how aesthetic beauty and embodied human experience can inform the design of AI systems, addressing limitations in current AI capabilities.",
   },
+  {
+    name: "H. Monteiro Rego Meyrelles",
+    degree: "MSc",
+    year: 2021,
+    title: "Atrium: Facilitating Social Interactions for Sustained Wellbeing in a Digital Campus Life",
+    description: "Designed a wellbeing-informed digital platform to lower friction in initiating social interactions between university peers during COVID-19 remote learning.",
+    url: "https://repository.tudelft.nl/record/uuid:4dc97c47-0d89-4356-927a-2e811a2b0ca9",
+  },
+  {
+    name: "Frederik Ueberschär",
+    degree: "MSc",
+    year: 2021,
+    title: "AI for Experience: Designing with Generative Adversarial Networks to evoke climate fascination",
+    description: "Created LANDSHAPES, an interactive museum installation using GANs to generate aerial landscapes that evoke climate engagement through beauty and fascination.",
+    url: "https://repository.tudelft.nl/record/uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf",
+  },
 ];
 
 // Research areas
