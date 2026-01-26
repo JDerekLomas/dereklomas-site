@@ -79,8 +79,13 @@ const recentPublications = [
     papers: [
       {
         title: "From Dead-ends to Dialogue: Third Workshop on Design Research & GenAI",
-        authors: "van der Maden W, van der Burg V, Halperin BA, ... Lomas D, et al.",
+        authors: "van der Maden W, van der Burg V, Halperin BA, Jääskeläinen P, Kun P, Lomas D, et al.",
         venue: "DIS 2025",
+      },
+      {
+        title: "When Discourse Stalls: Moving Past Semantic Stopsigns about Generative AI in Design Research",
+        authors: "van der Maden W, van der Burg V, Halperin BA, Jääskeläinen P, Lindley J, Lomas D, Merritt T",
+        venue: "arXiv",
       },
       {
         title: "Enhancing Aesthetic Appeal of AI-Generated Product Designs through LoRA Fine-Tuning",
@@ -99,13 +104,18 @@ const recentPublications = [
       },
       {
         title: "Death of the Design Researcher? Creating Knowledge Resources Using Generative AI",
-        authors: "van der Maden W, ... Lomas JD, et al.",
+        authors: "van der Maden W, van Beek E, Halperin BA, Jääskeläinen P, Kang E, Kun P, Lomas JD, et al.",
         venue: "DIS 2024",
       },
       {
-        title: "Improved Emotional Alignment of AI and Humans: Ratings of Emotions by Stable Diffusion & DALL-E",
-        authors: "Lomas JD, van der Maden W, et al.",
+        title: "Improved Emotional Alignment of AI and Humans: Ratings by Stable Diffusion & DALL-E",
+        authors: "Lomas JD, van der Maden W, Bandyopadhyay S, Lion G, Patel N, Jain G, Litowsky Y, Xue H, Desmet P",
         venue: "arXiv",
+      },
+      {
+        title: "Automated Surgical Step Recognition in Transurethral Bladder Tumor Resection Using AI",
+        authors: "Deol ES, Tollefson MK, Antolin A, Zohar M, Bar O, Ben-Ayoun D, Mynderse LA, Lomas DJ, et al.",
+        venue: "Frontiers in Artificial Intelligence",
       },
     ],
   },
@@ -119,13 +129,23 @@ const recentPublications = [
       },
       {
         title: "Towards a Design (Research) Framework with Generative AI",
-        authors: "van der Maden W, ... Lomas JD, Kang E",
+        authors: "van der Maden W, van Beek E, Nicenboim I, van der Burg V, Kun P, Lomas JD, Kang E",
         venue: "DIS 2023",
       },
       {
         title: "Fourth Annual Workshop on A/B Testing and Platform-Enabled Learning Research",
         authors: "Ritter S, Heffernan NT, Williams JJ, Lomas D, et al.",
         venue: "L@S 2023",
+      },
+      {
+        title: "Predicting Drum Beats from High-density Brain Rhythms",
+        authors: "Chaudhary S, Miyapuram KP, Lomas D",
+        venue: "COMAD/CODS 2023",
+      },
+      {
+        title: "Decoding Individual and Shared Experiences of Media Perception Using CNN Architectures",
+        authors: "Johri R, Pandey P, Miyapuram KP, Lomas JD",
+        venue: "MIUA 2023",
       },
     ],
   },
@@ -135,17 +155,52 @@ const recentPublications = [
       {
         title: "Harmony in Design: A Synthesis from Classical Philosophy, Sciences, Economics, and Design",
         authors: "Lomas JD, Xue H",
-        venue: "She Ji",
+        venue: "She Ji: The Journal of Design, Economics, and Innovation",
       },
       {
         title: "Resonance as a Design Strategy for AI and Social Robots",
-        authors: "Lomas JD, Lin A, Dikker S, et al.",
+        authors: "Lomas JD, Lin A, Dikker S, Forster D, Lupetti ML, Huisman G, Habekost J, et al.",
         venue: "Frontiers in Neurorobotics",
       },
       {
         title: "Initial Psychometric Properties of 7 NeuroUX Remote Ecological Momentary Cognitive Tests",
-        authors: "Moore RC, Parrish EM, et al.",
+        authors: "Moore RC, Parrish EM, Van Patten R, Paolillo E, Filip TF, Bomyea J, et al.",
         venue: "JMIR",
+      },
+      {
+        title: "Music Identification Using Brain Responses to Initial Snippets",
+        authors: "Pandey P, Sharma G, Miyapuram KP, Subramanian R, Lomas D",
+        venue: "ICASSP 2022",
+      },
+      {
+        title: "Real-time Sensing and NeuroFeedback for Practicing Meditation Using EEG and Eye Tracking",
+        authors: "Pandey P, Gupta P, Chaudhary S, Miyapuram KP, Lomas D",
+        venue: "IEEE TENSYMP 2022",
+      },
+      {
+        title: "EEG Spectral Correlates of Rapid and Deep Slow Breathing States",
+        authors: "Patnaik S, Pandey P, Arun I, Yadav G, Miyapuram KP, Lomas D",
+        venue: "IEEE TENSYMP 2022",
+      },
+      {
+        title: "Classifying EEG Signals of Mind-Wandering Across Different Styles of Meditation",
+        authors: "Chaudhary S, Pandey P, Miyapuram KP, Lomas D",
+        venue: "International Conference on Brain Informatics",
+      },
+      {
+        title: "Design for Wellbeing During Covid-19: A Cybernetic Perspective on Data Feedback Loops",
+        authors: "van der Maden W, Lomas JD, Hekkert P",
+        venue: "DRS 2022 Bilbao",
+      },
+      {
+        title: "Equitable Access to Intelligent Tutoring Systems Through Paper-Digital Integration",
+        authors: "Patel N, Thakkar M, Rabadiya B, Patel D, Malvi S, Sharma A, Lomas D",
+        venue: "EasyChair",
+      },
+      {
+        title: "Third Annual Workshop on A/B Testing and Platform-Enabled Learning Research",
+        authors: "Ritter S, Heffernan N, Williams JJ, Lomas D, Motz B, Basu Mallick D, et al.",
+        venue: "L@S 2022",
       },
     ],
   },
@@ -155,7 +210,7 @@ const recentPublications = [
       {
         title: "Design Space Cards: Using a Card Deck to Navigate the Design Space of Interactive Play",
         authors: "Lomas JD, Karac M, Gielen M",
-        venue: "CHI PLAY",
+        venue: "CHI PLAY / PACM HCI",
       },
       {
         title: "The Resonance Pod: Applying Haptics to Promote Relaxation Through Breathing Entrainment",
@@ -166,6 +221,225 @@ const recentPublications = [
         title: "UpGrade: An Open Source Tool to Support A/B Testing in Educational Software",
         authors: "Ritter S, Murphy A, Fancsali SE, Fitkariwala V, Patel N, Lomas JD",
         venue: "L@S Workshop",
+      },
+      {
+        title: "GuessTheMusic: Song Identification from Electroencephalography Response",
+        authors: "Sonawane D, Miyapuram KP, Rs B, Lomas DJ",
+        venue: "ACM IKDD CODS and COMAD",
+      },
+      {
+        title: "Predicting Dominant Beat Frequency from Brain Responses While Listening to Music",
+        authors: "Pandey P, Ahmad N, Miyapuram KP, Lomas D",
+        venue: "IEEE BIBM 2021",
+      },
+      {
+        title: "Modeling NAEP Test-taking Behavior Using Educational Process Analysis",
+        authors: "Patel N, Sharma A, Shah T, Lomas D",
+        venue: "Journal of Educational Data Mining",
+      },
+      {
+        title: "Second Workshop on Educational A/B Testing at Scale",
+        authors: "Ritter S, Heffernan NT, Williams JJ, Lomas D, Bicknell K",
+        venue: "L@S 2021",
+      },
+    ],
+  },
+];
+
+// Earlier publications (2020 and before)
+const earlierPublications = [
+  {
+    year: 2020,
+    papers: [
+      {
+        title: "How Might Data-Informed Design Help Reduce the Poverty Achievement Gap?",
+        authors: "Lomas JD",
+        venue: "Neuroscientific Perspectives on Poverty",
+      },
+      {
+        title: "Designing Smart Systems: Reframing AI for Human-Centered Designers",
+        authors: "Beardow C, van der Maden W, Lomas J",
+        venue: "TMCE 2020",
+      },
+      {
+        title: "Workshop Proposal: Educational A/B Testing at Scale",
+        authors: "Ritter S, Heffernan N, Williams JJ, Settles B, Grimaldi P, Lomas D",
+        venue: "L@S 2020",
+      },
+    ],
+  },
+  {
+    year: 2019,
+    papers: [
+      {
+        title: "Designing an Escape Room in the City for Public Engagement with AI-Enhanced Surveillance",
+        authors: "Kihara T, Bendor R, Lomas D",
+        venue: "CHI Extended Abstracts",
+      },
+      {
+        title: "Monster Mischief: A Game-Based Assessment of Selective Sustained Attention in Young Children",
+        authors: "Godwin KE, Lomas D, Koedinger KR, Fisher AV",
+        venue: "International Journal of Gaming",
+      },
+      {
+        title: "Gamified Mobile Cognitive Tests: Preliminary Feasibility in Persons with Bipolar Disorder",
+        authors: "Filip T, Kamarsu S, Lomas D, Eyler L, Depp C, Moore R",
+        venue: "Archives of Clinical Neuropsychology",
+      },
+    ],
+  },
+  {
+    year: 2018,
+    papers: [
+      {
+        title: "Using Mobile Health Gamification to Facilitate CBT Skills Practice in Child Anxiety Treatment",
+        authors: "Pramana G, Parmanto B, Lomas J, Lindhiem O, Kendall PC, Silk J",
+        venue: "JMIR Serious Games",
+      },
+      {
+        title: "Curriculum Pacing: A New Approach to Discover Instructional Practices in Classrooms",
+        authors: "Patel N, Sharma A, Sellman C, Lomas D",
+        venue: "International Conference on Intelligent Tutoring Systems",
+      },
+      {
+        title: "Towards a Domain-Specific Design Platform for Wheelchair User Well-being",
+        authors: "Bourgeois J, Liu S, Kortuem G, Lomas D",
+        venue: "ACM International Joint Conference",
+      },
+      {
+        title: "CHI 2018 Workshop: Data-Driven Educational Game Design",
+        authors: "McLaren BM, Asbell-Clarke J, Hammer J",
+        venue: "CHI Extended Abstracts",
+      },
+    ],
+  },
+  {
+    year: 2017,
+    papers: [
+      {
+        title: "Is Difficulty Overrated? Effects of Choice, Novelty and Suspense on Intrinsic Motivation",
+        authors: "Lomas JD, Koedinger K, Patel N, Shodhan S, Poonwala N, Forlizzi JL",
+        venue: "CHI 2017 (Honorable Mention)",
+      },
+      {
+        title: "Mining Frequent Learning Pathways from a Large Educational Dataset",
+        authors: "Patel N, Sellman C, Lomas D",
+        venue: "arXiv",
+      },
+    ],
+  },
+  {
+    year: 2016,
+    papers: [
+      {
+        title: "Interface Design Optimization as a Multi-Armed Bandit Problem",
+        authors: "Lomas JD, Forlizzi J, Poonwala N, Patel N, Shodhan S, Patel K, Koedinger K, Brunskill E",
+        venue: "CHI 2016",
+      },
+    ],
+  },
+  {
+    year: 2015,
+    papers: [
+      {
+        title: "Monster Mischief: Designing a Video Game to Assess Selective Sustained Attention",
+        authors: "Godwin KE, Lomas D, Koedinger KR, Fisher AV",
+        venue: "International Journal of Gaming and Computer-Mediated Simulations",
+      },
+      {
+        title: "India's Design Guru: MP Ranjan",
+        authors: "Lomas D",
+        venue: "She Ji",
+      },
+    ],
+  },
+  {
+    year: 2013,
+    papers: [
+      {
+        title: "Optimizing Challenge in an Educational Game Using Large-Scale Design Experiments",
+        authors: "Lomas D, Patel K, Forlizzi JL, Koedinger KR",
+        venue: "CHI 2013",
+      },
+      {
+        title: "The Power of Play: Design Lessons for Increasing the Lifespan of Outdated Computers",
+        authors: "Lomas D, Kumar A, Patel K, Ching D, Lakshmanan M, Kam M, Forlizzi JL",
+        venue: "CHI 2013",
+      },
+      {
+        title: "Supporting Social-Emotional Development in Collaborative Inquiry Games for K-3 Science",
+        authors: "Aleven V, Dow S, Christel M, Stevens S, Rosé C, Koedinger K, Myers B, et al.",
+        venue: "Games+Learning+Society",
+      },
+    ],
+  },
+  {
+    year: 2012,
+    papers: [
+      {
+        title: "RumbleBlocks: Teaching Science Concepts to Young Children Through a Unity Game",
+        authors: "Christel MG, Stevens SM, Maher BS, Brice S, Champer M, Jayapalan L, et al.",
+        venue: "International Conference on Computer Games",
+      },
+      {
+        title: "The Rise of the Super Experiment",
+        authors: "Stamper JC, Lomas D, Ching D, Ritter S, Koedinger KR, Steinhart J",
+        venue: "International Educational Data Mining Society",
+      },
+      {
+        title: "Effects of Adaptive Sequencing Algorithms on Player Engagement Within an Online Game",
+        authors: "Lomas D, Stamper J, Muller R, Patel K, Koedinger KR",
+        venue: "International Conference on Intelligent Tutoring Systems",
+      },
+      {
+        title: "Internet Scale Experimental Design and Deployment for Educational Games Using BrainPOP",
+        authors: "Stamper J, Lomas D, Ching D, Linch K, Ritter S",
+        venue: "Games+Learning+Society",
+      },
+    ],
+  },
+  {
+    year: 2011,
+    papers: [
+      {
+        title: "Battleship Numberline: A Digital Game for Improving Estimation Accuracy on Fraction Number Lines",
+        authors: "Lomas D, Ching D, Stampfer E, Sandoval M, Koedinger K",
+        venue: "Society for Research on Educational Effectiveness",
+      },
+      {
+        title: "When a Console Game Becomes CSCL: Play, Participatory Learning and 8-bit Home Computing in India",
+        authors: "Lomas D, Ching D, Hoadley C, Patel K, Kam M",
+        venue: "International Society of the Learning Sciences",
+      },
+    ],
+  },
+  {
+    year: 2010,
+    papers: [
+      {
+        title: "Some Consideration on the (In)Effectiveness of Residential Energy Feedback Systems",
+        authors: "Pierce J, Fan C, Lomas D, Marcu G, Paulos E",
+        venue: "ACM Conference on Designing Interactive Systems",
+      },
+    ],
+  },
+  {
+    year: 2008,
+    papers: [
+      {
+        title: "Playpower: Radically Affordable Computer-Aided Learning with $12 TV-Computers",
+        authors: "Lomas D, Douglass J, Rehn D",
+        venue: "Meaningful Play Conference",
+      },
+    ],
+  },
+  {
+    year: 2007,
+    papers: [
+      {
+        title: "Cognitive Artifacts: An Art-Science Engagement",
+        authors: "Lomas D",
+        venue: "ACM SIGCHI Conference on Creativity & Cognition",
       },
     ],
   },
@@ -209,8 +483,8 @@ export default function ResearchPage() {
             Research
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-6">
-            70+ publications on AI for wellbeing, learning engineering, and
-            human-centered design. 1,400+ citations.
+            75+ publications spanning AI for wellbeing, learning engineering,
+            educational games, and human-centered design. 1,500+ citations.
           </p>
           <a
             href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
@@ -292,10 +566,41 @@ export default function ResearchPage() {
         {/* Recent publications by year */}
         <section className="mb-16">
           <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
-            Recent Publications
+            Recent Publications (2021-2025)
           </h2>
           <div className="space-y-8">
             {recentPublications.map((yearGroup) => (
+              <div key={yearGroup.year}>
+                <h3 className="font-[family-name:var(--font-inter)] text-sm font-medium text-text-muted mb-4 sticky top-20 bg-[var(--bg-cream)] py-2">
+                  {yearGroup.year}
+                </h3>
+                <div className="space-y-3 pl-4 border-l-2 border-[var(--border-color)]">
+                  {yearGroup.papers.map((paper) => (
+                    <div key={paper.title} className="pb-3">
+                      <p className="text-text-primary text-sm font-medium leading-snug">
+                        {paper.title}
+                      </p>
+                      <p className="text-text-muted text-xs mt-1">
+                        {paper.authors}
+                      </p>
+                      <p className="text-text-secondary text-xs mt-1">
+                        {paper.venue}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Earlier publications */}
+        <section className="mb-16">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+            Earlier Publications (2007-2020)
+          </h2>
+          <div className="space-y-8">
+            {earlierPublications.map((yearGroup) => (
               <div key={yearGroup.year}>
                 <h3 className="font-[family-name:var(--font-inter)] text-sm font-medium text-text-muted mb-4 sticky top-20 bg-[var(--bg-cream)] py-2">
                   {yearGroup.year}
