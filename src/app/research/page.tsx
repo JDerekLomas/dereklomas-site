@@ -445,6 +445,49 @@ const earlierPublications = [
   },
 ];
 
+// Supervised students at TU Delft
+const supervisedStudents = [
+  {
+    name: "Willem van der Maden",
+    degree: "PhD",
+    year: 2024,
+    title: "Designing Positive AI: How optimizing for contextual wellbeing inspired a design method for artificial intelligence that promotes human flourishing",
+    description: "Developed methods for designing AI systems centered on human flourishing, including the 'My Wellness Check' longitudinal study with 20,000+ participants during COVID-19.",
+    url: "https://repository.tudelft.nl/record/uuid:7a341d93-3a51-4df2-9d0a-fcade9008e63",
+  },
+  {
+    name: "Dinuo Liao",
+    degree: "MSc",
+    year: 2023,
+    distinction: "Cum Laude (9.5/10)",
+    title: "Generative AI & Tangible Products: Human-AI Synergy in 3D-printed Lamp Design",
+    description: "Explored LoRA fine-tuning with human aesthetic feedback to enhance AI-generated product designs, with methods for converting designs into 3D-printable objects.",
+  },
+  {
+    name: "Tamay Oudhof",
+    degree: "MSc",
+    year: 2023,
+    distinction: "Cum Laude",
+    title: "Future Framing Method: Utilizing the power of co-creation and AI when envisioning the future",
+    description: "Developed a toolkit combining futuring methods, creativity, and AI (ChatGPT + MidJourney) to help teams envision desirable futures collaboratively.",
+    url: "https://repository.tudelft.nl/islandora/object/uuid:a147269d-c437-4695-be71-a8dc31085aaa",
+  },
+  {
+    name: "Xin Wen",
+    degree: "MSc",
+    year: 2024,
+    title: "Can AI Deepen Our Connection to Human Values?",
+    description: "Designed a game using ChatGPT and the Sciffle Box to help players explore and discuss corporate values aligned with personal human values.",
+  },
+  {
+    name: "Shuyue Jin",
+    degree: "MSc",
+    year: 2024,
+    title: "How Might Human Experience Inform AI Systems?",
+    description: "Investigated how aesthetic beauty and embodied human experience can inform the design of AI systems, addressing limitations in current AI capabilities.",
+  },
+];
+
 // Research areas
 const researchAreas = [
   {
@@ -619,6 +662,59 @@ export default function ResearchPage() {
                       </p>
                     </div>
                   ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Supervised Students */}
+        <section className="mb-16">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+            Supervised Students (TU Delft)
+          </h2>
+          <div className="space-y-4">
+            {supervisedStudents.map((student) => (
+              <div
+                key={student.name}
+                className="p-5 bg-white rounded-lg border border-[var(--border-color)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2 flex-wrap">
+                      <span className="badge badge-violet text-xs">
+                        {student.degree}
+                      </span>
+                      {student.distinction && (
+                        <span className="badge badge-rust text-xs">
+                          {student.distinction}
+                        </span>
+                      )}
+                      <span className="text-xs text-text-muted">
+                        {student.year}
+                      </span>
+                    </div>
+                    <p className="font-medium text-text-primary">
+                      {student.name}
+                    </p>
+                    {student.url ? (
+                      <a
+                        href={student.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-text-secondary mt-1 block hover:text-rust transition-colors"
+                      >
+                        {student.title}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-text-secondary mt-1">
+                        {student.title}
+                      </p>
+                    )}
+                    <p className="text-xs text-text-muted mt-2">
+                      {student.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
