@@ -30,6 +30,7 @@ const featuredProjects: Project[] = [
       "Computer vision for paper-based learning, reaching 5 million students across India. Making AI-powered education accessible without devices.",
     category: "AI",
     tags: ["Computer Vision", "Education", "Scale"],
+    image: "/images/projects/smart-paper.jpg",
   },
   {
     slug: "steamquest",
@@ -56,6 +57,7 @@ const featuredProjects: Project[] = [
       "Gamified cognitive assessments for remote mental health research. Over a dozen games designed for psychological assessment.",
     category: "Research",
     tags: ["Cognitive Science", "Games", "Assessment"],
+    image: "/images/projects/neuroux-phone.png",
   },
 ];
 
