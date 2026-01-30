@@ -11,6 +11,7 @@ const navItems = [
   { href: "/research", label: "Research" },
   { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {

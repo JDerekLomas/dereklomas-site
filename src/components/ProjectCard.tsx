@@ -1,15 +1,7 @@
 import Link from "next/link";
+import type { Project } from "@/data/projects";
 
-export interface Project {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  tags: string[];
-  image?: string;
-  url?: string;
-  featured?: boolean;
-}
+export type { Project };
 
 interface ProjectCardProps {
   project: Project;

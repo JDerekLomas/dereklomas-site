@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -27,10 +28,17 @@ export default function AboutPage() {
           {/* Bio section */}
           <section className="mb-16">
             <div className="grid md:grid-cols-3 gap-12">
-              {/* Photo placeholder */}
+              {/* Headshot */}
               <div className="md:col-span-1">
-                <div className="aspect-[3/4] bg-warm rounded-lg border border-[var(--border-color)] flex items-center justify-center">
-                  <span className="text-text-faint text-sm">Photo</span>
+                <div className="aspect-[3/4] rounded-lg overflow-hidden border border-[var(--border-color)]">
+                  <Image
+                    src="/images/headshot.png"
+                    alt="Derek Lomas"
+                    width={400}
+                    height={533}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
 
