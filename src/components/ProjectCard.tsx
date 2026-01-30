@@ -19,6 +19,7 @@ interface ProjectCardProps {
 const categoryBadge: Record<string, string> = {
   AI: "badge-violet",
   Education: "badge-sage",
+  Design: "badge-rust",
   Books: "badge-gold",
   Research: "badge-slate",
   Music: "badge-rust",

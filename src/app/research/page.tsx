@@ -487,6 +487,14 @@ const supervisedStudents = [
     description: "Investigated how aesthetic beauty and embodied human experience can inform the design of AI systems, addressing limitations in current AI capabilities.",
   },
   {
+    name: "Caiseal Beardow",
+    degree: "MSc",
+    year: 2021,
+    title: "NeuroAesthetic Resonance: A cybernetic system optimizing audiovisual experience through EEG feedback",
+    description: "Built an art-science installation using EEG brain activity to create a feedback loop that enhances neural and aesthetic resonance in real-time.",
+    url: "http://resolver.tudelft.nl/uuid:d57d831a-0c34-4822-9005-63fee99ff2c4",
+  },
+  {
     name: "H. Monteiro Rego Meyrelles",
     degree: "MSc",
     year: 2021,
@@ -501,6 +509,38 @@ const supervisedStudents = [
     title: "AI for Experience: Designing with Generative Adversarial Networks to evoke climate fascination",
     description: "Created LANDSHAPES, an interactive museum installation using GANs to generate aerial landscapes that evoke climate engagement through beauty and fascination.",
     url: "https://repository.tudelft.nl/record/uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf",
+  },
+  {
+    name: "Ferkan Metin",
+    degree: "MSc",
+    year: 2020,
+    title: "Envision Glasses: AI-powered smartglasses for the visually impaired",
+    description: "Designed AI smartglasses with camera, speaker, text/face recognition, and remote sighted-person assist. Launched with preorders on graduation day.",
+    url: "https://www.letsenvision.com/glasses",
+  },
+  {
+    name: "Bryan Zaaijer",
+    degree: "MSc",
+    year: 2020,
+    title: "Haptic Vision: Developing a vision for the SenseGlove VR glove",
+    description: "Designed hand tracking, force feedback, and tactile feedback for VR haptic gloves. Joined SenseGlove after graduating.",
+    url: "https://repository.tudelft.nl/islandora/object/uuid:f7c60e77-6c3a-4d33-8192-12ceeff43c48",
+  },
+  {
+    name: "Tomo Kihara",
+    degree: "MSc",
+    year: 2018,
+    title: "Escape the Smart City: A critical pervasive game about AI-enhanced surveillance",
+    description: "Created a city-scale escape room raising awareness about AI surveillance in smart cities. Published at CHI 2019 Extended Abstracts.",
+    url: "https://www.tomokihara.com/en/escape-the-smart-city.html",
+  },
+  {
+    name: "Mihovil Karac",
+    degree: "MSc",
+    year: 2018,
+    title: "Design Space Cards: A card deck for navigating the design space of interactive play",
+    description: "Developed a physical card deck tool for generating game design concepts. Published in CHI PLAY / PACM HCI.",
+    url: "https://repository.tudelft.nl/islandora/object/uuid:7076c234-0119-4fe2-8a83-bf10286efc1b",
   },
 ];
 
