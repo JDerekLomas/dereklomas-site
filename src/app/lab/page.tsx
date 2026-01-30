@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+type Experiment = {
+  slug: string;
+  title: string;
+  description: string;
+  tech: string;
+  status: string;
+  live?: boolean;
+};
+
 export const metadata: Metadata = {
   title: "Lab",
   description:
@@ -8,6 +17,15 @@ export const metadata: Metadata = {
 };
 
 const experiments = [
+  {
+    slug: "skill-ancestry",
+    title: "Math Skill Ancestry Tree",
+    description:
+      "Interactive D3.js visualization mapping prerequisite chains between K-8 math skills. Explore how foundational concepts connect across grade levels.",
+    tech: "D3.js",
+    status: "Live",
+    live: true,
+  },
   {
     slug: "research-connections",
     title: "Research Connections",
@@ -62,37 +80,58 @@ export default function LabPage() {
 
         {/* Experiments grid */}
         <div className="grid md:grid-cols-2 gap-6">
-          {experiments.map((experiment) => (
-            <div
-              key={experiment.slug}
-              className="group p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-violet/30 transition-all"
-            >
-              {/* Preview area */}
-              <div className="aspect-video bg-gradient-to-br from-warm to-paper rounded-lg mb-6 flex items-center justify-center border border-[var(--border-color)]">
-                <span className="text-text-faint text-sm">
-                  {experiment.status}
-                </span>
-              </div>
+          {experiments.map((experiment) => {
+            const Wrapper = experiment.live ? Link : 'div';
+            const wrapperProps = experiment.live
+              ? { href: `/lab/${experiment.slug}` }
+              : {};
 
-              {/* Meta */}
-              <div className="flex items-center gap-2 mb-3">
-                <span className="px-2 py-0.5 bg-violet/10 text-violet text-xs font-[family-name:var(--font-inter)] font-medium rounded">
-                  {experiment.tech}
-                </span>
-                <span className="text-text-faint text-xs">
-                  {experiment.status}
-                </span>
-              </div>
+            return (
+              <Wrapper
+                key={experiment.slug}
+                {...(wrapperProps as any)}
+                className={`group p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-violet/30 transition-all no-underline ${experiment.live ? 'cursor-pointer' : ''}`}
+              >
+                {/* Preview area */}
+                <div className={`aspect-video rounded-lg mb-6 flex items-center justify-center border border-[var(--border-color)] ${experiment.live ? 'bg-[#1a1510]' : 'bg-gradient-to-br from-warm to-paper'}`}>
+                  {experiment.live ? (
+                    <div className="text-center">
+                      <div className="text-2xl mb-1">🌳</div>
+                      <span className="text-[#8b7355] text-sm font-medium">Click to explore</span>
+                    </div>
+                  ) : (
+                    <span className="text-text-faint text-sm">
+                      {experiment.status}
+                    </span>
+                  )}
+                </div>
 
-              {/* Content */}
-              <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-semibold text-text-primary group-hover:text-violet transition-colors">
-                {experiment.title}
-              </h3>
-              <p className="mt-2 text-text-secondary text-sm leading-relaxed">
-                {experiment.description}
-              </p>
-            </div>
-          ))}
+                {/* Meta */}
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 bg-violet/10 text-violet text-xs font-[family-name:var(--font-inter)] font-medium rounded">
+                    {experiment.tech}
+                  </span>
+                  {experiment.live ? (
+                    <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-[family-name:var(--font-inter)] font-medium rounded">
+                      Live
+                    </span>
+                  ) : (
+                    <span className="text-text-faint text-xs">
+                      {experiment.status}
+                    </span>
+                  )}
+                </div>
+
+                {/* Content */}
+                <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-semibold text-text-primary group-hover:text-violet transition-colors">
+                  {experiment.title}
+                </h3>
+                <p className="mt-2 text-text-secondary text-sm leading-relaxed">
+                  {experiment.description}
+                </p>
+              </Wrapper>
+            );
+          })}
         </div>
 
         {/* Call to action */}
