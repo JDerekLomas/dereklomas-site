@@ -218,13 +218,16 @@ export default function WritingPage() {
 
             <div className="grid md:grid-cols-2 gap-4">
               {featuredVideos.map((video) => (
-                <div
+                <a
                   key={video.id}
-                  className="p-5 bg-card rounded-lg border border-[var(--border-color)]"
+                  href={video.id.startsWith("unknown") ? videoData.channel.url : `https://www.youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-5 bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] transition-colors no-underline group"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-sm font-medium text-text-primary leading-snug">
+                      <h3 className="text-sm font-medium text-text-primary leading-snug group-hover:text-rust transition-colors">
                         {video.title}
                       </h3>
                       {video.description && (
@@ -241,7 +244,7 @@ export default function WritingPage() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </section>

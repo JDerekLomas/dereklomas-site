@@ -143,13 +143,33 @@ export default function Home() {
       <section className="py-24">
         <div className="container-narrow text-center">
           <blockquote className="text-2xl md:text-3xl leading-relaxed italic">
-            "My personal mission is to enhance global wellbeing through
-            artificial intelligence and humanistic design."
+            &ldquo;My personal mission is to enhance global wellbeing through
+            artificial intelligence and humanistic design.&rdquo;
           </blockquote>
           <p className="mt-6 text-secondary font-sans text-sm">
             From research on resonance in interaction design to AI systems that
             measurably improve student motivation and learning.
           </p>
+        </div>
+      </section>
+
+      {/* Explore More */}
+      <section className="py-16">
+        <div className="container-medium">
+          <div className="grid sm:grid-cols-3 gap-6">
+            <Link href="/writing" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
+              <h3 className="font-sans text-sm font-medium text-rust mb-2">Writing</h3>
+              <p className="text-sm text-secondary">Essays on AI, wellbeing, and human flourishing</p>
+            </Link>
+            <Link href="/research" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
+              <h3 className="font-sans text-sm font-medium text-rust mb-2">Research</h3>
+              <p className="text-sm text-secondary">Publications in HCI, cognitive science, and education</p>
+            </Link>
+            <Link href="/press" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
+              <h3 className="font-sans text-sm font-medium text-rust mb-2">Press & Talks</h3>
+              <p className="text-sm text-secondary">NPR, CNN, Wired, UNESCO, TEDx, and more</p>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -175,10 +195,16 @@ export default function Home() {
                 </svg>
               </Link>
             </div>
-            <div className="card-warm aspect-video flex items-center justify-center">
-              <p className="text-muted font-sans text-sm">
-                Interactive demo coming soon
-              </p>
+            <div className="aspect-video rounded-lg bg-[#1a1510] border border-[var(--border-color)] flex items-center justify-center">
+              <svg width="200" height="120" viewBox="0 0 200 120" className="opacity-80">
+                <g fill="none" strokeWidth="3" strokeLinecap="round">
+                  <path d="M10 20 C50 15, 150 30, 190 20" stroke="#9b59b6" opacity="0.7" />
+                  <path d="M10 40 C50 48, 150 32, 190 40" stroke="#f1c40f" opacity="0.7" />
+                  <path d="M10 60 C50 55, 150 68, 190 60" stroke="#3498db" opacity="0.7" />
+                  <path d="M10 80 C50 88, 150 72, 190 80" stroke="#e74c3c" opacity="0.7" />
+                  <path d="M10 100 C50 95, 150 108, 190 100" stroke="#2ecc71" opacity="0.7" />
+                </g>
+              </svg>
             </div>
           </div>
         </div>
