@@ -34,7 +34,6 @@ export const allProjects: Project[] = [
     category: "Education",
     tags: ["Next.js", "PostgreSQL", "Prisma", "AI"],
     image: "/images/projects/playpowerlearn.png",
-    featured: true,
   },
   {
     slug: "smart-paper",
@@ -46,6 +45,7 @@ export const allProjects: Project[] = [
     category: "AI",
     tags: ["Computer Vision", "Education", "Scale"],
     image: "/images/projects/smart-paper.jpg",
+    featured: true,
   },
   {
     slug: "steamquest",
@@ -75,6 +75,7 @@ export const allProjects: Project[] = [
     category: "Research",
     tags: ["Cognitive Science", "Games", "Assessment"],
     image: "/images/projects/neuroux-phone.png",
+    featured: true,
   },
   {
     slug: "soma",
@@ -195,6 +196,7 @@ export const allProjects: Project[] = [
     tags: ["EdTech", "Data Science", "Games"],
     image: "/images/projects/playpower-labs.jpg",
     url: "https://www.playpowerlabs.com",
+    featured: true,
   },
   {
     slug: "playpower-8bit",
@@ -217,6 +219,7 @@ export const allProjects: Project[] = [
       "NeuroAesthetic Resonance is an EEG-based cybernetic aesthetic experience that explores the neural correlates of beauty and resonance. Participants wear EEG headsets while interacting with visual and auditory stimuli; their brainwave patterns are analyzed in real-time to create a feedback loop between neural activity and aesthetic experience. The project investigates whether we can design experiences that reliably induce states of aesthetic resonance, and what these states look like in the brain.",
     category: "Research",
     tags: ["EEG", "Neuroaesthetics", "Cybernetics", "Wellbeing"],
+    image: "/images/projects/neuroaesthetic-resonance.jpg",
   },
   {
     slug: "entrepreneurial-thinking",
@@ -227,6 +230,7 @@ export const allProjects: Project[] = [
       "Entrepreneurial Thinking is a master's course at the AMS Institute (Amsterdam Institute for Advanced Metropolitan Solutions) that teaches entrepreneurship through design thinking, lean methodology, and real-world startup challenges. Students work in interdisciplinary teams to identify urban problems, develop solution concepts, validate assumptions with real users, and pitch viable business models. The course bridges academic research and entrepreneurial practice.",
     category: "Education",
     tags: ["AMS Institute", "Entrepreneurship", "Design Thinking"],
+    image: "/images/projects/entrepreneurial-thinking.jpg",
   },
   {
     slug: "haptic-vision",
@@ -237,6 +241,7 @@ export const allProjects: Project[] = [
       "Haptic Vision is a VR haptic glove prototype developed in collaboration with SenseGlove. The project explores how touch feedback enhances immersion and spatial understanding in virtual environments. By combining force feedback, vibrotactile stimulation, and thermal cues, the glove allows users to feel virtual objects with unprecedented realism. Research findings contribute to the design of next-generation haptic interfaces for VR training, rehabilitation, and entertainment.",
     category: "Design",
     tags: ["VR", "Haptics", "SenseGlove", "Prototype"],
+    image: "/images/projects/haptic-vision.png",
   },
 ];
 

@@ -1,120 +1,99 @@
 import Link from "next/link";
-import { ProjectCard, type Project } from "@/components/ProjectCard";
+import Image from "next/image";
+import { ProjectCard } from "@/components/ProjectCard";
+import { allProjects } from "@/data/projects";
 
-// Featured projects data
-const featuredProjects: Project[] = [
+const recentNews = [
   {
-    slug: "source-library",
-    title: "Source Library",
-    description:
-      "Digitizing and translating rare Hermetic, alchemical, and mystical texts. 100+ books from the pre-1650 era, including works on kabbalah, neoplatonism, and natural magic.",
-    category: "Esoteric",
-    tags: ["Next.js", "MongoDB", "Gemini OCR", "Digital Humanities"],
-    image: "/images/projects/source-library.jpg",
-    featured: true,
+    date: "2025",
+    text: "Invited talk at UNESCO on AI and wellbeing in education",
   },
   {
-    slug: "playpowerlearn",
-    title: "PlayPowerLearn",
-    description:
-      "AI-powered learning management system where AI generates standards-aligned content and humans curate. Inverting the traditional LMS paradigm.",
-    category: "Education",
-    tags: ["Next.js", "PostgreSQL", "Prisma", "AI"],
-    image: "/images/projects/playpowerlearn.png",
-    featured: true,
+    date: "2025",
+    text: "Masterclass on designing AI systems for human flourishing",
   },
   {
-    slug: "smart-paper",
-    title: "Smart Paper",
-    description:
-      "Computer vision for paper-based learning, reaching 5 million students across India. Making AI-powered education accessible without devices.",
-    category: "AI",
-    tags: ["Computer Vision", "Education", "Scale"],
-    image: "/images/projects/smart-paper.jpg",
+    date: "2024",
+    text: "Published research on resonance in interaction design",
   },
   {
-    slug: "steamquest",
-    title: "STEAMQuest",
-    description:
-      "Educational 3D games with professional voice acting. Gamified learning through Three.js visualizations and immersive problem-solving.",
-    category: "Education",
-    tags: ["Three.js", "ElevenLabs", "Interactive"],
-    image: "/images/projects/steamquest.png",
-  },
-  {
-    slug: "babysees",
-    title: "BabySees & FunBookies",
-    description:
-      "Visual vocabulary books for toddlers featuring complex imagery: fractals, honeycombs, nebulae, microscopic structures. Plus decodable readers for early literacy.",
-    category: "Books",
-    tags: ["AI Art", "Early Learning", "Science of Reading"],
-    image: "/images/projects/babysees.jpg",
-  },
-  {
-    slug: "neuroux",
-    title: "NeuroUX",
-    description:
-      "Gamified cognitive assessments for remote mental health research. Over a dozen games designed for psychological assessment.",
-    category: "Research",
-    tags: ["Cognitive Science", "Games", "Assessment"],
-    image: "/images/projects/neuroux-phone.png",
+    date: "2024",
+    text: "Smart Paper reaches 5 million students across India",
   },
 ];
+
+const featuredProjects = allProjects.filter((p) => p.featured);
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-warm">
-        {/* Content */}
-        <div className="relative z-10 container-medium py-24 text-center">
-          <div className="stagger-children">
-            {/* Overline */}
-            <p className="label mb-6">AI · Education · Digital Humanities</p>
+      <section className="py-24 bg-warm">
+        <div className="container-medium">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Photo */}
+            <div className="flex justify-center md:justify-start">
+              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-[var(--border-color)]">
+                <Image
+                  src="/images/headshot.png"
+                  alt="Derek Lomas"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+              </div>
+            </div>
 
-            {/* Main heading */}
-            <h1 className="text-5xl md:text-7xl font-medium leading-tight">
-              Enhancing wellbeing through
-              <br />
-              <span className="text-rust">intelligent design</span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="mt-8 text-xl md:text-2xl text-secondary leading-relaxed max-w-2xl mx-auto">
-              I build AI systems for learning, digitize ancient manuscripts, and
-              create tools that make human potential more accessible.
-            </p>
-
-            {/* CTA buttons */}
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/projects" className="btn-primary">
-                View Projects
-              </Link>
-              <Link href="/about" className="btn-secondary">
-                About Me
-              </Link>
+            {/* Bio */}
+            <div>
+              <h1 className="text-4xl md:text-5xl font-medium leading-tight">
+                Derek Lomas
+              </h1>
+              <p className="mt-2 text-rust font-sans text-sm font-medium">
+                TU Delft · Positive AI
+              </p>
+              <p className="mt-6 text-lg text-secondary leading-relaxed">
+                I build AI systems for learning, digitize ancient manuscripts,
+                and create tools that make human potential more accessible.
+                Tenured professor of Positive AI, cognitive scientist, and
+                serial entrepreneur.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Link href="/projects" className="btn-primary">
+                  View Projects
+                </Link>
+                <Link href="/about" className="btn-secondary">
+                  About Me
+                </Link>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            className="text-muted"
-          >
-            <path d="M12 5v14M5 12l7 7 7-7" />
-          </svg>
+      {/* Recent News */}
+      <section className="py-24">
+        <div className="container-medium">
+          <h2 className="text-3xl md:text-4xl font-medium mb-8">Recent</h2>
+          <ul className="space-y-4">
+            {recentNews.map((item, i) => (
+              <li
+                key={i}
+                className="flex gap-4 items-baseline border-b border-[var(--border-color)] pb-4"
+              >
+                <span className="text-muted font-sans text-sm shrink-0">
+                  {item.date}
+                </span>
+                <span className="text-secondary">{item.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* Featured Projects Section */}
-      <section className="py-24">
+      <section className="py-24 bg-warm">
         <div className="container-wide">
           {/* Section header */}
           <div className="flex items-end justify-between mb-12">
@@ -141,7 +120,6 @@ export default function Home() {
               <ProjectCard
                 key={project.slug}
                 project={project}
-                featured={project.featured}
               />
             ))}
           </div>
@@ -162,7 +140,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-24 bg-warm">
+      <section className="py-24">
         <div className="container-narrow text-center">
           <blockquote className="text-2xl md:text-3xl leading-relaxed italic">
             "My personal mission is to enhance global wellbeing through
@@ -172,30 +150,6 @@ export default function Home() {
             From research on resonance in interaction design to AI systems that
             measurably improve student motivation and learning.
           </p>
-        </div>
-      </section>
-
-      {/* Stats/Credentials Section */}
-      <section className="py-24">
-        <div className="container-wide">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-4xl md:text-5xl font-semibold text-rust">5M+</p>
-              <p className="mt-2 text-secondary text-sm">Students reached</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-semibold text-rust">35+</p>
-              <p className="mt-2 text-secondary text-sm">Educational games</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-semibold text-rust">100+</p>
-              <p className="mt-2 text-secondary text-sm">Manuscripts digitized</p>
-            </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-semibold text-rust">100K+</p>
-              <p className="mt-2 text-secondary text-sm">Learners in experiments</p>
-            </div>
-          </div>
         </div>
       </section>
 
