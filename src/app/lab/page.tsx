@@ -27,6 +27,33 @@ const experiments = [
     live: true,
   },
   {
+    slug: "skill-graph",
+    title: "Math Skill Progression",
+    description:
+      "Skills organized by grade rows and domain columns. Node size reflects importance scores. Hover to see prerequisite and dependent connections.",
+    tech: "D3.js",
+    status: "Live",
+    live: true,
+  },
+  {
+    slug: "rivers",
+    title: "Rivers of Esoteric Life",
+    description:
+      "Animated Sankey diagram mapping 280 years of occult publishing (1469-1750). Nine traditions — from Hermetica to Rosicrucianism — flow through time as rivers of ink.",
+    tech: "D3.js",
+    status: "Live",
+    live: true,
+  },
+  {
+    slug: "ficino-network",
+    title: "Ficino's Network",
+    description:
+      "Interactive force-directed network of Marsilio Ficino's intellectual connections and correspondences in Renaissance Florence.",
+    tech: "D3.js",
+    status: "Live",
+    live: true,
+  },
+  {
     slug: "research-connections",
     title: "Research Connections",
     description:

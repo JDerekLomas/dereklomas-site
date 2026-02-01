@@ -151,7 +151,7 @@ export default function SkillAncestryPage() {
     if (!ancestryTree || !svgRef.current) return;
 
     const width = 1200;
-    const nodeHeight = 50;
+    const nodeHeight = 70;
     const nodeWidth = 280;
     const levelGap = 100;
 
@@ -163,7 +163,7 @@ export default function SkillAncestryPage() {
     const treeLayout = d3
       .tree<AncestryNode>()
       .nodeSize([nodeHeight, levelGap])
-      .separation((a, b) => (a.parent === b.parent ? 1 : 1.5));
+      .separation((a, b) => (a.parent === b.parent ? 1.2 : 1.8));
 
     treeLayout(root);
 
