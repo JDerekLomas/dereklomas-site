@@ -76,7 +76,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:j.d.lomas@tudelft.nl" className="text-secondary">
+                <a href="mailto:dereklomas@gmail.com" className="text-secondary">
                   Email
                 </a>
               </li>
