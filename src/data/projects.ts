@@ -78,14 +78,15 @@ export const allProjects: Project[] = [
     featured: true,
   },
   {
-    slug: "soma",
-    title: "Soma",
+    slug: "vibe-research-lab",
+    title: "VIBE Research Lab",
     description:
-      "Multi-provider AI assistant platform. Create customizable personal AI assistants with Claude, ChatGPT, Gemini, and more.",
+      "TU Delft research lab combining science, design, and AI to explore positive human experiences through vibration, resonance, and sensory interaction.",
     fullDescription:
-      "Soma is a multi-provider AI assistant platform that lets users create and customize personal AI assistants using Claude, ChatGPT, Gemini, and other language models. Built with React 19 and Supabase, it provides a unified interface for managing multiple AI conversations, custom system prompts, and persistent memory across providers.",
-    category: "AI",
-    tags: ["React 19", "Supabase", "Multi-model"],
+      "The VIBE Research Lab at TU Delft explores how vibration, harmony, and resonance can enhance human wellbeing. Projects include AI-powered vibrating blankets for sleep, vibroacoustic sound healing installations (exhibited at Dutch Design Week 2019), and EEG-based studies of aesthetic experience. The lab applies classical theories of harmony to modern interaction design, using AI to personalize sensory experiences.",
+    category: "Research",
+    tags: ["Wellbeing", "Haptics", "AI", "TU Delft"],
+    image: "/images/projects/feel-the-vibe.png",
   },
   {
     slug: "xwhysi",
