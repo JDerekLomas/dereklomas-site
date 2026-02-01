@@ -220,7 +220,7 @@ export default function WritingPage() {
               {featuredVideos.map((video) => (
                 <a
                   key={video.id}
-                  href={video.id.startsWith("unknown") ? videoData.channel.url : `https://www.youtube.com/watch?v=${video.id}`}
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block p-5 bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] transition-colors no-underline group"

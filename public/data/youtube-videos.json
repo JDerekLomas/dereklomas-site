@@ -6,225 +6,411 @@
   },
   "videos": [
     {
-      "id": "unknown-numbaland",
+      "id": "TLEUWc-FLcE",
+      "title": "ReSource Final Pitch",
+      "description": "",
+      "duration": "5:07",
+      "published": "",
+      "views": 18,
+      "category": "research",
+      "project": "source-library",
+      "featured": false
+    },
+    {
+      "id": "JZ3OkjkMJG0",
+      "title": "AIWritingHelper.com",
+      "description": "",
+      "duration": "1:37",
+      "published": "",
+      "views": 28,
+      "category": "education",
+      "project": "playpowerlearn",
+      "featured": false
+    },
+    {
+      "id": "riS5JFJKTZQ",
+      "title": "Analyzing data of consonance and dissonance",
+      "description": "",
+      "duration": "18:16",
+      "published": "",
+      "views": 40,
+      "category": "research",
+      "project": "vibe-research-lab",
+      "featured": false
+    },
+    {
+      "id": "lQzaMmo94qc",
+      "title": "Designing The Future Of Things",
+      "description": "",
+      "duration": "0:54",
+      "published": "",
+      "views": 32,
+      "category": "talk",
+      "project": "talks",
+      "featured": false
+    },
+    {
+      "id": "sLP-xa7bgio",
+      "title": "BrainBuilder on TV",
+      "description": "",
+      "duration": "2:17",
+      "published": "",
+      "views": 57,
+      "category": "education",
+      "project": "playpower-labs",
+      "featured": false
+    },
+    {
+      "id": "IInMZ0Si76Q",
+      "title": "Mike Kai and Phantom Drone",
+      "description": "",
+      "duration": "2:57",
+      "published": "",
+      "views": 29,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "owfpL8dJbfU",
+      "title": "Mathify - Techstars Demo Day",
+      "description": "",
+      "duration": "8:42",
+      "published": "",
+      "views": 198,
+      "category": "education",
+      "project": "playpower-labs",
+      "featured": false
+    },
+    {
+      "id": "4YNJjngt7-c",
+      "title": "Video Worked Example",
+      "description": "",
+      "duration": "1:04",
+      "published": "",
+      "views": 15,
+      "category": "other",
+      "project": "personal",
+      "featured": false
+    },
+    {
+      "id": "DWfRSnlZvlQ",
       "title": "NumberPower Presents: Numbaland!",
       "description": "Come to Numbaland.com to try out all of our games and learn about the academic research that inspires them",
       "duration": "4:06",
       "published": "2011-01-10",
       "views": 304,
       "category": "education",
-      "project": "numbaland"
+      "project": "numbaland",
+      "featured": false
     },
     {
-      "id": "unknown-battleship",
+      "id": "-Q71IUlTlNU",
       "title": "NumberPower presents: Battleship Numberline",
       "description": "A number sense game that is part of Numbaland. Come visit Numbaland.com to see the rest of the games and learn about the academic research that supports these games.",
       "duration": "3:59",
       "published": "2011-01-10",
       "views": 1092,
-      "category": "education",
-      "project": "numbaland"
+      "category": "other",
+      "project": "numbaland",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-quiz",
+      "id": "bOlZt3932LE",
       "title": "Hanuman Quiz Adventure",
       "description": "Incomplete: included in the Playpower.org 3-in-1 cartridge",
       "duration": "4:15",
       "published": "2010-10-04",
       "views": 853,
       "category": "education",
-      "project": "playpower-8bit"
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-malaria",
+      "id": "LXRzGG3Jj2k",
       "title": "Malaria Game",
       "description": "Incomplete, but found on the Playpower.org 3-in-1 demo game cartridge.",
       "duration": "0:34",
       "published": "2010-10-04",
       "views": 136,
       "category": "education",
-      "project": "playpower-8bit"
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-bc",
-      "title": "\"Hanuman, Typing Warrior\" Game User Testing - Household BC",
-      "description": "Playpower.org produces learning games for a $10 computer in India. This video shows our game user testing with three girls playing \"Hanuman, Typing Warrior\" in a household with an income level of less than $100/month for a family of 5.",
+      "id": "isVt9YoV3xc",
+      "title": "Hanuman Typing Warrior - Household BC",
+      "description": "",
       "duration": "1:57",
-      "published": "2010-09-14",
+      "published": "",
       "views": 173,
-      "category": "research",
-      "project": "playpower-8bit"
+      "category": "education",
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-bl1",
-      "title": "\"Hanuman, Typing Warrior\" Game User Testing - Household BL",
-      "description": "Playpower.org produces learning games for a $10 computer in India. This video shows our game user testing with two girls playing \"Hanuman, Typing Warrior\" in a household with an income level of about $100/month for a family of 4. Notice that the girls start saying each letter out loud. This occurred in many other households as well.",
+      "id": "rFrAVv7WDkk",
+      "title": "Hanuman Typing Warrior - Household BL",
+      "description": "",
       "duration": "0:58",
-      "published": "2010-09-14",
+      "published": "",
       "views": 96,
-      "category": "research",
-      "project": "playpower-8bit"
+      "category": "education",
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-bl2",
-      "title": "\"Hanuman, Typing Warrior\" Game User Testing - Household BL (alternating)",
-      "description": "Playpower.org produces learning games for a $10 computer in India. This video shows our game user testing with two girls playing \"Hanuman, Typing Warrior\" in a household with an income level of about $100/month for a family of 4. Notice that the girls created their own game within the game, where each girl alternates pressing the keys.",
+      "id": "5Np42Z7U-qs",
+      "title": "Hanuman Typing Warrior - Household BL 2",
+      "description": "",
       "duration": "0:47",
-      "published": "2010-09-14",
+      "published": "",
       "views": 105,
-      "category": "research",
-      "project": "playpower-8bit"
+      "category": "education",
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-worked",
-      "title": "Hanuman, Typing Warrior: A Worked Example from Playpower.org",
-      "description": "Playpower.org is an open-source community that makes learning games for low-cost (~$10) computer platforms that are widely sold to low-income families in developing countries. This game was developed in 6502 assembly code for a keyboard-based 8-bit Nintendo Famicom clone, which are widely sold in India for ~$10. (Meaning: this game would run on an 8-bit Nintendo Entertainment System, if it had a keyboard) Each level is only 16Kb with 8kb of graphics.",
+      "id": "FEvJdn5hRRU",
+      "title": "Hanuman Typing Warrior: A Worked Example",
+      "description": "",
       "duration": "4:27",
-      "published": "2010-09-14",
+      "published": "",
       "views": 493,
       "category": "education",
-      "project": "playpower-8bit"
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-hanuman-trimmed",
+      "id": "nFG1VI5HHkQ",
       "title": "Hanuman Typing Trimmed",
       "description": "",
       "duration": "3:48",
       "published": "2010-09-13",
       "views": 79,
       "category": "education",
-      "project": "playpower-8bit"
+      "project": "playpower",
+      "featured": false
     },
     {
-      "id": "unknown-neuroethology",
+      "id": "_pktr-fTMA0",
       "title": "Neuroethology",
       "description": "",
       "duration": "2:36",
       "published": "2008-12-30",
       "views": 515,
       "category": "research",
-      "project": "academic"
+      "project": "personal",
+      "featured": false
     },
     {
-      "id": "unknown-10dollar",
+      "id": "nvejRDkibS0",
       "title": "$10 Educational Computer",
       "description": "Shows some of the educational games that come with a $10 educational computer, for sale in India",
       "duration": "3:46",
       "published": "2008-08-03",
-      "views": 21943,
-      "likes": 101,
-      "category": "education",
+      "views": 21986,
+      "category": "other",
       "project": "playpower-8bit",
       "featured": true
     },
     {
-      "id": "unknown-dharavi",
+      "id": "noW0J3_7Zps",
       "title": "Pushing buttons in Dharavi",
       "description": "Found some kids playing video games in this little tiny arcade in Dharavi, which is supposedly Asia's largest slum",
       "duration": "0:33",
       "published": "2007-11-10",
       "views": 362,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "playpower-8bit",
+      "featured": false
     },
     {
-      "id": "unknown-ganesh",
+      "id": "1cQSCDtDwhI",
       "title": "Space Ganesh",
       "description": "This is footage from Ganpati, the festival for everyone's favorite elephant god, Ganesh.",
       "duration": "1:24",
       "published": "2007-09-27",
       "views": 1120,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-krishna",
+      "id": "uPfD7ysa1eI",
       "title": "Krishna's Birthday",
       "description": "Shows the excellent use of glitter graphics on Hindu devotional television, Krishna's Birthday celebration, a truck that is probably exceeding the legal limit of occupants, and my first motorcycle ride in Bombay",
       "duration": "1:20",
       "published": "2007-09-19",
       "views": 785,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-tattoo",
+      "id": "O5rcJb-F3Vs",
       "title": "Street Tattoo",
       "description": "Using a chain of Batteries, ladies will give you a really unhygenic tattoo on the streets of Bombay! This is at the Bandra Street Fair, for the Festival of Mount Mary.",
       "duration": "0:25",
       "published": "2007-09-10",
       "views": 8269,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-metal",
+      "id": "RomvkMOexLw",
       "title": "Heavy Metal in Mumbai",
       "description": "So heavy metal is the most popular genre of live music it seems. Here is a glammed up nagalander (boomerang) busting up the crowd. But first the crowd shouts some nasty hindi at him because the concert is late to start.",
       "duration": "0:48",
       "published": "2007-09-10",
       "views": 1043,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-electronics",
+      "id": "9HoWbvSovUI",
       "title": "Electronics Shopping in the Monsoon",
       "description": "We needed to find some specialized components for the Sewing Machine Mobile Phone Charger, so we headed down to Lamington Road, in Bombay, India. It was way more exciting than going to Radioshack.",
       "duration": "1:09",
       "published": "2007-09-07",
       "views": 841,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-commuting",
+      "id": "d51VTdpPGkc",
       "title": "Commuting in Bombay Monsoon",
       "description": "Commuting to Work in Bombay is more exciting than any disney ride, guaranteed.",
       "duration": "2:01",
       "published": "2007-09-03",
       "views": 2465,
-      "category": "india",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-traffic",
+      "id": "ddXlV7Bq0FM",
       "title": "Bombay Traffic in the Monsoon",
       "description": "Going to work is an adventure when it rains... Flooded roads",
       "duration": "0:36",
       "published": "2007-08-27",
-      "views": 1960,
-      "category": "india",
-      "project": "india-2007"
+      "views": 1961,
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-sewing",
-      "title": "sewing machine mobile phone charger",
+      "id": "W7iR2G50OkM",
+      "title": "Sewing machine mobile phone charger",
       "description": "Using some random parts found around bombay, we hacked together a footpowered sewing machine so that it can charge a mobile phone. Since there are footpowered sewing machines in nearly every village in India, this setup might help people stay connected even when the power goes out for days at a time. More at www.revolv.in hack, india, mobile phones, electricity",
       "duration": "0:56",
       "published": "2007-08-25",
       "views": 6194,
-      "category": "maker",
-      "project": "india-2007"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
     },
     {
-      "id": "unknown-realtimelapse",
-      "title": "real time lapse",
+      "id": "HjNi8pZQ-0c",
+      "title": "Real time lapse",
       "description": "A portable camera tower allows aerial capture of crowd movements at etech's Make Fest. The crowd was able to see a real-time time-lapse of their own activity at 10x speed.",
       "duration": "1:14",
       "published": "2007-03-30",
       "views": 5562,
-      "category": "art",
-      "project": "social-movement-lab"
+      "category": "documentary",
+      "project": "india-docs",
+      "featured": false
+    },
+    {
+      "id": "Bhax3N5rR3M",
+      "title": "Visualization of Myspace",
+      "description": "",
+      "duration": "2:20",
+      "published": "",
+      "views": 514,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "7DaOkfigpj0",
+      "title": "Big Red Balloon",
+      "description": "",
+      "duration": "2:39",
+      "published": "",
+      "views": 1665,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
     },
     {
       "id": "3wEWsM9JHtQ",
       "title": "Social Memory Boards",
       "description": "",
-      "duration": "unknown",
+      "duration": "1:18",
       "published": "unknown",
-      "category": "art",
-      "project": "social-movement-lab"
+      "views": 217,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "AWNB_dmlNMw",
+      "title": "Sppssshh-by-number",
+      "description": "",
+      "duration": "2:12",
+      "published": "",
+      "views": 2229,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "RNzhKicz8vc",
+      "title": "FireLab Presents: FireNova",
+      "description": "",
+      "duration": "1:43",
+      "published": "",
+      "views": 120,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "m7mL26IPt2s",
+      "title": "Art Party",
+      "description": "",
+      "duration": "2:00",
+      "published": "",
+      "views": 335,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "xeBQ1uejveY",
+      "title": "Super-Cute Breathalyzer Doggie",
+      "description": "",
+      "duration": "2:48",
+      "published": "",
+      "views": 5128,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
+    },
+    {
+      "id": "YjkHFKNUWbQ",
+      "title": "Chemhound",
+      "description": "",
+      "duration": "3:27",
+      "published": "",
+      "views": 5107,
+      "category": "creative",
+      "project": "creative",
+      "featured": false
     }
   ],
   "categories": {
