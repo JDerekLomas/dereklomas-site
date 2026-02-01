@@ -82,6 +82,8 @@ export const allProjects: Project[] = [
     title: "Soma",
     description:
       "Multi-provider AI assistant platform. Create customizable personal AI assistants with Claude, ChatGPT, Gemini, and more.",
+    fullDescription:
+      "Soma is a multi-provider AI assistant platform that lets users create and customize personal AI assistants using Claude, ChatGPT, Gemini, and other language models. Built with React 19 and Supabase, it provides a unified interface for managing multiple AI conversations, custom system prompts, and persistent memory across providers.",
     category: "AI",
     tags: ["React 19", "Supabase", "Multi-model"],
   },
@@ -90,6 +92,8 @@ export const allProjects: Project[] = [
     title: "XWHYSI",
     description:
       "Milo Lomas music portfolio with 30 AI-generated psychedelic video backgrounds. Electronic music meets generative art.",
+    fullDescription:
+      "XWHYSI is the music portfolio of Milo Lomas, featuring electronic music paired with 30 AI-generated psychedelic video backgrounds. Each track is accompanied by a unique visual created using generative AI tools, blending electronic sound design with surreal, evolving imagery.",
     category: "Music",
     tags: ["SoundCloud", "Video Generation", "Creative"],
   },
