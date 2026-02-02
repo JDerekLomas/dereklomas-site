@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 export type { Project };
@@ -26,12 +27,14 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       href={`/projects/${project.slug}`}
       className={`card block no-underline group ${featured ? "md:col-span-2" : ""}`}
     >
-      {/* Image */}
       {project.image ? (
         <div className="aspect-video bg-warm rounded-t-lg overflow-hidden mb-4 -mx-6 -mt-6">
-          <img
+          <Image
             src={project.image}
             alt={project.title}
+            width={600}
+            height={338}
+            loading="lazy"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
@@ -43,20 +46,16 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         </div>
       )}
 
-      {/* Category badge */}
       <span className={`badge ${badgeClass}`}>{project.category}</span>
 
-      {/* Title */}
       <h3 className="mt-3 text-xl font-medium group-hover:text-rust transition-colors">
         {project.title}
       </h3>
 
-      {/* Description */}
       <p className="mt-2 text-secondary text-sm leading-relaxed line-clamp-2">
         {project.description}
       </p>
 
-      {/* Tags */}
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tags.slice(0, 3).map((tag) => (
           <span key={tag} className="text-xs text-muted font-sans">

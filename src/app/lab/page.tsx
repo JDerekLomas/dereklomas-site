@@ -94,10 +94,10 @@ const experiments = [
 
 export default function LabPage() {
   return (
-    <div className="min-h-screen py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen py-16 px-6">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <header className="mb-16">
+        <header className="mb-8">
           <span className="inline-block px-3 py-1 bg-violet/10 text-violet text-xs font-[family-name:var(--font-inter)] font-medium rounded-full mb-4">
             Interactive Experiments
           </span>

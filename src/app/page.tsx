@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ProjectCard } from "@/components/ProjectCard";
 import { allProjects } from "@/data/projects";
 
 const recentNews = [
@@ -22,65 +21,71 @@ const recentNews = [
   },
 ];
 
-const featuredProjects = allProjects.filter((p) => p.featured);
+const selectedWork = allProjects
+  .filter((p) => p.featured)
+  .slice(0, 6)
+  .map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    description: p.description,
+    category: p.category,
+  }));
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-24 bg-warm">
-        <div className="container-medium">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Photo */}
-            <div className="flex justify-center md:justify-start">
-              <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border border-[var(--border-color)]">
-                <Image
-                  src="/images/headshot.png"
-                  alt="Derek Lomas"
-                  width={400}
-                  height={400}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
+      {/* Introduction */}
+      <section className="py-16 px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-16 h-16 rounded-full overflow-hidden shrink-0">
+              <Image
+                src="/images/headshot.png"
+                alt="Derek Lomas"
+                width={64}
+                height={64}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
-
-            {/* Bio */}
-            <div>
-              <h1 className="text-4xl md:text-5xl font-medium leading-tight">
-                Derek Lomas
-              </h1>
-              <p className="mt-2 text-rust font-sans text-sm font-medium">
-                TU Delft · Positive AI
-              </p>
-              <p className="mt-6 text-lg text-secondary leading-relaxed">
-                I build AI systems for learning, digitize ancient manuscripts,
-                and create tools that make human potential more accessible.
-                Tenured professor of Positive AI, cognitive scientist, and
-                serial entrepreneur.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/projects" className="btn-primary">
-                  View Projects
-                </Link>
-                <Link href="/about" className="btn-secondary">
-                  About Me
-                </Link>
-              </div>
-            </div>
+            <h1 className="text-3xl md:text-4xl font-medium">Derek Lomas</h1>
           </div>
+          <p className="text-lg text-secondary leading-relaxed">
+            Tenured professor of{" "}
+            <a
+              href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Positive AI at TU Delft
+            </a>
+            . I research the design of AI systems for wellbeing, build educational
+            technology that has reached 5 million students, and{" "}
+            <Link href="/projects/source-library">
+              digitize rare historical manuscripts
+            </Link>
+            . PhD from Carnegie Mellon, BA from Yale.{" "}
+            <a
+              href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              75+ publications
+            </a>
+            , 1,500+ citations.
+          </p>
         </div>
       </section>
 
-      {/* Recent News */}
-      <section className="py-24">
-        <div className="container-medium">
-          <h2 className="text-3xl md:text-4xl font-medium mb-8">Recent</h2>
+      {/* Recent */}
+      <section className="py-16 px-6 border-t border-light">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-medium mb-8">Recent</h2>
           <ul className="space-y-4">
             {recentNews.map((item, i) => (
               <li
                 key={i}
-                className="flex gap-4 items-baseline border-b border-[var(--border-color)] pb-4"
+                className="flex gap-4 items-baseline border-b border-light pb-4 last:border-b-0"
               >
                 <span className="text-muted font-sans text-sm shrink-0">
                   {item.date}
@@ -92,120 +97,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section className="py-24 bg-warm">
-        <div className="container-wide">
-          {/* Section header */}
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-medium">Featured Work</h2>
-              <p className="mt-2 text-secondary">
-                From ancient manuscripts to AI-powered education
-              </p>
-            </div>
-            <Link
-              href="/projects"
-              className="hidden sm:flex items-center gap-2 text-rust font-sans text-sm font-medium no-underline hover:gap-3 transition-all"
-            >
-              View all projects
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" />
-              </svg>
-            </Link>
-          </div>
-
-          {/* Projects grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
-              <ProjectCard
-                key={project.slug}
-                project={project}
-              />
+      {/* Selected Work */}
+      <section className="py-16 px-6 border-t border-light">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-medium mb-8">Selected Work</h2>
+          <ul className="space-y-4">
+            {selectedWork.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  href={`/projects/${item.slug}`}
+                  className="block no-underline group"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-medium group-hover:text-rust transition-colors">
+                      {item.title}
+                    </span>
+                    <span className="text-muted font-sans text-xs shrink-0">
+                      {item.category}
+                    </span>
+                  </div>
+                  <p className="text-secondary text-sm mt-1 line-clamp-1">
+                    {item.description}
+                  </p>
+                </Link>
+              </li>
             ))}
-          </div>
-
-          {/* Mobile link */}
-          <div className="mt-8 text-center sm:hidden">
+          </ul>
+          <div className="mt-8">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-rust font-sans text-sm font-medium no-underline"
+              className="text-rust font-sans text-sm font-medium no-underline hover:underline"
             >
-              View all projects
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                <path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" />
-              </svg>
+              View all projects &rarr;
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-24">
-        <div className="container-narrow text-center">
-          <blockquote className="text-2xl md:text-3xl leading-relaxed italic">
-            &ldquo;My personal mission is to enhance global wellbeing through
-            artificial intelligence and humanistic design.&rdquo;
-          </blockquote>
-          <p className="mt-6 text-secondary font-sans text-sm">
-            From research on resonance in interaction design to AI systems that
-            measurably improve student motivation and learning.
-          </p>
-        </div>
-      </section>
-
-      {/* Explore More */}
-      <section className="py-16">
-        <div className="container-medium">
-          <div className="grid sm:grid-cols-3 gap-6">
-            <Link href="/writing" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
-              <h3 className="font-sans text-sm font-medium text-rust mb-2">Writing</h3>
-              <p className="text-sm text-secondary">Essays on AI, wellbeing, and human flourishing</p>
-            </Link>
-            <Link href="/research" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
-              <h3 className="font-sans text-sm font-medium text-rust mb-2">Research</h3>
-              <p className="text-sm text-secondary">Publications in HCI, cognitive science, and education</p>
-            </Link>
-            <Link href="/press" className="p-6 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group">
-              <h3 className="font-sans text-sm font-medium text-rust mb-2">Press & Talks</h3>
-              <p className="text-sm text-secondary">NPR, CNN, Wired, UNESCO, TEDx, and more</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Lab Preview Section */}
-      <section className="py-24 bg-warm">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="badge badge-violet mb-4">Interactive Experiments</span>
-              <h2 className="text-3xl md:text-4xl font-medium">The Lab</h2>
-              <p className="mt-4 text-secondary leading-relaxed">
-                Explore interactive visualizations, 3D experiments, and
-                prototypes. From D3.js data stories to Three.js immersive
-                experiences.
-              </p>
-              <Link
-                href="/lab"
-                className="inline-flex items-center gap-2 mt-6 text-rust font-sans text-sm font-medium no-underline hover:gap-3 transition-all"
-              >
-                Enter the lab
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" />
-                </svg>
-              </Link>
-            </div>
-            <div className="aspect-video rounded-lg bg-[#1a1510] border border-[var(--border-color)] flex items-center justify-center">
-              <svg width="200" height="120" viewBox="0 0 200 120" className="opacity-80">
-                <g fill="none" strokeWidth="3" strokeLinecap="round">
-                  <path d="M10 20 C50 15, 150 30, 190 20" stroke="#9b59b6" opacity="0.7" />
-                  <path d="M10 40 C50 48, 150 32, 190 40" stroke="#f1c40f" opacity="0.7" />
-                  <path d="M10 60 C50 55, 150 68, 190 60" stroke="#3498db" opacity="0.7" />
-                  <path d="M10 80 C50 88, 150 72, 190 80" stroke="#e74c3c" opacity="0.7" />
-                  <path d="M10 100 C50 95, 150 108, 190 100" stroke="#2ecc71" opacity="0.7" />
-                </g>
-              </svg>
-            </div>
           </div>
         </div>
       </section>

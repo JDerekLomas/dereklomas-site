@@ -15,10 +15,10 @@ export default function ProjectsPage() {
       : allProjects.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="min-h-screen py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen py-16 px-6">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-8">
           <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Projects
           </h1>
