@@ -6,6 +6,13 @@
     "author": "Derek Lomas",
     "articles": [
       {
+        "title": "Prompt Archaeology",
+        "description": "What does a body of work look like when you're building with AI every day? An analysis of 10,497 prompts across 68 days.",
+        "date": "2026-02-04",
+        "url": "/projects/promptarchaeology/",
+        "featured": true
+      },
+      {
         "title": "Wellbeing, what else?",
         "description": "Prioritizing human flourishing in AI alignment",
         "date": "2024-03-07",
@@ -131,8 +138,8 @@
     "Intelligence and Cognition"
   ],
   "stats": {
-    "substackArticles": 12,
+    "substackArticles": 13,
     "mediumArticles": 5,
-    "totalArticles": 17
+    "totalArticles": 18
   }
 }

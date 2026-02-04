@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Archaeology - 10,497 prompts analyzed</title>
+    <meta name="description" content="What does a body of work look like when you're building with AI every day? An analysis of 68 days of Claude Code conversations.">
+    <meta property="og:title" content="Prompt Archaeology">
+    <meta property="og:description" content="10,497 prompts. 68 days. 53 projects. What patterns emerge?">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Hero -->
+    <section id="hero">
+        <h1>Prompt Archaeology</h1>
+        <p class="subtitle">10,497 prompts. 68 days. 53 projects.</p>
+        <p class="tagline">What does a body of work look like when you're building with AI every day?</p>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Intro -->
+    <section id="intro-section">
+        <div class="intro-content">
+            <p>I ran an analysis on my Claude Code conversation history. Not for optimization. For <em>archaeology</em>.</p>
+            <p>Every prompt I've written since November 2025—extracted, timestamped, clustered by project. The raw material of building with AI.</p>
+            <p>Three questions drove this:</p>
+            <ul class="intro-questions">
+                <li>What's the <strong>shape</strong> of the work over time?</li>
+                <li>What's the <strong>rhythm</strong> of context-switching?</li>
+                <li>What <strong>patterns</strong> actually work?</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Calendar Heatmap -->
+    <section id="heatmap-section">
+        <h2>The Calendar</h2>
+        <p class="section-intro">Each square is a day. Click to see the interleave pattern.</p>
+        <div id="calendar-heatmap"></div>
+        <div id="heatmap-tooltip" class="tooltip"></div>
+        <div class="legend">
+            <span>Less</span>
+            <div class="legend-scale"></div>
+            <span>More</span>
+        </div>
+    </section>
+
+    <!-- The Arc -->
+    <section id="arc-section">
+        <h2>The Arc</h2>
+        <p class="section-intro">Three acts emerged from the data.</p>
+        <div class="arc-phases">
+            <div class="phase" data-phase="experimentation">
+                <h3>Act I: Experimentation</h3>
+                <p class="date-range">Nov 25 – Dec 16</p>
+                <p class="phase-question">"What can I do with this thing?"</p>
+                <ul class="project-list">
+                    <li>mcqmcp <span class="desc">— MCQ assessment</span></li>
+                    <li>latinclaude <span class="desc">— Latin translation</span></li>
+                    <li>Claudetabs <span class="desc">— Browser tabs</span></li>
+                    <li>blendercell <span class="desc">— 3D experiments</span></li>
+                </ul>
+                <p class="phase-note">5-8 projects running simultaneously. Nothing ships yet. Testing boundaries.</p>
+            </div>
+            <div class="phase" data-phase="foundation">
+                <h3>Act II: Foundation</h3>
+                <p class="date-range">Dec 17 – Jan 6</p>
+                <p class="phase-question">"Build the core asset"</p>
+                <ul class="project-list">
+                    <li>sourcelibrary-v2 <span class="stat">2,216 prompts</span></li>
+                    <li>translate <span class="desc">— Supporting tooling</span></li>
+                    <li>philosopherslibrary <span class="desc">— Related archive</span></li>
+                </ul>
+                <p class="phase-note">One project dominates. Christmas Day: 299 prompts on Source Library.</p>
+            </div>
+            <div class="phase" data-phase="commercialization">
+                <h3>Act III: Commercialization</h3>
+                <p class="date-range">Jan 6 – Feb 4</p>
+                <p class="phase-question">"Ship products for users"</p>
+                <ul class="project-list">
+                    <li>playpowerlearn <span class="stat">1,605 prompts</span></li>
+                    <li>lilbookies <span class="stat">1,550 prompts</span></li>
+                    <li>AIED <span class="stat">1,425 prompts in 6 days</span></li>
+                </ul>
+                <p class="phase-note">Intensity spike. Feb 2: 793 prompts. The experiments became products.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Interleave -->
+    <section id="interleave-section">
+        <h2>The Interleave</h2>
+        <p class="section-intro">The real signature isn't parallel projects. It's <strong>multiplexed attention</strong>.</p>
+        <div class="interleave-stats">
+            <div class="stat-card">
+                <div class="stat-value">0.6</div>
+                <div class="stat-label">minutes avg between switches</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">1,645</div>
+                <div class="stat-label">switches on peak day</div>
+            </div>
+        </div>
+        <p class="interleave-insight">Not time-blocking. Not "morning on X, afternoon on Y." Constant interleaving at sub-minute intervals.</p>
+        <div id="day-detail">
+            <h3>A Day in the Life: <span id="selected-date">Jan 8, 2026</span></h3>
+            <div id="interleave-viz"></div>
+        </div>
+    </section>
+
+    <!-- Hourly Rhythm -->
+    <section id="rhythm-section">
+        <h2>The Rhythm</h2>
+        <p class="section-intro">When does the work happen?</p>
+        <div id="hourly-chart"></div>
+    </section>
+
+    <!-- The Grimoire -->
+    <section id="grimoire-section">
+        <h2>The Grimoire</h2>
+        <p class="section-intro">Patterns extracted from 10,497 prompts. Not best practices—observed practices.</p>
+
+        <div class="principle">
+            <h3>The First Principle: Strategic Ambiguity</h3>
+            <p>The most common mistake is over-specification. Precise prompts produce brittle results. The art is knowing what to leave open.</p>
+            <blockquote>
+                Describe the destination, not the route.<br>
+                Name the vibe, not the pixels.<br>
+                Specify constraints, not implementations.
+            </blockquote>
+            <p class="principle-note">Claude fills ambiguity with competence. Your job is to create the right-shaped space for that competence to flow into.</p>
+        </div>
+
+        <div class="archetypes">
+            <div class="archetype" data-archetype="scholar">
+                <h4>The Scholar</h4>
+                <p class="archetype-domain">For deep domain work, archives, research</p>
+                <p class="pattern">Immerse Claude in the domain first. Don't ask it to build—ask it to <em>understand</em>. The building follows naturally.</p>
+                <p class="archetype-example">Source Library: 2,216 prompts. Key insight: content-first. The OCR pipeline, translation engine, and UI all emerged from "help me make these ancient texts accessible."</p>
+            </div>
+            <div class="archetype" data-archetype="aesthete">
+                <h4>The Aesthete</h4>
+                <p class="archetype-domain">For design, visual work, brand</p>
+                <p class="pattern">Show, don't tell. Reference sites beat descriptions. Then iterate fast with vibe words.</p>
+                <p class="archetype-example">Design Therapy: Started with "take a look at designtherapy.org. Download all the components. Then recreate based on contemporary design concepts." References first, always.</p>
+            </div>
+            <div class="archetype" data-archetype="sprinter">
+                <h4>The Sprinter</h4>
+                <p class="archetype-domain">For deadline-driven, intensive builds</p>
+                <p class="pattern">Blend research and writing in the same session. Let Claude context-switch between gathering and producing.</p>
+                <p class="archetype-example">AIED paper: 1,425 prompts in 6 days. Research + writing blend meant Claude would find a paper, summarize it, and immediately draft how it fit the argument.</p>
+            </div>
+        </div>
+
+        <div class="spellbook">
+            <h3>The Spellbook</h3>
+
+            <div class="spell-category">
+                <h4>Opening Spells</h4>
+                <div class="spell">
+                    <h5>The Vision Opener</h5>
+                    <code>"I want to [destination]. Help me think about this."</code>
+                    <p>Leave the "how" completely open. You're painting a picture, not writing a spec.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Pickup</h5>
+                    <code>"Where were we..."</code>
+                    <p>Relies on Claude's context. Often produces better continuity than explicit summaries.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Delegation</h5>
+                    <code>"Work on the todos for [X]"</code>
+                    <p>Hand over the steering wheel. Works when you've built enough shared context.</p>
+                </div>
+            </div>
+
+            <div class="spell-category">
+                <h4>Refinement Spells</h4>
+                <div class="spell">
+                    <h5>The Vibe Shift</h5>
+                    <code>"This is too [X]. Make it more [Y]."</code>
+                    <p>Four words that carry intent. "Too busy. Simplify." That's a complete prompt.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Constraint Addition</h5>
+                    <code>"Same thing, but [constraint]."</code>
+                    <p>Add constraints one at a time, not all at once.</p>
+                </div>
+            </div>
+
+            <div class="spell-category">
+                <h4>Repair Spells</h4>
+                <div class="spell">
+                    <h5>The Soft Reset</h5>
+                    <code>"Let's step back. The core goal is [X]."</code>
+                    <p>When you've gone down a wrong path. Reorient without starting over.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Show-Don't-Tell</h5>
+                    <code>"Here's an example of what I mean: [paste/link]"</code>
+                    <p>When descriptions aren't landing. A reference beats a thousand words.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="antipatterns">
+            <h3>Anti-Patterns</h3>
+            <div class="antipattern">
+                <h5>Over-specification</h5>
+                <p>"Create a React component with TypeScript using Tailwind CSS that has a blue background (#3B82F6) and padding of 16px..."</p>
+                <p class="why">The more you specify, the less room for Claude to apply judgment. Save precision for actual constraints.</p>
+            </div>
+            <div class="antipattern">
+                <h5>Premature architecture</h5>
+                <p>"First, let's plan the folder structure and database schema..."</p>
+                <p class="why">Start with the thing you actually want. Structure emerges.</p>
+            </div>
+            <div class="antipattern">
+                <h5>Research/build separation</h5>
+                <p>"First research everything, then we'll build."</p>
+                <p class="why">Blend them. Context accumulated during research makes building better.</p>
+            </div>
+        </div>
+
+        <div class="paradox">
+            <h3>The Paradox</h3>
+            <p>The best prompts don't look like prompts at all. They look like someone thinking out loud, pointing at things, expressing preferences.</p>
+            <p>Most common openers from 10,497 prompts:</p>
+            <div class="openers">
+                <span class="opener">"this"</span>
+                <span class="opener">"i"</span>
+                <span class="opener">"yes"</span>
+            </div>
+            <p>Not elaborate instructions. Just... <em>presence</em>.</p>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="method-section">
+        <h2>Methodology</h2>
+        <div class="method-content">
+            <p>Data extracted from <code>~/.claude/projects</code> and <code>~/.claude/history.jsonl</code> using custom Python scripts.</p>
+            <ul>
+                <li><strong>370</strong> full conversation sessions parsed</li>
+                <li><strong>53</strong> projects identified from directory paths</li>
+                <li><strong>68</strong> active days (Nov 25, 2025 – Feb 4, 2026)</li>
+                <li>Timestamps used to calculate switching patterns</li>
+                <li>No prompt content exposed—only counts and project names</li>
+            </ul>
+            <p>The visualization code and extraction scripts are available at <a href="https://github.com/dereklomas/promptknowledge" target="_blank">github.com/dereklomas/promptknowledge</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with Claude Code, obviously.</p>
+        <p class="footer-meta">Derek Lomas · Feb 2026</p>
+    </footer>
+
+    <script src="data/archaeology.js"></script>
+    <script src="components/heatmap.js"></script>
+    <script src="components/interleave.js"></script>
+    <script src="components/hourly.js"></script>
+    <script src="components/main.js"></script>
+</body>
+</html>
