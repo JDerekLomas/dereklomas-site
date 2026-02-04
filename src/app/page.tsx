@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { allProjects } from "@/data/projects";
+import CyclingPortrait from "@/components/CyclingPortrait";
 
 const recentNews = [
   {
@@ -31,27 +31,65 @@ const selectedWork = allProjects
     category: p.category,
   }));
 
+// Aesthetic groupings - curated sets that work visually together
+const portraitSets = {
+  // Friendly illustrated style - starts with real photo, fades to illustrations
+  illustrated: [
+    "/images/headshot.png",
+    "/images/ai-portraits/illustrated-1.jpg",
+    "/images/ai-portraits/illustrated-2.jpg",
+    "/images/ai-portraits/illustrated-3.jpg",
+    "/images/ai-portraits/illustrated-4.jpg",
+  ],
+  // Classical/fine art - sophisticated, timeless
+  classical: [
+    "/images/ai-portraits/creative/marble-1.jpg",
+    "/images/ai-portraits/creative/ethereal-1.jpg",
+    "/images/ai-portraits/creative/impressionist-1.jpg",
+    "/images/ai-portraits/creative/surreal-1.jpg",
+  ],
+  // Digital/futuristic - tech-forward, bold
+  digital: [
+    "/images/ai-portraits/creative/cyberpunk-1.jpg",
+    "/images/ai-portraits/creative/cyberpunk-2.jpg",
+    "/images/ai-portraits/creative/glitch-1.jpg",
+    "/images/ai-portraits/creative/cosmic-1.jpg",
+  ],
+  // Retro/nostalgic - playful, memorable
+  retro: [
+    "/images/ai-portraits/creative/popart-1.jpg",
+    "/images/ai-portraits/creative/astronaut-1.jpg",
+    "/images/ai-portraits/creative/steampunk-1.jpg",
+  ],
+};
+
+// Current selection for home page - using illustrated set for friendly vibe
+const activePortraits = portraitSets.illustrated;
+
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Introduction */}
       <section className="py-16 px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 rounded-full overflow-hidden shrink-0">
-              <Image
-                src="/images/headshot.png"
-                alt="Derek Lomas"
-                width={64}
-                height={64}
-                className="w-full h-full object-cover"
-                priority
-              />
+          <div className="flex items-start gap-6 mb-8">
+            <CyclingPortrait
+              images={activePortraits}
+              interval={1500}
+              className="w-24 h-24 md:w-32 md:h-32 rounded-lg shrink-0"
+            />
+            <div>
+              <p className="text-sm font-[family-name:var(--font-inter)] text-text-muted uppercase tracking-wide mb-2">
+                Vibe Research Lab / TU Delft
+              </p>
+              <h1 className="text-2xl md:text-3xl font-medium text-text-primary leading-tight">
+                AI & Experience Design
+              </h1>
             </div>
-            <h1 className="text-3xl md:text-4xl font-medium">Derek Lomas</h1>
           </div>
           <p className="text-lg text-secondary leading-relaxed">
-            Tenured professor of{" "}
+            I research how to design AI systems that enhance human wellbeing and
+            create resonant experiences. Professor of{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
               target="_blank"
@@ -59,20 +97,11 @@ export default function Home() {
             >
               Positive AI at TU Delft
             </a>
-            . I research the design of AI systems for wellbeing, build educational
-            technology that has reached 5 million students, and{" "}
+            , founder of three ed-tech companies reaching 5M+ students, and{" "}
             <Link href="/projects/source-library">
-              digitize rare historical manuscripts
+              collector of rare esoteric manuscripts
             </Link>
-            . PhD from Carnegie Mellon, BA from Yale.{" "}
-            <a
-              href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              75+ publications
-            </a>
-            , 1,500+ citations.
+            .
           </p>
         </div>
       </section>
