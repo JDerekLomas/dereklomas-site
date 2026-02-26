@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Research",
   description:
-    "Selected publications on AI for wellbeing, learning engineering, empirical aesthetics, and human-centered design by Derek Lomas.",
+    "75+ publications on AI for wellbeing, learning engineering, empirical aesthetics, and human-centered design.",
 };
 
 // Featured publications - most impactful work
 const featuredPublications = [
+  {
+    title:
+      "The Harmony of Opposites in Design and Philosophy",
+    authors: "Lomas JD, Xue H",
+    venue: "Bloomsbury Publishing",
+    year: 2025,
+    description:
+      "Explores how opposition and conflict can paradoxically serve as generative forces for harmony in design, drawing on classical Chinese and Greek philosophy, music theory, and the Unified Model of Aesthetics.",
+    url: "/research/harmony-of-opposites",
+    image: "/images/papers/harmony-of-opposites-in-design-and-philosophy.png",
+  },
   {
     title:
       "Is Difficulty Overrated? The Effects of Choice, Novelty and Suspense on Intrinsic Motivation in Educational Games",
@@ -18,6 +30,7 @@ const featuredPublications = [
       "Honorable Mention Award. Large-scale experiments (70K subjects) showing players prefer easier game versions, with choice, novelty and suspense driving motivation more than difficulty.",
     award: "Honorable Mention",
     url: "https://dl.acm.org/doi/10.1145/3025453.3025686",
+    image: "/images/papers/is-difficulty-overrated.png",
   },
   {
     title:
@@ -29,16 +42,18 @@ const featuredPublications = [
     description:
       "Demonstrating how AI-assisted experimentation using multi-armed bandits can more rapidly identify effective design conditions in educational software.",
     url: "https://dl.acm.org/doi/10.1145/2858036.2858425",
+    image: "/images/papers/interface-design-multi-armed-bandit.png",
   },
   {
     title:
       "Harmony in Design: A Synthesis of Literature from Classical Philosophy, the Sciences, Economics, and Design",
     authors: "Lomas JD, Xue H",
-    venue: "She Ji: The Journal of Design, Economics, and Innovation",
+    venue: "She Ji",
     year: 2022,
     description:
       "A comprehensive synthesis exploring how principles of harmony from philosophy, science, and economics can inform design practice.",
     url: "https://www.sciencedirect.com/science/article/pii/S2405872622000089",
+    image: "/images/papers/harmony-in-design.png",
   },
   {
     title: "Resonance as a Design Strategy for AI and Social Robots",
@@ -49,6 +64,7 @@ const featuredPublications = [
     description:
       "Exploring how resonance—the tendency of systems to synchronize—can guide the design of AI and robotic systems that harmonize with humans.",
     url: "https://www.frontiersin.org/articles/10.3389/fnbot.2022.850489",
+    image: "/images/papers/resonance-design-strategy-ai-robots.png",
   },
   {
     title:
@@ -59,6 +75,7 @@ const featuredPublications = [
     description:
       "Pioneering work on using large-scale A/B testing (10K subjects) to optimize educational game design based on empirical evidence.",
     url: "https://dl.acm.org/doi/10.1145/2470654.2470668",
+    image: "/images/papers/optimizing-challenge-educational-game.png",
   },
   {
     title:
@@ -69,6 +86,7 @@ const featuredPublications = [
     description:
       "A framework and method for designing AI systems that actively promote human wellbeing rather than merely avoiding harm.",
     url: "https://www.cambridge.org/core/journals/ai-edam/article/developing-and-evaluating-a-design-method-for-positive-artificial-intelligence/",
+    image: "/images/papers/positive-ai-design-method.png",
   },
 ];
 
@@ -77,6 +95,11 @@ const recentPublications = [
   {
     year: 2025,
     papers: [
+      {
+        title: "The Harmony of Opposites in Design and Philosophy",
+        authors: "Lomas JD, Xue H",
+        venue: "In: Considering, Questioning and Re-Imagining Harmony (Bloomsbury)",
+      },
       {
         title: "From Dead-ends to Dialogue: Third Workshop on Design Research & GenAI",
         authors: "van der Maden W, van der Burg V, Halperin BA, Jääskeläinen P, Kun P, Lomas D, et al.",
@@ -619,45 +642,71 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        {/* Featured publications */}
+        {/* Featured publications - Jon Barron style */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-8">
             Featured Publications
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-8">
             {featuredPublications.map((pub) => (
-              <a
+              <div
                 key={pub.title}
-                href={pub.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block p-6 bg-white rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] hover:shadow-sm transition-all group no-underline"
+                className="flex gap-5 group"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="badge badge-slate text-xs">
-                        {pub.venue}
-                      </span>
-                      {pub.award && (
-                        <span className="badge badge-rust text-xs">
-                          {pub.award}
-                        </span>
-                      )}
-                    </div>
+                {/* Thumbnail */}
+                <div className="shrink-0 w-[140px] h-[100px] relative rounded overflow-hidden bg-warm">
+                  {pub.image && (
+                    <Image
+                      src={pub.image}
+                      alt={pub.title}
+                      fill
+                      className="object-cover object-top"
+                      sizes="140px"
+                    />
+                  )}
+                </div>
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <a
+                    href={pub.url}
+                    {...(pub.url.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                    className="no-underline"
+                  >
                     <h3 className="font-medium text-text-primary group-hover:text-rust transition-colors leading-snug">
                       {pub.title}
                     </h3>
-                    <p className="text-text-muted text-sm mt-1">{pub.authors}</p>
-                    <p className="text-text-secondary text-sm mt-3">
-                      {pub.description}
-                    </p>
+                  </a>
+                  <p className="text-text-muted text-sm mt-1">
+                    {pub.authors}
+                  </p>
+                  <p className="text-text-secondary text-sm mt-1">
+                    <span className="font-medium">{pub.venue}</span>, {pub.year}
+                    {pub.award && (
+                      <span className="ml-2 text-rust font-medium">
+                        ({pub.award})
+                      </span>
+                    )}
+                  </p>
+                  <p className="text-text-secondary text-sm mt-2">
+                    {pub.description}
+                  </p>
+                  <div className="flex gap-3 mt-2 text-xs font-[family-name:var(--font-inter)]">
+                    <a
+                      href={pub.url}
+                      {...(pub.url.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                      className="text-rust hover:underline"
+                    >
+                      {pub.url.startsWith("/") ? "read article" : "paper"}
+                    </a>
+                    {pub.url.includes("acm.org") && (
+                      <span className="text-text-muted">ACM DL</span>
+                    )}
+                    {pub.url.includes("frontiersin.org") && (
+                      <span className="text-text-muted">open access</span>
+                    )}
                   </div>
-                  <span className="shrink-0 text-text-faint font-[family-name:var(--font-inter)] text-sm">
-                    {pub.year}
-                  </span>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </section>
@@ -851,6 +900,39 @@ export default function ResearchPage() {
                 DBLP
               </p>
               <p className="text-text-secondary text-sm">Computer science bibliography</p>
+            </a>
+            <a
+              href="https://orcid.org/0000-0003-2329-7831"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-white rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group"
+            >
+              <p className="font-medium text-text-primary group-hover:text-rust transition-colors">
+                ORCID
+              </p>
+              <p className="text-text-secondary text-sm">0000-0003-2329-7831</p>
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-white rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group"
+            >
+              <p className="font-medium text-text-primary group-hover:text-rust transition-colors">
+                Google Scholar
+              </p>
+              <p className="text-text-secondary text-sm">Publications and citations</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dereklomas/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-4 bg-white rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-colors no-underline group"
+            >
+              <p className="font-medium text-text-primary group-hover:text-rust transition-colors">
+                LinkedIn
+              </p>
+              <p className="text-text-secondary text-sm">Professional profile</p>
             </a>
           </div>
         </section>

@@ -239,6 +239,38 @@ a:hover {
 .stagger-children > *:nth-child(5) { animation-delay: 400ms; }
 .stagger-children > *:nth-child(6) { animation-delay: 500ms; }
 
+/* Academic article two-column layout */
+.academic-article p {
+  margin-bottom: 1em;
+  text-align: justify;
+  text-indent: 1.5em;
+  hyphens: auto;
+}
+
+.academic-article h2 + p {
+  text-indent: 0;
+}
+
+.academic-article blockquote {
+  border-left: 2px solid var(--border-medium);
+  padding-left: 1.25em;
+  margin: 1.25em 0;
+  font-style: italic;
+  color: var(--text-muted);
+  text-indent: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.academic-article ul {
+  text-indent: 0;
+}
+
+.academic-article ul li {
+  text-indent: 0;
+  text-align: left;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
