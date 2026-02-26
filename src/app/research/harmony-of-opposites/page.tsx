@@ -50,10 +50,10 @@ export default function HarmonyOfOppositesPage() {
         </div>
       </header>
 
-      {/* Two-column article body */}
-      <article className="max-w-5xl mx-auto academic-article">
+      {/* Article body */}
+      <article className="max-w-2xl mx-auto academic-article">
         {/* Abstract */}
-        <section className="mb-10 max-w-3xl mx-auto">
+        <section className="mb-10">
           <div className="border-t border-b border-[var(--border-light)] py-6">
             <h2 className="font-[family-name:var(--font-inter)] text-xs font-semibold tracking-widest uppercase text-[var(--text-muted)] mb-3">
               Abstract
@@ -70,8 +70,22 @@ export default function HarmonyOfOppositesPage() {
           </div>
         </section>
 
-        {/* Main body in two columns */}
-        <div className="columns-1 md:columns-2 gap-10 text-[15.5px] leading-[1.75] text-[var(--text-secondary)]" style={{ columnRule: "1px solid var(--border-light)" }}>
+        {/* Download PDF */}
+        <div className="mb-10 flex justify-center">
+          <a
+            href="/papers/harmony-of-opposites.pdf"
+            className="btn-secondary gap-2 no-underline"
+            download
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" />
+            </svg>
+            Download two-column PDF
+          </a>
+        </div>
+
+        {/* Main body */}
+        <div className="text-[17px] leading-[1.8] text-[var(--text-secondary)]">
           {/* I. CONCEPTIONS OF HARMONY */}
           <SectionHeading number="I" title="Conceptions of Harmony: Pop Culture to Classical Philosophy" />
 
@@ -572,7 +586,7 @@ export default function HarmonyOfOppositesPage() {
           </p>
 
           {/* Table 1 */}
-          <div className="break-inside-avoid my-8">
+          <div className="my-8">
             <p className="font-[family-name:var(--font-inter)] text-xs font-semibold text-[var(--text-primary)] mb-3">
               Table 1: A Synthesised Table of Opposites
             </p>
@@ -842,7 +856,6 @@ export default function HarmonyOfOppositesPage() {
           </p>
 
           {/* BIBLIOGRAPHY */}
-          <div className="break-before-column" />
           <SectionHeading number="" title="Bibliography" />
 
           <div className="text-[13px] leading-[1.65] space-y-2">
