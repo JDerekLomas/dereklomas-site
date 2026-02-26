@@ -48,6 +48,17 @@ export default function HarmonyOfOppositesPage() {
             ISBN: 978-1-350-45321-0 (Print) &middot; 978-1-350-45322-7 (Electronic)
           </p>
         </div>
+        {/* Download PDF - prominent in header */}
+        <a
+          href="/papers/harmony-of-opposites.pdf"
+          className="btn-primary gap-2 no-underline mt-6"
+          download
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" />
+          </svg>
+          Download PDF
+        </a>
       </header>
 
       {/* Article body */}
@@ -69,20 +80,6 @@ export default function HarmonyOfOppositesPage() {
             </p>
           </div>
         </section>
-
-        {/* Download PDF */}
-        <div className="mb-10 flex justify-center">
-          <a
-            href="/papers/harmony-of-opposites.pdf"
-            className="btn-secondary gap-2 no-underline"
-            download
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" />
-            </svg>
-            Download two-column PDF
-          </a>
-        </div>
 
         {/* Main body */}
         <div className="text-[17px] leading-[1.8] text-[var(--text-secondary)]">

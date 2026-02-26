@@ -18,6 +18,7 @@ const featuredPublications = [
     description:
       "Explores how opposition and conflict can paradoxically serve as generative forces for harmony in design, drawing on classical Chinese and Greek philosophy, music theory, and the Unified Model of Aesthetics.",
     url: "/research/harmony-of-opposites",
+    pdf: "/papers/harmony-of-opposites.pdf",
     image: "/images/papers/harmony-of-opposites-in-design-and-philosophy.png",
   },
   {
@@ -698,6 +699,15 @@ export default function ResearchPage() {
                     >
                       {pub.url.startsWith("/") ? "read article" : "paper"}
                     </a>
+                    {pub.pdf && (
+                      <a
+                        href={pub.pdf}
+                        className="text-rust hover:underline"
+                        download
+                      >
+                        pdf
+                      </a>
+                    )}
                     {pub.url.includes("acm.org") && (
                       <span className="text-text-muted">ACM DL</span>
                     )}
