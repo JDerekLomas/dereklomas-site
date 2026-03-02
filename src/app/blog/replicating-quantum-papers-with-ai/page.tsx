@@ -4,6 +4,7 @@ import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
+import PromptCalendar from "@/components/PromptCalendar";
 
 export const metadata: Metadata = {
   title: "I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke.",
@@ -289,9 +290,16 @@ export default function QuantumPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The project spanned 490 Claude Code sessions and 1,226 prompts over three weeks in
+            The project spanned 469 Claude Code sessions and 2,942 prompts over three weeks in
             February 2026. The agent did the quantum computing. I steered:
           </p>
+
+          <PromptCalendar
+            sessions={469}
+            prompts={2942}
+            color="#7b7bff"
+            daily={{"2026-02-09":50,"2026-02-10":1477,"2026-02-11":383,"2026-02-12":484,"2026-02-13":85,"2026-02-14":169,"2026-02-15":142,"2026-02-16":116,"2026-02-17":18,"2026-02-26":18}}
+          />
 
           <div
             style={{

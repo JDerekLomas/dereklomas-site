@@ -4,6 +4,7 @@ import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
+import PromptCalendar from "@/components/PromptCalendar";
 
 export const metadata: Metadata = {
   title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
@@ -265,11 +266,18 @@ export default function BlenderCellPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The project started in December 2025 with a single prompt. Nine sessions and 184 prompts
+            The project started in December 2025 with a single prompt. Seven sessions and 129 prompts
             later, the atlas has nine cells. Each one was built through Claude Code &mdash; the
             procedural geometry, materials, animations, and interaction design all happen in
             conversation. Here&rsquo;s how it actually went:
           </p>
+
+          <PromptCalendar
+            sessions={7}
+            prompts={129}
+            color="#e66cc0"
+            daily={{"2026-01-01":9,"2026-01-06":1,"2026-01-12":17,"2026-02-01":3,"2026-02-02":13,"2026-02-03":1,"2026-02-06":12,"2026-02-08":9,"2026-02-09":14,"2026-02-10":3,"2026-02-27":1,"2026-02-28":4,"2026-03-02":42}}
+          />
 
           <div
             style={{

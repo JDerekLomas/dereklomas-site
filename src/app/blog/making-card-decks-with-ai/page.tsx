@@ -4,6 +4,7 @@ import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
+import PromptCalendar from "@/components/PromptCalendar";
 
 export const metadata: Metadata = {
   title: "Making Card Decks with AI: From Prompt to Print",
@@ -293,10 +294,17 @@ export default function CardDecksPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The Futures Oracle was built in a single 84-prompt Claude Code session. The MFT therapy
-            deck took two more. The real conversation is messier than a tidy pipeline description
-            suggests:
+            The card decks were built across 4 Claude Code sessions and 195 prompts, spanning
+            late December 2025 through January 2026. The real conversation is messier than a tidy
+            pipeline description suggests:
           </p>
+
+          <PromptCalendar
+            sessions={4}
+            prompts={195}
+            color="#e6a800"
+            daily={{"2025-12-30":6,"2025-12-31":1,"2026-01-01":34,"2026-01-02":49,"2026-01-03":26,"2026-01-04":29,"2026-01-05":6,"2026-01-06":18,"2026-01-12":1,"2026-01-15":21,"2026-02-27":2,"2026-02-28":2}}
+          />
 
           <div
             style={{
