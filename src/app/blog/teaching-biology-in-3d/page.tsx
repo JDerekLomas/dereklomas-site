@@ -5,7 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 
 export const metadata: Metadata = {
-  title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Blender and Three.js",
+  title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
   description:
     "I'm building an atlas of interactive 3D cell models — 9 cells so far — where students can rotate, zoom, and click on organelles to learn how they work. The rod photoreceptor even fires photons.",
   openGraph: {
@@ -36,7 +36,7 @@ export default function BlenderCellPost() {
         <header className="mb-12">
           <p className="label mb-4">Education</p>
           <h1 className="font-display text-3xl md:text-[42px] md:leading-[1.15] font-medium text-primary mb-6">
-            Teaching Biology in 3D: Building Interactive Cell Viewers with Blender and Three.js
+            Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js
           </h1>
           <p className="text-lg text-secondary leading-relaxed mb-4">
             An atlas of interactive 3D cell models where students rotate, zoom, and click on organelles to learn how they work. The rod photoreceptor even fires photons.
@@ -45,7 +45,7 @@ export default function BlenderCellPost() {
             2 March 2026 &middot; 8 min read
           </p>
           <div className="mt-8 rounded-lg overflow-hidden">
-            <Image src="/images/blog/blendercell.png" alt="BlenderCell interactive 3D cell viewer" width={800} height={400} className="w-full" />
+            <Image src="/images/blog/blendercell.png" alt="CellAtlas interactive 3D cell viewer showing a plasma cell" width={800} height={400} className="w-full" />
           </div>
         </header>
 
@@ -60,13 +60,13 @@ export default function BlenderCellPost() {
 
           <p>
             <a href="https://github.com/JDerekLomas/blendercell" target="_blank" rel="noopener noreferrer">
-              BlenderCell
+              CellAtlas
             </a>{" "}
             is an attempt to fix this. I started building it in early December 2025, and three months later
             it&rsquo;s a growing atlas of interactive 3D cell models, viewable
             in any web browser, where students can rotate the cell, zoom into organelles, click on
             structures to learn what they do, and watch biological processes animate in real time. Nine
-            cells so far, each modeled in Blender, exported as glTF, and rendered with Three.js.
+            cells so far, each built procedurally in Three.js.
           </p>
 
           <h2>The Cells</h2>
@@ -87,24 +87,30 @@ export default function BlenderCellPost() {
             literally walking along a microtubule highway, carrying cargo.
           </p>
 
-          <h2>The Pipeline: Blender to Browser</h2>
+          <h2>The Pipeline: Procedural Geometry</h2>
 
           <p>
-            The workflow is straightforward:
+            Every cell is built procedurally in Three.js &mdash; no imported 3D models. Each organelle is
+            constructed from geometric primitives: SphereGeometry for nuclei and vesicles, TorusGeometry
+            for the ER, LatheGeometry for membrane-bound structures, InstancedMesh for ribosomes. The
+            dimensions are scaled from real electron microscopy data: a nucleus is 5&ndash;10 micrometers
+            (radius 2&ndash;4 in the model), mitochondria are 0.5&ndash;1 micrometer, and ribosomes are
+            wildly enlarged &mdash; about 100x their real size &mdash; for visibility.
           </p>
 
-          <ol style={{ textIndent: 0, textAlign: "left", paddingLeft: "1.25em", lineHeight: "1.8" }}>
-            <li><strong>Model in Blender</strong> using real electron microscopy data for dimensions. The nucleus is 5&ndash;10 micrometers, scaled as radius 2&ndash;4 in the model. Mitochondria are 0.5&ndash;1 micrometer. Ribosomes are wildly enlarged for visibility &mdash; about 100x their real size.</li>
-            <li><strong>Export as glTF Binary</strong> (.glb) with Draco mesh compression, applied transforms and modifiers, in a single-file format.</li>
-            <li><strong>Load in Three.js</strong> via GLTFLoader, then override materials with custom Three.js materials for transparency, emission, and per-organelle color coding.</li>
-            <li><strong>Add interaction</strong>: Raycaster for click detection, info panels for each structure, animations for biological processes.</li>
-          </ol>
+          <p>
+            The advantage of procedural geometry over imported models is control. Every parameter is
+            tunable in code: the number of ER folds, the density of ribosomes on the rough ER, the
+            thickness of the nuclear envelope. The plasma cell has real-time sliders for ER folding
+            parameters so you can see how the structure changes. You can&rsquo;t do that with a static
+            mesh.
+          </p>
 
           <p>
-            The material override step is where the educational design happens. In Blender, the models
-            look like solid objects. In the browser, everything is translucent &mdash; intentionally, so
-            students can see through the cell membrane to the organelles inside, and through the
-            mitochondrial outer membrane to the cristae within.
+            Everything is translucent by design, so students can see through the cell membrane to the
+            organelles inside, and through the mitochondrial outer membrane to the cristae within.
+            Interaction comes from Three.js Raycaster for click detection, info panels for each
+            structure, and procedural animations for biological processes.
           </p>
 
           <h2>The Transparency Hierarchy</h2>
@@ -228,7 +234,7 @@ export default function BlenderCellPost() {
           <h2>What I&rsquo;ve Learned</h2>
 
           <p>
-            Building nine cells has taught me that the hard part isn&rsquo;t 3D modeling or WebGL
+            Building nine cells has taught me that the hard part isn&rsquo;t the geometry or the
             rendering. The hard part is deciding what to show and what to hide. A biologically accurate
             cell model would be an incomprehensible tangle of molecules. An educational model needs
             to show just enough to build the right mental model &mdash; and hide everything else.
@@ -258,10 +264,9 @@ export default function BlenderCellPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            Each cell viewer was built through Claude Code sessions. The Blender modeling is manual,
-            but everything from glTF export to Three.js rendering to interaction design happens in
-            conversation. The rod photoreceptor prompts show how biological accuracy emerges
-            iteratively:
+            Each cell viewer was built through Claude Code sessions &mdash; the procedural geometry,
+            materials, animations, and interaction design all happen in conversation. The rod
+            photoreceptor prompts show how biological accuracy emerges iteratively:
           </p>
 
           <div

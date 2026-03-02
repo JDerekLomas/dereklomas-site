@@ -29,7 +29,7 @@ const TAG_COLORS: Record<string, string> = {
 const posts: Post[] = [
   {
     slug: "teaching-biology-in-3d",
-    title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Blender and Three.js",
+    title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
     description:
       "An atlas of interactive 3D cell models where students rotate, zoom, and click on organelles to learn how they work. The rod photoreceptor even fires photons.",
     date: "2 March 2026",
