@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     type: "article",
     authors: ["Derek Lomas"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/blog/teaching-biology-in-3d/opengraph-image"],
+  },
 };
 
 export default function BlenderCellPost() {

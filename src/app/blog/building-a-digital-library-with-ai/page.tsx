@@ -17,6 +17,10 @@ export const metadata: Metadata = {
     type: "article",
     authors: ["Derek Lomas"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/blog/building-a-digital-library-with-ai/opengraph-image"],
+  },
 };
 
 export default function SourceLibraryPost() {

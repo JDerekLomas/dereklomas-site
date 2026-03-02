@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     type: "article",
     authors: ["Derek Lomas"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/blog/why-terminals-cant-edit/opengraph-image"],
+  },
 };
 
 export default function WhyTerminalsCantEditPage() {

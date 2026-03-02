@@ -16,6 +16,10 @@ export const metadata: Metadata = {
     type: "article",
     authors: ["Derek Lomas"],
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/blog/translating-the-renaissance/opengraph-image"],
+  },
 };
 
 export default function SecondRenaissancePost() {
