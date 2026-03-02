@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import LikeButton from "@/components/LikeButton";
+import GiscusComments from "@/components/GiscusComments";
 
 export const metadata: Metadata = {
   title: "Why You Can't Click to Place Your Cursor in a Terminal",
@@ -77,9 +79,12 @@ export default function WhyTerminalsCantEditPage() {
           </p>
 
           <p>
-            This design comes from the DEC VT100, released in 1978. The VT100 was a physical device &mdash;
-            a screen and keyboard connected to a remote computer via a serial cable. The computer sent
-            characters down the wire. The VT100 drew them. The user typed. The VT100 sent those keystrokes
+            This design comes from the{" "}
+            <a href="https://en.wikipedia.org/wiki/VT100" target="_blank" rel="noopener noreferrer">DEC VT100</a>,
+            released in 1978. The VT100 was a physical device &mdash;
+            a screen and keyboard connected to a remote computer via a{" "}
+            <a href="https://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-003_VT100_User_Guide_Jun82.pdf" target="_blank" rel="noopener noreferrer">serial cable</a>.
+            The computer sent characters down the wire. The VT100 drew them. The user typed. The VT100 sent those keystrokes
             back up the wire. That was the entire contract.
           </p>
 
@@ -87,7 +92,9 @@ export default function WhyTerminalsCantEditPage() {
             Every modern terminal emulator &mdash; Ghostty, iTerm2, Terminal.app, Windows Terminal,
             Kitty, Alacritty &mdash; still implements this same contract. They are software pretending
             to be a VT100. The program running inside the terminal (your shell, vim, python, Claude Code)
-            sends escape codes like <code>\e[12;5H</code> meaning
+            sends{" "}
+            <a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html" target="_blank" rel="noopener noreferrer">escape codes</a>{" "}
+            like <code>\e[12;5H</code> meaning
             &ldquo;move the cursor to row 12, column 5&rdquo; or <code>\e[31m</code> meaning
             &ldquo;switch to red text.&rdquo; The terminal obeys. It doesn&rsquo;t ask why.
           </p>
@@ -157,8 +164,9 @@ export default function WhyTerminalsCantEditPage() {
           </p>
 
           <p>
-            In a terminal, the renderer (the terminal emulator) and the editor (the shell) are different
-            programs communicating through a pipe. The terminal renders but doesn&rsquo;t edit.
+            In a terminal, the renderer (the terminal emulator) and the editor (the shell) are{" "}
+            <a href="https://www.linusakesson.net/programming/tty/" target="_blank" rel="noopener noreferrer">different
+            programs communicating through a pipe</a>. The terminal renders but doesn&rsquo;t edit.
             The shell edits but doesn&rsquo;t render. Neither has the full picture.
           </p>
 
@@ -224,14 +232,16 @@ export default function WhyTerminalsCantEditPage() {
           </p>
 
           <p>
-            <strong>Shells can advertise prompt boundaries.</strong> The OSC 133 escape sequence lets a
-            shell tell the terminal &ldquo;the prompt ends here, user input starts here.&rdquo; iTerm2
+            <strong>Shells can advertise prompt boundaries.</strong> The{" "}
+            <a href="https://gitlab.freedesktop.org/Per_Bothner/specifications/blob/master/proposals/semantic-prompts.md" target="_blank" rel="noopener noreferrer">OSC 133 escape sequence</a>{" "}
+            lets a shell tell the terminal &ldquo;the prompt ends here, user input starts here.&rdquo;{" "}
+            <a href="https://iterm2.com/documentation-shell-integration.html" target="_blank" rel="noopener noreferrer">iTerm2</a>{" "}
             and Ghostty support this. It solves step 1 of the click-to-place problem &mdash; but only for
             the shell, and only when the shell has been configured to emit the sequence.
           </p>
 
           <p>
-            <strong>Warp reinvented the input model.</strong> Warp treats the command input as an actual
+            <strong><a href="https://www.warp.dev/blog/why-is-the-terminal-input-so-weird" target="_blank" rel="noopener noreferrer">Warp</a> reinvented the input model.</strong> Warp treats the command input as an actual
             text editor, separate from the terminal output. You <em>can</em> click to place your cursor
             in Warp. But Warp achieves this by not being a normal terminal &mdash; it intercepts input before
             the shell sees it. This works for the shell prompt but breaks when you launch vim or ssh
@@ -239,13 +249,13 @@ export default function WhyTerminalsCantEditPage() {
           </p>
 
           <p>
-            <strong>Kitty&rsquo;s keyboard protocol</strong> provides richer keystroke information to
+            <strong><a href="https://sw.kovidgoyal.net/kitty/keyboard-protocol/" target="_blank" rel="noopener noreferrer">Kitty&rsquo;s keyboard protocol</a></strong> provides richer keystroke information to
             applications that opt in. This doesn&rsquo;t directly solve clicking, but it&rsquo;s a step
             toward terminals and applications having a shared understanding of input state.
           </p>
 
           <p>
-            <strong>Mouse reporting modes</strong> (SGR, X10) let the terminal forward mouse clicks to
+            <strong><a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html" target="_blank" rel="noopener noreferrer">Mouse reporting modes</a></strong> (SGR, X10) let the terminal forward mouse clicks to
             the running application. This is how vim and tmux handle mouse input &mdash; they opt in to
             receiving mouse events and implement their own click handling. But your shell doesn&rsquo;t
             do this by default, and even when it does (zsh has mouse support), the experience is spotty.
@@ -313,7 +323,9 @@ export default function WhyTerminalsCantEditPage() {
 
           <p>
             Almost. The one thing it&rsquo;s not good enough for is the thing every other application on
-            your computer has done since 1984: letting you click where you want to type.
+            your computer has done{" "}
+            <a href="https://en.wikipedia.org/wiki/MacWrite" target="_blank" rel="noopener noreferrer">since 1984</a>:
+            letting you click where you want to type.
           </p>
 
           <p style={{ fontStyle: "italic" }}>
@@ -330,7 +342,45 @@ export default function WhyTerminalsCantEditPage() {
             making the terminal <em>livable</em> for the AI coding era. But the character grid remains.
             Whoever cracks the input field protocol will change how every developer on Earth works.
           </p>
+          <h2>Sources</h2>
+
+          <ul>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/VT100" target="_blank" rel="noopener noreferrer">DEC VT100</a> &mdash; Wikipedia
+            </li>
+            <li>
+              <a href="https://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-003_VT100_User_Guide_Jun82.pdf" target="_blank" rel="noopener noreferrer">VT100 User Guide</a> &mdash; DEC, 1982 (bitsavers.org)
+            </li>
+            <li>
+              <a href="https://www.linusakesson.net/programming/tty/" target="_blank" rel="noopener noreferrer">The TTY Demystified</a> &mdash; Linus &Aring;kesson
+            </li>
+            <li>
+              <a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html" target="_blank" rel="noopener noreferrer">XTerm Control Sequences</a> &mdash; Thomas Dickey
+            </li>
+            <li>
+              <a href="https://gitlab.freedesktop.org/Per_Bothner/specifications/blob/master/proposals/semantic-prompts.md" target="_blank" rel="noopener noreferrer">Semantic Prompts (OSC 133)</a> &mdash; Per Bothner
+            </li>
+            <li>
+              <a href="https://iterm2.com/documentation-shell-integration.html" target="_blank" rel="noopener noreferrer">Shell Integration</a> &mdash; iTerm2
+            </li>
+            <li>
+              <a href="https://www.warp.dev/blog/why-is-the-terminal-input-so-weird" target="_blank" rel="noopener noreferrer">Why Is Terminal Input So Weird?</a> &mdash; Warp
+            </li>
+            <li>
+              <a href="https://sw.kovidgoyal.net/kitty/keyboard-protocol/" target="_blank" rel="noopener noreferrer">Keyboard Protocol</a> &mdash; Kitty
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/MacWrite" target="_blank" rel="noopener noreferrer">MacWrite</a> &mdash; Wikipedia (click-to-edit since 1984)
+            </li>
+          </ul>
         </div>
+
+        {/* Engagement */}
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+          <LikeButton slug="why-terminals-cant-edit" />
+        </div>
+
+        <GiscusComments />
       </article>
     </div>
   );

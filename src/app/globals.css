@@ -309,6 +309,35 @@ a:hover {
 
 .prose a {
   color: var(--accent-rust);
+  text-decoration-color: rgba(158, 74, 58, 0.3);
+}
+
+.prose ul, .prose ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+  text-indent: 0;
+  text-align: left;
+}
+
+.prose li {
+  margin-bottom: 0.4em;
+  line-height: 1.6;
+}
+
+.prose ul li {
+  list-style-type: disc;
+}
+
+.prose ol li {
+  list-style-type: decimal;
+}
+
+.prose code {
+  font-size: 0.85em;
+  background: rgba(26, 22, 18, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-inter), monospace;
 }
 
 .prose strong {
@@ -322,4 +351,11 @@ a:hover {
   margin: 2em 0;
   font-style: italic;
   color: var(--text-muted);
+}
+
+/* Giscus comments */
+.giscus-container {
+  margin-top: 3em;
+  padding-top: 2em;
+  border-top: 1px solid var(--border-light);
 }
