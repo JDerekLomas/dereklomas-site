@@ -100,6 +100,17 @@ export default function CardDecksPost() {
             oracle decks, therapeutic games, and speculative design tools from the same codebase.
           </p>
 
+          <div className="grid grid-cols-2 gap-4 my-8">
+            <div className="rounded-lg overflow-hidden">
+              <Image src="/images/blog/card-alchemy-rubedo.png" alt="Rubedo — the final alchemical stage, with phoenix rising from the philosopher's stone" width={400} height={400} className="w-full" />
+              <p className="text-xs text-muted text-center mt-2 font-sans">Alchemy Deck: Rubedo (Stage IV)</p>
+            </div>
+            <div className="rounded-lg overflow-hidden">
+              <Image src="/images/blog/card-alchemy-calcination.png" alt="Calcination — dragon rising from flames in an alchemical furnace" width={400} height={400} className="w-full" />
+              <p className="text-xs text-muted text-center mt-2 font-sans">Alchemy Deck: Calcination</p>
+            </div>
+          </div>
+
           <h2>Step 2: AI Artwork</h2>
 
           <p>
@@ -142,6 +153,17 @@ export default function CardDecksPost() {
             the work, but you still get outliers &mdash; cards that feel like they&rsquo;re from a different
             deck. I regenerate about 10&ndash;15% of images. At $0.04 each, the cost of iteration is trivial.
           </p>
+
+          <div className="grid grid-cols-2 gap-4 my-8">
+            <div className="rounded-lg overflow-hidden">
+              <Image src="/images/blog/card-futures-breakthrough.png" alt="Breakthrough — art deco tower of light piercing darkness" width={400} height={500} className="w-full" />
+              <p className="text-xs text-muted text-center mt-2 font-sans">Futures Oracle: Breakthrough</p>
+            </div>
+            <div className="rounded-lg overflow-hidden">
+              <Image src="/images/blog/card-futures-ocean.png" alt="Ocean terrain card showing futuristic coastal city" width={400} height={500} className="w-full" />
+              <p className="text-xs text-muted text-center mt-2 font-sans">Futures Oracle: Ocean</p>
+            </div>
+          </div>
 
           <p>
             For some decks I use MuleRouter&rsquo;s Wan2.6 model as an alternative. The async polling
