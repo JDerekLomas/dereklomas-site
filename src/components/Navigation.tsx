@@ -8,8 +8,10 @@ const navItems = [
   { href: "/projects", label: "Projects" },
   { href: "/research", label: "Research" },
   { href: "/writing", label: "Writing" },
+  { href: "/blog", label: "Blog" },
   { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {
