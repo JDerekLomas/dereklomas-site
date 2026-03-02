@@ -98,6 +98,8 @@ export default async function OGImage() {
         {/* Title */}
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             fontSize: 48,
             fontWeight: 600,
             color: "#fdfcf9",
@@ -107,9 +109,8 @@ export default async function OGImage() {
             marginBottom: 20,
           }}
         >
-          Why You Can&apos;t Click to Place
-          <br />
-          Your Cursor in a Terminal
+          <span>Why You Can&apos;t Click to Place</span>
+          <span>Your Cursor in a Terminal</span>
         </div>
 
         {/* Subtitle */}
