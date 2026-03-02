@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import InputWidget from "@/components/InputWidget";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -28,12 +29,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dereklomas.me"),
   title: {
-    default: "Derek Lomas — AI, Education & Digital Humanities",
+    default: "Positive AI & Digital Humanities",
     template: "%s | Derek Lomas",
   },
   description:
-    "Tenured professor of Positive AI at TU Delft. Founder of Playpower Labs, NeuroUX, and Smart Paper. Enhancing global wellbeing through artificial intelligence and humanistic design.",
+    "Tenured professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
   keywords: [
     "Derek Lomas",
     "Positive AI",
@@ -49,17 +51,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://derek-lomas.com",
+    url: "https://dereklomas.me",
     siteName: "Derek Lomas",
-    title: "Derek Lomas — AI, Education & Digital Humanities",
+    title: "Positive AI & Digital Humanities",
     description:
-      "Tenured professor of Positive AI at TU Delft. Enhancing global wellbeing through artificial intelligence and humanistic design.",
+      "Tenured professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Positive AI & Digital Humanities",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Derek Lomas — AI, Education & Digital Humanities",
-    description:
-      "Tenured professor of Positive AI at TU Delft. Enhancing global wellbeing through artificial intelligence and humanistic design.",
+    images: ["/twitter-image"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
   },
   robots: {
     index: true,
@@ -74,10 +87,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Derek Lomas — Blog"
+          href="/blog/feed.xml"
+        />
+      </head>
       <body className={`${cormorant.variable} ${newsreader.variable} ${inter.variable} min-h-screen flex flex-col`}>
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
+        <InputWidget />
       </body>
     </html>
   );

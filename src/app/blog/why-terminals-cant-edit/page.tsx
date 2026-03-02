@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LikeButton from "@/components/LikeButton";
+import ShareButtons from "@/components/ShareButtons";
+import TableOfContents from "@/components/TableOfContents";
 import CusdisComments from "@/components/CusdisComments";
+
+const SECTIONS = [
+  { id: "the-character-grid", title: "The Character Grid" },
+  { id: "the-blindness-problem", title: "The Blindness Problem" },
+  { id: "why-different", title: "Why This Is Different from Every Other Application" },
+  { id: "two-programs-problem", title: "The Two Programs Problem" },
+  { id: "highlight-to-delete", title: "\u201cHighlight to Delete\u201d Is Even Harder" },
+  { id: "partial-solutions", title: "Partial Solutions" },
+  { id: "what-would-fix-it", title: "What Would Actually Fix It" },
+  { id: "living-with-the-grid", title: "Living with the Grid" },
+];
 
 export const metadata: Metadata = {
   title: "Why You Can't Click to Place Your Cursor in a Terminal",
@@ -45,6 +58,8 @@ export default function WhyTerminalsCantEditPage() {
           </p>
         </header>
 
+        <TableOfContents sections={SECTIONS} />
+
         {/* Body */}
         <div className="prose">
           <p>
@@ -70,7 +85,7 @@ export default function WhyTerminalsCantEditPage() {
             about how we build software in 2026.
           </p>
 
-          <h2>The Character Grid</h2>
+          <h2 id="the-character-grid">The Character Grid</h2>
 
           <p>
             A terminal emulator is, at its core, a screen made of characters. Think of a spreadsheet
@@ -99,7 +114,7 @@ export default function WhyTerminalsCantEditPage() {
             &ldquo;switch to red text.&rdquo; The terminal obeys. It doesn&rsquo;t ask why.
           </p>
 
-          <h2>The Blindness Problem</h2>
+          <h2 id="the-blindness-problem">The Blindness Problem</h2>
 
           <p>
             Here is the fundamental issue: <strong>the terminal emulator does not know what is on
@@ -155,7 +170,7 @@ export default function WhyTerminalsCantEditPage() {
             else on screen. It&rsquo;s all just characters on a grid.
           </p>
 
-          <h2>Why This Is Different from Every Other Application</h2>
+          <h2 id="why-different">Why This Is Different from Every Other Application</h2>
 
           <p>
             In a web browser, when you click on a text input, the browser owns that input field. It
@@ -177,7 +192,7 @@ export default function WhyTerminalsCantEditPage() {
             exactly what a terminal is.
           </p>
 
-          <h2>The Two Programs Problem</h2>
+          <h2 id="two-programs-problem">The Two Programs Problem</h2>
 
           <p>
             The situation gets worse when you consider that the terminal doesn&rsquo;t even know
@@ -199,7 +214,7 @@ export default function WhyTerminalsCantEditPage() {
             exists for the terminal to ask.
           </p>
 
-          <h2>&ldquo;Highlight to Delete&rdquo; Is Even Harder</h2>
+          <h2 id="highlight-to-delete">&ldquo;Highlight to Delete&rdquo; Is Even Harder</h2>
 
           <p>
             Click-to-place-cursor is hard. Select-and-type-to-replace is nearly impossible.
@@ -225,7 +240,7 @@ export default function WhyTerminalsCantEditPage() {
             and configuration. It&rsquo;s the &ldquo;remote desktop video feed&rdquo; problem again, but worse.
           </p>
 
-          <h2>Partial Solutions</h2>
+          <h2 id="partial-solutions">Partial Solutions</h2>
 
           <p>
             Some programs have chipped away at the edges of this problem:
@@ -261,7 +276,7 @@ export default function WhyTerminalsCantEditPage() {
             do this by default, and even when it does (zsh has mouse support), the experience is spotty.
           </p>
 
-          <h2>What Would Actually Fix It</h2>
+          <h2 id="what-would-fix-it">What Would Actually Fix It</h2>
 
           <p>
             The real fix requires programs to tell the terminal about editable regions. Imagine an escape
@@ -304,7 +319,7 @@ export default function WhyTerminalsCantEditPage() {
             support ligatures, that&rsquo;s a generational project.
           </p>
 
-          <h2>Living with the Grid</h2>
+          <h2 id="living-with-the-grid">Living with the Grid</h2>
 
           <p>
             So here we are in 2026, using AI to write software through an interface designed for
@@ -376,8 +391,12 @@ export default function WhyTerminalsCantEditPage() {
         </div>
 
         {/* Engagement */}
-        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5em" }}>
           <LikeButton slug="why-terminals-cant-edit" />
+          <ShareButtons
+            url="https://dereklomas.me/blog/why-terminals-cant-edit"
+            title="Why You Can't Click to Place Your Cursor in a Terminal"
+          />
         </div>
 
         <CusdisComments
