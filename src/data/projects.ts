@@ -6,12 +6,26 @@ export interface Project {
   category: string;
   tags: string[];
   image?: string;
+  video?: string; // YouTube video ID
   url?: string;
   featured?: boolean;
 }
 
 export const allProjects: Project[] = [
   // Personal projects
+  {
+    slug: "prompt-archaeology",
+    title: "Prompt Archaeology",
+    description:
+      "What does a body of work look like when building with AI daily? An analysis of 10,497 prompts across 68 days and 53 projects.",
+    fullDescription:
+      "Prompt Archaeology is a data visualization project analyzing two months of Claude Code conversation history. It reveals patterns in how work emerges when building with AI: the three-act arc from experimentation to commercialization, the multiplexed attention of switching between projects every 36 seconds on average, and the rhythm of 793 prompts on the busiest day. Not for optimization—for archaeology.",
+    category: "AI",
+    tags: ["D3.js", "Data Visualization", "Claude Code", "Personal Analytics"],
+    image: "/images/projects/prompt-archaeology.png",
+    url: "/projects/promptarchaeology/",
+    featured: true,
+  },
   {
     slug: "source-library",
     title: "Source Library",
@@ -74,7 +88,8 @@ export const allProjects: Project[] = [
       "NeuroUX is a research platform that enables scientists to collect large-scale cognitive and psychological performance data using mobile technologies. By gamifying traditional cognitive assessments, NeuroUX achieves higher participant engagement and larger sample sizes than conventional lab-based methods. The platform has supported over 15 published studies in cognitive science, psychology, and mental health research.",
     category: "Research",
     tags: ["Cognitive Science", "Games", "Assessment"],
-    image: "/images/projects/neuroux-phone.png",
+    image: "/images/projects/neuroux.jpg",
+    video: "TJUbzc2SddI",
     featured: true,
   },
   {
@@ -201,7 +216,7 @@ export const allProjects: Project[] = [
       "Playpower Labs is an EdTech company providing data science and software development for digital education. Its flagship products include Math Planet (over 1 million downloads), Numbaland, and other educational games that make learning mathematics engaging and effective. The company combines rigorous learning science with game design to create products that measurably improve student outcomes.",
     category: "Education",
     tags: ["EdTech", "Data Science", "Games"],
-    image: "/images/projects/playpower-labs.jpg",
+    image: "/images/projects/playpower-labs.png",
     url: "https://www.playpowerlabs.com",
     featured: true,
   },

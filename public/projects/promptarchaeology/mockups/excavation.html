@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup: Excavation Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Space+Mono:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --soil-1: #2c1810;
+            --soil-2: #3d2817;
+            --soil-3: #4a3423;
+            --soil-4: #5c4330;
+            --soil-5: #6e523d;
+            --sand: #d4c4a8;
+            --bone: #f5f0e6;
+            --gold: #d4af37;
+            --rust: #9e4a3a;
+            --teal: #2a9d8f;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: var(--soil-1);
+            color: var(--bone);
+            line-height: 1.6;
+        }
+
+        /* Hero - emerging from darkness */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to bottom,
+                #0a0604 0%,
+                var(--soil-1) 50%,
+                var(--soil-2) 100%
+            );
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .hero h1 span {
+            display: block;
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stats {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--sand);
+            letter-spacing: 0.1em;
+            margin-top: 2rem;
+        }
+
+        .hero-stats span {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--sand);
+            opacity: 0.6;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Strata layers */
+        .stratum {
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stratum-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Layer 1 - Surface */
+        .stratum-1 {
+            background: linear-gradient(to bottom, var(--soil-2), var(--soil-3));
+        }
+
+        /* Layer 2 - Deeper */
+        .stratum-2 {
+            background: linear-gradient(to bottom, var(--soil-3), var(--soil-4));
+        }
+
+        /* Layer 3 - Deepest */
+        .stratum-3 {
+            background: linear-gradient(to bottom, var(--soil-4), var(--soil-5));
+        }
+
+        /* Sediment lines between strata */
+        .stratum::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 20px,
+                rgba(212, 196, 168, 0.1) 20px,
+                rgba(212, 196, 168, 0.1) 22px
+            );
+        }
+
+        /* Section labels - like archaeological markers */
+        .section-marker {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-marker::before {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-marker::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            color: var(--sand);
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Artifact specimen card */
+        .artifact {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .artifact::before {
+            content: 'SPECIMEN';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            background: var(--soil-3);
+            padding: 2px 8px;
+        }
+
+        .artifact-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--teal);
+            margin-bottom: 0.5rem;
+        }
+
+        .artifact-value {
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--bone);
+        }
+
+        .artifact-note {
+            font-style: italic;
+            color: var(--sand);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Timeline / stratigraphy */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 40px 0;
+        }
+
+        .era {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 30px;
+            padding: 30px 0;
+            border-left: 2px solid rgba(212, 175, 55, 0.2);
+            margin-left: 50px;
+            position: relative;
+        }
+
+        .era::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 30px;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .era-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--gold);
+            text-align: right;
+        }
+
+        .era-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .era-content p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Fossil fragments - floating decorative elements */
+        .fossil {
+            position: absolute;
+            opacity: 0.1;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            color: var(--bone);
+            transform: rotate(var(--rotation, 0deg));
+        }
+
+        /* Grid visualization */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(14, 1fr);
+            gap: 4px;
+            margin: 30px 0;
+        }
+
+        .activity-cell {
+            aspect-ratio: 1;
+            background: rgba(42, 157, 143, var(--intensity, 0.1));
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .activity-cell.peak::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border: 1px solid var(--gold);
+            border-radius: 3px;
+        }
+
+        /* Quote / insight callout */
+        .insight {
+            border-left: 3px solid var(--teal);
+            padding: 20px 30px;
+            margin: 40px 0;
+            background: rgba(42, 157, 143, 0.1);
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--bone);
+        }
+
+        /* Grimoire teaser */
+        .grimoire-portal {
+            text-align: center;
+            padding: 80px 40px;
+            background: linear-gradient(to bottom, var(--soil-5), #1a1008);
+            position: relative;
+        }
+
+        .grimoire-portal::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .grimoire-portal h2 {
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .grimoire-portal p {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .enter-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 16px 40px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .enter-link:hover {
+            background: var(--gold);
+            color: var(--soil-1);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0604;
+            text-align: center;
+            padding: 40px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--sand);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>
+        <span>Field Notes from</span>
+        Prompt<br>Archaeology
+    </h1>
+    <p class="hero-stats">
+        <span>10,497</span> prompts · <span>68</span> days · <span>53</span> projects
+    </p>
+    <div class="scroll-hint">↓ Begin excavation ↓</div>
+</section>
+
+<section class="stratum stratum-1">
+    <div class="stratum-content">
+        <div class="section-marker">Layer I · Surface Analysis</div>
+        <h2>The Shape of the Work</h2>
+        <p>
+            I ran an analysis on my Claude Code conversation history.
+            Not for optimization. For <em>archaeology</em>—to understand what building
+            with AI actually looks like when you do it every day.
+        </p>
+
+        <div class="activity-grid">
+            <div class="activity-cell" style="--intensity: 0.1"></div>
+            <div class="activity-cell" style="--intensity: 0.1"></div>
+            <div class="activity-cell" style="--intensity: 0.2"></div>
+            <div class="activity-cell" style="--intensity: 0.3"></div>
+            <div class="activity-cell" style="--intensity: 0.2"></div>
+            <div class="activity-cell" style="--intensity: 0.4"></div>
+            <div class="activity-cell" style="--intensity: 0.5"></div>
+            <div class="activity-cell" style="--intensity: 0.3"></div>
+            <div class="activity-cell" style="--intensity: 0.6"></div>
+            <div class="activity-cell" style="--intensity: 0.7"></div>
+            <div class="activity-cell peak" style="--intensity: 0.9"></div>
+            <div class="activity-cell" style="--intensity: 0.8"></div>
+            <div class="activity-cell" style="--intensity: 0.6"></div>
+            <div class="activity-cell" style="--intensity: 0.5"></div>
+            <div class="activity-cell" style="--intensity: 0.4"></div>
+            <div class="activity-cell" style="--intensity: 0.6"></div>
+            <div class="activity-cell" style="--intensity: 0.7"></div>
+            <div class="activity-cell" style="--intensity: 0.8"></div>
+            <div class="activity-cell peak" style="--intensity: 1.0"></div>
+            <div class="activity-cell" style="--intensity: 0.9"></div>
+            <div class="activity-cell" style="--intensity: 0.7"></div>
+            <div class="activity-cell" style="--intensity: 0.5"></div>
+            <div class="activity-cell" style="--intensity: 0.6"></div>
+            <div class="activity-cell" style="--intensity: 0.8"></div>
+            <div class="activity-cell" style="--intensity: 0.7"></div>
+            <div class="activity-cell" style="--intensity: 0.5"></div>
+            <div class="activity-cell" style="--intensity: 0.4"></div>
+            <div class="activity-cell" style="--intensity: 0.3"></div>
+        </div>
+    </div>
+</section>
+
+<section class="stratum stratum-2">
+    <div class="stratum-content">
+        <div class="section-marker">Layer II · Stratigraphy</div>
+        <h2>Three Eras Emerged</h2>
+
+        <div class="timeline">
+            <div class="era">
+                <div class="era-date">NOV 25<br>–<br>DEC 16</div>
+                <div class="era-content">
+                    <h3>Era I: Experimentation</h3>
+                    <p>"What can I do with this thing?" 5-8 projects running simultaneously. Nothing ships yet. Testing boundaries.</p>
+                </div>
+            </div>
+
+            <div class="era">
+                <div class="era-date">DEC 17<br>–<br>JAN 6</div>
+                <div class="era-content">
+                    <h3>Era II: Foundation</h3>
+                    <p>"Build the core asset." One project dominates—2,216 prompts on Source Library alone. Christmas Day: 299 prompts.</p>
+                </div>
+            </div>
+
+            <div class="era">
+                <div class="era-date">JAN 6<br>–<br>FEB 4</div>
+                <div class="era-content">
+                    <h3>Era III: Commercialization</h3>
+                    <p>"Ship products for users." Intensity spike. Feb 2: 793 prompts. The experiments became products.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stratum stratum-3">
+    <div class="stratum-content">
+        <div class="section-marker">Layer III · Behavioral Fossils</div>
+        <h2>The Interleave Pattern</h2>
+
+        <p>The signature behavior: <em>multiplexed attention</em>. Not time-blocking. Not "morning on X, afternoon on Y." Constant switching at sub-minute intervals.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
+            <div class="artifact">
+                <div class="artifact-label">Average interval between project switches</div>
+                <div class="artifact-value">0.6 min</div>
+                <div class="artifact-note">36 seconds of sustained focus</div>
+            </div>
+
+            <div class="artifact">
+                <div class="artifact-label">Context switches on peak day</div>
+                <div class="artifact-value">1,645</div>
+                <div class="artifact-note">January 8, 2026</div>
+            </div>
+        </div>
+
+        <div class="insight">
+            "The best prompts don't look like prompts at all. They look like someone thinking out loud, pointing at things, expressing preferences."
+        </div>
+    </div>
+</section>
+
+<section class="grimoire-portal">
+    <h2>✦ The Grimoire ✦</h2>
+    <p>Patterns extracted from 10,497 prompts.<br>Not best practices—observed practices.</p>
+    <a href="#" class="enter-link">Enter the Archive →</a>
+</section>
+
+<footer>
+    Excavated with Claude Code · Derek Lomas · February 2026
+</footer>
+
+</body>
+</html>

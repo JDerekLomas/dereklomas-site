@@ -88,7 +88,7 @@ export default function Home() {
             </div>
           </div>
           <p className="text-lg text-secondary leading-relaxed">
-            I research how to design AI systems that enhance human wellbeing and
+            I design AI systems that enhance human wellbeing and
             create resonant experiences. Professor of{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"

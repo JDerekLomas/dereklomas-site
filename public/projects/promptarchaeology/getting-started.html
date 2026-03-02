@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Claude Code - Prompt Archaeology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #fdfcf9;
+            --bg-warm: #f5f0e8;
+            --text-primary: #1a1612;
+            --text-muted: #666;
+            --accent-rust: #9e4a3a;
+            --border-light: #e8e4dc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg-cream);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        /* Site Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .site-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .site-logo:hover { color: var(--accent-rust); }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover { color: var(--accent-rust); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 24px 40px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-rust);
+        }
+
+        .page-header nav {
+            margin-top: 1.5rem;
+        }
+
+        .page-header nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .page-header nav a:hover { color: var(--accent-rust); }
+
+        /* Main */
+        main {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 50px 24px 80px;
+        }
+
+        .intro {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            color: var(--accent-rust);
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+            background: var(--bg-warm);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        .tip-box {
+            background: var(--bg-warm);
+            border-left: 3px solid var(--accent-rust);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-box strong {
+            color: var(--accent-rust);
+        }
+
+        a {
+            color: var(--accent-rust);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="site-logo">Derek Lomas</a>
+            <ul class="nav-links">
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/writing">Writing</a></li>
+                <li><a href="/lab">Lab</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="page-header">
+        <h1>Getting Started</h1>
+        <p class="subtitle">Beyond Installation</p>
+        <nav>
+            <a href="/projects/promptarchaeology/">Data</a>
+            <a href="/projects/promptarchaeology/field-notes.html">Field Notes</a>
+            <a href="/projects/promptarchaeology/grimoire.html">Grimoire</a>
+            <a href="/projects/promptarchaeology/prompts.html">Prompt Logs</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="intro">You installed Claude Code. Now what? This guide covers the setup that makes Claude Code actually powerful.</p>
+
+        <h2>The Basics You Need</h2>
+
+        <h3>1. Essential CLIs</h3>
+        <p>Claude Code works best when it can use real tools:</p>
+        <pre><code># On macOS with Homebrew
+brew install gh jq node
+
+# Authenticate GitHub
+gh auth login</code></pre>
+        <p><strong>Why these matter:</strong> <code>gh</code> lets Claude create repos and PRs directly. <code>jq</code> parses JSON. <code>node</code> runs JavaScript.</p>
+
+        <h3>2. A Deployment Target</h3>
+        <p>Claude shines when it can deploy what it builds:</p>
+        <pre><code># Vercel (recommended)
+npm install -g vercel
+vercel login</code></pre>
+        <p>Now you can say "deploy this" and watch it happen.</p>
+
+        <h3>3. Your First CLAUDE.md</h3>
+        <p>Create a file that tells Claude how to work with you:</p>
+        <pre><code># Create global preferences
+mkdir -p ~/.claude
+touch ~/.claude/CLAUDE.md</code></pre>
+        <p>Start simple:</p>
+        <pre><code># My Preferences
+
+## Style
+- Be concise
+- No emojis unless I ask
+
+## Project Defaults
+- Deploy to Vercel with `vercel --prod`
+- Use TypeScript when possible
+
+## Things to Remember
+- My GitHub username is: YOUR_USERNAME</code></pre>
+
+        <h2>The Secret to Secrets</h2>
+
+        <div class="tip-box">
+            <strong>Never put API keys in .env files when using AI tools.</strong><br>
+            Claude can read your files. Your API keys end up in conversation history.
+        </div>
+
+        <h3>Option 1: Environment Variables (Quick)</h3>
+        <pre><code># Add to ~/.zshrc
+export OPENAI_API_KEY="sk-..."</code></pre>
+        <p>Then restart your terminal. Claude can use <code>$OPENAI_API_KEY</code> without seeing the value.</p>
+
+        <h3>Option 2: secret-lover (Recommended)</h3>
+        <p>Store secrets in macOS Keychain with Touch ID protection:</p>
+        <pre><code># Install
+curl -sL https://secret-lover.dev/install.sh | bash
+
+# Add a secret
+secret-lover add OPENAI_API_KEY
+
+# Run with secrets injected
+secret-lover run -- npm run dev</code></pre>
+
+        <h2>Workflow Patterns</h2>
+
+        <h3>The Vibe Coding Flow</h3>
+        <ol>
+            <li><strong>Start loose:</strong> "I want to build X"</li>
+            <li><strong>Iterate fast:</strong> "try again", "no, more like Y"</li>
+            <li><strong>Deploy early:</strong> "push to vercel"</li>
+            <li><strong>Refine live:</strong> "the button doesn't work on mobile"</li>
+        </ol>
+
+        <h3>Context Management</h3>
+        <ul>
+            <li><code>/compact</code> - Summarize and compress at ~75% context</li>
+            <li><code>/clear</code> - Fresh start when switching projects</li>
+            <li>Be specific: "look at src/components/Header.tsx"</li>
+        </ul>
+
+        <h3>The Terse Prompt Style</h3>
+        <p>Once Claude understands your project, you can be brief:</p>
+        <pre><code>"vercel"      # deploys to Vercel
+"push it"     # git push
+"try again"   # retry last failed thing
+"mobile"      # fix mobile responsiveness
+"darker"      # adjust colors</code></pre>
+
+        <h2>Your First Real Project</h2>
+        <p>Try this sequence:</p>
+        <pre><code>1. "create a simple landing page for [your idea]"
+2. "deploy it to vercel"
+3. "add a contact form"
+4. "make it look more professional"
+5. "add dark mode"</code></pre>
+        <p>You'll have a deployed website in minutes.</p>
+
+        <h2>The Most Important Thing</h2>
+        <p>Claude Code isn't about typing less. It's about <em>thinking at a higher level</em>.</p>
+        <p>Instead of: "Write a function that validates email addresses"</p>
+        <p>Try: "I need user signup - handle validation, error states, and success feedback"</p>
+        <p>Let Claude figure out the implementation. You focus on what you're building.</p>
+
+        <div class="tip-box">
+            <strong>Welcome to vibe coding.</strong><br>
+            Full guide on GitHub: <a href="https://github.com/JDerekLomas/promptknowledge/blob/main/GETTING-STARTED.md">promptknowledge/GETTING-STARTED.md</a>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="/projects/promptarchaeology/">Back to Prompt Archaeology</a></p>
+        <p style="margin-top: 1rem;">Derek Lomas - Feb 2026</p>
+    </footer>
+</body>
+</html>

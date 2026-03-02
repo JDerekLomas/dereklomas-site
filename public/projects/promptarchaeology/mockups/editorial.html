@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup: Editorial / Data Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #faf9f7;
+            --ink: #1a1a1a;
+            --muted: #666;
+            --accent: #e63946;
+            --teal: #2a9d8f;
+            --warm: #f4a261;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Hero - editorial magazine style */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-deck {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            color: var(--muted);
+            margin-bottom: 3rem;
+        }
+
+        .hero-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .hero-meta span {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* Big number callouts */
+        .big-number {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .big-number .number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--ink);
+        }
+
+        .big-number .number small {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+
+        .big-number .context {
+            font-size: 1.25rem;
+            color: var(--muted);
+        }
+
+        .big-number .context strong {
+            color: var(--ink);
+        }
+
+        /* Scrolling ticker */
+        .ticker {
+            overflow: hidden;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .ticker-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            gap: 60px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .ticker-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ticker-item .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Prose sections */
+        .prose {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .prose p {
+            margin-bottom: 1.5rem;
+        }
+
+        .prose h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin: 4rem 0 2rem;
+        }
+
+        /* Pullquote */
+        .pullquote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-style: italic;
+            text-align: center;
+            padding: 80px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .pullquote::before {
+            content: '"';
+            font-size: 8rem;
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            color: var(--accent);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        /* Phase cards - stacked */
+        .phases {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .phase {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 40px;
+            padding: 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .phase:last-child {
+            border-bottom: none;
+        }
+
+        .phase-number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .phase-content h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .phase-content p {
+            color: var(--muted);
+        }
+
+        .phase-stat {
+            display: inline-block;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 4px 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        /* Interleave visualization */
+        .interleave-section {
+            background: var(--ink);
+            color: var(--bg);
+            padding: 100px 40px;
+        }
+
+        .interleave-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .interleave-section .subtitle {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 60px;
+        }
+
+        .interleave-stats {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+            margin-bottom: 60px;
+        }
+
+        .interleave-stat {
+            text-align: center;
+        }
+
+        .interleave-stat .value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 5rem;
+            color: var(--teal);
+        }
+
+        .interleave-stat .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+        /* Stream visualization */
+        .stream {
+            display: flex;
+            height: 60px;
+            gap: 2px;
+            max-width: 900px;
+            margin: 0 auto;
+            align-items: flex-end;
+        }
+
+        .stream-bar {
+            flex: 1;
+            background: var(--teal);
+            border-radius: 2px 2px 0 0;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .stream-bar:hover {
+            opacity: 1;
+        }
+
+        /* Grimoire CTA */
+        .grimoire-cta {
+            text-align: center;
+            padding: 120px 40px;
+            background: linear-gradient(to bottom, var(--bg), #f0ebe3);
+        }
+
+        .grimoire-cta h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .grimoire-cta p {
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 48px;
+            background: var(--ink);
+            color: var(--bg);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        /* Accent line */
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0 auto 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-eyebrow">A Data Story</div>
+    <h1>Prompt<br><em>Archaeology</em></h1>
+    <p class="hero-deck">
+        What does a body of work look like when you're building with AI every day?
+    </p>
+    <p class="hero-meta">
+        <span>10,497</span> prompts · <span>68</span> days · <span>53</span> projects
+    </p>
+</section>
+
+<div class="ticker">
+    <div class="ticker-track">
+        <div class="ticker-item"><span class="dot"></span>sourcelibrary-v2: 2,216 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>playpowerlearn: 1,605 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>lilbookies: 1,550 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>AIED: 1,425 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>dereklomas-site: 847 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>sourcelibrary-v2: 2,216 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>playpowerlearn: 1,605 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>lilbookies: 1,550 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>AIED: 1,425 prompts</div>
+        <div class="ticker-item"><span class="dot"></span>dereklomas-site: 847 prompts</div>
+    </div>
+</div>
+
+<div class="prose">
+    <p>
+        I ran an analysis on my Claude Code conversation history. Not for optimization—for <em>archaeology</em>. Every prompt I've written since November 2025, extracted, timestamped, clustered by project.
+    </p>
+    <p>
+        The raw material of building with AI.
+    </p>
+</div>
+
+<section class="big-number">
+    <div>
+        <div class="number">
+            793
+            <small>prompts in one day</small>
+        </div>
+    </div>
+    <div class="context">
+        February 2nd, 2026. The most intense day in the dataset. <strong>Three products shipping simultaneously.</strong> The interleave pattern at its peak.
+    </div>
+</section>
+
+<section class="phases">
+    <div class="accent-line"></div>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 60px;">Three Acts Emerged</h2>
+
+    <div class="phase">
+        <div class="phase-number">I</div>
+        <div class="phase-content">
+            <h3>Experimentation</h3>
+            <p class="phase-date">November 25 – December 16</p>
+            <p>"What can I do with this thing?" 5-8 projects running simultaneously. Nothing ships yet. Testing boundaries, learning the medium.</p>
+        </div>
+    </div>
+
+    <div class="phase">
+        <div class="phase-number">II</div>
+        <div class="phase-content">
+            <h3>Foundation</h3>
+            <p class="phase-date">December 17 – January 6</p>
+            <p>"Build the core asset." One project dominates. Source Library consumes 2,216 prompts. Christmas Day: 299 prompts.</p>
+            <span class="phase-stat">2,216 prompts on one project</span>
+        </div>
+    </div>
+
+    <div class="phase">
+        <div class="phase-number">III</div>
+        <div class="phase-content">
+            <h3>Commercialization</h3>
+            <p class="phase-date">January 6 – February 4</p>
+            <p>"Ship products for users." Intensity spike. The experiments became products. PlayPowerLearn, Lilbookies, AIED—all shipping.</p>
+            <span class="phase-stat">793 prompts in one day</span>
+        </div>
+    </div>
+</section>
+
+<div class="pullquote">
+    The real signature isn't parallel projects. It's multiplexed attention—constant interleaving at sub-minute intervals.
+</div>
+
+<section class="interleave-section">
+    <h2>The Interleave</h2>
+    <p class="subtitle">Not time-blocking. Something else entirely.</p>
+
+    <div class="interleave-stats">
+        <div class="interleave-stat">
+            <div class="value">0.6</div>
+            <div class="label">Minutes avg between switches</div>
+        </div>
+        <div class="interleave-stat">
+            <div class="value">1,645</div>
+            <div class="label">Switches on peak day</div>
+        </div>
+    </div>
+
+    <div class="stream">
+        <div class="stream-bar" style="height: 20%"></div>
+        <div class="stream-bar" style="height: 35%"></div>
+        <div class="stream-bar" style="height: 45%"></div>
+        <div class="stream-bar" style="height: 30%"></div>
+        <div class="stream-bar" style="height: 60%"></div>
+        <div class="stream-bar" style="height: 80%"></div>
+        <div class="stream-bar" style="height: 100%"></div>
+        <div class="stream-bar" style="height: 75%"></div>
+        <div class="stream-bar" style="height: 55%"></div>
+        <div class="stream-bar" style="height: 40%"></div>
+        <div class="stream-bar" style="height: 65%"></div>
+        <div class="stream-bar" style="height: 85%"></div>
+        <div class="stream-bar" style="height: 70%"></div>
+        <div class="stream-bar" style="height: 50%"></div>
+        <div class="stream-bar" style="height: 35%"></div>
+        <div class="stream-bar" style="height: 55%"></div>
+        <div class="stream-bar" style="height: 45%"></div>
+        <div class="stream-bar" style="height: 30%"></div>
+        <div class="stream-bar" style="height: 25%"></div>
+        <div class="stream-bar" style="height: 40%"></div>
+    </div>
+</section>
+
+<section class="grimoire-cta">
+    <h2>The Grimoire</h2>
+    <p>Patterns extracted from 10,497 prompts. Not best practices—observed practices.</p>
+    <a href="#" class="cta-button">Read the Patterns →</a>
+</section>
+
+<footer>
+    Built with Claude Code · Derek Lomas · February 2026
+</footer>
+
+</body>
+</html>

@@ -15,6 +15,15 @@ export function Footer() {
           </a>
           <span aria-hidden="true">&middot;</span>
           <a
+            href="https://orcid.org/0000-0003-2329-7831"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-rust"
+          >
+            ORCID
+          </a>
+          <span aria-hidden="true">&middot;</span>
+          <a
             href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
             target="_blank"
             rel="noopener noreferrer"

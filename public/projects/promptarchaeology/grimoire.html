@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grimoire - Promptcraft Patterns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/projects/promptarchaeology/styles/main.css">
+    <style>
+        /* Grimoire-specific styles */
+        .grimoire-header {
+            text-align: center;
+            padding: 80px 24px 60px;
+            border-bottom: 1px solid var(--border-light);
+            background: linear-gradient(180deg, var(--bg-warm) 0%, var(--bg-cream) 100%);
+        }
+
+        .grimoire-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .grimoire-header .subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .grimoire-header nav {
+            margin-top: 2rem;
+        }
+
+        .grimoire-header nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .grimoire-header nav a:hover {
+            color: var(--accent-rust);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-warm);
+            padding: 12px 24px;
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .toc-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 24px;
+        }
+
+        .toc a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 4px 0;
+        }
+
+        .toc a:hover {
+            color: var(--accent-rust);
+        }
+
+        /* Getting Started */
+        .starter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 30px;
+        }
+
+        .starter-card {
+            background: var(--bg-warm);
+            padding: 20px;
+            position: relative;
+        }
+
+        .starter-num {
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            background: var(--accent-rust);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .starter-card h4 {
+            margin: 8px 0 8px;
+            font-size: 1.1rem;
+        }
+
+        .starter-card p {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+        }
+
+        .starter-card code {
+            display: block;
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.6);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .starter-warning {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            background: #fef3f3;
+            border-left: 3px solid #c44;
+            text-align: center;
+        }
+
+        .starter-warning h4 {
+            color: #933;
+            margin-bottom: 8px;
+        }
+
+        .starter-warning p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Project Starts */
+        .project-starts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .start-quote {
+            background: var(--bg-warm);
+            padding: 20px 24px;
+            border-left: 3px solid var(--accent-rust);
+        }
+
+        .start-quote .project-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-rust);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .start-quote blockquote {
+            margin: 0;
+            font-size: 1rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Project Journeys */
+        .project-journeys {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .journey {
+            margin-bottom: 12px;
+            background: var(--bg-warm);
+            border-left: 3px solid var(--accent-rust);
+        }
+
+        .journey summary {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .journey summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .journey summary::before {
+            content: '▸';
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+
+        .journey[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .journey-title {
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .journey-stats {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .journey-stats a {
+            color: var(--accent-rust);
+            text-decoration: none;
+        }
+
+        .journey-stats a:hover {
+            text-decoration: underline;
+        }
+
+        .journey-prompts {
+            padding: 0 20px 20px 36px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .prompt-item {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .prompt-item:last-child {
+            border-bottom: none;
+        }
+
+        .prompt-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            background: var(--accent-rust);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        /* Techniques */
+        .technique {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 24px;
+            background: var(--bg-warm);
+            border-left: 3px solid var(--accent-rust);
+        }
+
+        .technique h3 {
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .technique-desc {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .technique-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .example-prompt {
+            background: rgba(255,255,255,0.5);
+            padding: 12px 16px;
+            border-radius: 4px;
+        }
+
+        .example-prompt code {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* Frustration Section */
+        .frustration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .frustration-category {
+            background: var(--bg-warm);
+            padding: 20px;
+            border-left: 3px solid #c44;
+        }
+
+        .frustration-category h4 {
+            margin-bottom: 4px;
+            color: #933;
+        }
+
+        .category-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        .frustration-quotes blockquote {
+            margin: 0 0 8px 0;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            font-style: italic;
+            border-radius: 4px;
+        }
+
+        .frustration-quotes blockquote:last-child {
+            margin-bottom: 0;
+        }
+
+        .frustration-insight {
+            max-width: 600px;
+            margin: 40px auto 0;
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="site-logo">Derek Lomas</a>
+            <ul class="nav-links">
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/writing">Writing</a></li>
+                <li><a href="/lab">Lab</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="grimoire-header">
+        <h1>The Grimoire</h1>
+        <p class="subtitle">A pattern language for building with Claude</p>
+        <nav>
+            <a href="/projects/promptarchaeology/">← Data</a>
+            <a href="/projects/promptarchaeology/field-notes.html">Field Notes</a>
+        </nav>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+        <div class="toc-inner">
+            <a href="#start-section">Getting Started</a>
+            <a href="#principle-section">Philosophy</a>
+            <a href="#archetypes-section">Archetypes</a>
+            <a href="#journeys-section">Project Journeys</a>
+            <a href="#spellbook-section">Spellbook</a>
+            <a href="#techniques-section">Techniques</a>
+            <a href="#frustration-section">What Goes Wrong</a>
+        </div>
+    </nav>
+
+    <!-- Getting Started -->
+    <section id="start-section">
+        <h2>Getting Started</h2>
+        <p class="section-intro">Five things to know before your first serious project.</p>
+
+        <div class="starter-grid">
+            <div class="starter-card">
+                <div class="starter-num">1</div>
+                <h4>Start with vision, not specs</h4>
+                <p>Don't write a technical specification. Describe what you want to exist in the world. Claude will figure out the implementation.</p>
+                <code>"I want to make minibooks for reading with kids... like the pixi books in germany"</code>
+            </div>
+
+            <div class="starter-card">
+                <div class="starter-num">2</div>
+                <h4>Reference sites beat descriptions</h4>
+                <p>Instead of describing a design, point at something that exists. "Like X but for Y" is more powerful than paragraphs of requirements.</p>
+                <code>"replicate and remix labs.google"</code>
+            </div>
+
+            <div class="starter-card">
+                <div class="starter-num">3</div>
+                <h4>Ship early, iterate fast</h4>
+                <p>Get to Vercel/Github within the first session. Real URLs make everything more tangible. Iteration happens faster once it's live.</p>
+                <code>"make a github and deploy on vercel"</code>
+            </div>
+
+            <div class="starter-card">
+                <div class="starter-num">4</div>
+                <h4>Build feedback loops</h4>
+                <p>Ask for review interfaces where you can thumbs up/down generated content. Human-in-the-loop makes AI output actually usable.</p>
+                <code>"give me a review ui where I can thumbs down the ones that need to be redone"</code>
+            </div>
+
+            <div class="starter-card">
+                <div class="starter-num">5</div>
+                <h4>Blend research and building</h4>
+                <p>Don't separate "research phase" from "build phase." Let Claude context-switch. The research informs the building in real-time.</p>
+                <code>"first research similar sites as background... then build"</code>
+            </div>
+        </div>
+
+        <div class="starter-warning">
+            <h4>Expect frustration</h4>
+            <p>Things will break. Claude will misunderstand. You'll say "same issue" and "that's not what I meant" many times. This is normal. The persistence loop is part of the process.</p>
+        </div>
+    </section>
+
+    <!-- The First Principle -->
+    <section id="principle-section">
+        <div class="principle">
+            <h2>The First Principle: Strategic Ambiguity</h2>
+            <p>The most common mistake is over-specification. Precise prompts produce brittle results. The art is knowing what to leave open.</p>
+            <blockquote>
+                Describe the destination, not the route.<br>
+                Name the vibe, not the pixels.<br>
+                Specify constraints, not implementations.
+            </blockquote>
+            <p class="principle-note">Claude fills ambiguity with competence. Your job is to create the right-shaped space for that competence to flow into.</p>
+        </div>
+    </section>
+
+    <!-- Archetypes -->
+    <section id="archetypes-section">
+        <h2>Three Archetypes</h2>
+        <p class="section-intro">Different modes for different work.</p>
+
+        <div class="archetypes">
+            <div class="archetype" data-archetype="scholar">
+                <h4>The Scholar</h4>
+                <p class="archetype-domain">For deep domain work, archives, research</p>
+                <p class="pattern">Immerse Claude in the domain first. Don't ask it to build—ask it to <em>understand</em>. The building follows naturally.</p>
+                <p class="archetype-example">Source Library: 2,216 prompts. Key insight: content-first. The OCR pipeline, translation engine, and UI all emerged from "help me make these ancient texts accessible."</p>
+            </div>
+            <div class="archetype" data-archetype="aesthete">
+                <h4>The Aesthete</h4>
+                <p class="archetype-domain">For design, visual work, brand</p>
+                <p class="pattern">Show, don't tell. Reference sites beat descriptions. Then iterate fast with vibe words.</p>
+                <p class="archetype-example">Design Therapy: Started with "take a look at designtherapy.org. Download all the components. Then recreate based on contemporary design concepts." References first, always.</p>
+            </div>
+            <div class="archetype" data-archetype="sprinter">
+                <h4>The Sprinter</h4>
+                <p class="archetype-domain">For deadline-driven, intensive builds</p>
+                <p class="pattern">Blend research and writing in the same session. Let Claude context-switch between gathering and producing.</p>
+                <p class="archetype-example">AIED paper: 1,425 prompts in 6 days. Research + writing blend meant Claude would find a paper, summarize it, and immediately draft how it fit the argument.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Journeys -->
+    <section id="journeys-section">
+        <h2>Project Journeys</h2>
+        <p class="section-intro">From first prompt to shipped product. Click to expand.</p>
+
+        <div class="project-journeys">
+            <!-- Source Library -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Source Library</span>
+                    <span class="journey-stats">2,007 prompts → <a href="https://sourcelibrary.org" target="_blank">sourcelibrary.org</a></span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> How's the organization of the repo?</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> What are the current features? And what remains?</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> save changes and add prompts... where would these be saved? Maybe even back to github?</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> great do it on mongo</div>
+                    <div class="prompt-item"><span class="prompt-num">5</span> oh, and does the ocr/translation work?</div>
+                    <div class="prompt-item"><span class="prompt-num">6</span> ok. Then help me think about how we do keyword search across all the individual page files in a book</div>
+                </div>
+            </details>
+
+            <!-- Play Power Learn -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Play Power Learn</span>
+                    <span class="journey-stats">1,455 prompts → <a href="https://playpowerlearn-v2-dereklomas-projects.vercel.app" target="_blank">playpowerlearn.com</a></span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> I want to start a project to create an LMS for AI-generated educational activities. Such as, creating complete common core coverage for each grade.</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> describe the overall plan and purpose of what we are doing. Not from a technical perspective, but the vision of how it is used and the value it has</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> Thats a bit too much marketing. I want to understand what people do and what their experiences are, use cases, etc.</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> yes. What are we missing?</div>
+                    <div class="prompt-item"><span class="prompt-num">5</span> Agree. Let's document the areas that need development and research what we should do for content production</div>
+                </div>
+            </details>
+
+            <!-- Lilbookies -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Lilbookies</span>
+                    <span class="journey-stats">1,432 prompts → <a href="https://funbookies.vercel.app" target="_blank">funbookies.vercel.app</a></span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> ok, my son just did a unit on volcanos, and his next unit is on castles. Actually the previous unit was on the elements, earth, water, fire, air... maybe cool to do something somewhat esoteric</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> links to printable</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> Didn't you make images?</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> weren't we making this for riso? What have you been doing exactly?</div>
+                    <div class="prompt-item"><span class="prompt-num">5</span> I think we need to separate things out in the workflow. Where are places where you need my input... Can you zoom out and think about how I can create this whole process?</div>
+                </div>
+            </details>
+
+            <!-- AIED Paper -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">AIED Paper</span>
+                    <span class="journey-stats">1,425 prompts in 6 days → submitted to conference</span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> check out the call for AIED in Seoul SK</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> also check L@S and EDM and ISLS calls. See all the tracks?</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> save all the detailed track calls to a file</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> Yes, now that you understand my intent, please look for prior work in the past 2 years.</div>
+                    <div class="prompt-item"><span class="prompt-num">5</span> Now, what would you say the research gaps are? What would make a contribution for this year?</div>
+                    <div class="prompt-item"><span class="prompt-num">6</span> Draft that abstract and the second alternative</div>
+                </div>
+            </details>
+
+            <!-- Sleep App -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Solid Sleep</span>
+                    <span class="journey-stats">37 prompts → <a href="https://solidsleep.vercel.app" target="_blank">solidsleep.vercel.app</a></span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> I want to make a CBT-I insomnia webapp with a 30 day challenge and a daily playlist and an efficient sleep logging system, good for mobile. Find similar sites as background</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> yes. and ill use mulerouter.ai for image generation, esp for button panels. no emoji. use untitledui and reactbits for components.</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> yes. Then describe the user experience, day by day. Create the entire description of the content, the complete user journey for the first 3 days.</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> And build the home page, onboarding... and what's the daily user journey? Think through that</div>
+                </div>
+            </details>
+
+            <!-- Philosopher's Library -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Philosopher's Library</span>
+                    <span class="journey-stats">69 prompts → pixel art game prototype</span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> I want to create characters based on the books in the sourcelibrary-v2... help me think about this and plan</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> historical authors that fulfill the archetypes... like drebbel for alchemist, kepler for astrologer</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> I want to just try one good one that I can test. like drebbel</div>
+                    <div class="prompt-item"><span class="prompt-num">4</span> first research similar game aesthetics & styles... I want them all walking around in a library, talking to each other. find some example games i can model</div>
+                    <div class="prompt-item"><span class="prompt-num">5</span> yeah, needs to be pixel art. Like zelda... click to talk...</div>
+                </div>
+            </details>
+
+            <!-- Fractal Viewer -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Fractal Viewer</span>
+                    <span class="journey-stats">47 prompts → evolutionary IFS modeler</span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> I want to make a procedurally generated fractal system. An evolutionary fractal modeler based on IFS fractals. Give me a human review interface where I can thumbs up/down bad ones.</div>
+                    <div class="prompt-item"><span class="prompt-num">2</span> I picked three. Can you breed them and give me more? Also, I just want to click on the ones I like. and thumbs down.</div>
+                    <div class="prompt-item"><span class="prompt-num">3</span> it works now.. .but still look for that mcp.. can you see the ones i selected? can you combine them?</div>
+                </div>
+            </details>
+
+            <!-- Second Renaissance -->
+            <details class="journey">
+                <summary>
+                    <span class="journey-title">Second Renaissance</span>
+                    <span class="journey-stats">→ <a href="https://secondrenaissance.vercel.app" target="_blank">secondrenaissance.ai</a></span>
+                </summary>
+                <div class="journey-prompts">
+                    <div class="prompt-item"><span class="prompt-num">1</span> I think the front page needs to communicate the idea, briefly, that the first renaissance occurred from translations—but we haven't translated the renaissance, which might inhibit a second renaissance...</div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Spellbook -->
+    <section id="spellbook-section">
+        <h2>The Spellbook</h2>
+        <p class="section-intro">Named patterns, extracted from practice.</p>
+
+        <div class="spellbook">
+            <div class="spell-category">
+                <h4>Opening Spells</h4>
+                <div class="spell">
+                    <h5>The Vision Opener</h5>
+                    <code>"Help me think through an improved organization. I want a purposeful front page, a collection of sources, a data visualization section..."</code>
+                    <p>Paint the destination, leave the route open. Claude fills the gaps with competence.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Pickup</h5>
+                    <code>"ok, whats next?"</code>
+                    <p>Three words. Relies entirely on Claude's context. Often produces better continuity than explicit summaries.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Delegation</h5>
+                    <code>"Look at the sourcelibrary-v2 repo and figure out how to add those to the mongodb with the appropriate metadata"</code>
+                    <p>Hand over the steering wheel. State the problem, not the solution.</p>
+                </div>
+            </div>
+
+            <div class="spell-category">
+                <h4>Refinement Spells</h4>
+                <div class="spell">
+                    <h5>The Vibe Shift</h5>
+                    <code>"can you make the style more cream paper and ancient wisdom?"</code>
+                    <p>Vibe words carry intent. Not "change the background to #f5f0e8"—just name the feeling.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Constraint Addition</h5>
+                    <code>"Sure, the bohme. but with this link: [url]"</code>
+                    <p>Accept the work, add one constraint. Layer refinements rather than restarting.</p>
+                </div>
+            </div>
+
+            <div class="spell-category">
+                <h4>Repair Spells</h4>
+                <div class="spell">
+                    <h5>The Soft Reset</h5>
+                    <code>"no, maybe I didn't communicate well. I mean, I want to create synthetic students to try the items..."</code>
+                    <p>When Claude went the wrong direction. Redirect without blame, restate the actual goal.</p>
+                </div>
+                <div class="spell">
+                    <h5>The Show-Don't-Tell</h5>
+                    <code>"check out my ancientwisdomfundraising github/vercel/folder for the playbook"</code>
+                    <p>When descriptions aren't landing. Point at something that exists. A reference beats a thousand words.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Techniques: Site Replication -->
+    <section id="techniques-section">
+        <h2>Advanced Techniques</h2>
+        <p class="section-intro">Patterns for specific workflows.</p>
+
+        <div class="technique">
+            <h3>Site Replication</h3>
+            <p class="technique-desc">Clone existing sites as starting points, then remix.</p>
+            <div class="technique-examples">
+                <div class="example-prompt">
+                    <code>"can you crawl mulerouter.ai to copy the code and retrieve the styles and save it in organized folders with markdown to describe the components.. I'm going to want to put the files back into LLMs with the markdown so that we can clone the site"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"now remix the functions of this to support colorcodedcrime (check it out). You can pull images from colorcodedcrime for our new site"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"replicate and remix labs.google. And use mulerouter Midjourney to explore logos, playfully"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"use the mulerouter skill to make an awesome website: video hero gifs to replicate xwhysi.com. take a look"</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="technique">
+            <h3>AI Image & Video Generation</h3>
+            <p class="technique-desc">Generate assets inline during development. Claude looks at results and iterates.</p>
+            <div class="technique-examples">
+                <div class="example-prompt">
+                    <code>"Use mulerouter to generate the images of the clothes and models. Use claude to look at the images to then recreate with mulerouter midjourney"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"make a video for the hero image. turn it into a gif. wan text to video. Show me the video first"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"ill use mulerouter.ai for image generation, esp for button panels. no emoji. use untitledui and reactbits for components."</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"don't you need to look at the existing images on morni to be able to describe them as prompts for midjourney?"</code>
+                </div>
+            </div>
+        </div>
+
+        <div class="technique">
+            <h3>Human Review Interfaces</h3>
+            <p class="technique-desc">Build UIs to give feedback on AI-generated content. Thumbs up/down, comments, batch review.</p>
+            <div class="technique-examples">
+                <div class="example-prompt">
+                    <code>"Give me a human review interface where I can thumbs up/down bad ones and give comments"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"give me a human review ui where I can see each story and the prompt used to create it. I want to be able to give thumbs up, down and leave a comment"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"give me a review ui where I can thumbs down the ones that need to be redone"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"I think we need to separate things out in the workflow. Where are places where you need my input... Can you zoom out and think about how I can create this whole process?"</code>
+                </div>
+                <div class="example-prompt">
+                    <code>"you'll need to give me a page where I can review, where the intended split is shown over the images"</code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- When Things Go Wrong -->
+    <section id="frustration-section">
+        <h2>When Things Go Wrong</h2>
+        <p class="section-intro">The reality of building with AI. Frustration is part of the process.</p>
+
+        <div class="frustration-grid">
+            <div class="frustration-category">
+                <h4>The Persistence Loop</h4>
+                <p class="category-desc">Same bug, multiple attempts.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"same issue remains — can you try to figure out why?"</blockquote>
+                    <blockquote>"nope. same 1/3 thing. what else might it be?"</blockquote>
+                    <blockquote>"still an issue. maybe you didn't deploy?"</blockquote>
+                    <blockquote>"issue persists."</blockquote>
+                    <blockquote>"nope, still the same"</blockquote>
+                </div>
+            </div>
+
+            <div class="frustration-category">
+                <h4>Miscommunication</h4>
+                <p class="category-desc">When Claude goes the wrong direction entirely.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"no, maybe I didn't communicate well. I mean, I want to..."</blockquote>
+                    <blockquote>"weren't we making this for riso? What have you been doing exactly?"</blockquote>
+                    <blockquote>"I feel like you didn't fully listen to my feedback"</blockquote>
+                    <blockquote>"i made descriptions but you didn't really make any changes. Think about what I said deeply"</blockquote>
+                    <blockquote>"that's not what I asked for"</blockquote>
+                </div>
+            </div>
+
+            <div class="frustration-category">
+                <h4>Quality Disappointment</h4>
+                <p class="category-desc">When the output isn't good enough.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"oh no, the design is very bad. Sorry. It needs to be elegant and readable with cool data viz!"</blockquote>
+                    <blockquote>"looks terrible! please make it look like claude"</blockquote>
+                    <blockquote>"hmm, could be a lot better I think"</blockquote>
+                    <blockquote>"still feels very AI"</blockquote>
+                    <blockquote>"the quiz is poorly integrated"</blockquote>
+                </div>
+            </div>
+
+            <div class="frustration-category">
+                <h4>Debugging Hell</h4>
+                <p class="category-desc">Technical problems that won't die.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"Error: column 'item_id' does not exist"</blockquote>
+                    <blockquote>"oh no now it doesnt work"</blockquote>
+                    <blockquote>"not all of the links work. please check."</blockquote>
+                    <blockquote>"the microtubules still go outside the cell"</blockquote>
+                    <blockquote>"there is a big stick going through the walker. That's weird."</blockquote>
+                </div>
+            </div>
+
+            <div class="frustration-category">
+                <h4>The Hard Problems</h4>
+                <p class="category-desc">When you hit walls.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"I'm frustrated by all the estimates alone. I want concrete counts and sources"</blockquote>
+                    <blockquote>"its hard to reach out to people for fundraising, so I want to start tonight"</blockquote>
+                    <blockquote>"I found it difficult to follow"</blockquote>
+                    <blockquote>"still the ER smoothness is not enough, looking for more ways to draw it, like a spacefilling algorithm but with sheets? IDK"</blockquote>
+                </div>
+            </div>
+
+            <div class="frustration-category">
+                <h4>Process Breakdown</h4>
+                <p class="category-desc">When the workflow itself needs fixing.</p>
+                <div class="frustration-quotes">
+                    <blockquote>"I think we need to separate things out in the workflow. Where are places where you need my input... Not happy with how things are going now..."</blockquote>
+                    <blockquote>"you are using too many tokens"</blockquote>
+                    <blockquote>"we now have too much fluff, I'm concerned"</blockquote>
+                </div>
+            </div>
+        </div>
+
+        <div class="frustration-insight">
+            <p>The work continues anyway. These frustrations appear across 10,497 prompts—but so does the persistence to push through them.</p>
+        </div>
+    </section>
+
+    <!-- Anti-patterns -->
+    <section id="antipatterns-section">
+        <h2>Anti-Patterns</h2>
+        <p class="section-intro">What to avoid.</p>
+
+        <div class="antipatterns">
+            <div class="antipattern">
+                <h5>Over-specification</h5>
+                <p>"Create a React component with TypeScript using Tailwind CSS that has a blue background (#3B82F6) and padding of 16px..."</p>
+                <p class="why">The more you specify, the less room for Claude to apply judgment. Save precision for actual constraints.</p>
+            </div>
+            <div class="antipattern">
+                <h5>Premature architecture</h5>
+                <p>"First, let's plan the folder structure and database schema..."</p>
+                <p class="why">Start with the thing you actually want. Structure emerges.</p>
+            </div>
+            <div class="antipattern">
+                <h5>Research/build separation</h5>
+                <p>"First research everything, then we'll build."</p>
+                <p class="why">Blend them. Context accumulated during research makes building better.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="/projects/promptarchaeology/" style="color: var(--accent-rust); text-decoration: none;">← Back to Prompt Archaeology</a></p>
+        <p class="footer-meta">Derek Lomas · Feb 2026</p>
+    </footer>
+</body>
+</html>

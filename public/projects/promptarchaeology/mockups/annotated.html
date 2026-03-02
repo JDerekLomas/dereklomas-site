@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup: Annotated Layout with Margin Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Kalam:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,wght@0,400;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Paper & background */
+            --bg-desk: #e8e4dc;
+            --paper: #fdfcf7;
+            --paper-shadow: rgba(0,0,0,0.08);
+
+            /* Ink colors */
+            --ink: #2c3e50;
+            --ink-light: #5d6d7e;
+            --pencil: #666;
+
+            /* Post-it colors - from designtherapy */
+            --postit-yellow: #FFEB3B;
+            --postit-pink: #F48FB1;
+            --postit-blue: #81D4FA;
+            --postit-green: #A5D6A7;
+            --postit-orange: #FFCC80;
+
+            /* Accent */
+            --highlight: rgba(255, 235, 59, 0.5);
+            --rust: #9e4a3a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Newsreader', Georgia, serif;
+            background: var(--bg-desk);
+            min-height: 100vh;
+            line-height: 1.7;
+            color: var(--ink);
+        }
+
+        /* Wide container with annotation margins */
+        .page-container {
+            display: grid;
+            grid-template-columns: 200px minmax(0, 700px) 200px;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .page-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+            .margin-left, .margin-right { display: none; }
+        }
+
+        /* Margins for annotations */
+        .margin-left, .margin-right {
+            position: relative;
+            padding-top: 80px;
+        }
+
+        /* Main content column */
+        .content {
+            background: var(--paper);
+            padding: 60px 50px;
+            box-shadow:
+                0 2px 8px var(--paper-shadow),
+                0 0 40px rgba(0,0,0,0.03);
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Subtle paper texture */
+        .content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Post-it note - designtherapy style */
+        .postit {
+            padding: 16px 20px;
+            font-family: 'Kalam', cursive;
+            font-size: 0.95rem;
+            position: relative;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+            transform: rotate(var(--rotation, -2deg));
+            margin-bottom: 20px;
+            cursor: default;
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* Paper texture */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        .postit:hover {
+            transform: rotate(0deg) scale(1.02);
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        /* Tape effect */
+        .postit::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(var(--tape-rotation, 1deg));
+            width: 50px;
+            height: 18px;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Corner fold */
+        .postit::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.06) 50%);
+        }
+
+        .postit.yellow { background-color: var(--postit-yellow); color: #5D4E00; }
+        .postit.pink { background-color: var(--postit-pink); color: #4A1A2C; }
+        .postit.blue { background-color: var(--postit-blue); color: #0D3C55; }
+        .postit.green { background-color: var(--postit-green); color: #1B4D1E; }
+        .postit.orange { background-color: var(--postit-orange); color: #5C3D00; }
+
+        /* Connection line from margin to content */
+        .postit[data-connects] {
+            position: relative;
+        }
+        .postit[data-connects]::after {
+            content: '';
+            position: absolute;
+            /* Line would go here - using CSS or SVG */
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--ink);
+        }
+
+        .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--rust);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.8rem;
+            margin: 3rem 0 1rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e4dc;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--ink-light);
+        }
+
+        /* Highlight marker */
+        .highlight {
+            background: var(--highlight);
+            padding: 0 4px;
+            position: relative;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            inset: -2px -4px;
+            background: var(--highlight);
+            z-index: -1;
+            transform: skewX(-2deg) rotate(-0.5deg);
+            border-radius: 2px;
+        }
+
+        /* Stats grid */
+        .stats-row {
+            display: flex;
+            gap: 24px;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: #f8f6f1;
+            border-radius: 8px;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.5rem;
+            color: var(--rust);
+        }
+
+        .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--pencil);
+        }
+
+        /* Arc phases */
+        .phase-card {
+            background: #faf8f5;
+            border: 1px solid #e8e4dc;
+            border-left: 3px solid var(--rust);
+            padding: 20px;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .phase-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .phase-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--rust);
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Handwritten annotation inline */
+        .annotation {
+            font-family: 'Caveat', cursive;
+            color: var(--rust);
+            font-size: 1.2rem;
+        }
+
+        /* Doodle / sketch elements */
+        .doodle-arrow {
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 20'%3E%3Cpath d='M2 10 Q 20 6, 32 10 M28 6 L34 10 L28 14' stroke='%239e4a3a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center;
+        }
+
+        /* Grimoire teaser */
+        .grimoire-link {
+            background: linear-gradient(135deg, #2c1810, #4a2c20);
+            color: #d4af37;
+            padding: 30px;
+            text-align: center;
+            margin: 3rem 0;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+        }
+
+        .grimoire-link h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .grimoire-link p {
+            color: #c9a86c;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Calendar mini heatmap */
+        .mini-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 3px;
+            margin: 1.5rem 0;
+        }
+
+        .mini-calendar .day {
+            aspect-ratio: 1;
+            background: #f0ebe3;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+            font-size: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .mini-calendar .day.l1 { background: #d4e7d4; }
+        .mini-calendar .day.l2 { background: #9ec89e; }
+        .mini-calendar .day.l3 { background: #5da65d; color: white; }
+        .mini-calendar .day.l4 { background: #2d7a2d; color: white; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--pencil);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+    <!-- Left margin for annotations -->
+    <aside class="margin-left">
+        <div class="postit yellow" style="--rotation: -3deg; --tape-rotation: 2deg;">
+            <strong>Key insight</strong><br>
+            The work has a shape. Three acts emerged from the chaos.
+        </div>
+
+        <div class="postit blue" style="--rotation: 2deg; margin-top: 180px;">
+            What if I tracked this monthly? Or even weekly?
+        </div>
+
+        <div class="postit green" style="--rotation: -1deg; margin-top: 240px;">
+            <strong>TODO:</strong><br>
+            Compare to other developers' patterns
+        </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+        <h1>Prompt Archaeology</h1>
+        <p class="subtitle">10,497 prompts · 68 days · 53 projects</p>
+
+        <p>
+            I ran an analysis on my Claude Code conversation history.
+            Not for optimization. For <span class="highlight">archaeology</span>.
+        </p>
+
+        <p>
+            Every prompt I've written since November 2025—extracted, timestamped,
+            clustered by project. The raw material of building with AI.
+        </p>
+
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-value">10,497</div>
+                <div class="stat-label">prompts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">68</div>
+                <div class="stat-label">days</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">53</div>
+                <div class="stat-label">projects</div>
+            </div>
+        </div>
+
+        <h2>The Calendar</h2>
+        <p>Each square is a day. Darker = more prompts. Click to see the interleave pattern.</p>
+
+        <div class="mini-calendar">
+            <div class="day"></div><div class="day"></div><div class="day l1">25</div>
+            <div class="day l1">26</div><div class="day"></div><div class="day"></div>
+            <div class="day"></div><div class="day l1">30</div><div class="day l1">1</div>
+            <div class="day l1">2</div><div class="day l1">3</div><div class="day l1">4</div>
+            <div class="day l2">5</div><div class="day l2">6</div><div class="day l2">7</div>
+            <div class="day l2">8</div><div class="day l3">9</div><div class="day l2">10</div>
+            <div class="day l2">11</div><div class="day l3">12</div><div class="day l3">13</div>
+            <div class="day l2">14</div><div class="day l3">15</div><div class="day l3">16</div>
+            <div class="day l4">17</div><div class="day l4">18</div><div class="day l3">19</div>
+        </div>
+
+        <h2>The Arc</h2>
+        <p>Three acts emerged from the data. <span class="annotation">← this surprised me</span></p>
+
+        <div class="phase-card">
+            <h3>Act I: Experimentation</h3>
+            <p class="phase-date">Nov 25 – Dec 16</p>
+            <p>"What can I do with this thing?" 5-8 projects running simultaneously. Nothing ships yet. Testing boundaries.</p>
+        </div>
+
+        <div class="phase-card">
+            <h3>Act II: Foundation</h3>
+            <p class="phase-date">Dec 17 – Jan 6</p>
+            <p>"Build the core asset." <span class="highlight">sourcelibrary-v2</span> dominates: 2,216 prompts. Christmas Day: 299 prompts.</p>
+        </div>
+
+        <div class="phase-card">
+            <h3>Act III: Commercialization</h3>
+            <p class="phase-date">Jan 6 – Feb 4</p>
+            <p>"Ship products for users." Intensity spike. Feb 2: <span class="highlight">793 prompts</span> in one day. The experiments became products.</p>
+        </div>
+
+        <h2>The Interleave</h2>
+        <p>
+            The real signature isn't parallel projects. It's <span class="highlight">multiplexed attention</span>.
+            Not time-blocking. Constant interleaving at sub-minute intervals.
+        </p>
+
+        <div class="stats-row">
+            <div class="stat">
+                <div class="stat-value">0.6</div>
+                <div class="stat-label">min avg between switches</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">1,645</div>
+                <div class="stat-label">switches on peak day</div>
+            </div>
+        </div>
+
+        <p class="annotation" style="font-size: 1.4rem; text-align: center; margin: 2rem 0;">
+            <span class="doodle-arrow"></span> Is this ADHD or flow? <span class="doodle-arrow" style="transform: scaleX(-1);"></span>
+        </p>
+
+        <div class="grimoire-link">
+            <h3>✦ The Grimoire ✦</h3>
+            <p>Patterns extracted from 10,497 prompts →</p>
+        </div>
+
+    </main>
+
+    <!-- Right margin for annotations -->
+    <aside class="margin-right">
+        <div class="postit pink" style="--rotation: 2deg; margin-top: 60px;">
+            <strong>Share:</strong><br>
+            This could help other builders understand their own patterns
+        </div>
+
+        <div class="postit orange" style="--rotation: -2deg; margin-top: 320px;">
+            Christmas Day prompts = <strong>obsession</strong> or flow state?
+        </div>
+
+        <div class="postit yellow" style="--rotation: 1deg; margin-top: 200px;">
+            <strong>Question:</strong><br>
+            How does this compare to "normal" work patterns?
+        </div>
+    </aside>
+</div>
+
+<footer>
+    Built with Claude Code, obviously. · Derek Lomas · Feb 2026
+</footer>
+
+</body>
+</html>

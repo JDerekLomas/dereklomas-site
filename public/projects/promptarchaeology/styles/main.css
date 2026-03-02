@@ -37,6 +37,62 @@
   box-sizing: border-box;
 }
 
+/* Site Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(253, 252, 249, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.site-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  color: var(--accent-rust);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-rust);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -170,9 +226,13 @@ a:hover {
 }
 
 /* Calendar Heatmap */
+#heatmap-section {
+  max-width: 1100px;
+}
+
 #calendar-heatmap {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
   margin: 2rem 0;
@@ -182,7 +242,7 @@ a:hover {
   background: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px 14px;
 }
 
 .month-title {
@@ -197,7 +257,7 @@ a:hover {
 
 .weekdays {
   display: grid;
-  grid-template-columns: repeat(7, 20px);
+  grid-template-columns: repeat(7, 26px);
   gap: 3px;
   margin-bottom: 6px;
 }
@@ -211,13 +271,13 @@ a:hover {
 
 .days {
   display: grid;
-  grid-template-columns: repeat(7, 20px);
+  grid-template-columns: repeat(7, 26px);
   gap: 3px;
 }
 
 .day {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -290,9 +350,13 @@ a:hover {
 }
 
 /* Arc Phases */
+#arc-section {
+  max-width: 1100px;
+}
+
 .arc-phases {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
@@ -355,6 +419,10 @@ a:hover {
 }
 
 /* Interleave */
+#interleave-section {
+  max-width: 1100px;
+}
+
 .interleave-stats {
   display: flex;
   gap: 1.5rem;
@@ -412,6 +480,152 @@ a:hover {
   min-width: 4px;
   border-radius: 2px;
   cursor: pointer;
+}
+
+/* Stream Timeline */
+#stream-timeline {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 2rem;
+}
+
+.stream-day {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.stream-day:hover {
+  opacity: 0.8;
+}
+
+.stream-day.selected {
+  background: var(--bg-warm);
+  margin: 0 -12px;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.stream-date {
+  width: 80px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.stream-bar {
+  flex: 1;
+  height: 24px;
+  display: flex;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.stream-segment {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.stream-count {
+  width: 60px;
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding-left: 8px;
+}
+
+/* Microscope view */
+#micro-view {
+  background: var(--bg-warm);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+#micro-timeline {
+  display: flex;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.micro-block {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  color: rgba(255,255,255,0.9);
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.micro-block:hover {
+  filter: brightness(1.1);
+}
+
+.micro-block span {
+  white-space: nowrap;
+  padding: 0 4px;
+}
+
+.micro-time-markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+/* Multiplex pulse animation */
+@keyframes pulse-attention {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.stream-segment.active {
+  animation: pulse-attention 2s infinite;
+}
+
+/* Pulse/Rhythm visualization */
+#pulse-viz {
+  display: flex;
+  align-items: flex-end;
+  height: 80px;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.pulse-bar {
+  flex-shrink: 0;
+  width: 3px;
+  min-height: 2px;
+  border-radius: 2px 2px 0 0;
+  transition: height 0.2s, opacity 0.2s;
+}
+
+.pulse-bar:hover {
+  opacity: 1 !important;
+}
+
+.pulse-time-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  color: var(--text-muted);
 }
 
 /* Hourly Chart */
@@ -727,8 +941,16 @@ footer {
     font-size: 1.5rem;
   }
 
+  #arc-section {
+    max-width: 100%;
+  }
+
   .arc-phases {
     grid-template-columns: 1fr;
+  }
+
+  #interleave-section {
+    max-width: 100%;
   }
 
   .interleave-stats {

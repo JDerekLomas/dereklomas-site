@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Notes - Prompt Archaeology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #fdfcf9;
+            --bg-warm: #f5f0e8;
+            --text-primary: #1a1612;
+            --text-muted: #666;
+            --accent-rust: #9e4a3a;
+            --border-light: #e8e4dc;
+
+            /* Post-it colors */
+            --postit-yellow: #FFEB3B;
+            --postit-yellow-text: #5D4E00;
+            --postit-pink: #F48FB1;
+            --postit-pink-text: #4A1A2C;
+            --postit-blue: #81D4FA;
+            --postit-blue-text: #0D3C55;
+            --postit-green: #A5D6A7;
+            --postit-green-text: #1B4D1E;
+            --postit-orange: #FFCC80;
+            --postit-orange-text: #5C3D00;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Site Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(253, 252, 249, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .site-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .site-logo:hover {
+            color: var(--accent-rust);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-rust);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            background: var(--bg-cream);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 24px 40px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-rust);
+        }
+
+        .page-header nav {
+            margin-top: 1.5rem;
+        }
+
+        .page-header nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .page-header nav a:hover {
+            color: var(--accent-rust);
+        }
+
+        /* Main content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .intro {
+            max-width: 600px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Field notes grid */
+        .field-notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Post-it note */
+        .postit {
+            position: relative;
+            padding: 24px 20px 28px;
+            min-height: 200px;
+            transform: rotate(var(--rotation, 0deg));
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .postit:hover {
+            transform: rotate(0deg) translateY(-4px);
+            box-shadow: 6px 8px 16px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        /* Tape effect */
+        .postit::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(var(--tape-rotation, 1deg));
+            width: 60px;
+            height: 20px;
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Fold corner */
+        .postit::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.06) 50%);
+        }
+
+        /* Colors */
+        .postit.yellow { background-color: var(--postit-yellow); color: var(--postit-yellow-text); }
+        .postit.pink { background-color: var(--postit-pink); color: var(--postit-pink-text); }
+        .postit.blue { background-color: var(--postit-blue); color: var(--postit-blue-text); }
+        .postit.green { background-color: var(--postit-green); color: var(--postit-green-text); }
+        .postit.orange { background-color: var(--postit-orange); color: var(--postit-orange-text); }
+
+        /* Post-it content */
+        .postit-title {
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .postit-body {
+            font-family: 'Caveat', cursive;
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+
+        .postit-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        /* Quote cards - for actual prompts */
+        .quote-card {
+            background: var(--bg-warm);
+            border-left: 3px solid var(--accent-rust);
+            padding: 24px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .quote-card .project-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-rust);
+            margin-bottom: 8px;
+        }
+
+        .quote-card blockquote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin: 80px 0 40px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-rust);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .field-notes-grid {
+                grid-template-columns: 1fr;
+            }
+            .postit {
+                transform: rotate(0deg) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="site-logo">Derek Lomas</a>
+            <ul class="nav-links">
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/research">Research</a></li>
+                <li><a href="/writing">Writing</a></li>
+                <li><a href="/lab">Lab</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="page-header">
+        <h1>Field Notes</h1>
+        <p class="subtitle">Observations from 10,497 prompts</p>
+        <nav>
+            <a href="/projects/promptarchaeology/">← Data</a>
+            <a href="/projects/promptarchaeology/grimoire.html">Grimoire →</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <p>Personal annotations from the archive. What I noticed looking back at two months of building with Claude.</p>
+        </div>
+
+        <div class="field-notes-grid">
+            <div class="postit yellow" style="--rotation: -2deg; --tape-rotation: 2deg;">
+                <div class="postit-title">On Starting Projects</div>
+                <div class="postit-body">
+                    The vision prompts share a structure: destination + reference + constraint.<br><br>
+                    You don't prescribe the route—just the vibe and the boundaries.
+                </div>
+            </div>
+
+            <div class="postit pink" style="--rotation: 1.5deg; --tape-rotation: -1deg;">
+                <div class="postit-title">The Best Starts Are Impossible</div>
+                <div class="postit-body">
+                    "A digital afterlife for philosophers"<br>
+                    "Fashion archaeology"<br>
+                    "The first renaissance occurred from translations"<br><br>
+                    Productive tension between ambition and constraint.
+                </div>
+            </div>
+
+            <div class="postit blue" style="--rotation: -1deg; --tape-rotation: 0deg;">
+                <div class="postit-title">Four Words</div>
+                <div class="postit-body">
+                    "too busy. simplify."<br><br>
+                    That's a complete prompt. The context does the heavy lifting.
+                </div>
+            </div>
+
+            <div class="postit green" style="--rotation: 2deg; --tape-rotation: -2deg;">
+                <div class="postit-title">Delegation Phrases</div>
+                <div class="postit-body">
+                    "do your research"<br>
+                    "help me think through"<br>
+                    "can you figure out"<br><br>
+                    State the problem, not the solution.
+                </div>
+            </div>
+
+            <div class="postit orange" style="--rotation: -1.5deg; --tape-rotation: 1deg;">
+                <div class="postit-title">The Personal Thread</div>
+                <div class="postit-body">
+                    Milo's music site. Lilbookies for the kids. Your personal site.<br><br>
+                    These surface in every phase. Commercial and creative stay interleaved.
+                </div>
+            </div>
+
+            <div class="postit yellow" style="--rotation: 1deg; --tape-rotation: -1deg;">
+                <div class="postit-title">On Persistence</div>
+                <div class="postit-body">
+                    "Wow, why is this so hard to figure out?"<br><br>
+                    The frustration is visible. But you keep returning. The work continues.
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2>Selected Prompts</h2>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">designtherapy</div>
+            <blockquote>take a look at designtherapy.org. Download all the components and style. Then recreate the site based on contemporary design concepts (do your research!). Make sure it appeals to people who are top designers and instagram influencers.</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">morniplus</div>
+            <blockquote>Focus it on fashion archaeology—finding ancient symbols and turning into embroidery for jackets, dresses, etc. Let's call it Garden of Eden.</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">philosopherslibrary</div>
+            <blockquote>I basically want a system where characters can walk around and speak to each other about their works. And also to read books in the library. Like, a digital afterlife for the philosophers where they can keep exploring, disputing and understanding through dialectic.</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">secondrenaissance</div>
+            <blockquote>I think the front page needs to communicate the idea, briefly, that the first renaissance occurred from translations—but we haven't translated the renaissance, which might inhibit a second renaissance...</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">minibooks</div>
+            <blockquote>I want to make minibooks for reading with kids in non-flowing epub format so that they can be printed nicely. Look up how to print small kids books with glossy cover and color pages, like the pixi books in germany.</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">milo</div>
+            <blockquote>I want to take my music career to the next level. I probably need a website or a way to post a lot of videos of weird things with my music... or something?</blockquote>
+        </div>
+
+        <div class="quote-card">
+            <div class="project-tag">playpowerlearn</div>
+            <blockquote>I want to start a project to create an LMS for AI-generated educational activities. Such as, creating complete common core coverage for each grade.</blockquote>
+        </div>
+
+        <div class="field-notes-grid" style="margin-top: 60px;">
+            <div class="postit pink" style="--rotation: 2deg; --tape-rotation: -1deg;">
+                <div class="postit-title">Research + Build = Same Session</div>
+                <div class="postit-body">
+                    No separation between learning and doing.<br><br>
+                    "first research similar game aesthetics & styles... find some example games i can model"<br><br>
+                    Then immediately: implementation.
+                </div>
+            </div>
+
+            <div class="postit blue" style="--rotation: -2deg; --tape-rotation: 2deg;">
+                <div class="postit-title">Projects Spawn Projects</div>
+                <div class="postit-body">
+                    Source Library → translation engine<br>
+                    Minibooks → lilbookies → funbookies<br><br>
+                    The work is generative, not linear.
+                </div>
+            </div>
+
+            <div class="postit green" style="--rotation: 1deg; --tape-rotation: 0deg;">
+                <div class="postit-title">Quality Control Stays Manual</div>
+                <div class="postit-body">
+                    "Look at each image—make sure they make sense with the text."<br><br>
+                    "coherence is poor. Like what is the emotional arc?"<br><br>
+                    Delegation has limits.
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><a href="/projects/promptarchaeology/">← Back to Prompt Archaeology</a></p>
+        <p style="margin-top: 1rem;">Derek Lomas · Feb 2026</p>
+    </footer>
+</body>
+</html>

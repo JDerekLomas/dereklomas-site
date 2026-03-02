@@ -28,6 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: project.title,
     description: project.description,
+    ...(project.image && {
+      openGraph: {
+        title: project.title,
+        description: project.description,
+        images: [{ url: project.image }],
+      },
+    }),
   };
 }
 
@@ -49,8 +56,18 @@ export default async function ProjectDetailPage({ params }: Props) {
           &larr; All Projects
         </Link>
 
-        {/* Image */}
-        {project.image && (
+        {/* Video or Image */}
+        {project.video ? (
+          <div className="mt-6 aspect-video bg-black rounded-lg overflow-hidden border border-[var(--border-color)]">
+            <iframe
+              src={`https://www.youtube.com/embed/${project.video}`}
+              title={project.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        ) : project.image ? (
           <div className="mt-6 aspect-video bg-warm rounded-lg overflow-hidden border border-[var(--border-color)]">
             <img
               src={project.image}
@@ -58,7 +75,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               className="w-full h-full object-cover"
             />
           </div>
-        )}
+        ) : null}
 
         {/* Header */}
         <div className="mt-8">

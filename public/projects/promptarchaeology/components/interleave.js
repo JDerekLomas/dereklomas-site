@@ -7,6 +7,19 @@ function createInterleaveViz(containerId, data) {
     // Default to highest activity day
     const defaultDate = "2026-01-08";
 
+    // Render the stream timeline (multiple days overview)
+    renderStreamTimeline(data.projectColors, defaultDate);
+
+    // Render the pulse visualization
+    if (DAY_DETAIL_DATA && DAY_DETAIL_DATA[defaultDate]) {
+        renderPulseViz(defaultDate, data.projectColors);
+    }
+
+    // Render the microscope view
+    if (DAY_DETAIL_DATA && DAY_DETAIL_DATA[defaultDate]) {
+        renderMicroTimeline(defaultDate, data.projectColors);
+    }
+
     // Prefer detailed data if available
     if (DAY_DETAIL_DATA && DAY_DETAIL_DATA[defaultDate]) {
         renderDetailedInterleave(container, defaultDate, data.projectColors);
@@ -14,6 +27,197 @@ function createInterleaveViz(containerId, data) {
         const dayData = INTERLEAVE_DATA[defaultDate];
         renderInterleave(container, dayData.sequence, data.projectColors, dayData);
     }
+}
+
+// Stream Timeline - shows multiple days as colored bands
+function renderStreamTimeline(colors, selectedDate) {
+    const container = document.getElementById('stream-viz');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    // Get days with detailed data, sorted by date
+    const days = Object.keys(DAY_DETAIL_DATA || INTERLEAVE_DATA || {}).sort().reverse();
+
+    days.forEach(dateStr => {
+        const dayData = DAY_DETAIL_DATA ? DAY_DETAIL_DATA[dateStr] : INTERLEAVE_DATA[dateStr];
+        if (!dayData) return;
+
+        const row = document.createElement('div');
+        row.className = 'stream-day' + (dateStr === selectedDate ? ' selected' : '');
+        row.dataset.date = dateStr;
+
+        // Date label
+        const dateLabel = document.createElement('div');
+        dateLabel.className = 'stream-date';
+        const d = new Date(dateStr);
+        dateLabel.textContent = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        row.appendChild(dateLabel);
+
+        // Stream bar showing project proportions
+        const bar = document.createElement('div');
+        bar.className = 'stream-bar';
+
+        const projects = dayData.projects || {};
+        const totalPrompts = dayData.total_prompts || dayData.prompts || Object.values(projects).reduce((sum, p) => sum + (p.prompts || p), 0);
+
+        // Sort projects by prompt count
+        const sortedProjects = Object.entries(projects)
+            .sort((a, b) => (b[1].prompts || b[1]) - (a[1].prompts || a[1]));
+
+        sortedProjects.forEach(([project, data]) => {
+            const prompts = data.prompts || data;
+            const pct = (prompts / totalPrompts) * 100;
+            if (pct < 1) return; // Skip tiny segments
+
+            const segment = document.createElement('div');
+            segment.className = 'stream-segment';
+            const colorKey = project.replace('/v2', '-v2').replace('/', '-');
+            segment.style.backgroundColor = colors[colorKey] || colors[project] || colors.default;
+            segment.style.width = `${pct}%`;
+            segment.title = `${project}: ${prompts.toLocaleString()} prompts`;
+            bar.appendChild(segment);
+        });
+
+        row.appendChild(bar);
+
+        // Prompt count
+        const count = document.createElement('div');
+        count.className = 'stream-count';
+        count.textContent = totalPrompts.toLocaleString();
+        row.appendChild(count);
+
+        // Click handler
+        row.addEventListener('click', () => {
+            document.querySelectorAll('.stream-day').forEach(el => el.classList.remove('selected'));
+            row.classList.add('selected');
+            updateInterleaveViz(dateStr);
+            renderMicroTimeline(dateStr, colors);
+        });
+
+        container.appendChild(row);
+    });
+}
+
+// Pulse visualization - shows switching rhythm like a heartbeat
+function renderPulseViz(dateStr, colors) {
+    const container = document.getElementById('pulse-viz');
+    if (!container) return;
+
+    const dayData = DAY_DETAIL_DATA ? DAY_DETAIL_DATA[dateStr] : null;
+    if (!dayData || !dayData.blocks) {
+        container.innerHTML = '<div style="color: var(--text-muted); font-size: 12px;">Detailed timing data not available</div>';
+        return;
+    }
+
+    container.innerHTML = '';
+
+    // Max prompts for scaling
+    const maxPrompts = Math.max(...dayData.blocks.map(b => b.prompts));
+
+    // Render each block as a spike
+    dayData.blocks.slice(0, 200).forEach((block, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'pulse-bar';
+        const height = Math.max(4, (block.prompts / maxPrompts) * 70);
+
+        const colorKey = block.project.replace('/v2', '-v2').replace('/', '-');
+        bar.style.backgroundColor = colors[colorKey] || colors[block.project] || colors.default;
+        bar.style.height = `${height}px`;
+        bar.style.opacity = 0.7 + (block.prompts / maxPrompts) * 0.3;
+        bar.title = `${block.project}\n${block.time}\n${block.prompts} prompts`;
+
+        container.appendChild(bar);
+    });
+
+    // Add time axis
+    const existingAxis = container.parentNode.querySelector('.pulse-time-axis');
+    if (existingAxis) existingAxis.remove();
+
+    const axis = document.createElement('div');
+    axis.className = 'pulse-time-axis';
+
+    if (dayData.blocks.length > 0) {
+        const firstTime = dayData.blocks[0].time;
+        const lastTime = dayData.blocks[Math.min(dayData.blocks.length - 1, 199)].time;
+        const switchCount = Math.min(dayData.blocks.length, 200);
+        axis.innerHTML = `<span>${firstTime}</span><span>${switchCount} switches shown</span><span>${lastTime}</span>`;
+    }
+    container.after(axis);
+}
+
+// Microscope view - zoomed in to show rapid switching in one hour
+function renderMicroTimeline(dateStr, colors) {
+    const container = document.getElementById('micro-timeline');
+    if (!container) return;
+
+    const dayData = DAY_DETAIL_DATA ? DAY_DETAIL_DATA[dateStr] : null;
+    if (!dayData || !dayData.blocks) {
+        container.innerHTML = '<div style="color: var(--text-muted); font-size: 12px;">Detailed timing data not available</div>';
+        return;
+    }
+
+    container.innerHTML = '';
+
+    // Find the busiest hour
+    let busiestHour = 9;
+    let maxPrompts = 0;
+    if (dayData.hourly) {
+        Object.entries(dayData.hourly).forEach(([h, data]) => {
+            if (data.prompts > maxPrompts) {
+                maxPrompts = data.prompts;
+                busiestHour = parseInt(h);
+            }
+        });
+    }
+
+    // Filter blocks in that hour
+    const hourBlocks = dayData.blocks.filter(b => {
+        const hour = parseInt(b.time.split(':')[0]);
+        return hour === busiestHour;
+    });
+
+    if (hourBlocks.length === 0) {
+        // Just show first few blocks
+        hourBlocks.push(...dayData.blocks.slice(0, 15));
+    }
+
+    // Calculate total prompts in this selection
+    const totalPrompts = hourBlocks.reduce((sum, b) => sum + b.prompts, 0);
+
+    // Render each block proportionally
+    hourBlocks.forEach(block => {
+        const el = document.createElement('div');
+        el.className = 'micro-block';
+        const pct = (block.prompts / totalPrompts) * 100;
+
+        const colorKey = block.project.replace('/v2', '-v2').replace('/', '-');
+        el.style.backgroundColor = colors[colorKey] || colors[block.project] || colors.default;
+        el.style.width = `${Math.max(pct, 2)}%`;
+
+        // Show project name if block is wide enough
+        if (pct > 8) {
+            const label = document.createElement('span');
+            label.textContent = block.project.replace('/v2', '').substring(0, 8);
+            el.appendChild(label);
+        }
+
+        el.title = `${block.project}\n${block.time}\n${block.prompts} prompts`;
+        container.appendChild(el);
+    });
+
+    // Add time markers
+    const existingMarkers = container.parentNode.querySelector('.micro-time-markers');
+    if (existingMarkers) existingMarkers.remove();
+
+    const markers = document.createElement('div');
+    markers.className = 'micro-time-markers';
+    if (hourBlocks.length > 0) {
+        const firstTime = hourBlocks[0].time;
+        const lastTime = hourBlocks[hourBlocks.length - 1].time;
+        markers.innerHTML = `<span>${firstTime}</span><span style="color: var(--accent-rust);">${hourBlocks.length} switches in ~${60 - (parseInt(firstTime.split(':')[1]) || 0)} min</span><span>${lastTime}</span>`;
+    }
+    container.after(markers);
 }
 
 function renderDetailedInterleave(container, dateStr, colors) {
@@ -258,6 +462,12 @@ function updateInterleaveViz(dateStr) {
     const container = document.getElementById('interleave-viz');
     if (!container) return;
 
+    // Update pulse visualization
+    renderPulseViz(dateStr, ARCHAEOLOGY_DATA.projectColors);
+
+    // Update micro timeline
+    renderMicroTimeline(dateStr, ARCHAEOLOGY_DATA.projectColors);
+
     // Prefer detailed data
     if (DAY_DETAIL_DATA && DAY_DETAIL_DATA[dateStr]) {
         renderDetailedInterleave(container, dateStr, ARCHAEOLOGY_DATA.projectColors);
@@ -272,7 +482,7 @@ function updateInterleaveViz(dateStr) {
                 <div style="color: var(--text-muted); font-size: 14px;">
                     <strong>${basicData.prompts}</strong> prompts across
                     <strong>${basicData.projects.length}</strong> projects<br>
-                    <span style="color: var(--accent)">${basicData.projects.join(', ')}</span>
+                    <span style="color: var(--accent-rust)">${basicData.projects.join(', ')}</span>
                     <p style="margin-top: 8px; font-size: 12px;">
                         (Detailed switch data available for top days)
                     </p>
@@ -291,6 +501,11 @@ function updateInterleaveViz(dateStr) {
             year: 'numeric'
         });
     }
+
+    // Update stream timeline selection
+    document.querySelectorAll('.stream-day').forEach(el => {
+        el.classList.toggle('selected', el.dataset.date === dateStr);
+    });
 }
 
 // Add day selector dropdown

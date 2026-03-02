@@ -14,7 +14,7 @@ type Experiment = {
 export const metadata: Metadata = {
   title: "Lab",
   description:
-    "Interactive experiments, visualizations, and prototypes exploring the intersection of technology and human experience.",
+    "Interactive experiments, visualizations, and prototypes exploring technology and human experience.",
 };
 
 const experiments = [
@@ -57,6 +57,16 @@ const experiments = [
     status: "Live",
     live: true,
     icon: "network",
+  },
+  {
+    slug: "claude-code",
+    title: "Getting Started with Claude Code",
+    description:
+      "A practical guide from first install to custom skills, MCP servers, and advanced workflows.",
+    tech: "Guide",
+    status: "Live",
+    live: true,
+    icon: "toolkit",
   },
   {
     slug: "research-connections",
@@ -159,6 +169,18 @@ export default function LabPage() {
                             <path d="M4 26 C16 24, 32 30, 44 26" stroke="#3498db" opacity="0.7" />
                             <path d="M4 34 C16 38, 32 32, 44 34" stroke="#e74c3c" opacity="0.7" />
                             <path d="M4 42 C16 40, 32 44, 44 42" stroke="#2ecc71" opacity="0.7" />
+                          </g>
+                        )}
+                        {experiment.icon === "toolkit" && (
+                          <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <rect x="8" y="8" width="12" height="14" rx="2" />
+                            <path d="M22 12h4v20H18v-4" />
+                            <line x1="12" y1="14" x2="16" y2="14" />
+                            <line x1="12" y1="18" x2="16" y2="18" />
+                            <line x1="12" y1="22" x2="14" y2="22" />
+                            <path d="M28 16h4v16H26v-4" />
+                            <line x1="24" y1="18" x2="30" y2="18" />
+                            <line x1="24" y1="22" x2="28" y2="22" />
                           </g>
                         )}
                         {experiment.icon === "network" && (

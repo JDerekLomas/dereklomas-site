@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Derek Lomas is a tenured professor of Positive AI at TU Delft, cognitive scientist, and entrepreneur working at the intersection of AI, education, and wellbeing.",
+    "Cognitive scientist, AI researcher, and entrepreneur. Tenured professor of Positive AI at TU Delft.",
 };
 
 export default function AboutPage() {
@@ -161,7 +161,22 @@ export default function AboutPage() {
             >
               LinkedIn
             </a>
+            {" "}and{" "}
+            <a
+              href="https://orcid.org/0000-0003-2329-7831"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rust font-medium"
+            >
+              ORCID
+            </a>
             .
+          </p>
+          <p className="text-text-secondary">
+            See also:{" "}
+            <Link href="/press" className="text-rust font-medium">
+              Press & Talks
+            </Link>
           </p>
         </section>
       </div>
