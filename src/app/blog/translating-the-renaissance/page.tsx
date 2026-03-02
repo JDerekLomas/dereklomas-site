@@ -345,7 +345,7 @@ export default function SecondRenaissancePost() {
 
         <CusdisComments
           pageId="translating-the-renaissance"
-          pageUrl="https://derek-lomas.com/blog/translating-the-renaissance"
+          pageUrl="https://dereklomas.me/blog/translating-the-renaissance"
           pageTitle="To Create a Second Renaissance, Translate the First"
         />
       </article>

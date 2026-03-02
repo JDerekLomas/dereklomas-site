@@ -4,6 +4,7 @@ import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
+import PromptCalendar from "@/components/PromptCalendar";
 
 export const metadata: Metadata = {
   title: "Building a 1.67-Million-Page Digital Library with AI",
@@ -379,7 +380,7 @@ export default function SourceLibraryPost() {
 
         <CusdisComments
           pageId="building-a-digital-library-with-ai"
-          pageUrl="https://derek-lomas.com/blog/building-a-digital-library-with-ai"
+          pageUrl="https://dereklomas.me/blog/building-a-digital-library-with-ai"
           pageTitle="Building a 1.67-Million-Page Digital Library with AI"
         />
       </article>

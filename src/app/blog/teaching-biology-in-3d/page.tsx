@@ -349,7 +349,7 @@ export default function BlenderCellPost() {
 
         <CusdisComments
           pageId="teaching-biology-in-3d"
-          pageUrl="https://derek-lomas.com/blog/teaching-biology-in-3d"
+          pageUrl="https://dereklomas.me/blog/teaching-biology-in-3d"
           pageTitle="Teaching Biology in 3D: Interactive Cell Viewers"
         />
       </article>

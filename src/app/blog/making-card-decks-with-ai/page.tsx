@@ -370,7 +370,7 @@ export default function CardDecksPost() {
 
         <CusdisComments
           pageId="making-card-decks-with-ai"
-          pageUrl="https://derek-lomas.com/blog/making-card-decks-with-ai"
+          pageUrl="https://dereklomas.me/blog/making-card-decks-with-ai"
           pageTitle="Making Card Decks with AI: From Prompt to Print"
         />
       </article>

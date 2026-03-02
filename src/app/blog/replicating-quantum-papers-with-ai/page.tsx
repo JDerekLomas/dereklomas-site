@@ -361,7 +361,7 @@ export default function QuantumPost() {
 
         <CusdisComments
           pageId="replicating-quantum-papers-with-ai"
-          pageUrl="https://derek-lomas.com/blog/replicating-quantum-papers-with-ai"
+          pageUrl="https://dereklomas.me/blog/replicating-quantum-papers-with-ai"
           pageTitle="I Replicated 6 Quantum Computing Papers on 3 Platforms"
         />
       </article>

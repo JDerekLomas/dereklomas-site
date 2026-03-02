@@ -405,7 +405,7 @@ export default function WhyTerminalsCantEditPage() {
 
         <CusdisComments
           pageId="why-terminals-cant-edit"
-          pageUrl="https://derek-lomas.com/blog/why-terminals-cant-edit"
+          pageUrl="https://dereklomas.me/blog/why-terminals-cant-edit"
           pageTitle="Why You Can't Click to Place Your Cursor in a Terminal"
         />
       </article>
