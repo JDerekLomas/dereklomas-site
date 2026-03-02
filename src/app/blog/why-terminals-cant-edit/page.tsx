@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import LikeButton from "@/components/LikeButton";
-import GiscusComments from "@/components/GiscusComments";
+import CusdisComments from "@/components/CusdisComments";
 
 export const metadata: Metadata = {
   title: "Why You Can't Click to Place Your Cursor in a Terminal",
@@ -380,7 +380,11 @@ export default function WhyTerminalsCantEditPage() {
           <LikeButton slug="why-terminals-cant-edit" />
         </div>
 
-        <GiscusComments />
+        <CusdisComments
+          pageId="why-terminals-cant-edit"
+          pageUrl="https://derek-lomas.com/blog/why-terminals-cant-edit"
+          pageTitle="Why You Can't Click to Place Your Cursor in a Terminal"
+        />
       </article>
     </div>
   );
