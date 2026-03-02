@@ -288,8 +288,8 @@ export default function QuantumPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The entire project was built through Claude Code sessions, with the agent doing the
-            quantum computing while I steered. The prompts tell the story:
+            The project spanned 490 Claude Code sessions and 1,226 prompts over three weeks in
+            February 2026. The agent did the quantum computing. I steered:
           </p>
 
           <div
@@ -304,22 +304,36 @@ export default function QuantumPost() {
               margin: "2em 0",
             }}
           >
-            <span style={{ color: "#78716c" }}># February 9 — starting from zero</span><br />
-            &gt; Can you use a quantum computer to do basic operations like addition?<br />
+            <span style={{ color: "#78716c" }}># Feb 9 — starting from zero</span><br />
+            &gt; Can you use a quantum computer to do basic operations<br />
+            &gt; like addition?<br />
             <br />
-            <span style={{ color: "#78716c" }}># February 12 — scaling up</span><br />
+            <span style={{ color: "#78716c" }}># Feb 9 — setting the vision</span><br />
+            &gt; get me on github and start organizing this project as an<br />
+            &gt; exploration of accelerating science with generative ai.<br />
+            &gt; This should make Delft look super cutting edge in Quantum<br />
+            &gt; and AI.<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 10 — surface code on real hardware</span><br />
+            &gt; wait, it was that easy? Are you sure that is real?<br />
+            &gt; was it real data? I&rsquo;m worried it was faked<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 10 — asking the hard question</span><br />
+            &gt; can you act like a critical reviewer and look through the<br />
+            &gt; site and the experiments and results and try to poke holes?<br />
+            &gt; yeah, actually AI did it all. I&rsquo;m just prompting here.<br />
+            &gt; Really, you didn&rsquo;t find any LLM bs faked data or anything?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 12 — scaling up</span><br />
             &gt; apply the error mitigation across all 7 bond distances<br />
-            &gt; do all of them<br />
-            <br />
-            <span style={{ color: "#78716c" }}># February 20 — reality check</span><br />
-            &gt; Any of this publishable?
+            &gt; do all of them
           </div>
 
           <p>
-            That &ldquo;do all of them&rdquo; prompt is representative of the workflow. I&rsquo;d
-            identify an experiment category, the agent would run one instance, and I&rsquo;d tell it
-            to sweep the full parameter space. Most of the 105 experiments were launched this way
-            &mdash; one prompt generating a dozen hardware jobs.
+            The &ldquo;was it real data? I&rsquo;m worried it was faked&rdquo; prompt captures the
+            central anxiety of AI-accelerated science: how do you trust results when the agent does
+            everything? The answer was running the same experiments across three independent hardware
+            platforms and checking whether results converge. They mostly did.
           </p>
 
           <p>

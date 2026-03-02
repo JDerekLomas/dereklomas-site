@@ -292,9 +292,49 @@ export default function CardDecksPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            Each deck was built in one or two Claude Code sessions. The workflow is conversational:
-            describe the theme, iterate on card concepts, then run the pipeline. You can watch
-            compressed replays of the building sessions at{" "}
+            The Futures Oracle was built in a single 84-prompt Claude Code session. The MFT therapy
+            deck took two more. The real conversation is messier than a tidy pipeline description
+            suggests:
+          </p>
+
+          <div
+            style={{
+              background: "var(--bg-dark)",
+              color: "#4ade80",
+              fontFamily: "var(--font-inter), monospace",
+              padding: "1.5em",
+              borderRadius: "8px",
+              fontSize: "13px",
+              lineHeight: "2",
+              margin: "2em 0",
+            }}
+          >
+            <span style={{ color: "#78716c" }}># The Futures deck — starting from zero</span><br />
+            &gt; I am wanting to make printable carddecks<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Early image generation was bad</span><br />
+            &gt; hmmm... pretty bad. Let&rsquo;s go back to our core purpose<br />
+            &gt; &mdash; do you understand what we are doing?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Finding the visual style</span><br />
+            &gt; Make them more of a natural philosophy feel. Colored engravings.<br />
+            &gt; With small details. Maybe a central image and small details<br />
+            &gt; surrounding that trigger associations<br />
+            &gt; too old fashioned. Keep the engravings but for modern concepts.<br />
+            &gt; No text. Make them look good on cards<br />
+            <br />
+            <span style={{ color: "#78716c" }}># The MFT deck — reusing the template</span><br />
+            &gt; I want to make a new carddeck for marriage and family therapy.<br />
+            &gt; Help me do some research on approaches.<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Iterating on therapy card content</span><br />
+            &gt; Make the sex card have sexier content. Like, you can use<br />
+            &gt; words like horny. In general, the &ldquo;try saying&rdquo; feels a<br />
+            &gt; little... underperforming
+          </div>
+
+          <p>
+            You can watch compressed replays of the building sessions at{" "}
             <a href="https://codevibing.com/session/alchemy" target="_blank" rel="noopener noreferrer">
               codevibing.com
             </a>{" "}

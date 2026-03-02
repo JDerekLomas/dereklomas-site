@@ -264,9 +264,10 @@ export default function BlenderCellPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            Each cell viewer was built through Claude Code sessions &mdash; the procedural geometry,
-            materials, animations, and interaction design all happen in conversation. The rod
-            photoreceptor prompts show how biological accuracy emerges iteratively:
+            The project started in December 2025 with a single prompt. Nine sessions and 184 prompts
+            later, the atlas has nine cells. Each one was built through Claude Code &mdash; the
+            procedural geometry, materials, animations, and interaction design all happen in
+            conversation. Here&rsquo;s how it actually went:
           </p>
 
           <div
@@ -281,24 +282,50 @@ export default function BlenderCellPost() {
               margin: "2em 0",
             }}
           >
-            <span style={{ color: "#78716c" }}># Starting the rod cell</span><br />
+            <span style={{ color: "#78716c" }}># Dec 4, 2025 — the first cell</span><br />
+            &gt; can you make a new github repo for plasmacell?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Dec 5 — fighting the ER</span><br />
+            &gt; the ER shapes need lots of folds and convolutions, you know?<br />
+            &gt; now add internal structure to mitochondria and nucleus and<br />
+            &gt; make their membrane 50% opaque. default cell membrane opacity<br />
+            &gt; 10% and ER 20%<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Dec 7 — six cells in a weekend</span><br />
+            &gt; red blood cell<br />
+            &gt; macrophage<br />
+            &gt; make the neuron<br />
+            &gt; ok, then make a skin cell?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Dec 8 — refactoring for reuse</span><br />
+            &gt; make a common set of organelles that can be used across cells,<br />
+            &gt; with the plasma cell as base. like refactor everything<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Jan 1, 2026 — the slime mold</span><br />
+            &gt; make it branch-like and pulsing like cytoplasmic streaming<br />
+            &gt; ditch the green outer shell, make the whole thing more like a<br />
+            &gt; tree branching, L-systems styled structure in yellow on black<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 28 — the rod cell</span><br />
             &gt; let&rsquo;s do the rod cell<br />
+            &gt; it is very dark. I don&rsquo;t see membrane or context.<br />
+            &gt; nothing happens when I click fire photon<br />
             <br />
-            <span style={{ color: "#78716c" }}># Getting the biology right</span><br />
-            &gt; I feel like it should be clear that it maximally fires in the dark<br />
-            &gt; (right?) and that light inhibits firing. And maybe represent<br />
-            &gt; simplified neighboring cells?<br />
-            <br />
-            <span style={{ color: "#78716c" }}># Debugging the simulation</span><br />
-            &gt; needs actual light source... and confirm orientation and spatial layout<br />
-            &gt; the firephoton button and auto firing doesn&rsquo;t work for me
+            <span style={{ color: "#78716c" }}># Mar 2 — getting the biology right</span><br />
+            &gt; I feel like it should be clear that it maximally fires in the<br />
+            &gt; dark (right?) and that light inhibits firing<br />
+            &gt; the firephoton button and auto firing doesn&rsquo;t work for me<br />
+            &gt; still not giving me the contrast I need... looks so dark
           </div>
 
           <p>
-            The &ldquo;maximally fires in the dark&rdquo; prompt is where the three-state state machine
-            originated. Getting the counterintuitive biology right &mdash; that the rod&rsquo;s
-            default state is <em>on</em> &mdash; required going back and forth between the code and
-            the neuroscience until the simulation matched reality.
+            The pattern is the same across all nine cells: describe what you want, deploy, look at
+            it, say what&rsquo;s wrong, iterate. The persistent complaints are always about visibility
+            (&ldquo;it is very dark&rdquo;), biological accuracy (&ldquo;are the sizes proportional to
+            real sizes?&rdquo;), and interactivity (&ldquo;nothing happens when I click&rdquo;). The
+            &ldquo;maximally fires in the dark&rdquo; prompt is where the rod cell&rsquo;s three-state
+            state machine originated &mdash; getting the counterintuitive biology right required going
+            back and forth between the code and the neuroscience until the simulation matched reality.
           </p>
 
           <p>

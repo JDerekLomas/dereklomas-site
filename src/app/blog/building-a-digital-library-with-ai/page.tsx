@@ -306,25 +306,48 @@ export default function SourceLibraryPost() {
               margin: "2em 0",
             }}
           >
-            <span style={{ color: "#78716c" }}># December 2025</span><br />
-            &gt; I want to get to 200 books as quickly as possible... at least to &gt;50% translated<br />
+            <span style={{ color: "#78716c" }}># Dec 25, 2025 — the vision</span><br />
+            &gt; fully automated workflow for book import to split<br />
+            &gt; (if necessary) to ocr to translate to summary to<br />
+            &gt; publication review to doi<br />
             <br />
-            <span style={{ color: "#78716c" }}># January 2026 — scaling</span><br />
-            &gt; I think a queue based write approach works, for high load data inputs.<br />
-            &gt; Things are pushed in a queue, and controllable number of workers insert<br />
+            <span style={{ color: "#78716c" }}># Dec 27 — scaling ambitions</span><br />
+            &gt; we will have a billion books with hundreds of pages<br />
             <br />
-            <span style={{ color: "#78716c" }}># February 2026 — quality</span><br />
-            &gt; check on the translation progress<br />
-            &gt; I don&rsquo;t want gemini batch! only fifo with lambda<br />
-            &gt; check for other broken images<br />
-            &gt; the /letter to patrick collison needs more fact checking...
+            <span style={{ color: "#78716c" }}># Dec 27 — curating by candlelight</span><br />
+            &gt; demonologie by king james<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Dec 30 — going deep</span><br />
+            &gt; oh, we need the bible of course... I guess we should<br />
+            &gt; find an early greek bible? Hebrew? First in Latin?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Dec 31 — chasing fragments</span><br />
+            &gt; Any byzantine sources with orphic histories? I bet there<br />
+            &gt; are a bunch of unread greek sources that make reference<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Jan 1, 2026 — milestone</span><br />
+            &gt; let&rsquo;s get to 1000 books in the collection<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Jan 2 — scolding the AI</span><br />
+            &gt; &ldquo;What AI can&rsquo;t do: Actually understand&rdquo;???<br />
+            &gt; what are you on... you can do a lot better than this.<br />
+            &gt; Do you need to meditate or recenter?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 16 — launch anxiety</span><br />
+            &gt; I want to put out a press release. So that we don&rsquo;t<br />
+            &gt; get scooped. I dont&rsquo; know how to do press releases<br />
+            &gt; or any of this stuff<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Feb 27 — the patron</span><br />
+            &gt; I think the /letter to patrick collison needs more<br />
+            &gt; fact checking
           </div>
 
           <p>
-            That queue-based write prompt led directly to the Writer Lambda architecture. The
-            &ldquo;check for broken images&rdquo; prompt uncovered the archive fallback chain.
-            Most of the system emerged this way &mdash; a problem noticed, a prompt typed,
-            a solution built in the same session.
+            The &ldquo;billion books&rdquo; prompt was typed on Christmas Day. The demonology,
+            the Orphic fragments, the early Bibles &mdash; the collection grew the way any
+            library grows: by following curiosity at midnight. Most of the system emerged the
+            same way &mdash; a problem noticed, a prompt typed, a solution built in the same session.
           </p>
 
           <p>
