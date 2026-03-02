@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "To Create a Second Renaissance, Translate the First",
@@ -334,8 +335,12 @@ export default function SecondRenaissancePost() {
         </div>
 
         {/* Engagement */}
-        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5em" }}>
           <LikeButton slug="translating-the-renaissance" />
+          <ShareButtons
+            url="https://dereklomas.me/blog/translating-the-renaissance"
+            title="To Create a Second Renaissance, Translate the First"
+          />
         </div>
 
         <CusdisComments

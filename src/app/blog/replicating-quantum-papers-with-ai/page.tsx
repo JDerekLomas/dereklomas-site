@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke.",
@@ -350,8 +351,12 @@ export default function QuantumPost() {
         </div>
 
         {/* Engagement */}
-        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5em" }}>
           <LikeButton slug="replicating-quantum-papers-with-ai" />
+          <ShareButtons
+            url="https://dereklomas.me/blog/replicating-quantum-papers-with-ai"
+            title="I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke."
+          />
         </div>
 
         <CusdisComments

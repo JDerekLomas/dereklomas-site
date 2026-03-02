@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "Building a 1.67-Million-Page Digital Library with AI",
@@ -368,8 +369,12 @@ export default function SourceLibraryPost() {
         </div>
 
         {/* Engagement */}
-        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5em" }}>
           <LikeButton slug="building-a-digital-library-with-ai" />
+          <ShareButtons
+            url="https://dereklomas.me/blog/building-a-digital-library-with-ai"
+            title="Building a 1.67-Million-Page Digital Library with AI"
+          />
         </div>
 
         <CusdisComments

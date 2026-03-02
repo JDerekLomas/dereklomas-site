@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
+import ShareButtons from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "Making Card Decks with AI: From Prompt to Print",
@@ -359,8 +360,12 @@ export default function CardDecksPost() {
         </div>
 
         {/* Engagement */}
-        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1em" }}>
+        <div style={{ marginTop: "3em", display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5em" }}>
           <LikeButton slug="making-card-decks-with-ai" />
+          <ShareButtons
+            url="https://dereklomas.me/blog/making-card-decks-with-ai"
+            title="Making Card Decks with AI: From Prompt to Print"
+          />
         </div>
 
         <CusdisComments
