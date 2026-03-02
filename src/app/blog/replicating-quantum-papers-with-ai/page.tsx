@@ -41,7 +41,7 @@ export default function QuantumPost() {
             An AI agent autonomously ran 105+ experiments across IBM, Quantum Inspire, and IQM hardware. The failures were more interesting than the successes.
           </p>
           <p className="font-sans text-sm text-muted">
-            2 March 2026 &middot; 14 min read
+            24 February 2026 &middot; 14 min read
           </p>
         </header>
 
@@ -59,9 +59,9 @@ export default function QuantumPost() {
           </p>
 
           <p>
-            Over the past few months, working at TU Delft with{" "}
+            Over the past two weeks, working at TU Delft with{" "}
             <a href="https://www.quantum-inspire.com/" target="_blank" rel="noopener noreferrer">Quantum Inspire</a>,
-            I ran this experiment. The agent replicated six papers spanning 2014&ndash;2023, tested 27 quantitative
+            I ran this experiment. Starting February 9th, the agent replicated six papers spanning 2014&ndash;2023, tested 27 quantitative
             claims across four hardware backends, and ran 105+ individual experiments. The results are live at{" "}
             <a href="https://quantuminspire.vercel.app" target="_blank" rel="noopener noreferrer">quantuminspire.vercel.app</a>.
           </p>
@@ -279,6 +279,43 @@ export default function QuantumPost() {
             bottleneck isn&rsquo;t theoretical insight &mdash; it&rsquo;s systematic characterization,
             cross-platform comparison, and honest failure analysis. An agent that can run 100 experiments
             overnight and produce a structured report by morning is genuinely useful.
+          </p>
+
+          <h2>How It Was Built</h2>
+
+          <p>
+            The entire project was built through Claude Code sessions, with the agent doing the
+            quantum computing while I steered. The prompts tell the story:
+          </p>
+
+          <div
+            style={{
+              background: "var(--bg-dark)",
+              color: "#4ade80",
+              fontFamily: "var(--font-inter), monospace",
+              padding: "1.5em",
+              borderRadius: "8px",
+              fontSize: "13px",
+              lineHeight: "2",
+              margin: "2em 0",
+            }}
+          >
+            <span style={{ color: "#78716c" }}># February 9 — starting from zero</span><br />
+            &gt; Can you use a quantum computer to do basic operations like addition?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># February 12 — scaling up</span><br />
+            &gt; apply the error mitigation across all 7 bond distances<br />
+            &gt; do all of them<br />
+            <br />
+            <span style={{ color: "#78716c" }}># February 20 — reality check</span><br />
+            &gt; Any of this publishable?
+          </div>
+
+          <p>
+            That &ldquo;do all of them&rdquo; prompt is representative of the workflow. I&rsquo;d
+            identify an experiment category, the agent would run one instance, and I&rsquo;d tell it
+            to sweep the full parameter space. Most of the 105 experiments were launched this way
+            &mdash; one prompt generating a dozen hardware jobs.
           </p>
 
           <p>

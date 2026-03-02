@@ -41,7 +41,7 @@ export default function SecondRenaissancePost() {
             533,000 Latin editions were printed between 1450 and 1700. Fewer than 3% have ever been translated into English. We built the first comprehensive census to map the gap.
           </p>
           <p className="font-sans text-sm text-muted">
-            2 March 2026 &middot; 10 min read
+            28 January 2026 &middot; 10 min read
           </p>
         </header>
 
@@ -111,9 +111,11 @@ export default function SecondRenaissancePost() {
           <h2>The Census</h2>
 
           <p>
-            We built what we believe is the first comprehensive census of Latin-to-English translations:
-            7,542 records spanning 1800 to 2025, compiled from the UNESCO Index Translationum, Open
-            Library, Internet Archive, and over 50 publisher catalogs.
+            Starting in December 2025, we built what we believe is the first comprehensive census of
+            Latin-to-English translations: 7,542 records spanning 1800 to 2025, compiled from the
+            UNESCO Index Translationum, Open Library, Internet Archive, and over 50 publisher catalogs.
+            By late December, we had enriched 99.9% of the USTC&rsquo;s 1.6 million edition records
+            with AI-generated metadata. By late January, the census was complete.
           </p>
 
           <p>
@@ -268,6 +270,49 @@ export default function SecondRenaissancePost() {
             We&rsquo;re proposing something similar: imperfect translations, made quickly, validated by
             experts, good enough to reveal what&rsquo;s been hiding in plain sight for 500 years. To
             create a second Renaissance, translate the first.
+          </p>
+
+          <h2>How It Was Built</h2>
+
+          <p>
+            The census and infrastructure were built through Claude Code sessions, starting from
+            a single discovery:
+          </p>
+
+          <div
+            style={{
+              background: "var(--bg-dark)",
+              color: "#4ade80",
+              fontFamily: "var(--font-inter), monospace",
+              padding: "1.5em",
+              borderRadius: "8px",
+              fontSize: "13px",
+              lineHeight: "2",
+              margin: "2em 0",
+            }}
+          >
+            <span style={{ color: "#78716c" }}># December 2025 — discovery</span><br />
+            &gt; I learned about the unesco translationium project<br />
+            <br />
+            <span style={{ color: "#78716c" }}># January 2026 — building the census</span><br />
+            &gt; I want to be able to report on whether a book we translate is the first<br />
+            &gt; time the work has been translated<br />
+            &gt; how many are translations of the same work?<br />
+          </div>
+
+          <p>
+            That UNESCO Index Translationum discovery led to scraping 50+ publisher catalogs and
+            building the 7,542-record census. The &ldquo;how many are translations of the same
+            work?&rdquo; prompt led to the deduplication logic that revealed 16,000 translated
+            works out of 533,000 editions &mdash; the 3% figure that frames the entire project.
+          </p>
+
+          <p>
+            You can watch a compressed replay of a Second Renaissance building session at{" "}
+            <a href="https://codevibing.com/session/secondrenaissance" target="_blank" rel="noopener noreferrer">
+              codevibing.com
+            </a>
+            .
           </p>
 
           <p>

@@ -41,7 +41,7 @@ export default function CardDecksPost() {
             A pipeline that turns card concepts into AI-generated artwork, web-rendered layouts, and print-ready files. Four decks and counting.
           </p>
           <p className="font-sans text-sm text-muted">
-            2 March 2026 &middot; 9 min read
+            16 January 2026 &middot; 9 min read
           </p>
         </header>
 
@@ -63,8 +63,10 @@ export default function CardDecksPost() {
           </p>
 
           <p>
-            Four decks so far: a 72-card Futures Oracle, a 39-card Alchemy Deck, a 63-card relationships
-            therapy game, and a 40-card Plant Intelligence oracle. Here&rsquo;s how the pipeline works.
+            I built the first two decks in the first week of January 2026. The MFT therapy deck followed
+            a week later. Four decks so far: a 72-card Futures Oracle, a 39-card Alchemy Deck, a 63-card
+            relationships therapy game, and a 40-card Plant Intelligence oracle. Here&rsquo;s how the
+            pipeline works.
           </p>
 
           <h2>Step 1: Card Data</h2>
@@ -259,6 +261,26 @@ export default function CardDecksPost() {
             adaptation? Design a deck in an afternoon. A therapy exercise for couples? A deck. A
             classroom activity on molecular biology? A deck. The constraint isn&rsquo;t creativity
             or cost anymore &mdash; it&rsquo;s having something worth making cards about.
+          </p>
+
+          <h2>How It Was Built</h2>
+
+          <p>
+            Each deck was built in one or two Claude Code sessions. The workflow is conversational:
+            describe the theme, iterate on card concepts, then run the pipeline. You can watch
+            compressed replays of the building sessions at{" "}
+            <a href="https://codevibing.com/session/alchemy" target="_blank" rel="noopener noreferrer">
+              codevibing.com
+            </a>{" "}
+            (the Alchemy Deck,{" "}
+            <a href="https://codevibing.com/session/futures" target="_blank" rel="noopener noreferrer">
+              Futures Oracle
+            </a>
+            , and{" "}
+            <a href="https://codevibing.com/session/therapycards" target="_blank" rel="noopener noreferrer">
+              MFT therapy deck
+            </a>
+            ).
           </p>
 
           <p>

@@ -58,7 +58,8 @@ export default function BlenderCellPost() {
             <a href="https://github.com/JDerekLomas/blendercell" target="_blank" rel="noopener noreferrer">
               BlenderCell
             </a>{" "}
-            is an attempt to fix this. It&rsquo;s a growing atlas of interactive 3D cell models, viewable
+            is an attempt to fix this. I started building it in early December 2025, and three months later
+            it&rsquo;s a growing atlas of interactive 3D cell models, viewable
             in any web browser, where students can rotate the cell, zoom into organelles, click on
             structures to learn what they do, and watch biological processes animate in real time. Nine
             cells so far, each modeled in Blender, exported as glTF, and rendered with Three.js.
@@ -248,6 +249,47 @@ export default function BlenderCellPost() {
             Next cells on the list: a hepatocyte (the liver&rsquo;s chemical factory), a pancreatic beta
             cell (insulin secretion), and an osteoclast (bone resorption). Each one teaches a different
             lesson about how cells specialize.
+          </p>
+
+          <h2>How It Was Built</h2>
+
+          <p>
+            Each cell viewer was built through Claude Code sessions. The Blender modeling is manual,
+            but everything from glTF export to Three.js rendering to interaction design happens in
+            conversation. The rod photoreceptor prompts show how biological accuracy emerges
+            iteratively:
+          </p>
+
+          <div
+            style={{
+              background: "var(--bg-dark)",
+              color: "#4ade80",
+              fontFamily: "var(--font-inter), monospace",
+              padding: "1.5em",
+              borderRadius: "8px",
+              fontSize: "13px",
+              lineHeight: "2",
+              margin: "2em 0",
+            }}
+          >
+            <span style={{ color: "#78716c" }}># Starting the rod cell</span><br />
+            &gt; let&rsquo;s do the rod cell<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Getting the biology right</span><br />
+            &gt; I feel like it should be clear that it maximally fires in the dark<br />
+            &gt; (right?) and that light inhibits firing. And maybe represent<br />
+            &gt; simplified neighboring cells?<br />
+            <br />
+            <span style={{ color: "#78716c" }}># Debugging the simulation</span><br />
+            &gt; needs actual light source... and confirm orientation and spatial layout<br />
+            &gt; the firephoton button and auto firing doesn&rsquo;t work for me
+          </div>
+
+          <p>
+            The &ldquo;maximally fires in the dark&rdquo; prompt is where the three-state state machine
+            originated. Getting the counterintuitive biology right &mdash; that the rod&rsquo;s
+            default state is <em>on</em> &mdash; required going back and forth between the code and
+            the neuroscience until the simulation matched reality.
           </p>
 
           <p>
