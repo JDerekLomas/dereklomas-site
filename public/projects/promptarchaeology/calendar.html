@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Archaeology — Activity Calendar</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    padding: 40px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .project {
+    margin-bottom: 48px;
+  }
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .project-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e6edf3;
+  }
+  .project-stats {
+    font-size: 13px;
+    color: #8b949e;
+  }
+  .calendar-container {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .calendar {
+    display: inline-grid;
+    grid-template-rows: repeat(7, 13px);
+    grid-auto-flow: column;
+    grid-auto-columns: 13px;
+    gap: 3px;
+  }
+  .day {
+    width: 13px;
+    height: 13px;
+    border-radius: 2px;
+    background: #161b22;
+    outline: 1px solid rgba(27, 31, 35, 0.06);
+    cursor: default;
+    position: relative;
+  }
+  .day:hover {
+    outline: 1px solid #8b949e;
+  }
+  .day[data-count]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1b1f23;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+    margin-bottom: 4px;
+  }
+  /* Color scales per project */
+  .project-sourcelibrary .l1 { background: #0e4429; }
+  .project-sourcelibrary .l2 { background: #006d32; }
+  .project-sourcelibrary .l3 { background: #26a641; }
+  .project-sourcelibrary .l4 { background: #39d353; }
+
+  .project-quantum .l1 { background: #1a1a4e; }
+  .project-quantum .l2 { background: #2d2d8a; }
+  .project-quantum .l3 { background: #5050c8; }
+  .project-quantum .l4 { background: #7b7bff; }
+
+  .project-cellatlas .l1 { background: #4a1942; }
+  .project-cellatlas .l2 { background: #7a2d6e; }
+  .project-cellatlas .l3 { background: #b44a9a; }
+  .project-cellatlas .l4 { background: #e66cc0; }
+
+  .project-carddecks .l1 { background: #4a3000; }
+  .project-carddecks .l2 { background: #7a5000; }
+  .project-carddecks .l3 { background: #b47a00; }
+  .project-carddecks .l4 { background: #e6a800; }
+
+  .project-personalsite .l1 { background: #3a1a0a; }
+  .project-personalsite .l2 { background: #6a3010; }
+  .project-personalsite .l3 { background: #a04818; }
+  .project-personalsite .l4 { background: #d06020; }
+
+  .month-labels {
+    display: inline-grid;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+    grid-auto-columns: 13px;
+    gap: 3px;
+    margin-bottom: 4px;
+    font-size: 10px;
+    color: #8b949e;
+    height: 16px;
+  }
+  .month-label {
+    grid-column: span var(--span, 4);
+    text-align: left;
+    padding-left: 2px;
+  }
+  .day-labels {
+    display: grid;
+    grid-template-rows: repeat(7, 13px);
+    gap: 3px;
+    font-size: 10px;
+    color: #8b949e;
+    margin-right: 6px;
+    float: left;
+  }
+  .day-labels span:nth-child(even) { visibility: hidden; }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: #8b949e;
+  }
+  .legend .day { cursor: default; display: inline-block; }
+  .legend .day:hover { outline: none; }
+
+  .total-bar {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #21262d;
+  }
+  .total-bar h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 16px;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .bar-label {
+    width: 120px;
+    font-size: 13px;
+    color: #8b949e;
+    text-align: right;
+    padding-right: 12px;
+    flex-shrink: 0;
+  }
+  .bar {
+    height: 20px;
+    border-radius: 3px;
+    min-width: 2px;
+    transition: width 0.3s ease;
+  }
+  .bar-count {
+    font-size: 12px;
+    color: #8b949e;
+    margin-left: 8px;
+  }
+  .note {
+    margin-top: 24px;
+    padding: 12px 16px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<h1>Prompt Archaeology</h1>
+<p class="subtitle">
+  Every Claude Code session logs each prompt. These calendars show when and how
+  intensely each project was built — extracted from 767 sessions across 5 projects.
+</p>
+
+<div id="calendars"></div>
+
+<div class="total-bar" id="totals"></div>
+
+<div class="note">
+  <strong>Note:</strong> Timestamps only available from Feb 8, 2026 onward — earlier Claude Code
+  versions didn't embed timestamps. CellAtlas started Dec 4, 2025; Card Decks started Jan 2026.
+  Counts exclude tool results, plan implementations, and continuation summaries — only real human-typed prompts.
+</div>
+
+<script>
+const DATA = {
+  "Source Library": {
+    css: "sourcelibrary",
+    color: "#39d353",
+    sessions: 270,
+    prompts: 4951,
+    daily: {"2026-02-08":87,"2026-02-09":15,"2026-02-10":68,"2026-02-11":30,"2026-02-12":141,"2026-02-13":376,"2026-02-14":292,"2026-02-15":359,"2026-02-16":383,"2026-02-17":295,"2026-02-18":328,"2026-02-19":447,"2026-02-20":539,"2026-02-21":302,"2026-02-23":321,"2026-02-24":194,"2026-02-25":254,"2026-02-26":209,"2026-02-27":149,"2026-02-28":50,"2026-03-02":112}
+  },
+  "Quantum": {
+    css: "quantum",
+    color: "#7b7bff",
+    sessions: 469,
+    prompts: 1920,
+    daily: {"2026-02-09":40,"2026-02-10":1071,"2026-02-11":179,"2026-02-12":311,"2026-02-13":46,"2026-02-14":98,"2026-02-15":92,"2026-02-16":69,"2026-02-17":3,"2026-02-26":11}
+  },
+  "CellAtlas": {
+    css: "cellatlas",
+    color: "#e66cc0",
+    sessions: 7,
+    prompts: 70,
+    daily: {"2026-01-01":4,"2026-01-06":1,"2026-01-12":10,"2026-02-01":3,"2026-02-02":6,"2026-02-03":1,"2026-02-06":6,"2026-02-08":5,"2026-02-09":8,"2026-02-10":1,"2026-02-27":1,"2026-02-28":2,"2026-03-02":22}
+  },
+  "Personal Site": {
+    css: "personalsite",
+    color: "#d06020",
+    sessions: 19,
+    prompts: 254,
+    daily: {"2026-01-30":15,"2026-01-31":2,"2026-02-01":16,"2026-02-02":10,"2026-02-03":19,"2026-02-04":89,"2026-02-05":21,"2026-02-10":4,"2026-02-11":25,"2026-02-13":7,"2026-02-16":11,"2026-02-26":7,"2026-03-02":28}
+  },
+  "Card Decks": {
+    css: "carddecks",
+    color: "#e6a800",
+    sessions: 2,
+    prompts: 4,
+    daily: {"2026-02-27":4}
+  }
+};
+
+// Find the full date range across all projects
+let allDates = [];
+for (const p of Object.values(DATA)) {
+  allDates.push(...Object.keys(p.daily));
+}
+allDates.sort();
+const startDate = new Date(allDates[0] + 'T00:00:00');
+const endDate = new Date(allDates[allDates.length - 1] + 'T00:00:00');
+
+// Extend to start on a Sunday
+while (startDate.getDay() !== 0) {
+  startDate.setDate(startDate.getDate() - 1);
+}
+// Extend to end on a Saturday
+while (endDate.getDay() !== 6) {
+  endDate.setDate(endDate.getDate() + 1);
+}
+
+function dateStr(d) {
+  return d.toISOString().split('T')[0];
+}
+
+function buildCalendar(name, project) {
+  const container = document.createElement('div');
+  container.className = `project project-${project.css}`;
+
+  // Header
+  const header = document.createElement('div');
+  header.className = 'project-header';
+  header.innerHTML = `
+    <span class="project-name">${name}</span>
+    <span class="project-stats">${project.sessions} sessions · ${project.prompts.toLocaleString()} prompts</span>
+  `;
+  container.appendChild(header);
+
+  const calWrap = document.createElement('div');
+  calWrap.className = 'calendar-container';
+
+  // Day labels
+  const dayLabels = document.createElement('div');
+  dayLabels.className = 'day-labels';
+  ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d => {
+    const s = document.createElement('span');
+    s.textContent = d;
+    dayLabels.appendChild(s);
+  });
+  calWrap.appendChild(dayLabels);
+
+  const rightSide = document.createElement('div');
+  rightSide.style.display = 'inline-block';
+
+  // Month labels
+  const monthLabels = document.createElement('div');
+  monthLabels.className = 'month-labels';
+
+  // Calculate weeks and month boundaries
+  const weeks = [];
+  let current = new Date(startDate);
+  let weekDays = [];
+  while (current <= endDate) {
+    weekDays.push(new Date(current));
+    if (current.getDay() === 6 || current.getTime() === endDate.getTime()) {
+      weeks.push(weekDays);
+      weekDays = [];
+    }
+    current.setDate(current.getDate() + 1);
+  }
+
+  // Month labels spanning correct weeks
+  let lastMonth = -1;
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let monthSpans = [];
+  for (let w = 0; w < weeks.length; w++) {
+    const firstDay = weeks[w][0];
+    const m = firstDay.getMonth();
+    if (m !== lastMonth) {
+      if (monthSpans.length > 0) {
+        monthSpans[monthSpans.length - 1].end = w;
+      }
+      monthSpans.push({ month: m, start: w, end: weeks.length });
+      lastMonth = m;
+    }
+  }
+  if (monthSpans.length > 0) {
+    monthSpans[monthSpans.length - 1].end = weeks.length;
+  }
+
+  for (const ms of monthSpans) {
+    const span = ms.end - ms.start;
+    const label = document.createElement('span');
+    label.className = 'month-label';
+    label.style.setProperty('--span', span);
+    label.textContent = monthNames[ms.month];
+    monthLabels.appendChild(label);
+  }
+  rightSide.appendChild(monthLabels);
+
+  // Determine quartiles for this project
+  const values = Object.values(project.daily).sort((a, b) => a - b);
+  const maxVal = values.length ? values[values.length - 1] : 0;
+  const q1 = maxVal * 0.25;
+  const q2 = maxVal * 0.5;
+  const q3 = maxVal * 0.75;
+
+  // Calendar grid
+  const grid = document.createElement('div');
+  grid.className = 'calendar';
+
+  current = new Date(startDate);
+  while (current <= endDate) {
+    const ds = dateStr(current);
+    const count = project.daily[ds] || 0;
+    const day = document.createElement('div');
+    day.className = 'day';
+
+    if (count > 0) {
+      let level = 'l1';
+      if (count > q3) level = 'l4';
+      else if (count > q2) level = 'l3';
+      else if (count > q1) level = 'l2';
+      day.classList.add(level);
+      day.setAttribute('data-count', count);
+
+      const dateFormatted = current.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      day.setAttribute('data-tooltip', `${count} prompts on ${dateFormatted}`);
+    }
+
+    grid.appendChild(day);
+    current.setDate(current.getDate() + 1);
+  }
+
+  rightSide.appendChild(grid);
+  calWrap.appendChild(rightSide);
+  container.appendChild(calWrap);
+
+  // Legend
+  const legend = document.createElement('div');
+  legend.className = 'legend';
+  legend.innerHTML = `
+    Less <div class="day"></div><div class="day l1"></div><div class="day l2"></div><div class="day l3"></div><div class="day l4"></div> More
+  `;
+  container.appendChild(legend);
+
+  return container;
+}
+
+// Build all calendars
+const calendarsEl = document.getElementById('calendars');
+for (const [name, project] of Object.entries(DATA)) {
+  calendarsEl.appendChild(buildCalendar(name, project));
+}
+
+// Build totals bar chart
+const totalsEl = document.getElementById('totals');
+totalsEl.innerHTML = '<h2>Total Prompts by Project</h2>';
+const maxPrompts = Math.max(...Object.values(DATA).map(p => p.prompts));
+const sortedProjects = Object.entries(DATA).sort((a, b) => b[1].prompts - a[1].prompts);
+
+for (const [name, project] of sortedProjects) {
+  const row = document.createElement('div');
+  row.className = 'bar-row';
+  const pct = (project.prompts / maxPrompts) * 100;
+  row.innerHTML = `
+    <span class="bar-label">${name}</span>
+    <div class="bar" style="width: ${Math.max(pct, 0.5)}%; background: ${project.color}"></div>
+    <span class="bar-count">${project.prompts.toLocaleString()}</span>
+  `;
+  totalsEl.appendChild(row);
+}
+</script>
+
+</body>
+</html>
