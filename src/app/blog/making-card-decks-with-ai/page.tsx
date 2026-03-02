@@ -298,16 +298,16 @@ export default function CardDecksPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The card decks were built across 4 Claude Code sessions and 195 prompts, spanning
+            The card decks were built across 6 Claude Code sessions and 321 prompts, spanning
             late December 2025 through January 2026. The real conversation is messier than a tidy
             pipeline description suggests:
           </p>
 
           <PromptCalendar
-            sessions={4}
-            prompts={195}
+            sessions={6}
+            prompts={321}
             color="#e6a800"
-            daily={{"2025-12-30":6,"2025-12-31":1,"2026-01-01":34,"2026-01-02":49,"2026-01-03":26,"2026-01-04":29,"2026-01-05":6,"2026-01-06":18,"2026-01-12":1,"2026-01-15":21,"2026-02-27":2,"2026-02-28":2}}
+            daily={{"2025-12-15":15,"2025-12-16":23,"2025-12-17":46,"2025-12-18":37,"2025-12-19":1,"2025-12-30":6,"2025-12-31":1,"2026-01-01":36,"2026-01-02":49,"2026-01-03":26,"2026-01-04":29,"2026-01-05":6,"2026-01-06":20,"2026-01-12":1,"2026-01-15":21,"2026-02-27":4}}
           />
 
           <div

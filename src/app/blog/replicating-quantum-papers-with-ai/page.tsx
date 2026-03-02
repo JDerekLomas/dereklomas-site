@@ -294,15 +294,15 @@ export default function QuantumPost() {
           <h2>How It Was Built</h2>
 
           <p>
-            The project spanned 469 Claude Code sessions and 2,942 prompts over three weeks in
+            The project spanned 469 Claude Code sessions and 16,837 prompts over three weeks in
             February 2026. The agent did the quantum computing. I steered:
           </p>
 
           <PromptCalendar
             sessions={469}
-            prompts={2942}
+            prompts={16837}
             color="#7b7bff"
-            daily={{"2026-02-09":50,"2026-02-10":1477,"2026-02-11":383,"2026-02-12":484,"2026-02-13":85,"2026-02-14":169,"2026-02-15":142,"2026-02-16":116,"2026-02-17":18,"2026-02-26":18}}
+            daily={{"2026-02-09":414,"2026-02-10":8177,"2026-02-11":1597,"2026-02-12":2516,"2026-02-13":923,"2026-02-14":1552,"2026-02-15":834,"2026-02-16":643,"2026-02-17":32,"2026-02-26":149}}
           />
 
           <div
