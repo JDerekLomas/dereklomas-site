@@ -200,7 +200,7 @@
 <h1>Prompt Archaeology</h1>
 <p class="subtitle">
   Every Claude Code session logs each prompt. These calendars show when and how
-  intensely each project was built — extracted from 767 sessions across 5 projects.
+  intensely each project was built — extracted from 770+ sessions across 5 projects.
 </p>
 
 <div id="calendars"></div>
@@ -208,9 +208,11 @@
 <div class="total-bar" id="totals"></div>
 
 <div class="note">
-  <strong>Note:</strong> Timestamps only available from Feb 8, 2026 onward — earlier Claude Code
-  versions didn't embed timestamps. CellAtlas started Dec 4, 2025; Card Decks started Jan 2026.
-  Counts exclude tool results, plan implementations, and continuation summaries — only real human-typed prompts.
+  <strong>Note:</strong> Source Library and Quantum timestamps only available from Feb 2026 onward —
+  earlier Claude Code versions didn't embed timestamps in JSONL. Card Deck counts for Jan 1-6 are
+  tool-call counts (conversation transcripts weren't preserved in that format).
+  CellAtlas started Dec 4, 2025 but most early sessions lack timestamps.
+  Counts exclude tool results, plan implementations, and continuation summaries where possible.
 </div>
 
 <script>
@@ -246,9 +248,9 @@ const DATA = {
   "Card Decks": {
     css: "carddecks",
     color: "#e6a800",
-    sessions: 2,
-    prompts: 4,
-    daily: {"2026-02-27":4}
+    sessions: 5,
+    prompts: 192,
+    daily: {"2026-01-01":84,"2026-01-03":18,"2026-01-04":46,"2026-01-06":40,"2026-02-27":4}
   }
 };
 
