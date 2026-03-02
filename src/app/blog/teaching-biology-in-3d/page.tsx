@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 
@@ -43,6 +44,9 @@ export default function BlenderCellPost() {
           <p className="font-sans text-sm text-muted">
             2 March 2026 &middot; 8 min read
           </p>
+          <div className="mt-8 rounded-lg overflow-hidden">
+            <Image src="/images/blog/blendercell.png" alt="BlenderCell interactive 3D cell viewer" width={800} height={400} className="w-full" />
+          </div>
         </header>
 
         {/* Body */}

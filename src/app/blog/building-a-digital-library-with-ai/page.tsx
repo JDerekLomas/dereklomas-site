@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 
@@ -41,8 +42,11 @@ export default function SourceLibraryPost() {
             How I used Gemini, Lambda workers, and MongoDB to OCR and translate 4,430 books in 30 languages &mdash; for about $3,400 total.
           </p>
           <p className="font-sans text-sm text-muted">
-            2 March 2026 &middot; 12 min read
+            27 February 2026 &middot; 12 min read
           </p>
+          <div className="mt-8 rounded-lg overflow-hidden">
+            <Image src="/images/blog/source-library.jpg" alt="Splendor Solis illuminated manuscript — a page from Source Library's collection" width={800} height={400} className="w-full" />
+          </div>
         </header>
 
         {/* Body */}
@@ -56,9 +60,9 @@ export default function SourceLibraryPost() {
           </p>
 
           <p>
-            In early 2025, I started building{" "}
+            In December 2025, I started building{" "}
             <a href="https://sourcelibrary.org" target="_blank" rel="noopener noreferrer">Source Library</a>{" "}
-            to change that. One year later, the system has processed 4,430 books containing 1.67 million
+            to change that. Less than three months later, the system has processed 4,430 books containing 1.67 million
             page images from 15 institutional archives, in over 30 languages. 467,000 pages have been
             OCR&rsquo;d. 285,000 pages have been translated into English. Total AI processing cost: roughly
             $3,400.
@@ -281,6 +285,54 @@ export default function SourceLibraryPost() {
             The window where we have both the technology to process these texts and the scholars to validate
             the output is narrowing. Source Library is a bet that building the infrastructure now, while both
             exist, is worth the effort.
+          </p>
+
+          <h2>How It Was Built</h2>
+
+          <p>
+            Source Library was built almost entirely through Claude Code sessions. The prompts read
+            like a project diary:
+          </p>
+
+          <div
+            style={{
+              background: "var(--bg-dark)",
+              color: "#4ade80",
+              fontFamily: "var(--font-inter), monospace",
+              padding: "1.5em",
+              borderRadius: "8px",
+              fontSize: "13px",
+              lineHeight: "2",
+              margin: "2em 0",
+            }}
+          >
+            <span style={{ color: "#78716c" }}># December 2025</span><br />
+            &gt; I want to get to 200 books as quickly as possible... at least to &gt;50% translated<br />
+            <br />
+            <span style={{ color: "#78716c" }}># January 2026 — scaling</span><br />
+            &gt; I think a queue based write approach works, for high load data inputs.<br />
+            &gt; Things are pushed in a queue, and controllable number of workers insert<br />
+            <br />
+            <span style={{ color: "#78716c" }}># February 2026 — quality</span><br />
+            &gt; check on the translation progress<br />
+            &gt; I don&rsquo;t want gemini batch! only fifo with lambda<br />
+            &gt; check for other broken images<br />
+            &gt; the /letter to patrick collison needs more fact checking...
+          </div>
+
+          <p>
+            That queue-based write prompt led directly to the Writer Lambda architecture. The
+            &ldquo;check for broken images&rdquo; prompt uncovered the archive fallback chain.
+            Most of the system emerged this way &mdash; a problem noticed, a prompt typed,
+            a solution built in the same session.
+          </p>
+
+          <p>
+            You can watch a compressed replay of a Source Library building session at{" "}
+            <a href="https://codevibing.com/session/sourcelibrary" target="_blank" rel="noopener noreferrer">
+              codevibing.com
+            </a>
+            .
           </p>
 
           <p>

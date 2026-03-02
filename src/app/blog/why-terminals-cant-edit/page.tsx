@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import ShareButtons from "@/components/ShareButtons";
 import TableOfContents from "@/components/TableOfContents";
@@ -56,6 +57,9 @@ export default function WhyTerminalsCantEditPage() {
           <p className="font-sans text-sm text-muted">
             2 March 2026 &middot; 10 min read
           </p>
+          <div className="mt-8 rounded-lg overflow-hidden">
+            <Image src="/images/blog/terminal.png" alt="Retro CRT terminal with glowing green text" width={800} height={400} className="w-full" />
+          </div>
         </header>
 
         <TableOfContents sections={SECTIONS} />

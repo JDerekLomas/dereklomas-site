@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 
@@ -43,6 +44,9 @@ export default function QuantumPost() {
           <p className="font-sans text-sm text-muted">
             24 February 2026 &middot; 14 min read
           </p>
+          <div className="mt-8 rounded-lg overflow-hidden">
+            <Image src="/images/blog/quantum.jpg" alt="Starmon quantum processor chip" width={800} height={400} className="w-full" />
+          </div>
         </header>
 
         {/* Body */}
