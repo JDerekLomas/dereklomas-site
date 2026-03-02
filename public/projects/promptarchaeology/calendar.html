@@ -110,6 +110,31 @@
   .project-personalsite .l3 { background: #a04818; }
   .project-personalsite .l4 { background: #d06020; }
 
+  .project-aied .l1 { background: #4a1a1a; }
+  .project-aied .l2 { background: #8a2e2e; }
+  .project-aied .l3 { background: #cc4444; }
+  .project-aied .l4 { background: #ff6b6b; }
+
+  .project-playpowerlearn .l1 { background: #3d3000; }
+  .project-playpowerlearn .l2 { background: #6b5500; }
+  .project-playpowerlearn .l3 { background: #a88800; }
+  .project-playpowerlearn .l4 { background: #ffd43b; }
+
+  .project-lilbookies .l1 { background: #2a1f4e; }
+  .project-lilbookies .l2 { background: #4a3580; }
+  .project-lilbookies .l3 { background: #7a60c0; }
+  .project-lilbookies .l4 { background: #a78bfa; }
+
+  .project-clawdbot .l1 { background: #0f3b38; }
+  .project-clawdbot .l2 { background: #1a6b64; }
+  .project-clawdbot .l3 { background: #30a89e; }
+  .project-clawdbot .l4 { background: #4ecdc4; }
+
+  .project-codevibing .l1 { background: #4a1a3d; }
+  .project-codevibing .l2 { background: #7a2d66; }
+  .project-codevibing .l3 { background: #c060a0; }
+  .project-codevibing .l4 { background: #ff9ff3; }
+
   .month-labels {
     display: inline-grid;
     grid-template-rows: 1fr;
@@ -200,7 +225,8 @@
 <h1>Prompt Archaeology</h1>
 <p class="subtitle">
   Every Claude Code session logs each prompt. These calendars show when and how
-  intensely each project was built — extracted from 770+ sessions across 5 projects.
+  intensely each project was built — extracted from 1,224 sessions across 50+ projects,
+  Dec 2025 through Mar 2026.
 </p>
 
 <div id="calendars"></div>
@@ -208,11 +234,10 @@
 <div class="total-bar" id="totals"></div>
 
 <div class="note">
-  <strong>Note:</strong> Source Library and Quantum timestamps only available from Feb 2026 onward —
-  earlier Claude Code versions didn't embed timestamps in JSONL. Card Deck counts for Jan 1-6 are
-  tool-call counts (conversation transcripts weren't preserved in that format).
-  CellAtlas started Dec 4, 2025 but most early sessions lack timestamps.
-  Counts exclude tool results, plan implementations, and continuation summaries where possible.
+  <strong>Note:</strong> Prompts extracted from two storage formats: per-session JSONL transcripts (newer)
+  and global history.jsonl (older). Both formats are preserved. Counts exclude tool results,
+  plan implementations, slash commands, and continuation summaries — only real human-typed prompts.
+  Some overlap between formats means totals are approximate.
 </div>
 
 <script>
@@ -220,37 +245,72 @@ const DATA = {
   "Source Library": {
     css: "sourcelibrary",
     color: "#39d353",
-    sessions: 270,
-    prompts: 4951,
-    daily: {"2026-02-08":87,"2026-02-09":15,"2026-02-10":68,"2026-02-11":30,"2026-02-12":141,"2026-02-13":376,"2026-02-14":292,"2026-02-15":359,"2026-02-16":383,"2026-02-17":295,"2026-02-18":328,"2026-02-19":447,"2026-02-20":539,"2026-02-21":302,"2026-02-23":321,"2026-02-24":194,"2026-02-25":254,"2026-02-26":209,"2026-02-27":149,"2026-02-28":50,"2026-03-02":112}
+    sessions: 302,
+    prompts: 10092,
+    daily: {"2025-12-20":3,"2025-12-21":93,"2025-12-22":69,"2025-12-23":45,"2025-12-24":68,"2025-12-25":187,"2025-12-26":166,"2025-12-27":163,"2025-12-28":213,"2025-12-29":218,"2025-12-30":136,"2025-12-31":69,"2026-01-01":91,"2026-01-02":74,"2026-01-03":23,"2026-01-04":110,"2026-01-05":13,"2026-01-06":36,"2026-01-11":26,"2026-01-12":10,"2026-01-13":8,"2026-01-15":21,"2026-01-16":2,"2026-02-08":135,"2026-02-09":73,"2026-02-10":121,"2026-02-11":54,"2026-02-12":192,"2026-02-13":626,"2026-02-14":453,"2026-02-15":505,"2026-02-16":617,"2026-02-17":484,"2026-02-18":550,"2026-02-19":754,"2026-02-20":896,"2026-02-21":513,"2026-02-23":442,"2026-02-24":320,"2026-02-25":448,"2026-02-26":369,"2026-02-27":347,"2026-02-28":86,"2026-03-01":2,"2026-03-02":261}
   },
   "Quantum": {
     css: "quantum",
     color: "#7b7bff",
     sessions: 469,
-    prompts: 1920,
-    daily: {"2026-02-09":40,"2026-02-10":1071,"2026-02-11":179,"2026-02-12":311,"2026-02-13":46,"2026-02-14":98,"2026-02-15":92,"2026-02-16":69,"2026-02-17":3,"2026-02-26":11}
+    prompts: 2942,
+    daily: {"2026-02-09":50,"2026-02-10":1477,"2026-02-11":383,"2026-02-12":484,"2026-02-13":85,"2026-02-14":169,"2026-02-15":142,"2026-02-16":116,"2026-02-17":18,"2026-02-26":18}
+  },
+  "AIED": {
+    css: "aied",
+    color: "#ff6b6b",
+    sessions: 44,
+    prompts: 2867,
+    daily: {"2026-01-26":241,"2026-01-27":61,"2026-01-30":46,"2026-02-01":217,"2026-02-02":1508,"2026-02-03":794}
+  },
+  "PlayPower Learn": {
+    css: "playpowerlearn",
+    color: "#ffd43b",
+    sessions: 73,
+    prompts: 1903,
+    daily: {"2026-01-06":81,"2026-01-08":149,"2026-01-09":114,"2026-01-10":238,"2026-01-11":115,"2026-01-12":289,"2026-01-13":166,"2026-01-14":134,"2026-01-17":15,"2026-01-18":155,"2026-01-19":74,"2026-01-20":153,"2026-01-21":10,"2026-01-22":39,"2026-01-23":5,"2026-02-01":31,"2026-02-02":40,"2026-02-03":28,"2026-02-04":39,"2026-02-25":13,"2026-02-26":15}
+  },
+  "Lil Bookies": {
+    css: "lilbookies",
+    color: "#a78bfa",
+    sessions: 46,
+    prompts: 1663,
+    daily: {"2026-01-06":50,"2026-01-08":48,"2026-01-09":89,"2026-01-10":125,"2026-01-11":119,"2026-01-12":57,"2026-01-13":34,"2026-01-14":141,"2026-01-15":28,"2026-01-16":59,"2026-01-17":43,"2026-01-18":98,"2026-01-19":66,"2026-01-20":215,"2026-01-21":146,"2026-01-22":177,"2026-01-23":52,"2026-01-30":49,"2026-02-01":50,"2026-02-02":17}
+  },
+  "ClawdBot": {
+    css: "clawdbot",
+    color: "#4ecdc4",
+    sessions: 11,
+    prompts: 703,
+    daily: {"2026-01-25":8,"2026-01-26":97,"2026-01-28":7,"2026-01-30":58,"2026-02-01":11,"2026-02-02":151,"2026-02-03":94,"2026-02-04":140,"2026-02-05":107,"2026-02-06":8,"2026-02-11":22}
+  },
+  "CodeVibing": {
+    css: "codevibing",
+    color: "#ff9ff3",
+    sessions: 9,
+    prompts: 495,
+    daily: {"2026-02-03":40,"2026-02-04":164,"2026-02-05":151,"2026-02-06":6,"2026-02-08":3,"2026-02-09":6,"2026-02-11":59,"2026-03-02":66}
+  },
+  "Personal Site": {
+    css: "personalsite",
+    color: "#d06020",
+    sessions: 21,
+    prompts: 451,
+    daily: {"2026-01-26":22,"2026-01-28":1,"2026-01-29":2,"2026-01-30":36,"2026-01-31":3,"2026-02-01":22,"2026-02-02":18,"2026-02-03":21,"2026-02-04":139,"2026-02-05":41,"2026-02-10":7,"2026-02-11":40,"2026-02-13":9,"2026-02-16":19,"2026-02-26":9,"2026-02-27":2,"2026-03-02":60}
+  },
+  "Card Decks": {
+    css: "carddecks",
+    color: "#e6a800",
+    sessions: 4,
+    prompts: 195,
+    daily: {"2025-12-30":6,"2025-12-31":1,"2026-01-01":34,"2026-01-02":49,"2026-01-03":26,"2026-01-04":29,"2026-01-05":6,"2026-01-06":18,"2026-01-12":1,"2026-01-15":21,"2026-02-27":2,"2026-02-28":2}
   },
   "CellAtlas": {
     css: "cellatlas",
     color: "#e66cc0",
     sessions: 7,
-    prompts: 70,
-    daily: {"2026-01-01":4,"2026-01-06":1,"2026-01-12":10,"2026-02-01":3,"2026-02-02":6,"2026-02-03":1,"2026-02-06":6,"2026-02-08":5,"2026-02-09":8,"2026-02-10":1,"2026-02-27":1,"2026-02-28":2,"2026-03-02":22}
-  },
-  "Personal Site": {
-    css: "personalsite",
-    color: "#d06020",
-    sessions: 19,
-    prompts: 254,
-    daily: {"2026-01-30":15,"2026-01-31":2,"2026-02-01":16,"2026-02-02":10,"2026-02-03":19,"2026-02-04":89,"2026-02-05":21,"2026-02-10":4,"2026-02-11":25,"2026-02-13":7,"2026-02-16":11,"2026-02-26":7,"2026-03-02":28}
-  },
-  "Card Decks": {
-    css: "carddecks",
-    color: "#e6a800",
-    sessions: 5,
-    prompts: 192,
-    daily: {"2026-01-01":84,"2026-01-03":18,"2026-01-04":46,"2026-01-06":40,"2026-02-27":4}
+    prompts: 129,
+    daily: {"2026-01-01":9,"2026-01-06":1,"2026-01-12":17,"2026-02-01":3,"2026-02-02":13,"2026-02-03":1,"2026-02-06":12,"2026-02-08":9,"2026-02-09":14,"2026-02-10":3,"2026-02-27":1,"2026-02-28":4,"2026-03-02":42}
   }
 };
 
