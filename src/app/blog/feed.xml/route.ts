@@ -1,38 +1,5 @@
 const posts = [
   {
-    slug: "building-a-digital-library-with-ai",
-    title: "Building a 1.67-Million-Page Digital Library with AI",
-    description:
-      "How I used Gemini, Lambda workers, and MongoDB to OCR and translate 4,430 books in 30 languages — for about $3,400 total.",
-    date: "2026-03-02",
-    tag: "Building in Public",
-  },
-  {
-    slug: "replicating-quantum-papers-with-ai",
-    title:
-      "I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke.",
-    description:
-      "An AI agent autonomously ran 105+ experiments across IBM, Quantum Inspire, and IQM hardware. 93% of published claims held up.",
-    date: "2026-03-02",
-    tag: "Research",
-  },
-  {
-    slug: "translating-the-renaissance",
-    title: "To Create a Second Renaissance, Translate the First",
-    description:
-      "533,000 Latin editions were printed between 1450 and 1700. Fewer than 3% have ever been translated into English.",
-    date: "2026-03-02",
-    tag: "Essay",
-  },
-  {
-    slug: "making-card-decks-with-ai",
-    title: "Making Card Decks with AI: From Prompt to Print",
-    description:
-      "A pipeline that turns card concepts into AI-generated artwork, web-rendered layouts, and print-ready files.",
-    date: "2026-03-02",
-    tag: "Creative Tech",
-  },
-  {
     slug: "teaching-biology-in-3d",
     title:
       "Teaching Biology in 3D: Building Interactive Cell Viewers with Blender and Three.js",
@@ -48,6 +15,39 @@ const posts = [
       "The 1978 architecture decision that still shapes how 50 million developers work.",
     date: "2026-03-02",
     tag: "Technical",
+  },
+  {
+    slug: "building-a-digital-library-with-ai",
+    title: "Building a 1.67-Million-Page Digital Library with AI",
+    description:
+      "How I used Gemini, Lambda workers, and MongoDB to OCR and translate 4,430 books in 30 languages — for about $3,400 total.",
+    date: "2026-02-27",
+    tag: "Building in Public",
+  },
+  {
+    slug: "replicating-quantum-papers-with-ai",
+    title:
+      "I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke.",
+    description:
+      "An AI agent autonomously ran 105+ experiments across IBM, Quantum Inspire, and IQM hardware. 93% of published claims held up.",
+    date: "2026-02-24",
+    tag: "Research",
+  },
+  {
+    slug: "translating-the-renaissance",
+    title: "To Create a Second Renaissance, Translate the First",
+    description:
+      "533,000 Latin editions were printed between 1450 and 1700. Fewer than 3% have ever been translated into English.",
+    date: "2026-01-28",
+    tag: "Essay",
+  },
+  {
+    slug: "making-card-decks-with-ai",
+    title: "Making Card Decks with AI: From Prompt to Print",
+    description:
+      "A pipeline that turns card concepts into AI-generated artwork, web-rendered layouts, and print-ready files.",
+    date: "2026-01-16",
+    tag: "Creative Tech",
   },
 ];
 
