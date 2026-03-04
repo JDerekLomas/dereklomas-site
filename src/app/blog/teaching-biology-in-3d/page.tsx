@@ -5,6 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
 import PromptCalendar from "@/components/PromptCalendar";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function BlenderCellPost() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js"
+        description="I'm building an atlas of interactive 3D cell models — 9 cells so far — where students can rotate, zoom, and click on organelles to learn how they work."
+        slug="teaching-biology-in-3d"
+        datePublished="2026-03-02"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -61,7 +68,7 @@ export default function BlenderCellPost() {
             Biology textbooks show cells as flat diagrams with labeled arrows. The mitochondria is an
             oblong blob. The endoplasmic reticulum is a stack of wavy lines. The cell membrane is a
             circle. These diagrams are useful abstractions, but they teach students to think of cells as
-            two-dimensional &mdash; and cells are not two-dimensional.
+            two-dimensional. Cells aren&rsquo;t flat.
           </p>
 
           <p>
@@ -97,11 +104,9 @@ export default function BlenderCellPost() {
 
           <p>
             Every cell is built procedurally in Three.js &mdash; no imported 3D models. Each organelle is
-            constructed from geometric primitives: SphereGeometry for nuclei and vesicles, TorusGeometry
-            for the ER, LatheGeometry for membrane-bound structures, InstancedMesh for ribosomes. The
-            dimensions are scaled from real electron microscopy data: a nucleus is 5&ndash;10 micrometers
-            (radius 2&ndash;4 in the model), mitochondria are 0.5&ndash;1 micrometer, and ribosomes are
-            wildly enlarged &mdash; about 100x their real size &mdash; for visibility.
+            constructed from geometric primitives: spheres, toruses, lathes, instanced meshes. The
+            dimensions are scaled from real electron microscopy data, though ribosomes are enlarged
+            about 100x for visibility &mdash; at real scale you&rsquo;d never find them.
           </p>
 
           <p>
@@ -142,9 +147,8 @@ export default function BlenderCellPost() {
           </p>
 
           <p>
-            The color palette is consistent across all cells: membrane in light blue (#a2c2e8), nucleus
-            in deep purple (#2E1A47), rough ER in turquoise (#40E0D0), Golgi in gold (#FFD700),
-            mitochondria in tomato red (#FF6347). Students who learn the plasma cell immediately
+            The color palette is consistent across all cells: blue membranes, purple nuclei, turquoise
+            ER, gold Golgi, red mitochondria. Students who learn the plasma cell immediately
             recognize organelles when they open the macrophage.
           </p>
 
@@ -218,7 +222,7 @@ export default function BlenderCellPost() {
           <h2>Procedural Animations</h2>
 
           <p>
-            Static 3D models are better than flat diagrams, but animated models are better still. The
+            But the real payoff is animation. The
             atlas uses several procedural animation systems:
           </p>
 
@@ -250,15 +254,15 @@ export default function BlenderCellPost() {
             The transparency hierarchy is the key pedagogical decision. Making the cell membrane nearly
             invisible says: &ldquo;the boundary matters, but look <em>inside</em>.&rdquo; Making
             mitochondrial cristae 80% opaque inside a 40% opaque outer membrane says: &ldquo;there&rsquo;s
-            structure within structure.&rdquo; Every opacity value is a teaching choice.
+            structure within structure.&rdquo; Getting the opacity right took most of the time.
           </p>
 
           <p>
             The rod photoreceptor taught me something else: students remember processes, not parts. The
             static version of the rod &mdash; here are the discs, here is the synapse &mdash; is
             informative. The animated version &mdash; fire a photon and watch the cascade close ion
-            channels and stop glutamate release &mdash; is <em>memorable</em>. The disc stack isn&rsquo;t
-            just a structure anymore; it&rsquo;s a machine that does something you can watch.
+            channels and stop glutamate release &mdash; is <em>memorable</em>. You can watch
+            the disc stack do something. That&rsquo;s the difference.
           </p>
 
           <p>

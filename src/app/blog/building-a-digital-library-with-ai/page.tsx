@@ -5,6 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
 import PromptCalendar from "@/components/PromptCalendar";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Building a 1.67-Million-Page Digital Library with AI",
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function SourceLibraryPost() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="Building a 1.67-Million-Page Digital Library with AI"
+        description="How I used Gemini, Lambda workers, and MongoDB to OCR and translate 4,430 books in 30 languages — for about $3,400 total."
+        slug="building-a-digital-library-with-ai"
+        datePublished="2026-02-27"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -74,10 +81,6 @@ export default function SourceLibraryPost() {
             $3,400.
           </p>
 
-          <p>
-            This is the technical story of how that works.
-          </p>
-
           <h2>The Pipeline</h2>
 
           <p>
@@ -87,7 +90,7 @@ export default function SourceLibraryPost() {
             automatic retry logic (three attempts before marking <code>failed</code>).
           </p>
 
-          <p>The stages, in order:</p>
+          <p>I had to write this list to remember them all:</p>
 
           <ol style={{ textIndent: 0, textAlign: "left", paddingLeft: "1.25em", lineHeight: "1.8" }}>
             <li><strong>Import</strong> &mdash; Pull metadata and page images from 13 different archive APIs (Internet Archive, Gallica, Bavarian State Library, Vatican, Bodleian, and others)</li>
@@ -123,7 +126,7 @@ export default function SourceLibraryPost() {
           </p>
 
           <p>
-            The cost structure made Gemini the clear choice. The Batch API runs at 50% of realtime pricing,
+            Gemini was cheapest. The Batch API runs at 50% of realtime pricing,
             bringing per-page OCR cost to about $0.001. Translation is similar. For a typical 300-page book,
             the full pipeline &mdash; OCR, translation, summary, image extraction &mdash; costs about $1.20.
           </p>
@@ -152,7 +155,7 @@ export default function SourceLibraryPost() {
           <h2>The MongoDB Connection Storm</h2>
 
           <p>
-            The hardest scaling problem wasn&rsquo;t AI &mdash; it was the database. When 600+ Lambda workers
+            The worst scaling problem was the database. When 600+ Lambda workers
             are processing pages concurrently, each one opening a MongoDB Atlas connection, writing results,
             and closing the connection, you get connection storms that exhaust the cluster&rsquo;s connection
             pool.
@@ -185,7 +188,7 @@ export default function SourceLibraryPost() {
 
           <p>
             The mitigation is straightforward: realtime processing uses a fallback chain
-            (gemini-2.5-flash, then gemini-2.0-flash, then gemini-1.5-flash) when safety filters trigger, and
+            (falling back through Gemini model versions) when safety filters trigger, and
             all hallucinations are logged to a dedicated <code>gemini_usage</code> collection for analysis.
             Every prompt version is immutable in the database with auto-incrementing IDs, so every page&rsquo;s
             output is traceable to the exact prompt that produced it.
@@ -208,8 +211,8 @@ export default function SourceLibraryPost() {
 
           <p>
             OCR prompts output <code>&lt;column-break/&gt;</code> markers to preserve reading order within
-            multi-column pages. This sounds like a detail, but getting it wrong means sentences from column A
-            interleave with sentences from column B, rendering the entire page nonsensical.
+            multi-column pages. Get it wrong and sentences from column A interleave with
+            column B. The whole page becomes nonsensical.
           </p>
 
           <h2>What&rsquo;s in the Library</h2>
@@ -251,8 +254,8 @@ export default function SourceLibraryPost() {
 
           <p>
             Every tool returns structured data with citation URLs &mdash; if an AI finds a passage, it can
-            link directly to the page on sourcelibrary.org where that passage appears. The library isn&rsquo;t
-            just a website; it&rsquo;s a knowledge layer that other systems can build on.
+            link directly to the page on sourcelibrary.org where that passage appears. Other
+            systems can build on top of it.
           </p>
 
           <h2>Cost and Scale</h2>
@@ -271,14 +274,14 @@ export default function SourceLibraryPost() {
           <p>
             The translations are not publication-grade. They&rsquo;re research-grade &mdash; accurate enough for
             discovery, for finding the passage you need, for understanding argument structure, for deciding
-            whether a book warrants serious scholarly attention. The difference matters. This isn&rsquo;t
-            replacing translators; it&rsquo;s building the index that tells translators where to look.
+            whether a book warrants serious scholarly attention. The difference matters. None of
+            this replaces translators. It builds the index that tells them where to look.
           </p>
 
           <h2>Why Now</h2>
 
           <p>
-            Three conditions are simultaneously true right now, and may not be for long:
+            This works right now because of a coincidence:
           </p>
 
           <ol style={{ textIndent: 0, textAlign: "left", paddingLeft: "1.25em", lineHeight: "1.8" }}>

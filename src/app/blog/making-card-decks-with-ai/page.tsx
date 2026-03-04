@@ -5,6 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
 import PromptCalendar from "@/components/PromptCalendar";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Making Card Decks with AI: From Prompt to Print",
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function CardDecksPost() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="Making Card Decks with AI: From Prompt to Print"
+        description="I built a pipeline that turns a JSON file of card concepts into AI-generated artwork, web-rendered card layouts, and print-ready files for physical production."
+        slug="making-card-decks-with-ai"
+        datePublished="2026-01-16"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -60,8 +67,8 @@ export default function CardDecksPost() {
           <p>
             I design card decks for workshops. Futures thinking, relationship therapy, alchemical
             symbolism, plant intelligence &mdash; the topics vary, but the format is the same: a deck
-            of 40&ndash;70 cards that participants draw, combine, and interpret. Cards are an extraordinarily
-            effective design medium. They&rsquo;re tangible, combinatorial, and they force you to distill
+            of 40&ndash;70 cards that participants draw, combine, and interpret. I keep using
+            cards for a reason: they&rsquo;re tangible, combinatorial, and they force you to distill
             an idea down to a title, an image, and a sentence or two.
           </p>
 
@@ -199,7 +206,7 @@ export default function CardDecksPost() {
           </p>
 
           <p>
-            Typography matters more than you&rsquo;d expect. Card titles need to be large enough to read
+            Typography took more time than I expected. Card titles need to be large enough to read
             at arm&rsquo;s length. Subtitles in italics. Context text sized for close reading. The
             rendering template handles all of this with CSS &mdash; cards are effectively tiny web pages.
           </p>
@@ -211,12 +218,10 @@ export default function CardDecksPost() {
             matter:
           </p>
 
-          <ul>
-            <li>Physical card size: 89 &times; 148mm (with 4mm bleed)</li>
-            <li>Trim size: ~80 &times; 140mm after cutting</li>
-            <li>Color: RGB PNGs &mdash; printers handle CMYK conversion</li>
-            <li>Corners: square (the printer die-cuts rounded corners)</li>
-          </ul>
+          <p>
+            The output is roughly tarot-sized PNGs with bleed margins, square corners (the
+            printer die-cuts the rounds), and RGB color &mdash; printers handle the CMYK conversion.
+          </p>
 
           <p>
             For small runs (1&ndash;25 decks), MakePlayingCards.com is cheapest: about $30&ndash;40 for
@@ -244,7 +249,7 @@ export default function CardDecksPost() {
           </p>
 
           <p>
-            This is where card decks become something more than printed artifacts. The physical cards
+            This goes beyond printed cards. The physical cards
             set up the combinatorial space. The AI fills it with meaning. Draw the same three cards
             twice and you get different scenarios &mdash; the cards are constraints, not scripts.
           </p>
@@ -291,8 +296,8 @@ export default function CardDecksPost() {
           <p>
             The AI pipeline makes it feasible to create decks for any context. A workshop on climate
             adaptation? Design a deck in an afternoon. A therapy exercise for couples? A deck. A
-            classroom activity on molecular biology? A deck. The constraint isn&rsquo;t creativity
-            or cost anymore &mdash; it&rsquo;s having something worth making cards about.
+            classroom activity on molecular biology? A deck. The bottleneck now is having
+            something worth making cards about.
           </p>
 
           <h2>How It Was Built</h2>

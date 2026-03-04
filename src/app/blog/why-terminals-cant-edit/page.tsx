@@ -5,6 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import ShareButtons from "@/components/ShareButtons";
 import TableOfContents from "@/components/TableOfContents";
 import CusdisComments from "@/components/CusdisComments";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 const SECTIONS = [
   { id: "the-character-grid", title: "The Character Grid" },
@@ -37,6 +38,12 @@ export const metadata: Metadata = {
 export default function WhyTerminalsCantEditPage() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="Why You Can't Click to Place Your Cursor in a Terminal"
+        description="Terminal emulators don't know what's on screen. They draw characters on a grid and forward keystrokes. That architectural decision from 1978 is why basic text editing feels broken in 2026."
+        slug="why-terminals-cant-edit"
+        datePublished="2026-03-02"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -89,8 +96,7 @@ export default function WhyTerminalsCantEditPage() {
             I went looking for a terminal that could. I tried Ghostty, iTerm2, Warp, Kitty. None of them
             support it. I asked on Hacker News. The responses split into two camps: &ldquo;that&rsquo;s
             not the terminal&rsquo;s job&rdquo; and &ldquo;of course it&rsquo;s the terminal&rsquo;s
-            job.&rdquo; Both are right, and the reason both are right reveals something genuinely strange
-            about how we build software in 2026.
+            job.&rdquo; Both are right. The explanation is weirder than either camp realizes.
           </p>
 
           <h2 id="the-character-grid">The Character Grid</h2>
@@ -104,7 +110,7 @@ export default function WhyTerminalsCantEditPage() {
           <p>
             This design comes from the{" "}
             <a href="https://en.wikipedia.org/wiki/VT100" target="_blank" rel="noopener noreferrer">DEC VT100</a>,
-            released in 1978. The VT100 was a physical device &mdash;
+            released in the late &rsquo;70s. The VT100 was a physical device &mdash;
             a screen and keyboard connected to a remote computer via a{" "}
             <a href="https://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-003_VT100_User_Guide_Jun82.pdf" target="_blank" rel="noopener noreferrer">serial cable</a>.
             The computer sent characters down the wire. The VT100 drew them. The user typed. The VT100 sent those keystrokes
@@ -125,12 +131,11 @@ export default function WhyTerminalsCantEditPage() {
           <h2 id="the-blindness-problem">The Blindness Problem</h2>
 
           <p>
-            Here is the fundamental issue: <strong>the terminal emulator does not know what is on
-            screen.</strong>
+            <strong>The terminal emulator does not know what is on screen.</strong>
           </p>
 
           <p>
-            That sounds absurd &mdash; it&rsquo;s drawing the screen, how can it not know? But the
+            It draws the screen, so how can it not know? But the
             terminal only knows what characters are at which grid positions. It does not know what those
             characters <em>mean</em>. When you see this:
           </p>
@@ -203,8 +208,8 @@ export default function WhyTerminalsCantEditPage() {
           <h2 id="two-programs-problem">The Two Programs Problem</h2>
 
           <p>
-            The situation gets worse when you consider that the terminal doesn&rsquo;t even know
-            which program is running inside it. When you launch a terminal, it starts your shell (zsh,
+            It gets worse. The terminal doesn&rsquo;t even know which program is running inside it.
+            When you launch a terminal, it starts your shell (zsh,
             bash, fish). But the shell launches other programs &mdash; git, python, vim, ssh &mdash; and those
             programs take over the terminal. Each one handles input differently.
           </p>
@@ -333,11 +338,11 @@ export default function WhyTerminalsCantEditPage() {
             So here we are in 2026, using AI to write software through an interface designed for
             connecting teletypes to mainframes. The irony isn&rsquo;t lost on me. Claude Code &mdash; maybe
             the most advanced consumer of terminal I/O ever built &mdash; is still bound by the
-            same character grid that constrained a DEC engineer 48 years ago.
+            same character grid that constrained DEC engineers almost fifty years ago.
           </p>
 
           <p>
-            The terminal has survived this long precisely because of its simplicity. The VT100 contract
+            The terminal survives because the contract is so simple. The VT100 contract
             is universal: any program that can write bytes and read keystrokes can use a terminal. That
             universality is why we still use terminals at all, instead of building bespoke GUIs for every
             tool. It&rsquo;s a lowest-common-denominator interface that happens to be good enough for
@@ -347,7 +352,7 @@ export default function WhyTerminalsCantEditPage() {
           <p>
             Almost. The one thing it&rsquo;s not good enough for is the thing every other application on
             your computer has done{" "}
-            <a href="https://en.wikipedia.org/wiki/MacWrite" target="_blank" rel="noopener noreferrer">since 1984</a>:
+            <a href="https://en.wikipedia.org/wiki/MacWrite" target="_blank" rel="noopener noreferrer">since the original Mac</a>:
             letting you click where you want to type.
           </p>
 

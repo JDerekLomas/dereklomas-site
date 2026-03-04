@@ -4,6 +4,7 @@ import Image from "next/image";
 import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "To Create a Second Renaissance, Translate the First",
@@ -25,6 +26,12 @@ export const metadata: Metadata = {
 export default function SecondRenaissancePost() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="To Create a Second Renaissance, Translate the First"
+        description="533,000 Latin editions were printed between 1450 and 1700. Fewer than 3% have ever been translated into English."
+        slug="translating-the-renaissance"
+        datePublished="2026-01-28"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -61,12 +68,12 @@ export default function SecondRenaissancePost() {
             Italy rediscovered ancient Greek and Roman texts that had been preserved in Arabic
             translations, retranslated them into Latin, and that flood of recovered knowledge reshaped
             European civilization. Copernicus read Ptolemy. Vesalius read Galen. Machiavelli read Livy.
-            The ideas weren&rsquo;t new &mdash; they were ancient. But making them readable again changed
-            everything.
+            The ideas weren&rsquo;t new &mdash; they were ancient. But making them readable again
+            changed how people thought.
           </p>
 
           <p>
-            Here is the irony: the Renaissance produced an enormous body of scholarship &mdash; five
+            And yet the Renaissance produced an enormous body of scholarship &mdash; five
             centuries of scientific, philosophical, theological, and literary work, most of it written
             in Latin &mdash; and we have largely forgotten it. Not because the books were lost. They
             weren&rsquo;t. They sit in libraries across Europe, many of them digitized and freely
@@ -171,7 +178,7 @@ export default function SecondRenaissancePost() {
           </p>
 
           <p>
-            This isn&rsquo;t an abstract problem. Consider early modern medicine. The 13,000+
+            Take early modern medicine. The 13,000+
             medical texts in the USTC represent a detailed record of how European physicians thought
             about disease, treatment, anatomy, and pharmacology during a period of extraordinary
             intellectual ferment. Historians of medicine can access a handful of canonical
@@ -201,7 +208,7 @@ export default function SecondRenaissancePost() {
           </p>
 
           <p>
-            The vision isn&rsquo;t to replace human translators. It&rsquo;s to build the index. Right
+            We&rsquo;re not trying to replace human translators. We&rsquo;re building the index. Right
             now, a scholar studying early modern chemistry has no way to know what&rsquo;s in the
             thousands of untranslated Latin chemistry texts sitting in European libraries. A
             research-grade translation layer turns the entire corpus into a searchable resource.
@@ -254,17 +261,15 @@ export default function SecondRenaissancePost() {
           <h2>The Window</h2>
 
           <p>
-            There is urgency here, though it&rsquo;s the slow urgency of generational change. The
-            scholars who can read Renaissance Latin, who understand the intellectual context of these
-            texts, who can validate AI translations &mdash; they are retiring. Their students are fewer.
-            The departments that trained them are shrinking.
+            The scholars who can read Renaissance Latin, who understand the intellectual context of
+            these texts, who can validate AI translations &mdash; they are retiring. Their students
+            are fewer. The departments that trained them are shrinking.
           </p>
 
           <p>
             AI translation without scholarly validation is dangerous &mdash; plausible-sounding output
-            that might be subtly wrong in ways only an expert would catch. The window where we have
-            both the technology to translate at scale and the scholars to validate the output is
-            narrowing.
+            that might be subtly wrong in ways only an expert would catch. We have maybe a generation
+            where both the technology and the expertise coexist.
           </p>
 
           <p>
@@ -272,7 +277,7 @@ export default function SecondRenaissancePost() {
             they recovered were degraded, copied by scribes who didn&rsquo;t always understand what
             they were copying, sometimes corrupted across centuries of transmission. The translators
             had to be both linguists and scholars &mdash; able to reconstruct meaning from imperfect
-            sources. Their work was imperfect too. But it was sufficient to change the world.
+            sources. Their work was imperfect too. It was enough.
           </p>
 
           <p>

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import InputWidget from "@/components/InputWidget";
+import { SiteSchema } from "@/components/SchemaOrg";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -97,6 +98,7 @@ export default function RootLayout({
           title="Derek Lomas — Blog"
           href="/blog/feed.xml"
         />
+        <SiteSchema />
       </head>
       <body className={`${cormorant.variable} ${newsreader.variable} ${inter.variable} min-h-screen flex flex-col`}>
         <Navigation />

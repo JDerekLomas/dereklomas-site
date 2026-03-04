@@ -5,6 +5,7 @@ import LikeButton from "@/components/LikeButton";
 import CusdisComments from "@/components/CusdisComments";
 import ShareButtons from "@/components/ShareButtons";
 import PromptCalendar from "@/components/PromptCalendar";
+import { BlogPostSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke.",
@@ -26,6 +27,12 @@ export const metadata: Metadata = {
 export default function QuantumPost() {
   return (
     <div className="min-h-screen py-16 px-6">
+      <BlogPostSchema
+        title="I Replicated 6 Quantum Computing Papers on 3 Platforms. Here's What Broke."
+        description="An AI agent autonomously ran 105+ experiments across IBM, Quantum Inspire, and IQM hardware. 93% of published claims held up."
+        slug="replicating-quantum-papers-with-ai"
+        datePublished="2026-02-24"
+      />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
         <Link
@@ -77,8 +84,8 @@ export default function QuantumPost() {
           </p>
 
           <p>
-            The headline: <strong>93% of published claims replicated successfully.</strong> But the two failures, and
-            the mistakes the agent made along the way, taught me more than the successes.
+            <strong>93% of published claims replicated successfully.</strong> The two that didn&rsquo;t
+            were more interesting.
           </p>
 
           <h2>The Protocol</h2>
@@ -136,7 +143,7 @@ export default function QuantumPost() {
           <h2>Why HeH+ Fails but H2 Succeeds</h2>
 
           <p>
-            Here&rsquo;s where it gets interesting. HeH+ (helium hydride) uses the exact same circuit
+            HeH+ (helium hydride) uses the exact same circuit
             structure as H2. Same number of qubits, same gates, same hardware. But the best result on
             HeH+ was 4.31 kcal/mol &mdash; not even close to chemical accuracy.
           </p>
@@ -144,8 +151,7 @@ export default function QuantumPost() {
           <p>
             The agent eventually identified why: <strong>coefficient amplification</strong>. In the
             Hamiltonian decomposition, each molecule has coefficients that weight different measurement
-            bases. For H2, the ratio of the Z-basis coefficient to the X/Y-basis coefficient is 4.4.
-            For HeH+, it&rsquo;s 23.6 &mdash; 5.4x larger.
+            bases. For H2, that ratio is modest. For HeH+, it&rsquo;s about five times larger.
           </p>
 
           <p>
@@ -165,7 +171,7 @@ export default function QuantumPost() {
           <h2>More Mitigation Is Not Better</h2>
 
           <p>
-            One of the most counterintuitive findings: stacking error mitigation techniques often makes
+            Stacking error mitigation techniques often makes
             results <em>worse</em>. The agent systematically tested 8 mitigation configurations on H2:
           </p>
 
@@ -281,13 +287,13 @@ export default function QuantumPost() {
             But it didn&rsquo;t have physical intuition. It couldn&rsquo;t predict that calibration drift
             would invalidate pre-computed VQE parameters within hours. It couldn&rsquo;t tell you
             <em>why</em> TREX works better than ZNE for shallow circuits without being prompted to analyze
-            the error budget. It was a tireless, precise lab technician, not a physicist.
+            the error budget. Good lab technician. Not a physicist.
           </p>
 
           <p>
             For quantum computing in 2026, that&rsquo;s actually exactly what&rsquo;s needed. The
-            bottleneck isn&rsquo;t theoretical insight &mdash; it&rsquo;s systematic characterization,
-            cross-platform comparison, and honest failure analysis. An agent that can run 100 experiments
+            field doesn&rsquo;t need more theoretical insight right now. It needs systematic
+            characterization, cross-platform comparison, and honest failure analysis. An agent that can run 100 experiments
             overnight and produce a structured report by morning is genuinely useful.
           </p>
 
