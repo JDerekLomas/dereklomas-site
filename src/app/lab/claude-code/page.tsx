@@ -60,6 +60,20 @@ const skills: Tool[] = [
     tags: ["dataviz", "d3"],
   },
   {
+    name: "mulerouter",
+    description:
+      "Generate images and videos using MuleRouter multimodal APIs. Text-to-image, image-to-image, text-to-video with models like Wan2.6.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["generative", "images", "video"],
+  },
+  {
+    name: "source-research",
+    description:
+      "Search and cite primary sources from Source Library — 116+ digitized pre-modern texts with OCR and English translation.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["research", "humanities"],
+  },
+  {
     name: "literature-review",
     description:
       "Systematic literature reviews across PubMed, arXiv, bioRxiv, and Semantic Scholar with verified citations.",
@@ -72,6 +86,48 @@ const skills: Tool[] = [
       "Create animated canvas-based replays of Claude Code building sessions as standalone HTML files.",
     repo: "https://github.com/JDerekLomas/claude-code-skills",
     tags: ["meta", "sharing"],
+  },
+  {
+    name: "codevibing",
+    description:
+      "Post to codevibing.com — a social network for Claude Code users. Share what you're building with zero friction.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["social", "sharing"],
+  },
+  {
+    name: "steamquest-development",
+    description:
+      "Build educational STEAMQuest games with Three.js 3D interactives, ElevenLabs voice acting, and Vercel deployment.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["education", "games", "3d"],
+  },
+  {
+    name: "visual-compare",
+    description:
+      "Screenshot a reference app and a replica, use Claude vision to identify differences, and generate a gap report.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["design", "testing", "visual-diff"],
+  },
+  {
+    name: "html-to-svg",
+    description:
+      "Convert rendered HTML/CSS to outlined SVG vectors. Renders with Puppeteer, traces with potrace to clean vector paths.",
+    repo: "https://github.com/JDerekLomas/claude-code-skills",
+    tags: ["design", "svg", "graphics"],
+  },
+  {
+    name: "vercel-react-best-practices",
+    description:
+      "React and Next.js performance optimization guidelines from Vercel Engineering. Auto-reviews components for optimal patterns.",
+    link: "https://github.com/vercel-labs/agent-skills",
+    tags: ["performance", "react", "nextjs"],
+  },
+  {
+    name: "web-design-guidelines",
+    description:
+      "Review UI code against Web Interface Guidelines. Checks accessibility, usability, and responsive design.",
+    link: "https://github.com/vercel-labs/agent-skills",
+    tags: ["design", "accessibility", "review"],
   },
 ];
 

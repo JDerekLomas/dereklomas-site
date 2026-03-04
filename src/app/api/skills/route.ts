@@ -218,6 +218,42 @@ const skills = [
     },
     tags: ["design", "accessibility", "review"],
   },
+  {
+    id: "visual-compare",
+    name: "visual-compare",
+    category: "skill",
+    description:
+      "Visual comparison of a reference app against a replica build. Screenshots both via Chrome DevTools, uses Claude vision to identify differences, and generates gap reports.",
+    use_when:
+      "Auditing visual fidelity of a site clone, checking design replication, or doing a visual diff between two URLs.",
+    install: {
+      type: "symlink",
+      repo: "https://github.com/JDerekLomas/claude-code-skills",
+      commands: [
+        "git clone https://github.com/JDerekLomas/claude-code-skills.git ~/claude-code-skills",
+        "ln -s ~/claude-code-skills/visual-compare ~/.claude/skills/visual-compare",
+      ],
+    },
+    tags: ["design", "testing", "visual-diff"],
+  },
+  {
+    id: "html-to-svg",
+    name: "html-to-svg",
+    category: "skill",
+    description:
+      "Convert rendered HTML/CSS to outlined SVG vectors. Renders with Puppeteer at high resolution, traces with potrace to produce clean vector paths. All text becomes paths — no font dependencies.",
+    use_when:
+      "Creating SVG logos, converting text to vector outlines, or exporting any HTML component as a scalable vector graphic.",
+    install: {
+      type: "symlink",
+      repo: "https://github.com/JDerekLomas/claude-code-skills",
+      commands: [
+        "git clone https://github.com/JDerekLomas/claude-code-skills.git ~/claude-code-skills",
+        "ln -s ~/claude-code-skills/html-to-svg ~/.claude/skills/html-to-svg",
+      ],
+    },
+    tags: ["design", "svg", "graphics"],
+  },
 ];
 
 const mcpServers = [
