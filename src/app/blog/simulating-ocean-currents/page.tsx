@@ -55,9 +55,17 @@ export default function OceanCurrentsPost() {
           <p className="font-sans text-sm text-muted">
             9 April 2026 &middot; 7 min read
           </p>
-          <div className="mt-8 rounded-lg overflow-hidden">
-            <Image src="/images/blog/amoc-simulator.png" alt="Ocean Circulation Simulator running in the browser" width={800} height={400} className="w-full" />
-          </div>
+          <figure className="mt-8">
+            <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden">
+              <Image src="/images/blog/amoc-simulator.png" alt="Ocean Circulation Simulator running in the browser" width={800} height={400} className="w-full hover:opacity-90 transition-opacity" />
+            </a>
+            <figcaption className="text-center text-sm text-muted mt-3 font-sans">
+              The simulator running a global ocean circulation with temperature overlay.{" "}
+              <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer" className="text-rust hover:underline">
+                Try it live &rarr;
+              </a>
+            </figcaption>
+          </figure>
         </header>
 
         {/* Body */}
