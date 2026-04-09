@@ -70,20 +70,80 @@ export default function OceanCurrentsPost() {
 
         {/* Body */}
         <div className="prose">
+          <h2>What is the AMOC?</h2>
+
           <p>
-            Physical oceanography has a remarkable property: one equation explains almost all large-scale
-            ocean circulation. The barotropic vorticity equation describes how wind stress, the
-            Earth&rsquo;s rotation, and friction interact to produce the gyres and boundary currents we
-            see on every ocean map. I wanted to see if I could make that equation come alive in a browser.
+            The Atlantic Meridional Overturning Circulation — the AMOC — is one of the most important
+            systems on Earth that most people have never heard of. It&rsquo;s a vast conveyor belt of
+            ocean currents that carries warm water from the tropics northward through the Atlantic.
+            When that water reaches the North Atlantic, it cools, becomes denser, sinks to the deep
+            ocean, and flows back south. This circulation is what gives Western Europe its mild climate —
+            London sits at the same latitude as Calgary, but rarely sees -30&deg;C winters.
+          </p>
+
+          <p>
+            The AMOC is weakening. As Greenland&rsquo;s ice sheet melts, freshwater floods the North
+            Atlantic and dilutes the salty water that needs to sink. A{" "}
+            <a href="https://www.nature.com/articles/s41467-023-39810-w" target="_blank" rel="noopener noreferrer">
+              2023 study in <em>Nature Communications</em>
+            </a>{" "}
+            by Peter and Susanne Ditlevsen estimates the AMOC will collapse around 2057, with 95%
+            confidence the tipping point falls between 2025 and 2095. A more recent{" "}
+            <a href="https://www.science.org/doi/10.1126/sciadv.adk1189" target="_blank" rel="noopener noreferrer">
+              paper in <em>Science Advances</em>
+            </a>{" "}
+            found physics-based early warning signals confirming the system is on a tipping course.
+            If it collapses, Europe gets dramatically colder, sea levels rise along the Atlantic coast,
+            monsoon patterns shift, and agriculture across the Northern Hemisphere is disrupted.
+          </p>
+
+          <p>
+            I live in the Netherlands. This isn&rsquo;t a distant abstraction for me — it&rsquo;s the
+            most important climate risk to the place I call home.
+          </p>
+
+          <h2>Climate simulations you can&rsquo;t see</h2>
+
+          <p>
+            The problem with most climate science is that the simulations are invisible. Researchers
+            run massive numerical models on supercomputers, producing terabytes of data that get
+            distilled into charts and papers. The underlying physics is beautiful — the interplay of
+            wind, rotation, and friction that produces every major ocean current — but you&rsquo;d never
+            know it from looking at a time series plot.
+          </p>
+
+          <p>
+            Reading that the Gulf Stream carries 30 sverdrups of warm water northward is abstract.
+            Watching it form from nothing — watching the beta effect pull the flow to the western
+            boundary, watching the boundary current intensify as you increase wind stress — makes the
+            physics intuitive in a way that equations on a page never can.
+          </p>
+
+          <h2>Building it with Claude Code</h2>
+
+          <p>
+            In conversation with my friend{" "}
+            <a href="https://www.linkedin.com/in/lukebarrington/" target="_blank" rel="noopener noreferrer">
+              Luke Barrington
+            </a>, director of{" "}
+            <a href="https://research.google/blog/google-earth-ai-unlocking-geospatial-insights-with-foundation-models-and-cross-modal-reasoning/" target="_blank" rel="noopener noreferrer">
+              Google Earth AI
+            </a>, we wanted to see what was possible in a short time with{" "}
+            <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">
+              Claude Code
+            </a>.
+            Could we take the barotropic vorticity equation — the single equation that governs
+            large-scale ocean circulation — and make it run interactively in a browser?
           </p>
 
           <p>
             <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer">
-              The result is a real-time simulator
+              The result
             </a>{" "}
-            that runs the full barotropic vorticity equation on a 360&times;180 global grid, using WebGPU
-            compute shaders for GPU acceleration. You can watch currents form from nothing, paint new
-            continents, and trigger paleoclimate scenarios — all at interactive frame rates.
+            is a real-time simulator on a 360&times;180 global grid, using WebGPU
+            compute shaders for GPU acceleration. It evolved through four versions — from a
+            flat map with a simple two-box model, to a Three.js globe, to real satellite data overlays,
+            and finally to the full physics simulation running on the GPU.
           </p>
 
           <h2>One equation to rule them all</h2>
@@ -126,7 +186,7 @@ export default function OceanCurrentsPost() {
             and watch the circulation reorganize in real time. Paint a land bridge across the Drake
             Passage and the Antarctic Circumpolar Current collapses. Open a seaway through Panama and
             water flows between the Atlantic and Pacific. Melt Greenland and watch the freshwater
-            disrupt the Atlantic overturning circulation.
+            disrupt the overturning circulation.
           </p>
 
           <p>
@@ -137,13 +197,13 @@ export default function OceanCurrentsPost() {
           </p>
 
           <p>
-            There are preset scenarios that recreate key moments in Earth&rsquo;s climate history:
+            Preset scenarios recreate key moments in Earth&rsquo;s climate history:
           </p>
 
           <ul>
             <li><strong>Open Drake Passage</strong> — the event ~34 million years ago that isolated Antarctica and triggered its glaciation</li>
             <li><strong>Close Panama Seaway</strong> — the formation of the Isthmus of Panama ~3 million years ago that strengthened the Gulf Stream</li>
-            <li><strong>Melt Greenland</strong> — what happens when freshwater floods the North Atlantic (a scenario we may be heading toward)</li>
+            <li><strong>Melt Greenland</strong> — what happens when freshwater floods the North Atlantic</li>
             <li><strong>Ice Age</strong> — expanded polar ice sheets and their effect on circulation</li>
           </ul>
 
@@ -161,57 +221,19 @@ export default function OceanCurrentsPost() {
             slower but still functional. A badge in the corner tells you which backend you&rsquo;re using.
           </p>
 
-          <h2>Temperature and the AMOC</h2>
+          <h2>Simulating the collapse</h2>
 
           <p>
-            Beyond the vorticity-driven currents, the simulator includes a temperature field with
-            seasonal solar heating and buoyancy coupling. A slider lets you add freshwater forcing to
-            the North Atlantic — simulating what happens when ice sheets melt and dilute the salty
-            water that normally sinks to drive the Atlantic Meridional Overturning Circulation (AMOC).
+            The simulator includes a temperature field with seasonal solar heating and buoyancy
+            coupling. A freshwater forcing slider lets you simulate what happens when ice sheets melt
+            and dilute the salty water that drives the AMOC.
           </p>
 
           <p>
             Push the slider far enough and the AMOC collapses. The warm water that normally flows north
-            from the tropics weakens, and the North Atlantic cools. This isn&rsquo;t hypothetical — a{" "}
-            <a href="https://www.nature.com/articles/s41467-023-39810-w" target="_blank" rel="noopener noreferrer">
-              2023 study in <em>Nature Communications</em>
-            </a>{" "}
-            by Peter and Susanne Ditlevsen estimates the AMOC will collapse around 2057, with 95%
-            confidence the tipping point falls between 2025 and 2095. A more recent{" "}
-            <a href="https://www.science.org/doi/10.1126/sciadv.adk1189" target="_blank" rel="noopener noreferrer">
-              paper in <em>Science Advances</em>
-            </a>{" "}
-            found physics-based early warning signals confirming the AMOC is on a tipping course.
-          </p>
-
-          <h2>Why build this</h2>
-
-          <p>
-            I live in the Netherlands. If the AMOC collapses, the country I live in gets
-            colder, stormier, and loses the mild climate that makes it habitable for 17 million people.
-            The North Sea rises. Agriculture across Western Europe fails. This isn&rsquo;t a
-            distant abstraction for me — it&rsquo;s the most important climate risk to the place I call home.
-          </p>
-
-          <p>
-            I wanted to understand the physics, not just read about it. Reading that the
-            Gulf Stream carries 30 sverdrups of warm water northward is abstract. Watching it form from
-            nothing — watching the beta effect pull the flow to the western boundary, watching the
-            boundary current intensify as you increase wind stress — makes the physics intuitive in a
-            way that equations on a page never can.
-          </p>
-
-          <p>
-            The simulator started as a collaboration with{" "}
-            <a href="https://www.linkedin.com/in/lukebarrington/" target="_blank" rel="noopener noreferrer">
-              Luke Barrington
-            </a>, director of{" "}
-            <a href="https://research.google/blog/google-earth-ai-unlocking-geospatial-insights-with-foundation-models-and-cross-modal-reasoning/" target="_blank" rel="noopener noreferrer">
-              Google Earth AI
-            </a>, who wanted a tool for
-            explaining ocean dynamics to non-specialists. It evolved through four versions — from a
-            flat map with a simple two-box model, to a Three.js globe, to real satellite data overlays,
-            and finally to the full physics simulation running on WebGPU.
+            from the tropics weakens, and the North Atlantic cools. You can watch it happen in real
+            time — the same process that scientists warn could reshape the climate of the Northern
+            Hemisphere within our lifetimes.
           </p>
 
           <p>
