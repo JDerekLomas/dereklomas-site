@@ -172,15 +172,29 @@ export default function OceanCurrentsPost() {
 
           <p>
             Push the slider far enough and the AMOC collapses. The warm water that normally flows north
-            from the tropics weakens, and the North Atlantic cools. This isn&rsquo;t hypothetical — it&rsquo;s
-            one of the most studied tipping points in climate science, and recent observations suggest
-            the real AMOC is already slowing.
+            from the tropics weakens, and the North Atlantic cools. This isn&rsquo;t hypothetical — a{" "}
+            <a href="https://www.nature.com/articles/s41467-023-39810-w" target="_blank" rel="noopener noreferrer">
+              2023 study in <em>Nature Communications</em>
+            </a>{" "}
+            by Peter and Susanne Ditlevsen estimates the AMOC will collapse around 2057, with 95%
+            confidence the tipping point falls between 2025 and 2095. A more recent{" "}
+            <a href="https://www.science.org/doi/10.1126/sciadv.adk1189" target="_blank" rel="noopener noreferrer">
+              paper in <em>Science Advances</em>
+            </a>{" "}
+            found physics-based early warning signals confirming the AMOC is on a tipping course.
           </p>
 
           <h2>Why build this</h2>
 
           <p>
-            I&rsquo;ve been thinking about how to make climate science more tangible. Reading that the
+            I live in the Netherlands. If the AMOC collapses, the country I live in gets
+            colder, stormier, and loses the mild climate that makes it habitable for 17 million people.
+            The North Sea rises. Agriculture across Western Europe fails. This isn&rsquo;t a
+            distant abstraction for me — it&rsquo;s the most important climate risk to the place I call home.
+          </p>
+
+          <p>
+            I wanted to understand the physics, not just read about it. Reading that the
             Gulf Stream carries 30 sverdrups of warm water northward is abstract. Watching it form from
             nothing — watching the beta effect pull the flow to the western boundary, watching the
             boundary current intensify as you increase wind stress — makes the physics intuitive in a
@@ -189,9 +203,12 @@ export default function OceanCurrentsPost() {
 
           <p>
             The simulator started as a collaboration with{" "}
-            <a href="https://www.lukebarrington.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/lukebarrington/" target="_blank" rel="noopener noreferrer">
               Luke Barrington
-            </a>, a climate scientist, who wanted a tool for
+            </a>, director of{" "}
+            <a href="https://research.google/blog/google-earth-ai-unlocking-geospatial-insights-with-foundation-models-and-cross-modal-reasoning/" target="_blank" rel="noopener noreferrer">
+              Google Earth AI
+            </a>, who wanted a tool for
             explaining ocean dynamics to non-specialists. It evolved through four versions — from a
             flat map with a simple two-box model, to a Three.js globe, to real satellite data overlays,
             and finally to the full physics simulation running on WebGPU.
