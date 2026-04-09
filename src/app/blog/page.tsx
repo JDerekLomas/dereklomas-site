@@ -28,6 +28,16 @@ const TAG_COLORS: Record<string, string> = {
 
 const posts: Post[] = [
   {
+    slug: "simulating-ocean-currents",
+    title: "Simulating Ocean Currents from One Equation",
+    description:
+      "The Gulf Stream, Kuroshio Current, and Antarctic Circumpolar Current all emerge from a single equation. I built a GPU-accelerated simulator that lets you watch it happen — and reshape the continents while it runs.",
+    date: "9 April 2026",
+    readTime: "7 min read",
+    tag: "Education",
+    image: "/images/blog/amoc-simulator.png",
+  },
+  {
     slug: "teaching-biology-in-3d",
     title: "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
     description:
