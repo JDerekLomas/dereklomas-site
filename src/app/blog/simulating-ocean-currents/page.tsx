@@ -29,7 +29,7 @@ export default function OceanCurrentsPost() {
         title="Simulating Ocean Currents from One Equation"
         description="A browser-based ocean circulation simulator that produces the Gulf Stream, Kuroshio Current, and Antarctic Circumpolar Current from a single equation."
         slug="simulating-ocean-currents"
-        datePublished="2026-04-09"
+        datePublished="2026-04-24"
       />
       <article className="max-w-2xl mx-auto">
         {/* Back link */}
@@ -53,7 +53,7 @@ export default function OceanCurrentsPost() {
             The Gulf Stream, Kuroshio Current, and Antarctic Circumpolar Current all emerge from a single equation. I built a GPU-accelerated simulator that lets you watch it happen in real time — and reshape the continents while it runs.
           </p>
           <p className="font-sans text-sm text-muted">
-            9 April 2026 &middot; 7 min read
+            24 April 2026 &middot; 8 min read
           </p>
           <figure className="mt-8">
             <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden">
@@ -207,13 +207,33 @@ export default function OceanCurrentsPost() {
             <li><strong>Ice Age</strong> — expanded polar ice sheets and their effect on circulation</li>
           </ul>
 
+          <h2>More than one layer</h2>
+
+          <p>
+            The barotropic vorticity equation gets you the currents, but the real climate story is
+            about heat. After the first version was running, we kept pushing: a two-layer ocean with
+            separate surface and deep water, spatially varying bathymetry, land-ocean heat exchange
+            at coastlines, latitude-dependent seasonal insolation, outgoing longwave radiation, and
+            ice-albedo feedback. The simulator now tracks how ice sheets reflect sunlight, how deep
+            water stores and releases heat on longer timescales, and how the radiative balance shifts
+            with the seasons.
+          </p>
+
+          <p>
+            A live radiative balance chart shows the energy budget by latitude — incoming solar versus
+            outgoing thermal radiation — so you can see exactly where the planet is gaining or losing
+            heat. It&rsquo;s the kind of diagnostic that climate modelers stare at, now running
+            interactively in a browser tab.
+          </p>
+
           <h2>WebGPU makes it possible</h2>
 
           <p>
-            The physics requires solving a Poisson equation at every timestep — a large linear system
-            across 64,800 grid cells. On CPU, this is barely interactive. WebGPU compute shaders make
-            it smooth. The entire pipeline — timestep integration, Jacobi iteration for the Poisson
-            solver, temperature advection, boundary enforcement — runs on the GPU in parallel.
+            All of this physics requires solving a Poisson equation at every timestep — a large linear
+            system across 64,800 grid cells — plus temperature advection, radiative transfer, and
+            ice dynamics. On CPU, this is barely interactive. WebGPU compute shaders make it smooth.
+            The entire pipeline runs on the GPU in parallel, with recent optimizations cutting GPU
+            passes by ~40%.
           </p>
 
           <p>
@@ -224,16 +244,17 @@ export default function OceanCurrentsPost() {
           <h2>Simulating the collapse</h2>
 
           <p>
-            The simulator includes a temperature field with seasonal solar heating and buoyancy
-            coupling. A freshwater forcing slider lets you simulate what happens when ice sheets melt
-            and dilute the salty water that drives the AMOC.
+            A freshwater forcing slider lets you simulate what happens when ice sheets melt
+            and dilute the salty water that drives the AMOC. Push it far enough and the overturning
+            collapses. The warm water that normally flows north from the tropics weakens, and the
+            North Atlantic cools. With the two-layer ocean and ice-albedo feedback, you can watch
+            the cascading effects — surface cooling triggers ice growth, which reflects more sunlight,
+            which cools things further.
           </p>
 
           <p>
-            Push the slider far enough and the AMOC collapses. The warm water that normally flows north
-            from the tropics weakens, and the North Atlantic cools. You can watch it happen in real
-            time — the same process that scientists warn could reshape the climate of the Northern
-            Hemisphere within our lifetimes.
+            You can watch it happen in real time — the same process that scientists warn could reshape
+            the climate of the Northern Hemisphere within our lifetimes.
           </p>
 
           <p>

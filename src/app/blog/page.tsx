@@ -32,8 +32,8 @@ const posts: Post[] = [
     title: "Simulating Ocean Currents from One Equation",
     description:
       "The Gulf Stream, Kuroshio Current, and Antarctic Circumpolar Current all emerge from a single equation. I built a GPU-accelerated simulator that lets you watch it happen — and reshape the continents while it runs.",
-    date: "9 April 2026",
-    readTime: "7 min read",
+    date: "24 April 2026",
+    readTime: "8 min read",
     tag: "Education",
     image: "/images/blog/amoc-simulator.png",
   },
