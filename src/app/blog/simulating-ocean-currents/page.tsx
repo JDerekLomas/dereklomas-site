@@ -56,12 +56,12 @@ export default function OceanCurrentsPost() {
             24 April 2026 &middot; 8 min read
           </p>
           <figure className="mt-8">
-            <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden">
+            <a href="https://amoc-pi.vercel.app/simamoc/" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden">
               <Image src="/images/blog/amoc-simulator.png" alt="Ocean Circulation Simulator running in the browser" width={800} height={400} className="w-full hover:opacity-90 transition-opacity" />
             </a>
             <figcaption className="text-center text-sm text-muted mt-3 font-sans">
               The simulator running a global ocean circulation with temperature overlay.{" "}
-              <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer" className="text-rust hover:underline">
+              <a href="https://amoc-pi.vercel.app/simamoc/" target="_blank" rel="noopener noreferrer" className="text-rust hover:underline">
                 Try it live &rarr;
               </a>
             </figcaption>
@@ -137,13 +137,13 @@ export default function OceanCurrentsPost() {
           </p>
 
           <p>
-            <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer">
+            <a href="https://amoc-pi.vercel.app/simamoc/" target="_blank" rel="noopener noreferrer">
               The result
             </a>{" "}
-            is a real-time simulator on a 360&times;180 global grid, using WebGPU
-            compute shaders for GPU acceleration. It evolved through four versions — from a
-            flat map with a simple two-box model, to a Three.js globe, to real satellite data overlays,
-            and finally to the full physics simulation running on the GPU.
+            is a real-time simulator on a 720&times;320 global grid (0.5&deg; resolution), using WebGPU
+            compute shaders for GPU acceleration. It uses real NCEP wind stress data, NOAA observed
+            sea surface temperatures, WOA23 salinity, ETOPO1 bathymetry, and MODIS cloud fraction — all
+            running on the GPU with cos(latitude) metric corrections for proper spherical geometry.
           </p>
 
           <h2>One equation to rule them all</h2>
@@ -172,7 +172,7 @@ export default function OceanCurrentsPost() {
 
           <p>
             I built an{" "}
-            <a href="https://amoc-sim.vercel.app/v4-physics/equation.html" target="_blank" rel="noopener noreferrer">
+            <a href="https://amoc-pi.vercel.app/simamoc/equation.html" target="_blank" rel="noopener noreferrer">
               interactive equation explainer
             </a>{" "}
             that breaks down each term with animations and physical intuition, so you don&rsquo;t need a
@@ -230,10 +230,10 @@ export default function OceanCurrentsPost() {
 
           <p>
             All of this physics requires solving a Poisson equation at every timestep — a large linear
-            system across 64,800 grid cells — plus temperature advection, radiative transfer, and
-            ice dynamics. On CPU, this is barely interactive. WebGPU compute shaders make it smooth.
-            The entire pipeline runs on the GPU in parallel, with recent optimizations cutting GPU
-            passes by ~40%.
+            system across 230,400 grid cells — plus temperature advection, salinity transport, Ekman
+            wind-driven heat transport, radiative transfer, cloud parameterization, and ice dynamics.
+            On CPU, this is barely interactive. WebGPU compute shaders make it smooth, running five
+            GPU compute shaders per timestep with Red-Black SOR for the Poisson solve.
           </p>
 
           <p>
@@ -257,10 +257,32 @@ export default function OceanCurrentsPost() {
             the climate of the Northern Hemisphere within our lifetimes.
           </p>
 
+          <h2>AI-driven physics discovery</h2>
+
+          <p>
+            The next phase is using AI agents to <em>improve</em> the model&rsquo;s physics. The
+            simulator has a programmatic API (<code>lab.diagnostics()</code>, <code>lab.setParams()</code>)
+            that lets autonomous agents propose parameter changes, run simulations, and measure
+            RMSE against observed satellite data. The best configurations get submitted to a{" "}
+            <a href="https://amoc-pi.vercel.app/leaderboard/" target="_blank" rel="noopener noreferrer">
+              leaderboard
+            </a>{" "}
+            where AI and human submissions compete.
+          </p>
+
+          <p>
+            So far, this approach has driven the temperature RMSE from 4.7&deg;C down to 3.3&deg;C.
+            The model now uses variable mixed layer depth (deep in the Southern Ocean, shallow in
+            the tropics), observed NCEP wind stress curl with Ekman heat transport, and regime-based
+            cloud parameterization — each improvement discovered through automated parameter sweeps
+            validated against NOAA and WOA23 observations. An AMOC strength panel compares the
+            simulated overturning circulation against the RAPID array at 26.5&deg;N.
+          </p>
+
           <p>
             The code is all client-side — no server, no API calls. Just HTML, JavaScript, and WGSL
             shaders. You can{" "}
-            <a href="https://amoc-sim.vercel.app/v4-physics/" target="_blank" rel="noopener noreferrer">
+            <a href="https://amoc-pi.vercel.app/simamoc/" target="_blank" rel="noopener noreferrer">
               try it now
             </a>{" "}
             in any modern browser.
