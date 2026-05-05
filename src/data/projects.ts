@@ -39,6 +39,11 @@ export const allProjects: Project[] = [
     image: "/images/projects/source-library.jpg",
     url: "https://sourcelibrary.org",
     featured: true,
+    gallery: [
+      "/images/projects/gallery/source-library/atalanta-fugiens.jpg",
+      "/images/projects/gallery/source-library/splendor-solis.jpg",
+      "/images/projects/gallery/source-library/vitruvian-macrocosm.jpg",
+    ],
   },
   {
     slug: "playpower-games",
@@ -52,6 +57,14 @@ export const allProjects: Project[] = [
     image: "/images/projects/playpowerlearn.png",
     url: "https://playpowergames.com",
     featured: true,
+    gallery: [
+      "/images/projects/gallery/playpower-games/invite-student.webp",
+      "/images/projects/gallery/playpower-games/build-pick-quiz.webp",
+      "/images/projects/gallery/playpower-games/real-time.webp",
+      "/images/projects/gallery/playpower-games/reports.webp",
+      "/images/projects/gallery/playpower-games/class.webp",
+      "/images/projects/gallery/playpower-games/score-card.webp",
+    ],
   },
   {
     slug: "smart-paper",
@@ -87,6 +100,11 @@ export const allProjects: Project[] = [
     category: "Books",
     tags: ["AI Art", "Early Learning", "Science of Reading"],
     image: "/images/projects/babysees.jpg",
+    gallery: [
+      "/images/projects/gallery/babysees/fern.jpg",
+      "/images/projects/gallery/babysees/honeycomb.jpg",
+      "/images/projects/gallery/babysees/snowflake.jpg",
+    ],
   },
   {
     slug: "neuroux",
@@ -292,6 +310,10 @@ export const allProjects: Project[] = [
       "/images/projects/gallery/playpower-8bit/04.jpg",
       "/images/projects/gallery/playpower-8bit/05.jpg",
       "/images/projects/gallery/playpower-8bit/06.jpg",
+      "/images/projects/gallery/playpower-8bit/07-hanuman-typing.jpg",
+      "/images/projects/gallery/playpower-8bit/08-malaria-game.jpg",
+      "/images/projects/gallery/playpower-8bit/09-playpower-header.jpg",
+      "/images/projects/gallery/playpower-8bit/10-workshop-group.jpg",
     ],
   },
   // New projects
