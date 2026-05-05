@@ -40,26 +40,29 @@ export const allProjects: Project[] = [
     featured: true,
   },
   {
-    slug: "playpowerlearn",
-    title: "PlayPowerLearn",
+    slug: "playpower-games",
+    title: "Playpower Games",
     description:
-      "AI-powered learning management system where AI generates standards-aligned content and humans curate. Inverting the traditional LMS paradigm.",
+      "Free K–8 math games aligned to Common Core and TEKS. Teachers assign in 30 seconds, host live quizzes Kahoot-style, and track student progress in real time.",
     fullDescription:
-      "PlayPowerLearn is a next-generation learning management system that inverts the traditional content creation paradigm. Instead of humans writing all content and AI assisting, PlayPowerLearn uses AI to generate standards-aligned educational content while humans curate, refine, and approve. This approach dramatically accelerates course creation while maintaining pedagogical quality.",
+      "Playpower Games is a free platform of K–8 math games aligned to Common Core and TEKS standards. Teachers can assign games to a class in 30 seconds, run live multiplayer quizzes (Kahoot-style), and watch student progress update in real time. It integrates directly with Google Classroom, Clever, and ClassLink, and is the current consumer-facing successor to two decades of Playpower educational-game research.",
     category: "Education",
-    tags: ["Next.js", "PostgreSQL", "Prisma", "AI"],
+    tags: ["Math", "K-8", "Common Core", "Live Quizzes"],
     image: "/images/projects/playpowerlearn.png",
+    url: "https://playpowergames.com",
+    featured: true,
   },
   {
     slug: "smart-paper",
     title: "Smart Paper",
     description:
-      "Computer vision tool integrating paper-based and digital learning. Reached 5 million students with 6 longitudinal assessments across India.",
+      "AI for paper assessments by EdOptimize. Computer vision turns hand-completed worksheets into instant feedback — reaching 5+ million students across India.",
     fullDescription:
-      "Smart Paper bridges the gap between paper-based and digital learning using computer vision. Teachers distribute printed worksheets; students complete them by hand; a smartphone camera captures and scores the work instantly. Deployed across India, Smart Paper has reached over 5 million students and conducted 6 longitudinal assessments, proving that AI-powered education doesn't require every student to have a device.",
+      "Smart Paper bridges the gap between paper-based and digital learning using computer vision. Teachers distribute printed worksheets; students complete them by hand; a smartphone camera captures and scores the work instantly. Now operated by EdOptimize, Smart Paper has reached over 5 million students across India and run 6 longitudinal assessments, proving that AI-powered education doesn't require every student to have a device.",
     category: "AI",
     tags: ["Computer Vision", "Education", "Scale"],
     image: "/images/projects/smart-paper.jpg",
+    url: "https://smartpaperapp.com",
     featured: true,
   },
   {
@@ -84,13 +87,14 @@ export const allProjects: Project[] = [
     slug: "neuroux",
     title: "NeuroUX",
     description:
-      "Platform enabling researchers to collect large-scale cognitive and psychological performance data via mobile technologies. Over 15 published studies.",
+      "HIPAA/GDPR-compliant cognitive assessment and Ecological Momentary Assessment (EMA) platform. Validated tests for executive function, memory, attention; passive sensing and wearable integrations (Fitbit, Garmin, Apple Watch, ActiGraph).",
     fullDescription:
-      "NeuroUX is a research platform that enables scientists to collect large-scale cognitive and psychological performance data using mobile technologies. By gamifying traditional cognitive assessments, NeuroUX achieves higher participant engagement and larger sample sizes than conventional lab-based methods. The platform has supported over 15 published studies in cognitive science, psychology, and mental health research.",
+      "NeuroUX is a research platform for collecting cognitive and behavioral data in the wild. Its library includes validated mobile cognitive tests for executive function, memory, psychomotor speed, attention, and social cognition, plus configurable Ecological Momentary Assessment (EMA) surveys. The platform passively collects GPS, ambient noise, accelerometer, weather, and air-quality data, and integrates with Fitbit, Garmin, Apple Watch, and ActiGraph through a unified wearables dashboard. NeuroUX is HIPAA- and GDPR-compliant and is used by leading institutions worldwide; the team is presenting at ACNP, INS, and ISCTM in 2026.",
     category: "Research",
-    tags: ["Cognitive Science", "Games", "Assessment"],
+    tags: ["Cognitive Science", "EMA", "Wearables", "HIPAA"],
     image: "/images/projects/neuroux.jpg",
     video: "TJUbzc2SddI",
+    url: "https://getneuroux.com",
     featured: true,
   },
   {
