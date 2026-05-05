@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     template: "%s | Derek Lomas",
   },
   description:
-    "Tenured professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
+    "Tenured assistant professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
   keywords: [
     "Derek Lomas",
     "Positive AI",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Derek Lomas",
     title: "Positive AI & Digital Humanities",
     description:
-      "Tenured professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
+      "Tenured assistant professor of Positive AI at TU Delft. Enhancing wellbeing through AI, education, and humanistic design.",
     images: [
       {
         url: "/opengraph-image",

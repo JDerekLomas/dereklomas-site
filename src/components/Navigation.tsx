@@ -22,7 +22,7 @@ export function Navigation() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-light">
+    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-light print:hidden">
       <nav className="max-w-4xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="font-display text-2xl font-medium no-underline">

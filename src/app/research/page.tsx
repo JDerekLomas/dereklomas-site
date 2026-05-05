@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -632,16 +633,16 @@ export default function ResearchPage() {
             citations.
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <a
-              href="/cv-derek-lomas.pdf"
+            <Link
+              href="/cv"
               className="inline-flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
-              download
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" />
+                <path d="M3 3h10v10H3z" />
+                <path d="M5 6h6M5 8h6M5 10h4" />
               </svg>
-              Download CV (PDF)
-            </a>
+              View CV
+            </Link>
             <a
               href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
               target="_blank"

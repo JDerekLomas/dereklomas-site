@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cognitive scientist, AI researcher, and entrepreneur. Tenured professor of Positive AI at TU Delft.",
+    "Cognitive scientist, AI researcher, and entrepreneur. Tenured assistant professor of Positive AI at TU Delft.",
 };
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
         {/* Bio narrative */}
         <div className="space-y-6 text-text-secondary leading-relaxed mb-16">
           <p>
-            I'm a tenured professor of{" "}
+            I'm a tenured assistant professor of{" "}
             <strong className="text-text-primary">Positive AI</strong> at{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
@@ -217,19 +217,18 @@ export default function AboutPage() {
                 <p className="text-xs text-text-secondary truncate">@cognotron</p>
               </div>
             </a>
-            <a
-              href="/cv-derek-lomas.pdf"
-              download
+            <Link
+              href="/cv"
               className="flex items-center gap-3 p-4 bg-card rounded-lg border border-[var(--border-color)] no-underline hover:border-rust transition-colors group"
             >
               <div className="w-9 h-9 bg-warm rounded-full flex items-center justify-center text-text-muted group-hover:text-rust transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
               </div>
               <div className="min-w-0">
-                <p className="font-medium text-text-primary text-sm">CV (PDF)</p>
-                <p className="text-xs text-text-secondary truncate">Download a one-page CV</p>
+                <p className="font-medium text-text-primary text-sm">Curriculum Vitae</p>
+                <p className="text-xs text-text-secondary truncate">Full CV — web &amp; PDF</p>
               </div>
-            </a>
+            </Link>
             <Link
               href="/press"
               className="flex items-center gap-3 p-4 bg-card rounded-lg border border-[var(--border-color)] no-underline hover:border-rust transition-colors group"
