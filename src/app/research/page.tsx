@@ -185,7 +185,7 @@ const recentPublications = [
         title: "The Enigma of Mind: A Theory of Evolution and Conscious Experience",
         authors: "Lin A, Lomas JD",
         venue: "In: Enigmas — Darwin College Lectures (Cambridge University Press)",
-        url: "https://pure.tudelft.nl/ws/files/144861667/enigma_of_mind_a_theory_of_evolution_and_conscious_experience.pdf",
+        url: "/papers/enigma-of-mind.pdf",
       },
       {
         title: "Resonance as a Design Strategy for AI and Social Robots",
