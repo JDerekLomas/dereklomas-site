@@ -6,6 +6,7 @@ export interface Project {
   category: string;
   tags: string[];
   image?: string;
+  gallery?: string[];
   video?: string; // YouTube video ID
   url?: string;
   featured?: boolean;
@@ -64,6 +65,10 @@ export const allProjects: Project[] = [
     image: "/images/projects/smart-paper.jpg",
     url: "https://smartpaperapp.com",
     featured: true,
+    gallery: [
+      "/images/projects/gallery/smart-paper/01.jpg",
+      "/images/projects/gallery/smart-paper/02.png",
+    ],
   },
   {
     slug: "steamquest",
@@ -96,6 +101,10 @@ export const allProjects: Project[] = [
     video: "TJUbzc2SddI",
     url: "https://getneuroux.com",
     featured: true,
+    gallery: [
+      "/images/projects/gallery/neuroux/01.gif",
+      "/images/projects/gallery/neuroux/02.png",
+    ],
   },
   {
     slug: "vibe-research-lab",
@@ -132,6 +141,11 @@ export const allProjects: Project[] = [
     tags: ["Wellbeing", "COVID-19", "TU Delft"],
     image: "/images/projects/my-wellness-check.png",
     url: "https://mywellnesscheck.org",
+    gallery: [
+      "/images/projects/gallery/my-wellness-check/01.png",
+      "/images/projects/gallery/my-wellness-check/02.png",
+      "/images/projects/gallery/my-wellness-check/03.png",
+    ],
   },
   {
     slug: "resonance-pod",
@@ -143,6 +157,11 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["Haptics", "Wellbeing", "Installation"],
     image: "/images/projects/resonance-pod.png",
+    gallery: [
+      "/images/projects/gallery/resonance-pod/01.png",
+      "/images/projects/gallery/resonance-pod/02.jpg",
+      "/images/projects/gallery/resonance-pod/03.jpg",
+    ],
   },
   {
     slug: "feel-the-vibe",
@@ -154,6 +173,11 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["Haptics", "Aesthetics", "Installation"],
     image: "/images/projects/feel-the-vibe.png",
+    gallery: [
+      "/images/projects/gallery/feel-the-vibe/01.png",
+      "/images/projects/gallery/feel-the-vibe/02.jpeg",
+      "/images/projects/gallery/feel-the-vibe/03.jpeg",
+    ],
   },
   {
     slug: "escape-the-smart-city",
@@ -165,6 +189,11 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["AI Ethics", "Games", "Critical Design"],
     image: "/images/projects/escape-smart-city.jpeg",
+    gallery: [
+      "/images/projects/gallery/escape-the-smart-city/01.jpg",
+      "/images/projects/gallery/escape-the-smart-city/02.gif",
+      "/images/projects/gallery/escape-the-smart-city/03.jpeg",
+    ],
   },
   {
     slug: "envision-glasses",
@@ -177,6 +206,11 @@ export const allProjects: Project[] = [
     tags: ["Accessibility", "AI", "Product Design"],
     image: "/images/projects/envision-glasses.png",
     url: "https://www.letsenvision.com/glasses",
+    gallery: [
+      "/images/projects/gallery/envision-glasses/01.jpg",
+      "/images/projects/gallery/envision-glasses/02.jpeg",
+      "/images/projects/gallery/envision-glasses/03.png",
+    ],
   },
   {
     slug: "landshapes",
@@ -188,6 +222,11 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["GANs", "Climate", "Google AI"],
     image: "/images/projects/landshapes.jpg",
+    gallery: [
+      "/images/projects/gallery/landshapes/01.png",
+      "/images/projects/gallery/landshapes/02.jpg",
+      "/images/projects/gallery/landshapes/03.jpg",
+    ],
   },
   {
     slug: "upgrade",
@@ -200,6 +239,10 @@ export const allProjects: Project[] = [
     tags: ["A/B Testing", "Open Source", "EdTech"],
     image: "/images/projects/upgrade.png",
     url: "https://www.upgradeplatform.org",
+    gallery: [
+      "/images/projects/gallery/upgrade/01.jpeg",
+      "/images/projects/gallery/upgrade/02.png",
+    ],
   },
   {
     slug: "design-space-cards",
@@ -224,6 +267,13 @@ export const allProjects: Project[] = [
     image: "/images/projects/playpower-labs.png",
     url: "https://www.playpowerlabs.com",
     featured: true,
+    gallery: [
+      "/images/projects/gallery/playpower-labs/01.png",
+      "/images/projects/gallery/playpower-labs/02.jpg",
+      "/images/projects/gallery/playpower-labs/03.jpg",
+      "/images/projects/gallery/playpower-labs/04.jpg",
+      "/images/projects/gallery/playpower-labs/05.jpg",
+    ],
   },
   {
     slug: "playpower-8bit",
@@ -235,6 +285,14 @@ export const allProjects: Project[] = [
     category: "Education",
     tags: ["8-bit", "MacArthur", "India"],
     image: "/images/projects/playpower-8bit.png",
+    gallery: [
+      "/images/projects/gallery/playpower-8bit/01.png",
+      "/images/projects/gallery/playpower-8bit/02.jpeg",
+      "/images/projects/gallery/playpower-8bit/03.jpg",
+      "/images/projects/gallery/playpower-8bit/04.jpg",
+      "/images/projects/gallery/playpower-8bit/05.jpg",
+      "/images/projects/gallery/playpower-8bit/06.jpg",
+    ],
   },
   // New projects
   {
@@ -247,6 +305,11 @@ export const allProjects: Project[] = [
     category: "Research",
     tags: ["EEG", "Neuroaesthetics", "Cybernetics", "Wellbeing"],
     image: "/images/projects/neuroaesthetic-resonance.jpg",
+    gallery: [
+      "/images/projects/gallery/neuroaesthetic-resonance/01.png",
+      "/images/projects/gallery/neuroaesthetic-resonance/02.png",
+      "/images/projects/gallery/neuroaesthetic-resonance/03.jpeg",
+    ],
   },
   {
     slug: "entrepreneurial-thinking",
@@ -258,6 +321,10 @@ export const allProjects: Project[] = [
     category: "Education",
     tags: ["AMS Institute", "Entrepreneurship", "Design Thinking"],
     image: "/images/projects/entrepreneurial-thinking.jpg",
+    gallery: [
+      "/images/projects/gallery/entrepreneurial-thinking/01.png",
+      "/images/projects/gallery/entrepreneurial-thinking/02.jpg",
+    ],
   },
   {
     slug: "haptic-vision",
@@ -269,6 +336,9 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["VR", "Haptics", "SenseGlove", "Prototype"],
     image: "/images/projects/haptic-vision.png",
+    gallery: [
+      "/images/projects/gallery/haptic-vision/01.jpg",
+    ],
   },
 ];
 

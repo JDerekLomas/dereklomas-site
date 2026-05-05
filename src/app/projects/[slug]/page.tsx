@@ -115,6 +115,26 @@ export default async function ProjectDetailPage({ params }: Props) {
             </a>
           </div>
         )}
+
+        {/* Gallery */}
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="mt-12 space-y-4">
+            {project.gallery.map((src, i) => (
+              <div
+                key={src}
+                className="bg-warm rounded-lg overflow-hidden border border-[var(--border-color)]"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`${project.title} — image ${i + 1}`}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
