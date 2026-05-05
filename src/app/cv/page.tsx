@@ -244,11 +244,15 @@ const teaching = [
 ];
 
 const press = [
-  { year: "2021", body: "Lifewire, Digital Trends, New Scientist, Inner Detail — coverage of EEG-based song-identification research" },
-  { year: "2020", body: "News-Medical — “New Mobile Platform Can Address Another Serious Complication of COVID-19”" },
+  { year: "2023", body: "TU Delft Delft Design Stories — “Positive Artificial Intelligence Vibes”" },
+  { year: "2021", body: "New Scientist, Digital Trends, Lifewire, Inner Detail — coverage of EEG-based song-identification research" },
+  { year: "2020", body: "UC San Diego Health; News-Medical — “New Mobile Platform Can Address Another Serious Complication of COVID-19”" },
+  { year: "2014", body: "San Diego Union-Tribune — “How Jargon Is Killing Innovation”; Tech.co — Kaplan/Techstars EdTech Accelerator class" },
   { year: "2013", body: "Wall Street Journal — “New Approaches to Teaching Fractions”" },
   { year: "2011", body: "KQED MindShift — “Preventing the Summer Slide in Math Skills”" },
-  { year: "2009", body: "Wired, NPR, CNN, MIT News — Playpower / $12 Computer coverage" },
+  { year: "2010", body: "NPR; CNN — Playpower / $12 Computer coverage" },
+  { year: "2009", body: "Wired; The Guardian; Calit2; PopTech Social Innovation Fellow" },
+  { year: "2008", body: "ABC News — “Researchers Propose $12 Computer for Developing Countries”" },
 ];
 
 const recognition = [

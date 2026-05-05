@@ -8,6 +8,73 @@ export const metadata: Metadata = {
 
 const pressItems = [
   {
+    title: "Positive Artificial Intelligence vibes",
+    outlet: "TU Delft Delft Design Stories",
+    date: "2023",
+    url: "https://www.tudelft.nl/en/ide/delft-design-stories/positive-artificial-intelligence-vibes",
+    type: "Profile" as const,
+  },
+  {
+    title: "AI can tell what song you are listening to from your brainwaves",
+    outlet: "New Scientist",
+    date: "2021",
+    url: "https://www.newscientist.com/article/2265811-ai-can-tell-what-song-you-are-listening-to-from-your-brainwaves/",
+    type: "Feature" as const,
+  },
+  {
+    title:
+      "New A.I. can identify the song you're listening to by reading your brain waves",
+    outlet: "Digital Trends",
+    date: "2021",
+    url: "https://www.digitaltrends.com/music/ai-identifies-songs-by-reading-brain-waves/",
+    type: "Feature" as const,
+  },
+  {
+    title:
+      "How are You Doing? Researchers Hope to Measure Well-Being at Global Scale",
+    outlet: "UC San Diego Health",
+    date: "2020",
+    url: "https://health.ucsd.edu/news/releases/Pages/2020-05-05-researchers-hope-to-measure-well-being-at-global-scale.aspx",
+    type: "Feature" as const,
+  },
+  {
+    title:
+      "New mobile platform can address another serious complication of COVID-19",
+    outlet: "News-Medical",
+    date: "2020",
+    url: "https://www.news-medical.net/news/20200506/New-mobile-platform-can-address-another-serious-complication-of-COVID-19.aspx",
+    type: "Feature" as const,
+  },
+  {
+    title: "How jargon is killing innovation",
+    outlet: "San Diego Union-Tribune",
+    date: "2014",
+    url: "https://www.sandiegouniontribune.com/business/technology/sdut-innovation-clear-pitch-2014nov04-story.html",
+    type: "Feature" as const,
+  },
+  {
+    title:
+      "Kaplan and Techstars Announce the 2014 Kaplan EdTech Accelerator Class",
+    outlet: "Tech.co",
+    date: "2014",
+    url: "https://tech.co/news/12-startups-selected-for-kaplan-edtec-accelerator-2014-07",
+    type: "Feature" as const,
+  },
+  {
+    title: "New Approaches to Teaching Fractions",
+    outlet: "Wall Street Journal",
+    date: "2013",
+    url: "https://www.wsj.com/articles/SB10001424052702303759604579093231122420774",
+    type: "Feature" as const,
+  },
+  {
+    title: 'Preventing the "Summer Slide" in Math Skills',
+    outlet: "KQED MindShift",
+    date: "2011",
+    url: "https://www.kqed.org/mindshift/11896/preventing-the-summer-slide-in-math-skills",
+    type: "Feature" as const,
+  },
+  {
     title: "$12 Computer for the Developing World",
     outlet: "NPR",
     date: "2010",
@@ -22,10 +89,32 @@ const pressItems = [
     type: "Feature" as const,
   },
   {
-    title: "Playpower: Learning on an 8-bit Budget",
+    title: "Ashoka Changemakers Innovation Award",
+    outlet: "Ashoka",
+    date: "2010",
+    url: "https://www.ashoka.org/",
+    type: "Award" as const,
+  },
+  {
+    title: "PlayPower: 1980s computing for the 21st century",
+    outlet: "The Guardian",
+    date: "2009",
+    url: "https://www.theguardian.com/technology/2009/nov/04/playpower-80s-computing-21st-century",
+    type: "Feature" as const,
+  },
+  {
+    title:
+      "UC San Diego Students Seek to Improve Education with $12 Computers",
+    outlet: "Calit2",
+    date: "2009",
+    url: "http://www.calit2.net/newsroom/release.php?id=1472",
+    type: "Feature" as const,
+  },
+  {
+    title: "$12 Computer: Playpower Wants to Save the World 8 Bits at a Time",
     outlet: "Wired",
     date: "2009",
-    url: "https://www.wired.com/2009/09/playpower/",
+    url: "https://www.wired.com/2009/03/12-computers-ba/",
     type: "Feature" as const,
   },
   {
@@ -36,24 +125,11 @@ const pressItems = [
     type: "Award" as const,
   },
   {
-    title: "Ashoka Changemakers Innovation Award",
-    outlet: "Ashoka",
-    date: "2010",
-    url: "https://www.ashoka.org/",
-    type: "Award" as const,
-  },
-  {
-    title: "Smart Paper: AI for Paper-Based Learning",
-    outlet: "EdSurge",
-    date: "2023",
+    title: "Researchers Propose $12 Computer for Developing Countries",
+    outlet: "ABC News",
+    date: "2008",
+    url: "https://abcnews.go.com/Technology/AheadoftheCurve/story?id=5529989&page=1",
     type: "Feature" as const,
-  },
-  {
-    title: "Positive AI: Designing for Human Wellbeing",
-    outlet: "TU Delft Stories",
-    date: "2022",
-    url: "https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d",
-    type: "Profile" as const,
   },
 ];
 
