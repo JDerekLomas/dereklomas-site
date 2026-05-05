@@ -147,6 +147,16 @@ const recentPublications = [
     year: 2023,
     papers: [
       {
+        title: "A framework for designing AI systems that support community wellbeing",
+        authors: "van der Maden W, Lomas JD, Hekkert P",
+        venue: "Frontiers in Psychology",
+      },
+      {
+        title: "Positive AI: Key challenges in designing artificial intelligence for wellbeing",
+        authors: "van der Maden W, Lomas JD, Hekkert P",
+        venue: "arXiv / Wellbeing-aligned AI workshop",
+      },
+      {
         title: "Improving Mathematics Assessment Readability: Do Large Language Models Help?",
         authors: "Patel N, Nagpal P, Shah T, Sharma A, Malvi S, Lomas D",
         venue: "Journal of Computer Assisted Learning",
@@ -223,9 +233,14 @@ const recentPublications = [
         venue: "DRS 2022 Bilbao",
       },
       {
+        title: "EdOptimize — An Open-Source K-12 Learning Analytics Platform",
+        authors: "Shah T, Patel N, Lomas D, Sharma A",
+        venue: "LAK22 — 12th Intl. Conference on Learning Analytics & Knowledge",
+      },
+      {
         title: "Equitable Access to Intelligent Tutoring Systems Through Paper-Digital Integration",
         authors: "Patel N, Thakkar M, Rabadiya B, Patel D, Malvi S, Sharma A, Lomas D",
-        venue: "EasyChair",
+        venue: "Intelligent Tutoring Systems (ITS)",
       },
       {
         title: "Third Annual Workshop on A/B Testing and Platform-Enabled Learning Research",

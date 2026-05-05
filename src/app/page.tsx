@@ -17,14 +17,13 @@ const recentNews: RecentItem[] = [
   },
   {
     date: "Apr 2026",
-    text: "New paper: An AI-generated art evaluation model integrating computational aesthetics and cognitive science",
-    href: "/research",
-  },
-  {
-    date: "Apr 2026",
     text: "Source Library passes 12,347 books and 11,218 new English translations across 152 languages",
     href: "https://sourcelibrary.org",
     external: true,
+  },
+  {
+    date: "2025",
+    text: "Invited talk at Ozora Festival, Hungary: \"Vibes, Resonance and Harmony in the Age of AI\"",
   },
   {
     date: "Mar 2026",
