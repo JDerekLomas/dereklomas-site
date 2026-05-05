@@ -15,6 +15,39 @@ const pressItems = [
     type: "Profile" as const,
   },
   {
+    title:
+      "Smart Paper Recognized by UNESCO for Pioneering AI in Learning Assessment",
+    outlet: "ThePrint / ANI",
+    date: "2024",
+    url: "https://theprint.in/ani-press-releases/smart-paper-recognized-by-unesco-for-pioneering-ai-in-learning-assessment/1936733/",
+    type: "Venture" as const,
+    note: "Smart Paper / Playpower Labs, India",
+  },
+  {
+    title: "Rajasthan Ke Shiksha Mein Badhate Kadam (RKSMBK)",
+    outlet: "World Bank AI Repository",
+    date: "2024",
+    url: "https://airepository.worldbank.org/use-case/rajasthan-ke-shiksha-mein-badhate-kadam-rksmbk",
+    type: "Venture" as const,
+    note: "Case study of Playpower Labs / Smart Paper deployment in 65,000 Rajasthan schools",
+  },
+  {
+    title: "How Smart Paper Is Transforming Handwritten Assessments at Scale",
+    outlet: "Tools Competition",
+    date: "2024",
+    url: "https://tools-competition.org/smart-paper-ai-handwritten-assessments-scale-india/",
+    type: "Venture" as const,
+    note: "Smart Paper / Playpower Labs, India",
+  },
+  {
+    title: "In Rajasthan Schools, AI Is Teacher And Examiner",
+    outlet: "BoomLive",
+    date: "2023",
+    url: "https://www.boomlive.in/decode/in-rajasthan-schools-artificial-intelligence-is-teacher-and-examiner-21761",
+    type: "Venture" as const,
+    note: "Smart Paper / Playpower Labs, India",
+  },
+  {
     title: "AI can tell what song you are listening to from your brainwaves",
     outlet: "New Scientist",
     date: "2021",
@@ -165,6 +198,7 @@ const TYPE_STYLES = {
   Feature: "bg-violet/10 text-violet",
   Award: "bg-amber-100 text-amber-700",
   Profile: "bg-teal-100 text-teal-700",
+  Venture: "bg-rust/10 text-rust",
 };
 
 export default function PressPage() {
@@ -207,6 +241,11 @@ export default function PressPage() {
                     <h3 className="text-lg font-medium text-text-primary group-hover:text-rust transition-colors">
                       {item.title}
                     </h3>
+                    {"note" in item && item.note && (
+                      <p className="text-xs text-text-muted mt-1 font-[family-name:var(--font-inter)]">
+                        {item.note}
+                      </p>
+                    )}
                   </div>
                   <span className="text-sm text-text-muted whitespace-nowrap font-[family-name:var(--font-inter)]">
                     {item.date}
