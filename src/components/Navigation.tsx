@@ -6,12 +6,10 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/projects", label: "Projects" },
-  { href: "/research", label: "Research" },
+  { href: "/research", label: "Publications" },
   { href: "/writing", label: "Writing" },
-  { href: "/blog", label: "Blog" },
   { href: "/lab", label: "Lab" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {

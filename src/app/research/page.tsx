@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Research",
+  title: "Publications",
   description:
     "75+ publications on AI for wellbeing, learning engineering, empirical aesthetics, and human-centered design.",
 };
@@ -180,6 +180,12 @@ const recentPublications = [
         title: "Harmony in Design: A Synthesis from Classical Philosophy, Sciences, Economics, and Design",
         authors: "Lomas JD, Xue H",
         venue: "She Ji: The Journal of Design, Economics, and Innovation",
+      },
+      {
+        title: "The Enigma of Mind: A Theory of Evolution and Conscious Experience",
+        authors: "Lin A, Lomas JD",
+        venue: "In: Enigmas — Darwin College Lectures (Cambridge University Press)",
+        url: "https://pure.tudelft.nl/ws/files/144861667/enigma_of_mind_a_theory_of_evolution_and_conscious_experience.pdf",
       },
       {
         title: "Resonance as a Design Strategy for AI and Social Robots",
@@ -603,11 +609,12 @@ export default function ResearchPage() {
         {/* Header */}
         <header className="mb-8">
           <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
-            Research
+            Publications
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-6">
-            75+ publications spanning AI for wellbeing, learning engineering,
-            educational games, and human-centered design. 1,500+ citations.
+            75+ peer-reviewed publications spanning AI for wellbeing, learning
+            engineering, educational games, and human-centered design. 1,500+
+            citations.
           </p>
           <a
             href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
@@ -733,19 +740,33 @@ export default function ResearchPage() {
                   {yearGroup.year}
                 </h3>
                 <div className="space-y-3 pl-4 border-l-2 border-[var(--border-color)]">
-                  {yearGroup.papers.map((paper) => (
-                    <div key={paper.title} className="pb-3">
-                      <p className="text-text-primary text-sm font-medium leading-snug">
-                        {paper.title}
-                      </p>
-                      <p className="text-text-muted text-xs mt-1">
-                        {paper.authors}
-                      </p>
-                      <p className="text-text-secondary text-xs mt-1">
-                        {paper.venue}
-                      </p>
-                    </div>
-                  ))}
+                  {yearGroup.papers.map((paper) => {
+                    const url = (paper as { url?: string }).url;
+                    return (
+                      <div key={paper.title} className="pb-3">
+                        {url ? (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-text-primary text-sm font-medium leading-snug hover:text-rust transition-colors no-underline"
+                          >
+                            {paper.title}
+                          </a>
+                        ) : (
+                          <p className="text-text-primary text-sm font-medium leading-snug">
+                            {paper.title}
+                          </p>
+                        )}
+                        <p className="text-text-muted text-xs mt-1">
+                          {paper.authors}
+                        </p>
+                        <p className="text-text-secondary text-xs mt-1">
+                          {paper.venue}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -764,19 +785,33 @@ export default function ResearchPage() {
                   {yearGroup.year}
                 </h3>
                 <div className="space-y-3 pl-4 border-l-2 border-[var(--border-color)]">
-                  {yearGroup.papers.map((paper) => (
-                    <div key={paper.title} className="pb-3">
-                      <p className="text-text-primary text-sm font-medium leading-snug">
-                        {paper.title}
-                      </p>
-                      <p className="text-text-muted text-xs mt-1">
-                        {paper.authors}
-                      </p>
-                      <p className="text-text-secondary text-xs mt-1">
-                        {paper.venue}
-                      </p>
-                    </div>
-                  ))}
+                  {yearGroup.papers.map((paper) => {
+                    const url = (paper as { url?: string }).url;
+                    return (
+                      <div key={paper.title} className="pb-3">
+                        {url ? (
+                          <a
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-text-primary text-sm font-medium leading-snug hover:text-rust transition-colors no-underline"
+                          >
+                            {paper.title}
+                          </a>
+                        ) : (
+                          <p className="text-text-primary text-sm font-medium leading-snug">
+                            {paper.title}
+                          </p>
+                        )}
+                        <p className="text-text-muted text-xs mt-1">
+                          {paper.authors}
+                        </p>
+                        <p className="text-text-secondary text-xs mt-1">
+                          {paper.venue}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}

@@ -8,14 +8,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { url: baseUrl, lastModified: new Date(), priority: 1.0 },
-    { url: `${baseUrl}/blog`, lastModified: new Date(), priority: 0.9 },
     { url: `${baseUrl}/projects`, lastModified: new Date(), priority: 0.9 },
-    { url: `${baseUrl}/research`, lastModified: new Date(), priority: 0.8 },
-    { url: `${baseUrl}/writing`, lastModified: new Date(), priority: 0.8 },
+    { url: `${baseUrl}/research`, lastModified: new Date(), priority: 0.9 },
+    { url: `${baseUrl}/writing`, lastModified: new Date(), priority: 0.9 },
     { url: `${baseUrl}/lab`, lastModified: new Date(), priority: 0.7 },
     { url: `${baseUrl}/press`, lastModified: new Date(), priority: 0.6 },
     { url: `${baseUrl}/about`, lastModified: new Date(), priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), priority: 0.5 },
   ];
 
   const blogPosts = [

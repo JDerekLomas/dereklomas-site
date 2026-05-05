@@ -1,9 +1,19 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="border-t border-light mt-auto">
       <div className="max-w-4xl mx-auto px-6 py-8">
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted font-sans">
           <span>&copy; {new Date().getFullYear()} Derek Lomas</span>
+          <span aria-hidden="true">&middot;</span>
+          <Link href="/press" className="hover:text-rust">
+            Press
+          </Link>
+          <span aria-hidden="true">&middot;</span>
+          <Link href="/about#contact" className="hover:text-rust">
+            Contact
+          </Link>
           <span aria-hidden="true">&middot;</span>
           <a
             href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
@@ -39,10 +49,6 @@ export function Footer() {
             className="hover:text-rust"
           >
             LinkedIn
-          </a>
-          <span aria-hidden="true">&middot;</span>
-          <a href="mailto:dereklomas@gmail.com" className="hover:text-rust">
-            Email
           </a>
         </div>
       </div>
