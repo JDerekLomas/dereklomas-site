@@ -30,12 +30,13 @@ export const allProjects: Project[] = [
     slug: "source-library",
     title: "Source Library",
     description:
-      "Digitizing and translating rare Hermetic, alchemical, and mystical texts. 100+ books from the pre-1650 era, including works on kabbalah, neoplatonism, and natural magic.",
+      "12,347 rare historical texts from the 15th–18th centuries, 11,218 translated into English across 152 languages — the largest open archive of Hermetic, alchemical, and pre-modern scientific writing.",
     fullDescription:
-      "Source Library is a digital humanities project dedicated to digitizing and translating rare Hermetic, alchemical, and mystical texts from the pre-1650 era. The collection includes over 100 books spanning kabbalah, neoplatonism, natural magic, and early scientific thought. Using Gemini OCR and modern AI translation tools, these texts are being made accessible to researchers and enthusiasts for the first time in centuries.",
+      "Source Library is a digital humanities project dedicated to digitizing and translating rare historical texts. The live collection now spans 12,347 books by 5,095+ authors in 152 languages — including 11,218 fresh AI-assisted English translations, 94,811 illustrations, and 14,249 artworks. The corpus emphasizes Hermetic, alchemical, kabbalistic, neoplatonic, and natural-magic traditions alongside early scientific thought, with a Gemini-based OCR + translation pipeline that has processed roughly 1.67 million pages for around $3,400 total.",
     category: "Esoteric",
     tags: ["Next.js", "MongoDB", "Gemini OCR", "Digital Humanities"],
     image: "/images/projects/source-library.jpg",
+    url: "https://sourcelibrary.org",
     featured: true,
   },
   {

@@ -70,14 +70,23 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Beyond my professional work, I'm passionate about{" "}
-            <Link href="/projects/source-library">
-              digitizing rare historical texts
-            </Link>
-            —particularly Hermetic, alchemical, and mystical manuscripts from
-            the pre-modern era. I believe these texts contain valuable wisdom
-            about the nature of consciousness, creativity, and human
-            flourishing.
+            Beyond my professional work, I built{" "}
+            <Link href="/projects/source-library">Source Library</Link> — an
+            open archive of <strong className="text-text-primary">12,347</strong>{" "}
+            rare historical texts from the 15th–18th centuries, with{" "}
+            <strong className="text-text-primary">11,218</strong> new English
+            translations across 152 languages. The collection emphasizes
+            Hermetic, alchemical, kabbalistic, and natural-magic traditions
+            alongside early scientific thought, and is freely available at{" "}
+            <a
+              href="https://sourcelibrary.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              sourcelibrary.org
+            </a>
+            . I believe these texts contain valuable wisdom about
+            consciousness, creativity, and human flourishing.
           </p>
 
           <p>

@@ -97,11 +97,13 @@ export default function Home() {
             >
               Positive AI at TU Delft
             </a>
-            , founder of three ed-tech companies reaching 5M+ students, and{" "}
+            , founder of three ed-tech companies reaching 5M+ students, and
+            builder of{" "}
             <Link href="/projects/source-library">
-              collector of rare esoteric manuscripts
+              Source Library
             </Link>
-            .
+            {" "}— an open archive of 12,000+ rare historical texts with 11,000+
+            new English translations.
           </p>
         </div>
       </section>
