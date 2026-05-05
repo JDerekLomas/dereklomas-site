@@ -2,22 +2,68 @@ import Link from "next/link";
 import { allProjects } from "@/data/projects";
 import CyclingPortrait from "@/components/CyclingPortrait";
 
-const recentNews = [
+type RecentItem = {
+  date: string;
+  text: string;
+  href?: string;
+  external?: boolean;
+};
+
+const recentNews: RecentItem[] = [
   {
-    date: "2025",
-    text: "Invited talk at UNESCO on AI and wellbeing in education",
+    date: "May 2026",
+    text: "New paper: Parametric Analysis of Feature-Specific Neural Coding During Music Imagery and Perception (IEEE)",
+    href: "/research",
+  },
+  {
+    date: "Apr 2026",
+    text: "New paper: An AI-generated art evaluation model integrating computational aesthetics and cognitive science",
+    href: "/research",
+  },
+  {
+    date: "Apr 2026",
+    text: "Source Library passes 12,347 books and 11,218 new English translations across 152 languages",
+    href: "https://sourcelibrary.org",
+    external: true,
+  },
+  {
+    date: "Mar 2026",
+    text: "Playpower Games launches free K–8 math platform with live Kahoot-style quizzes",
+    href: "https://playpowergames.com",
+    external: true,
+  },
+  {
+    date: "Feb 2026",
+    text: "Essay: To Create a Second Renaissance, Translate the First",
+    href: "/blog/translating-the-renaissance",
   },
   {
     date: "2025",
-    text: "Masterclass on designing AI systems for human flourishing",
+    text: "Chapter: The Harmony of Opposites in Design and Philosophy (Bloomsbury)",
+    href: "/research/harmony-of-opposites",
+  },
+];
+
+const stats = [
+  { value: "75+", label: "publications" },
+  { value: "1,500+", label: "citations" },
+  { value: "5M+", label: "students reached" },
+  { value: "12,347", label: "rare texts digitized" },
+  { value: "11,218", label: "new translations" },
+];
+
+const currentlyItems = [
+  {
+    title: "Positive AI at TU Delft",
+    body: "Designing AI systems that promote wellbeing — supervising PhD work on aesthetic alignment, EEG-based meditation feedback, and AI-as-design-research-instrument.",
   },
   {
-    date: "2024",
-    text: "Published research on resonance in interaction design",
+    title: "Source Library",
+    body: "Expanding the open archive of pre-1700 Hermetic, alchemical, and natural-magic texts. Recent translations: Rithmomachia, the Philosopher's Stone literature, first-translated works.",
   },
   {
-    date: "2024",
-    text: "Smart Paper reaches 5 million students across India",
+    title: "Writing & Lab",
+    body: "Long-form essays on building with AI, plus interactive Three.js experiments — most recently a GPU ocean-current simulator and an animated Sankey of 280 years of occult publishing.",
   },
 ];
 
@@ -105,6 +151,44 @@ export default function Home() {
             {" "}— an open archive of 12,000+ rare historical texts with 11,000+
             new English translations.
           </p>
+
+          {/* Stat strip */}
+          <ul className="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-x-4 gap-y-4 border-y border-light py-5">
+            {stats.map((stat) => (
+              <li key={stat.label} className="text-center sm:text-left">
+                <div className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary leading-none">
+                  {stat.value}
+                </div>
+                <div className="font-[family-name:var(--font-inter)] text-[11px] uppercase tracking-wider text-text-muted mt-1.5">
+                  {stat.label}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Currently */}
+      <section className="py-16 px-6 border-t border-light bg-warm/30">
+        <div className="max-w-2xl mx-auto">
+          <div className="flex items-baseline justify-between mb-8 gap-4 flex-wrap">
+            <h2 className="text-2xl font-medium">Currently</h2>
+            <span className="font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider text-text-muted">
+              May 2026
+            </span>
+          </div>
+          <div className="space-y-6">
+            {currentlyItems.map((item) => (
+              <div key={item.title}>
+                <h3 className="font-medium text-text-primary mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-secondary text-sm leading-relaxed">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -113,17 +197,36 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-medium mb-8">Recent</h2>
           <ul className="space-y-4">
-            {recentNews.map((item, i) => (
-              <li
-                key={i}
-                className="flex gap-4 items-baseline border-b border-light pb-4 last:border-b-0"
-              >
-                <span className="text-muted font-sans text-sm shrink-0">
-                  {item.date}
-                </span>
-                <span className="text-secondary">{item.text}</span>
-              </li>
-            ))}
+            {recentNews.map((item, i) => {
+              const content = (
+                <>
+                  <span className="text-muted font-sans text-sm shrink-0 w-20">
+                    {item.date}
+                  </span>
+                  <span className="text-secondary">{item.text}</span>
+                </>
+              );
+              return (
+                <li
+                  key={i}
+                  className="border-b border-light pb-4 last:border-b-0"
+                >
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      {...(item.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="flex gap-4 items-baseline no-underline hover:text-rust transition-colors group"
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div className="flex gap-4 items-baseline">{content}</div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>

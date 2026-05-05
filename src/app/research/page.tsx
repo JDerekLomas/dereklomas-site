@@ -616,17 +616,29 @@ export default function ResearchPage() {
             engineering, educational games, and human-centered design. 1,500+
             citations.
           </p>
-          <a
-            href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
-          >
-            View full publication list on Google Scholar
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" />
-            </svg>
-          </a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <a
+              href="/cv-derek-lomas.pdf"
+              className="inline-flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
+              download
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 2v8m0 0l-3-3m3 3l3-3M3 12h10" />
+              </svg>
+              Download CV (PDF)
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=hbPBXXoAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-rust font-[family-name:var(--font-inter)] text-sm font-medium hover:gap-3 transition-all"
+            >
+              Google Scholar
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" />
+              </svg>
+            </a>
+          </div>
         </header>
 
         {/* Research areas */}
