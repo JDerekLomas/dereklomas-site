@@ -260,6 +260,29 @@ const talks = [
   },
   // 2024
   {
+    title: "Feeling Music — The Sonics of Emotion",
+    venue: "Pitch & Sync podcast",
+    date: "2024",
+    description:
+      "Podcast conversation on neural resonance theory: that we don't just process symbols, we literally resonate with music.",
+    url: "https://pitchandsync.com/feeling-music-the-sonics-of-emotion-with-dr-derek-lomas/",
+  },
+  {
+    title: "Resonance & A.I. — Interview",
+    venue: "Radio Ozora",
+    date: "2024",
+    description:
+      "Interview at Ozora on resonance, vibes, and the design of AI systems.",
+    url: "https://www.facebook.com/radiozora/videos/interview-w-derek-lomas-resonance-ai/2341457189394827/",
+  },
+  {
+    title: "AI in Creativity — Workshop for Creatives, Designers & Educators",
+    venue: "ChatGPT Education Conference",
+    date: "Jun 2024",
+    description:
+      "Interactive workshop demonstrating how AI tools like Midjourney and ChatGPT can enhance creative practice.",
+  },
+  {
     title: "AI and Creativity",
     venue: "Dutch Design Week 2024, Eindhoven",
     date: "Oct 2024",
