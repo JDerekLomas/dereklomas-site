@@ -167,12 +167,13 @@ const pressItems = [
 ];
 
 const talks = [
+  // 2026 — Upcoming / current
   {
     title: "Vibe Coding Workshop",
     venue: "IT University of Copenhagen (HCI Design Section)",
     date: "May 2026",
     description:
-      "Hands-on follow-up to an HCI talk: helping participants with no programming background ship real software using Claude Code and AI-assisted development.",
+      "Hands-on follow-up to an invited HCI talk: helping participants with no programming background ship real software using Claude Code and AI-assisted development.",
   },
   {
     title: "AI and Experience Design — IDE Master Class",
@@ -182,12 +183,12 @@ const talks = [
       "Two-day masterclass for working professionals on integrating AI into design practice. Online primer on May 13; in-person sessions May 20–21.",
   },
   {
-    title: "Vibe Coding Workshops",
+    title: "Vibe Coding Workshops (recurring)",
     venue: "Embassy of the Free Mind, Amsterdam",
-    date: "2026 — recurring",
+    date: "2025 — present",
     description:
-      "Ongoing monthly workshop series at the Bibliotheca Philosophica Hermetica teaching AI-assisted software building to scholars, librarians, and artists.",
-    url: "https://embassyofthefreemind.com/",
+      "Ongoing workshop series at the Bibliotheca Philosophica Hermetica teaching AI-assisted software building to scholars, librarians, and artists. The March 13 “Vibe Coding Amsterdam | Show & Tell” featured seven AI projects.",
+    url: "https://luma.com/6eks7dum",
   },
   {
     title: "Humanist AI: Translating the Ancient World",
@@ -196,6 +197,7 @@ const talks = [
     description:
       "Talk on a vision for humanist AI grounded in the Source Library project at the Embassy of the Free Mind — building the largest library of translated ancient texts.",
   },
+  // 2025
   {
     title: "AI Coaching at the Internet Archive",
     venue: "Internet Archive, San Francisco",
@@ -205,18 +207,87 @@ const talks = [
     url: "https://archive.org/",
   },
   {
-    title: "Vibes, Resonance and Harmony in the Age of AI",
-    venue: "Ozora Festival, Hungary",
+    title: "Quantum Resonance — interactive exhibit",
+    venue: "UNESCO Headquarters, Paris (Salle des Actes / Salle des Pas Perdus)",
+    date: "Feb 2025",
+    description:
+      "Co-created with Martijn Weber for the Opening Ceremony of the UN International Year of Quantum Science and Technology (Feb 4–5, 2025). Visitors explored how resonance and interference patterns shape both the quantum world and cymatic visualizations.",
+    url: "https://www.unesco.org/en/articles/opening-ceremony-international-year-quantum-science-and-technology",
+  },
+  {
+    title: "Smart Paper for Learning Assessment",
+    venue: "UNESCO",
     date: "2025",
     description:
-      "Festival talk on harmony and resonance as design strategies for AI systems.",
+      "Talk at UNESCO on Smart Paper — a low-cost AI tool to assess math and literacy skills now used by 4.7M+ students across India.",
+  },
+  {
+    title: "The Nature of Artificial Intelligence",
+    venue: "OZORA Festival, Hungary (Chambok House)",
+    date: "2025",
+    description:
+      "Invited lecture; second talk: “Vibes, Resonance and Harmony in the Age of AI.”",
+    url: "https://2025.ozorafestival.eu/arts-and-workshops/chambok-house/derek-lomas/",
+  },
+  {
+    title: "Designing with AI — Professional Master Class",
+    venue: "TU Delft IDE (open-enrollment)",
+    date: "2024 — recurring",
+    description:
+      "Two-day masterclass for working professionals from companies including ASML, Silver Cross, and ABN Amro Bank.",
+  },
+  {
+    title: "Neural Resonance in Aesthetic Experiences",
+    venue: "Stanford EEG Topics Seminar",
+    date: "2025",
+    description:
+      "Presentation of an open EEG dataset on music listening alongside research on neural resonance in aesthetic experience.",
+  },
+  {
+    title: "Speaker / Artist",
+    venue: "Amsterdam Dance Event (ADE)",
+    date: "2025",
+    description: "Listed as artist/speaker at ADE.",
+    url: "https://www.amsterdam-dance-event.nl/en/artists-speakers/derek-lomas/2584426/",
+  },
+  // 2024
+  {
+    title: "AI and Creativity",
+    venue: "Dutch Design Week 2024, Eindhoven",
+    date: "Oct 2024",
+    description:
+      "Interactive session at Design Academy Eindhoven on creative practice with generative AI.",
   },
   {
     title: "AI & Experience Design Conference",
     venue: "TU Delft",
+    date: "Feb 2024",
+    description:
+      "Keynote on frontiers of generative AI for meaningful design experiences.",
+  },
+  {
+    title: "Talk at Het Landjuweel Festival",
+    venue: "Ruigoord, Amsterdam",
     date: "2024",
     description:
-      "Keynote on the frontiers of generative AI for meaningful design experiences.",
+      "Talk at Amsterdam's oldest festival on AI, resonance, and design.",
+    url: "https://ruigoord.nl/en/ruigoord-gatherings/landjuweel/",
+  },
+  {
+    title: "Talk at Mo:Dem Festival",
+    venue: "Mo:Dem Festival, Croatia",
+    date: "2024",
+    description:
+      "Talk at the international psytrance gathering on resonance and AI.",
+    url: "https://modemfestival.com/",
+  },
+  // 2022
+  {
+    title: "Design Resonance",
+    venue: "Experience Research Society Summit, Provo / Salt Lake City",
+    date: "2022",
+    description:
+      "Keynote on resonance, harmony, and vibes as principles for experience design.",
   },
   {
     title: "AI & Cocktails (recurring series)",
@@ -225,6 +296,7 @@ const talks = [
     description:
       "Long-running Friday-afternoon mixer where designers, students, and faculty experiment with new generative AI tools over cocktails. Started September 2022.",
   },
+  // Originals
   {
     title: "The $12 Computer",
     venue: "PopTech, Camden, ME",
