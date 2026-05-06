@@ -168,29 +168,77 @@ const pressItems = [
 
 const talks = [
   {
-    title: "Designing AI for Wellbeing",
-    venue: "UNESCO",
+    title: "Vibe Coding Workshop",
+    venue: "IT University of Copenhagen (HCI Design Section)",
+    date: "May 2026",
+    description:
+      "Hands-on follow-up to an HCI talk: helping participants with no programming background ship real software using Claude Code and AI-assisted development.",
+  },
+  {
+    title: "AI and Experience Design — IDE Master Class",
+    venue: "TU Delft, Industrial Design Engineering",
+    date: "May 2026",
+    description:
+      "Two-day masterclass for working professionals on integrating AI into design practice. Online primer on May 13; in-person sessions May 20–21.",
+  },
+  {
+    title: "Vibe Coding Workshops",
+    venue: "Embassy of the Free Mind, Amsterdam",
+    date: "2026 — recurring",
+    description:
+      "Ongoing monthly workshop series at the Bibliotheca Philosophica Hermetica teaching AI-assisted software building to scholars, librarians, and artists.",
+    url: "https://embassyofthefreemind.com/",
+  },
+  {
+    title: "Humanist AI: Translating the Ancient World",
+    venue: "Design Thinking Zeal (online)",
+    date: "March 2026",
+    description:
+      "Talk on a vision for humanist AI grounded in the Source Library project at the Embassy of the Free Mind — building the largest library of translated ancient texts.",
+  },
+  {
+    title: "AI Coaching at the Internet Archive",
+    venue: "Internet Archive, San Francisco",
     date: "2025",
-    description: "Invited talk on AI and wellbeing in education",
+    description:
+      "Workshops and coaching sessions on AI-assisted research and digital preservation, around the Internet Archive's World Digital Preservation Day events.",
+    url: "https://archive.org/",
+  },
+  {
+    title: "Vibes, Resonance and Harmony in the Age of AI",
+    venue: "Ozora Festival, Hungary",
+    date: "2025",
+    description:
+      "Festival talk on harmony and resonance as design strategies for AI systems.",
   },
   {
     title: "AI & Experience Design Conference",
     venue: "TU Delft",
     date: "2024",
-    description: "Keynote on frontiers of generative AI for meaningful experiences",
+    description:
+      "Keynote on the frontiers of generative AI for meaningful design experiences.",
+  },
+  {
+    title: "AI & Cocktails (recurring series)",
+    venue: "TU Delft StudioLab / IDE",
+    date: "2022 — present",
+    description:
+      "Long-running Friday-afternoon mixer where designers, students, and faculty experiment with new generative AI tools over cocktails. Started September 2022.",
   },
   {
     title: "The $12 Computer",
-    venue: "PopTech",
+    venue: "PopTech, Camden, ME",
     date: "2009",
-    description: "How 8-bit gaming platforms can deliver education to the developing world",
+    description:
+      "How 8-bit gaming platforms can deliver education to the developing world.",
     url: "https://poptech.org/",
   },
   {
-    title: "Playpower: Education on a $12 Computer",
-    venue: "TEDxCMU",
-    date: "2010",
-    description: "Open-source educational games for the world's cheapest computers",
+    title: "Playpower! $12 Computers for Radically Affordable Computer-Aided Learning",
+    venue: "O'Reilly ETech, San Jose",
+    date: "2009",
+    description:
+      "Original Playpower talk introducing the $12 computer concept for global education.",
   },
 ];
 

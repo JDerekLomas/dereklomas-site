@@ -221,7 +221,13 @@ const funding = [
 ];
 
 const talks = [
+  { year: "2026", venue: "IT University of Copenhagen, HCI Design Section", title: "Vibe Coding Workshop (follow-up to invited HCI talk)" },
+  { year: "2026", venue: "TU Delft IDE Master Class", title: "AI and Experience Design (May 20–21 cohort)" },
+  { year: "2026", venue: "Embassy of the Free Mind, Amsterdam", title: "Vibe Coding Workshops — recurring monthly series at the BPH" },
+  { year: "2026", venue: "Design Thinking Zeal (online)", title: "Humanist AI: Translating the Ancient World" },
+  { year: "2025", venue: "Internet Archive, San Francisco", title: "AI coaching around World Digital Preservation Day" },
   { year: "2025", venue: "Ozora Festival, Hungary", title: "Vibes, Resonance and Harmony in the Age of AI" },
+  { year: "2022–present", venue: "TU Delft StudioLab / IDE", title: "AI & Cocktails — recurring generative-AI mixer (since Sept 2022)" },
   { year: "2022", venue: "Experience Research Summit, Salt Lake City", title: "Design Resonance" },
   { year: "2022", venue: "Amplify AI, Amsterdam", title: "AI for Good Vibes" },
   { year: "2022", venue: "Fruit Punch AI, Eindhoven", title: "AI for Mental Health" },
