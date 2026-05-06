@@ -6,6 +6,46 @@
   },
   "videos": [
     {
+      "id": "kfbWBFfei4w",
+      "title": "IDE Master Class: AI in Experience Design",
+      "description": "Two-day TU Delft IDE Master Class for working professionals on integrating AI into design practice.",
+      "duration": "",
+      "published": "2024",
+      "category": "talk",
+      "project": "talks",
+      "featured": true
+    },
+    {
+      "id": "XaPVlGdj4Yk",
+      "title": "Designing AI for Wellbeing",
+      "description": "Talk at the AiTech Agora at TU Delft on designing AI systems that maximize human wellbeing.",
+      "duration": "",
+      "published": "2020",
+      "category": "talk",
+      "project": "talks",
+      "featured": true
+    },
+    {
+      "id": "r5ijNjJNefc",
+      "title": "AI and Experience Design with Dr. Derek Lomas",
+      "description": "#Tellarthosts conversation on taking a human-centered approach to artificial intelligence.",
+      "duration": "",
+      "published": "2023",
+      "category": "talk",
+      "project": "talks",
+      "featured": true
+    },
+    {
+      "id": "cNVYIlgZ_l4",
+      "title": "Embassy of the Free Mind: All is One — Documentary",
+      "description": "Documentary on the Embassy of the Free Mind / Bibliotheca Philosophica Hermetica in Amsterdam, featuring Derek and the Source Library project.",
+      "duration": "",
+      "published": "2024",
+      "category": "documentary",
+      "project": "source-library",
+      "featured": true
+    },
+    {
       "id": "TLEUWc-FLcE",
       "title": "ReSource Final Pitch",
       "description": "",

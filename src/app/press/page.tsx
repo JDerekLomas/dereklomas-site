@@ -191,6 +191,14 @@ const talks = [
     url: "https://luma.com/6eks7dum",
   },
   {
+    title: "Workshop on AI, Creativity and Esotericism",
+    venue: "Embassy of the Free Mind, Amsterdam",
+    date: "July 2025",
+    description:
+      "Sold-out afternoon workshop at the BPH on creative rituals to explore human-AI resonance — vibe coding, AI translations of ancient texts, digital divination, philosopher agents, future scrying. Co-hosted with Michell Zappa (Envisioning).",
+    url: "https://luma.com/uowhvyzx",
+  },
+  {
     title: "Humanist AI: Translating the Ancient World",
     venue: "Design Thinking Zeal (online)",
     date: "March 2026",

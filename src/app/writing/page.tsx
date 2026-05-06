@@ -209,11 +209,22 @@ export default function WritingPage() {
   const writing = loadWritingData();
   const videoData = loadVideoData();
 
-  // Show featured + most-viewed videos
-  const featuredVideos = videoData.videos
-    .filter((v) => v.featured || (v.views && v.views > 1000))
+  // Talks, lectures, and the EFM documentary — manually curated/featured
+  const talkVideos = videoData.videos.filter(
+    (v) => v.featured && (v.category === "talk" || v.category === "documentary"),
+  );
+
+  // Selected popular content from the channel (not duplicates of the talks)
+  const otherFeaturedVideos = videoData.videos
+    .filter(
+      (v) =>
+        !talkVideos.some((t) => t.id === v.id) &&
+        (v.featured || (v.views && v.views > 1000)),
+    )
     .sort((a, b) => (b.views || 0) - (a.views || 0))
     .slice(0, 6);
+
+  const featuredVideos = otherFeaturedVideos;
 
   return (
     <div className="min-h-screen py-16 px-6">
@@ -342,16 +353,87 @@ export default function WritingPage() {
           </div>
         </section>
 
-        {/* Videos Section */}
+        {/* Talks & Lectures Section */}
+        {talkVideos.length > 0 && (
+          <section className="mb-16">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+                  Talks &amp; Lectures
+                </h2>
+                <p className="text-sm text-text-secondary mt-1">
+                  Recorded talks, masterclasses, and a documentary
+                </p>
+              </div>
+              <a
+                href={videoData.channel.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-rust font-[family-name:var(--font-inter)] font-medium hover:underline flex items-center gap-1"
+              >
+                YouTube
+                <ChevronIcon />
+              </a>
+            </div>
+
+            <div className="space-y-4">
+              {talkVideos.map((video) => (
+                <a
+                  key={video.id}
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] transition-colors no-underline group overflow-hidden"
+                >
+                  <div className="grid md:grid-cols-[200px_1fr] gap-0">
+                    <div className="relative aspect-video md:aspect-auto bg-black overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors">
+                        <div className="w-12 h-12 rounded-full bg-rust/90 flex items-center justify-center">
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-base font-medium text-text-primary leading-snug group-hover:text-rust transition-colors">
+                        {video.title}
+                      </h3>
+                      {video.description && (
+                        <p className="mt-2 text-sm text-text-secondary">
+                          {video.description}
+                        </p>
+                      )}
+                      <div className="mt-3 flex items-center gap-3 text-xs text-text-muted">
+                        {video.published && <span>{video.published}</span>}
+                        {video.duration && <span>{video.duration}</span>}
+                        <span className="capitalize">{video.category}</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Other Videos Section */}
         {featuredVideos.length > 0 && (
           <section className="mb-16">
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
-                  Videos
+                  Other Videos
                 </h2>
                 <p className="text-sm text-text-secondary mt-1">
-                  Selected talks, demos, and research documentation
+                  Demos, documentation, and creative projects from the channel
                 </p>
               </div>
               <a

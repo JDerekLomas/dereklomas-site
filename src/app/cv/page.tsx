@@ -224,6 +224,7 @@ const talks = [
   { year: "2026", venue: "IT University of Copenhagen, HCI Design Section", title: "Vibe Coding Workshop (follow-up to invited HCI talk)" },
   { year: "2026", venue: "TU Delft IDE Master Class", title: "AI and Experience Design (May 20–21 cohort)" },
   { year: "2026", venue: "Embassy of the Free Mind, Amsterdam", title: "Vibe Coding Workshops — recurring series at the BPH" },
+  { year: "2025", venue: "Embassy of the Free Mind, Amsterdam", title: "Workshop on AI, Creativity and Esotericism (sold out, July 4)" },
   { year: "2026", venue: "Design Thinking Zeal (online)", title: "Humanist AI: Translating the Ancient World" },
   { year: "2025", venue: "Internet Archive, San Francisco", title: "AI coaching around World Digital Preservation Day" },
   { year: "2025", venue: "UNESCO HQ, Paris", title: "Quantum Resonance — interactive exhibit, Opening Ceremony of the UN International Year of Quantum (Feb 4–5)" },
