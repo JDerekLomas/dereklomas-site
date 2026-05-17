@@ -1,0 +1,968 @@
+[
+  {
+    "uuid": "uuid:c787ac32-2945-46d2-967c-2156eb70d5f6",
+    "title": "MAIK: Modular Artificial Intelligence Kit",
+    "subtitle": null,
+    "description": "AI tools have entered design teams faster than the shared practices for using them. Inside design teams, every designer already uses AI in their own way, but what one designer learns never reaches the rest of the group. This thesis investigated how AI can be integrated into the early-stage design workflow of a…",
+    "year": 2026,
+    "date": "2026-4-20",
+    "degree": "MSc",
+    "student": "Arnau  Castillo, E.E. Furia",
+    "derekRole": "mentor",
+    "keywords": [
+      "Artificial Inteligence (AI)",
+      "Canvas",
+      "Collaboration",
+      "Design workflow",
+      "Scaffolding",
+      "Toolkit"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:c787ac32-2945-46d2-967c-2156eb70d5f6"
+  },
+  {
+    "uuid": "uuid:63a9a918-8074-4cf4-83c2-22fc8df28654",
+    "title": "Futures of disruptive technologies",
+    "subtitle": "An AI-enhanced foresight tool for exploring the future of disruptive technologies",
+    "description": "This graduation project investigates how policymakers and strategists can be supported in exploring long-term futures shaped by the convergence of disruptive technologies. The project was conducted in collaboration with Quantum Delta NL and its Centre for Quantum and Society (CQS), which develops tools to explore the…",
+    "year": 2026,
+    "date": "2026-3-23",
+    "degree": "MSc",
+    "student": "R.J. Bouman",
+    "derekRole": "mentor",
+    "keywords": [
+      "Disruptive Technologies",
+      "Future Foresight",
+      "Human-AI interation",
+      "Scenario Planning",
+      "Technological Convergence"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:63a9a918-8074-4cf4-83c2-22fc8df28654"
+  },
+  {
+    "uuid": "uuid:e8ad364e-e2d4-41bc-bd20-3455e1749654",
+    "title": "Co-Creating a Human-Centered AI Learning System for the Future of Education",
+    "subtitle": null,
+    "description": "As Artificial Intelligence (AI) becomes a staple in modern classrooms, educators face a growing dilemma: how to effectively embrace personalization without compromising instructional control or inadvertently encouraging student academic dishonesty. This research addresses the current \"black box\" nature of AI in…",
+    "year": 2026,
+    "date": "2026-1-9",
+    "degree": "MSc",
+    "student": "J.H. Boyle, Z.H. Krullaars",
+    "derekRole": "mentor",
+    "keywords": [
+      "Co-Design",
+      "EduAI",
+      "Education",
+      "Human-AI Interaction",
+      "Human-Centered AI",
+      "LLM",
+      "Vibe-Coding"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e8ad364e-e2d4-41bc-bd20-3455e1749654"
+  },
+  {
+    "uuid": "uuid:5a40bff1-0b91-4522-b1df-54c7384fd609",
+    "title": "Bag-to-Remote",
+    "subtitle": "An Integrated and Modular Baggage Delivery Service",
+    "description": "As global air travel continues to rise, airports are investing in smoother passenger experiences: particularly during the departure process. Yet for many passengers, the moment of arrival remains stressful. At airports, this problem is particularly present for leisure passengers carrying heavy baggage. This thesis…",
+    "year": 2025,
+    "date": "2025-9-29",
+    "degree": "MSc",
+    "student": "J.W. van den Berg, S.C. Santema",
+    "derekRole": "mentor",
+    "keywords": [],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5a40bff1-0b91-4522-b1df-54c7384fd609"
+  },
+  {
+    "uuid": "uuid:2d2ec6f5-3a82-4a96-b588-c63d3864000f",
+    "title": "AI boosted User Experiences for Polestar",
+    "subtitle": null,
+    "description": "This thesis investigates the strategic integration of Artificial Intelligence (AI) to enhance user experience (UX) in the automotive sector, with a focus on Polestar, a premium electric vehicle manufacturer. Through an strategic and exploratory design-driven approach, the research identifies AI-powered UX…",
+    "year": 2025,
+    "date": "2025-7-7",
+    "degree": "MSc",
+    "student": "B.J. Perk, L.W.L. Simonse",
+    "derekRole": "mentor",
+    "keywords": [
+      "AI Design",
+      "AI Strategy",
+      "Automotive",
+      "Design Roadmapping",
+      "Future Vision",
+      "Innovation Strategy",
+      "Mobility",
+      "UX Strategy"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:2d2ec6f5-3a82-4a96-b588-c63d3864000f"
+  },
+  {
+    "uuid": "uuid:8231e212-d77a-435c-add5-f2e1eaa81d94",
+    "title": "Adaptive Reuse of Water Heritage In The Dutch Polder Landscape",
+    "subtitle": "Bridging Theory and Practice in the Redevelopment of a Historic Pumping Station",
+    "description": "This thesis focuses on the adaptive reuse of obsolete historic water infrastructure in the Dutch Polder landscape. It examines how these heritage structures can be reimagined to effectively serve contemporary social, cultural, and environmental needs. The goal of this research is to guide the development of an…",
+    "year": 2025,
+    "date": "2025-10-16",
+    "degree": "MSc",
+    "student": "J.C. de Jong",
+    "derekRole": "mentor",
+    "keywords": [],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:8231e212-d77a-435c-add5-f2e1eaa81d94"
+  },
+  {
+    "uuid": "uuid:f90672fe-cd4e-4306-9666-7ac80211cb36",
+    "title": "Smart Kitchens and Smarter Conversations",
+    "subtitle": "Mapping Human-AI dynamics and expectations of applying GPT (Generative Pre-trained Transformer) models as an interface in smart kitchen ecosystems",
+    "description": "We are on the verge of reversing a technological paradox. With the right steps, we can leverage the power of artificial intelligence to revolutionize the world of smart kitchen appliances. Imagine a kitchen where your fridge, oven, and cooking hob understand and anticipate your needs, making cooking a breeze and a…",
+    "year": 2024,
+    "date": "2024-8-14",
+    "degree": "MSc",
+    "student": "Eric Heng Gu, Vincent Hofstee, Wouter Ditters, Y. Khinvasara",
+    "derekRole": "mentor",
+    "keywords": [
+      "Appliance",
+      "Artifical Intelligence",
+      "GPT-4o",
+      "Kitchen",
+      "Large Language Models (LLMs)",
+      "Smart Home"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:f90672fe-cd4e-4306-9666-7ac80211cb36"
+  },
+  {
+    "uuid": "uuid:9ef3bcd2-ea4f-4baf-be2a-eda6095de813",
+    "title": "Designing for the future of secondary education",
+    "subtitle": null,
+    "description": "The adoption of ChatGPT among students for academic assistance, including report writing, has sparked debates on its integration into secondary education. Despite initial resistance, ChatGPT has firmly entrenched itself in secondary schools, necessitating a comprehensive exploration of its adoption and the design…",
+    "year": 2024,
+    "date": "2024-5-15",
+    "degree": "MSc",
+    "student": "J.J. Tamsma, Michiel van Zomeren",
+    "derekRole": "mentor",
+    "keywords": [
+      "Education",
+      "Generative AI",
+      "Teachers"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:9ef3bcd2-ea4f-4baf-be2a-eda6095de813"
+  },
+  {
+    "uuid": "uuid:e3116550-4c24-49bf-9da7-a0f86f4abda8",
+    "title": "Image-based AI for Industrial Design",
+    "subtitle": "How aligning semantics among desingers helps them use AI tools more effectively",
+    "description": "This research explores the opportunities and limitations of image-based AI tools for industrial design. In collaboration with designers at Royal Gazelle, several tools were tested. AI tools can broaden and speed up the creative processes but also lack control for the user. AI models and designers use different terms…",
+    "year": 2024,
+    "date": "2024-4-29",
+    "degree": "MSc",
+    "student": "B.H.P. Theijse, Stef de Groot",
+    "derekRole": "mentor",
+    "keywords": [
+      "AI",
+      "Design",
+      "Industrial Design",
+      "LoRA",
+      "Low-Rank Adaptation",
+      "image-based AI",
+      "labelling",
+      "semantics"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e3116550-4c24-49bf-9da7-a0f86f4abda8"
+  },
+  {
+    "uuid": "uuid:657c365b-be9a-4a8d-b29d-6679fccec764",
+    "title": "How Might ChatGPT Improve the Accessibility of Quantum Computing?",
+    "subtitle": "A design research on improving Quantum Computing accessibility trough AI",
+    "description": "The evolution of higher education and technological advancements has transformed the accessibility and understanding of complex subjects, such as quantum computing.  Traditionally, higher education has focused on specialized knowledge, making it challenging for individuals to explore diverse fields beyond their…",
+    "year": 2024,
+    "date": "2024-2-29",
+    "degree": "MSc",
+    "student": "C. D'Arcangelis",
+    "derekRole": "mentor",
+    "keywords": [
+      "Artificial Inteligence",
+      "ChatGPT",
+      "Knowledge gap",
+      "Quantum Computing",
+      "accessibility"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:657c365b-be9a-4a8d-b29d-6679fccec764"
+  },
+  {
+    "uuid": "uuid:a147269d-c437-4695-be71-a8dc31085aaa",
+    "title": "Future framing method: utilizing the power of co-creation and AI when envisioning the future",
+    "subtitle": null,
+    "description": "Society currently faces many complex and significant challenges, dilemmas that lack straightforward solutions and are deeply interconnected. These problems demand a transformative approach that involves reevaluating people’s values, beliefs, attitudes, and behavior. Amidst these ongoing challenges, there is a…",
+    "year": 2023,
+    "date": "2023-8-3",
+    "degree": "MSc",
+    "student": "T. Oudhof",
+    "derekRole": "mentor",
+    "keywords": [
+      "Artificial intelligence",
+      "Co-creation",
+      "Future Vision",
+      "Futuring",
+      "Toolkit",
+      "method"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:a147269d-c437-4695-be71-a8dc31085aaa"
+  },
+  {
+    "uuid": "uuid:5fa2a662-3e60-4f79-ac28-4c4a6e4aacaf",
+    "title": "PLAI: Positive Implementation of Generative AI in Education Through Play-Based Learning",
+    "subtitle": null,
+    "description": "Generative AI has had a profound impact on various sectors since mid-2022. The rapid adoption by students poses challenges for student assessment and raises concerns about student development. This thesis delves into the subject and proposes a positive implementation in education through play-based learning. The…",
+    "year": 2023,
+    "date": "2023-8-25",
+    "degree": "MSc",
+    "student": "T.M.L. Visser",
+    "derekRole": "mentor",
+    "keywords": [
+      "AI Literacy",
+      "Child-AI interaction",
+      "Education",
+      "Generative AI",
+      "Human-Centered Design",
+      "Implementation",
+      "Iterative approach",
+      "Play-based learning",
+      "Teacher-AI interaction",
+      "creativity",
+      "workshop design"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5fa2a662-3e60-4f79-ac28-4c4a6e4aacaf"
+  },
+  {
+    "uuid": "uuid:a94dcdb5-afe7-4d6e-85db-1985785c3c81",
+    "title": "More Connected Than Ever: Value connection through a Sciffle Box game with ChatGPT",
+    "subtitle": null,
+    "description": "Background\n\nThis master’s thesis focuses on developing a\ngame that utilizes ChatGPT and the Sciffle Box to guide players in discussing their\nunderstanding of corporate values and connecting more deeply with corporate values\nbased on their own human values. Values are abstract and challenging to\ncomprehend. In…",
+    "year": 2023,
+    "date": "2023-8",
+    "degree": "MSc",
+    "student": "Anko Elzes, X. Wen",
+    "derekRole": "mentor",
+    "keywords": [
+      "ChatGPT",
+      "Human Values",
+      "Serious Game"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:a94dcdb5-afe7-4d6e-85db-1985785c3c81"
+  },
+  {
+    "uuid": "uuid:4dd32169-7337-4962-9ab7-2790d70ec847",
+    "title": "Design for Diverse Body Shapes with AI",
+    "subtitle": "Exploring AIGC Applications for DINED Mannequin Generation",
+    "description": "What In this project, a workflow method integrating generative AI has been developed. This versatile approach can be applied to a variety of body shape-related design tasks. For instance, designers can leverage this method effectively to generate design inspirations, enabling them to establish detailed design themes…",
+    "year": 2023,
+    "date": "2023-7-12",
+    "degree": "MSc",
+    "student": "Y. Ma",
+    "derekRole": "mentor",
+    "keywords": [
+      "Anthropometry tool",
+      "DINED",
+      "Design tool",
+      "Design workflow",
+      "Human body shape",
+      "Human factors tool",
+      "Human-AI interaction"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:4dd32169-7337-4962-9ab7-2790d70ec847"
+  },
+  {
+    "uuid": "uuid:083276b5-1580-482c-a36b-94576e15c2c2",
+    "title": "Generative AI &amp; Tangible Products: Human-AI Design of 3D-printed Lamps",
+    "subtitle": null,
+    "description": "New generative AI systems can make beautiful pictures, but can they help produce functional products? This graduation project investigated the potential for generative AI to aid the design of functional, 3D-printed lamps.  Two studies were conducted to assess the degree to which AI can measurably improve design…",
+    "year": 2023,
+    "date": "2023-7-11",
+    "degree": "MSc",
+    "student": "D. LIAO",
+    "derekRole": "mentor",
+    "keywords": [
+      "3D printing",
+      "AI",
+      "Artifical Intelligence",
+      "Exploration",
+      "Generative AI",
+      "Lamp Design",
+      "Skill Adaptation",
+      "User Interface",
+      "human-ai collaboration",
+      "product attachment",
+      "prototyping"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:083276b5-1580-482c-a36b-94576e15c2c2"
+  },
+  {
+    "uuid": "uuid:c436a6dd-8e23-4779-aabb-477e0337a7d0",
+    "title": "Stomatal Conductance Patterns and Advanced Automatic Control",
+    "subtitle": "With Application to Small Scale Agriculture",
+    "description": "Humanitarian, environmental, and political concerns have contributed to the evolution of agricultural technology, also known as AgTech. Researchers from various scientific backgrounds are diving into AgTech to ensure the world's food security, create a sustainable future for agriculture, and pave the way for…",
+    "year": 2023,
+    "date": "2023-4-11",
+    "degree": "MSc",
+    "student": "I. PANAGOPOULOS, Javier Lomas",
+    "derekRole": "mentor",
+    "keywords": [
+      "Speaking Plant Approach",
+      "agriculture",
+      "climate control",
+      "greenhouse",
+      "stomatal conductance"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:c436a6dd-8e23-4779-aabb-477e0337a7d0"
+  },
+  {
+    "uuid": "uuid:89d2b59c-0210-435b-a11b-db80a68fcbcc",
+    "title": "Introducing Basic Aspects of Quantum Physics through Cymatics",
+    "subtitle": null,
+    "description": "The market of quantum computing is growing rapidly due to the rising demand of high-performance computing. By combining quantum theory and computer science, quantum computing shows great promise for future application in fields like algorithms, cryptography, machine learning and quantum simulation. Current…",
+    "year": 2023,
+    "date": "2023-10-17",
+    "degree": "MSc",
+    "student": "A.J.C. van der Helm, M. Weber",
+    "derekRole": "mentor",
+    "keywords": [
+      "cymatics",
+      "eigenmodes",
+      "frequency",
+      "quantum computing",
+      "quantum physics"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:89d2b59c-0210-435b-a11b-db80a68fcbcc"
+  },
+  {
+    "uuid": "uuid:e506d582-820b-4356-8b43-6513cc070b7a",
+    "title": "How might human experience inform AI systems",
+    "subtitle": null,
+    "description": "The problem we want to address AI(Artificial intelligence) is diving into people’s lives as its algorithm continues to iterate. However, the algorithmic and quantitative systems do not seem to access people’s experiences, which always include emotional and qualitative factors. How can an AI system understand people’s…",
+    "year": 2022,
+    "date": "2022-8-2",
+    "degree": "MSc",
+    "student": "J. Wu, S. Jin",
+    "derekRole": "mentor",
+    "keywords": [
+      "Aesthetic",
+      "Artifical Intelligence",
+      "Generative Adversarial Networks",
+      "Human Centered Design"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e506d582-820b-4356-8b43-6513cc070b7a"
+  },
+  {
+    "uuid": "uuid:2a1ba952-499b-4b84-bb18-50c2ab06b716",
+    "title": "Design engagement for the Recharge app to help and motivate users throughout the program",
+    "subtitle": null,
+    "description": "Due to an increase in remote working concerns around mental and physical health are increasing. Most people are aware of this problem, but find it hard to improve their health. Recharge is a company that wants to help these people by providing an app where users experience an one-week Bootcamp. In this week they are…",
+    "year": 2022,
+    "date": "2022-6-3",
+    "degree": "MSc",
+    "student": "A.R.V. Choenni",
+    "derekRole": "mentor",
+    "keywords": [
+      "App Design",
+      "Arvind",
+      "Choenni",
+      "Engagement",
+      "Motivation",
+      "Recharge"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:2a1ba952-499b-4b84-bb18-50c2ab06b716"
+  },
+  {
+    "uuid": "uuid:09486d4d-0aaf-4404-b8bc-ddb68e4f4d2d",
+    "title": "Beauty in the Eye of Machine",
+    "subtitle": "Using Automated Measures of Aesthetic Beauty to Improve GAN Output of Satellite Images",
+    "description": "This paper aims to evaluate which automated measures of aesthetic beauty are the best predictors for human ratings of aesthetics and proposes that typicality and novelty may increase the correlation between the two. To study the correlation between these metrics, a literature study was performed to find a select…",
+    "year": 2022,
+    "date": "2022-6-23",
+    "degree": "BSc",
+    "student": "J.M. Catlett",
+    "derekRole": "mentor",
+    "keywords": [],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:09486d4d-0aaf-4404-b8bc-ddb68e4f4d2d"
+  },
+  {
+    "uuid": "uuid:5087014b-6086-4e42-92c3-41e087aed498",
+    "title": "How can crowdsourced workers effectively rate artwork images produced by Generative Adversarial Network transformers?",
+    "subtitle": null,
+    "description": "Generative Adversarial Networks (GANs) can create artwork images and we need effective ways of rating their aesthetic values. This could help us determine the most aesthetic artwork images (and identify the GANs that created them) and train GANs to produce more aesthetic artwork images in the future. In this research,…",
+    "year": 2022,
+    "date": "2022-6-23",
+    "degree": "BSc",
+    "student": "M. Rahman",
+    "derekRole": "mentor",
+    "keywords": [],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5087014b-6086-4e42-92c3-41e087aed498"
+  },
+  {
+    "uuid": "uuid:ce179e1d-4de4-4c3e-b754-2a580116ddc6",
+    "title": "GANAesthetic : An experience of interactively exploring aesthetically pleasing images and incorporating the human perception of beauty to discover aesthetic latent dimensions",
+    "subtitle": null,
+    "description": "Despite the fact that climate change is becoming increasingly dangerous and prevalent, there is still a lack of public engagement. This can be explained by the fact that the media portrays climate change as an abstract concept. The message can be more effectively communicated through visual art because it is more…",
+    "year": 2022,
+    "date": "2022-6-23",
+    "degree": "BSc",
+    "student": "T.H. Nguyen",
+    "derekRole": "mentor",
+    "keywords": [
+      "Aesthetic",
+      "GAN",
+      "GANSpace",
+      "Latent space",
+      "StyleGAN2"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:ce179e1d-4de4-4c3e-b754-2a580116ddc6"
+  },
+  {
+    "uuid": "uuid:273421df-60ae-42b2-866a-59abf80005ac",
+    "title": "Iterative training with human rated images to improve GAN generated image aesthetics",
+    "subtitle": "Effects of dataset size and training length",
+    "description": "Generative Adversarial Networks (GANs) brought rapid developments in generating synthetic images by mimicking structures in the training data. With the list of application of GANs growing drastically, it has lately become an exciting technology to explore for designers to communicate their ideas and arts through…",
+    "year": 2022,
+    "date": "2022-6-23",
+    "degree": "BSc",
+    "student": "B.I. Çelebi",
+    "derekRole": "mentor",
+    "keywords": [
+      "Aesthetic experience",
+      "Artificial Intelligence",
+      "Crowdsourcing",
+      "Generative Adversarial Network",
+      "Human Centered Design"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:273421df-60ae-42b2-866a-59abf80005ac"
+  },
+  {
+    "uuid": "uuid:b52d55ee-8f80-4bcb-8eba-f243465b8a26",
+    "title": "Using graphics to assess wellbeing in a conversational user interface",
+    "subtitle": null,
+    "description": "With the COVID-19 pandemic testing humanity worldwide in unforeseen ways, wellbeing assessment has stepped to the foreground of individual health status. Conversational User Interfaces (CUIs) prove promising as an assessment tool, but lacking the means to retain users engaged during the process. This research aims to…",
+    "year": 2022,
+    "date": "2022-6-22",
+    "degree": "BSc",
+    "student": "A. Achilleos",
+    "derekRole": "mentor",
+    "keywords": [
+      "Conversational User Interface",
+      "Drawing",
+      "Image Classification",
+      "Wellbeing"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:b52d55ee-8f80-4bcb-8eba-f243465b8a26"
+  },
+  {
+    "uuid": "uuid:7861141f-851a-4116-a4c7-bfed55381c12",
+    "title": "Designing a dashboard for wellbeing data",
+    "subtitle": "A recommendation system for individual wellbeing",
+    "description": "Due to COVID-19 the overall wellbeing worldwide decreased. Assessing and improving wellbeing became a more important subject. This article describes the design research that uses the My Wellness Check survey created by the Delft University for Technology and aims to create a dashboard for wellbeing. That includes a…",
+    "year": 2022,
+    "date": "2022-6-22",
+    "degree": "BSc",
+    "student": "M.A.A. Groenendijk",
+    "derekRole": "mentor",
+    "keywords": [
+      "Assesment",
+      "Recommendation",
+      "Wellbeing",
+      "dashboard"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:7861141f-851a-4116-a4c7-bfed55381c12"
+  },
+  {
+    "uuid": "uuid:326af6a6-0cbe-4f6d-b696-d52e40946c1c",
+    "title": "To what degree can we use NLP to mine current and trending topics with respect to well-being?",
+    "subtitle": null,
+    "description": "The increase in global internet users brings forth a vast amount of social media users and therefore opinions that are shared online. A subset of those users, adolescents, seem to develop some sort of addiction towards social media, which could lead to low life satisfaction. This paper tries to extract trending topics…",
+    "year": 2022,
+    "date": "2022-6-22",
+    "degree": "BSc",
+    "student": "N. Manglani",
+    "derekRole": "mentor",
+    "keywords": [
+      "nlp",
+      "social media",
+      "well being"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:326af6a6-0cbe-4f6d-b696-d52e40946c1c"
+  },
+  {
+    "uuid": "uuid:3b7d01de-8d7f-42d8-b147-54cd58da48ae",
+    "title": "Using Transformers to Generate Wellbeing Questions",
+    "subtitle": null,
+    "description": "With the surge of mental health issues during COVID-19, more emphasis has turned towards assessing wellbeing. At the same time, recent advances in AI have shown huge potential in a variety of fields. However, few solutions are available at the intersection of those two fields. This research explores how the use of…",
+    "year": 2022,
+    "date": "2022-6-22",
+    "degree": "BSc",
+    "student": "M. Trasberg",
+    "derekRole": "mentor",
+    "keywords": [
+      "GPT-3",
+      "Transformer",
+      "Wellbeing"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:3b7d01de-8d7f-42d8-b147-54cd58da48ae"
+  },
+  {
+    "uuid": "uuid:aeb1519c-f22a-43f1-868c-a41319bcf49f",
+    "title": "Effects of Adaptive Conversational User Interfaces on Enjoyment and Engagement while assessing Wellbeing",
+    "subtitle": null,
+    "description": "A decrease in wellbeing worldwide due to the COVID-19 pandemic called for ways to assess wellbeing in a scalable and adequate manner. Conversational User Interfaces (CUIs) seem suitable, however, applying them optimally in certain contexts remains a challenge. This study aims to find ways to make CUIs more engaging…",
+    "year": 2022,
+    "date": "2022-6-22",
+    "degree": "BSc",
+    "student": "C.E. Eijkelkamp",
+    "derekRole": "mentor",
+    "keywords": [
+      "Chatbot",
+      "Conversational Agent",
+      "Conversational Style",
+      "Gender",
+      "User Engagement",
+      "Wellbeing"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:aeb1519c-f22a-43f1-868c-a41319bcf49f"
+  },
+  {
+    "uuid": "uuid:9dd83b2a-3319-4f85-8d0b-4037cbb0c559",
+    "title": "From Sex Toy to Sense Toy",
+    "subtitle": "Designing a product that inspires long-term couples to explore new ways of intimacy",
+    "description": "The fundamental problem to this study is the fact that after the so-called honeymoon phase of a relationship (the beginning of a new relationship where everything feels carefree and passionate) sexual desire between partners often decreases. A large scale survey conducted amongst 920 people in long-term relationships…",
+    "year": 2022,
+    "date": "2022-3-25",
+    "degree": "MSc",
+    "student": "L.M. Kleisen",
+    "derekRole": "mentor",
+    "keywords": [
+      "Intimacy",
+      "couples",
+      "intimate exploration",
+      "long-term relationship",
+      "sense toy",
+      "sensual massage",
+      "sex",
+      "sexual arousal discrepancy"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:9dd83b2a-3319-4f85-8d0b-4037cbb0c559"
+  },
+  {
+    "uuid": "uuid:3c8df541-eded-4abe-aae2-e0448d2c87dc",
+    "title": "Haptic Lullaby: Research &amp; design of a vibrating smart mattress that helps young children sleep",
+    "subtitle": null,
+    "description": "Young children often have problems sleeping. Some are afraid of the dark. Or wake up multiple times during the night. Another just does not want to go to bed or lays awake for a long time. Whatever the reason, a lack of sleep makes the children tired during the day. For parents, their child's well-being is important,…",
+    "year": 2022,
+    "date": "2022-2-11",
+    "degree": "MSc",
+    "student": "M.B.M. Schoorl",
+    "derekRole": "mentor",
+    "keywords": [
+      "Design for Children",
+      "Haptics",
+      "Research through Design",
+      "Vibrations"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:3c8df541-eded-4abe-aae2-e0448d2c87dc"
+  },
+  {
+    "uuid": "uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22",
+    "title": "Digital Distraction Barrier Design",
+    "subtitle": "Using Lean startup to develop an app that creates intentional friction to create conscious phone usage",
+    "description": "Smartphones have revolutionized the way we live, giving us instant access to countless tools and apps (replacing dozens of single-function products), and this has made us more and more dependent on them. But there is another side, they are taking a heavy toll on our time and attention. Unpluq is a startup that aims to…",
+    "year": 2022,
+    "date": "2022-12-21",
+    "degree": "MSc",
+    "student": "T. Smits",
+    "derekRole": "mentor",
+    "keywords": [
+      "Smartphones",
+      "digital distraction",
+      "lean startup"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22"
+  },
+  {
+    "uuid": "uuid:5abd9325-2a37-4da2-aff5-ed9b257975e3",
+    "title": "Ikigai in online learning with Platzi",
+    "subtitle": null,
+    "description": "This thesis project explores how to maintain students' motivation to learn with the e-learning platform Platzi. Latin American EdTech company Platzi provides online courses related to jobs in the digital economy to a Spanish-speaking audience. Despite many new benefits of e-learning, like on-demand learning, it also…",
+    "year": 2022,
+    "date": "2022-10-20",
+    "degree": "MSc",
+    "student": "L.R. Kaußen, S.R. Dehli",
+    "derekRole": "mentor",
+    "keywords": [
+      "E-learning",
+      "EdTech",
+      "Goal-setting",
+      "Ikigai",
+      "Latin America",
+      "Motivation",
+      "Online education",
+      "Purpose-finding",
+      "UX Design"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5abd9325-2a37-4da2-aff5-ed9b257975e3"
+  },
+  {
+    "uuid": "uuid:5eb25911-dbf7-4b24-ada0-7d9330ff9a25",
+    "title": "HapSync - Exploring Emotional Interactions Through Haptic Vibrations",
+    "subtitle": null,
+    "description": "This project was meant to explore social connection between people through haptic interfaces based on tactile vibrations, but it ended up being a reflection on how technology has been influenced by our understanding of human cognition and how new trends in cognitive science can help to create interfaces that make our…",
+    "year": 2021,
+    "date": "2021-8-24",
+    "degree": "MSc",
+    "student": "M. Aguirre Uriz",
+    "derekRole": "mentor",
+    "keywords": [
+      "Cognition",
+      "Haptics",
+      "Research Through Design",
+      "Social Interaction"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5eb25911-dbf7-4b24-ada0-7d9330ff9a25"
+  },
+  {
+    "uuid": "uuid:1b54aaf2-7144-4f0f-ad72-88a309540d20",
+    "title": "Project Vital Presents Spiritus: Designing a Data Supported Breath Practice for a TU Delft Student's Journey Towards Inner Peace ",
+    "subtitle": null,
+    "description": "Spiritual wellbeing is an important part of human wellbeing. As the field of positive design aims to design for human well-being, how may we design for spiritual well-being? As we address this question in a secular society, an opportunity is presented by a rise in practices that were not explored by traditional…",
+    "year": 2021,
+    "date": "2021-8-23",
+    "degree": "MSc",
+    "student": "A. Abraham John, E.A.J. Van Niekerk",
+    "derekRole": "mentor",
+    "keywords": [
+      "Data driven design",
+      "Design for well-being",
+      "Positive design",
+      "Research through design",
+      "Spirituality"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:1b54aaf2-7144-4f0f-ad72-88a309540d20"
+  },
+  {
+    "uuid": "uuid:4dc97c47-0d89-4356-927a-2e811a2b0ca9",
+    "title": "Atrium",
+    "subtitle": "Facilitating social interactions for sustained wellbeing in a digital campus life",
+    "description": "It would be hard to think of someone who isn’t benefiting from their social circles and social interactions within them. The many and varied social interactions we all experience are intrinsic to nurturing and maintaining our social connections, which are arguably one of the core capabilities to which we can attribute…",
+    "year": 2021,
+    "date": "2021-5-18",
+    "degree": "MSc",
+    "student": "H. Monteiro Rego Meyrelles",
+    "derekRole": "mentor",
+    "keywords": [
+      "Well-being",
+      "interactive technology"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:4dc97c47-0d89-4356-927a-2e811a2b0ca9"
+  },
+  {
+    "uuid": "uuid:617db3fb-849b-4f1e-95f3-43406afe1365",
+    "title": "Families versus Machines",
+    "subtitle": "On how a startup can improve digital well-being in the family life",
+    "description": "The goal of this project was to find a way to improve digital well-being in family life through design for the startup Unpluq. In this thesis, the designer combined a design approach called Value Sensitive Design with the list of requirements methodology taught at Industrial Design Engineering. This resulted in a new…",
+    "year": 2021,
+    "date": "2021-4-23",
+    "degree": "MSc",
+    "student": "Jorn Rigter, N.J.A. Weggeman",
+    "derekRole": "mentor",
+    "keywords": [
+      "Behavioural Economics",
+      "Digital Well-being",
+      "Parenting",
+      "Positive Psychology",
+      "Start-up",
+      "Value-Sensitive Design"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:617db3fb-849b-4f1e-95f3-43406afe1365"
+  },
+  {
+    "uuid": "uuid:4d7fccfa-4c3b-4a31-ab23-3cf537f8be30",
+    "title": "The impact of the physical environment on work-related wellbeing",
+    "subtitle": "Helping TU Delft student working in a single-room-home",
+    "description": "During the ongoing COVID-19 pandemic, students are having difficulties with working from home. Particularly those living in a single-room-home, where they have to find ways to separate work and private life, while signals from different activities are mixed in a single room.  This thesis focussed on helping TU Delft…",
+    "year": 2021,
+    "date": "2021-3-31",
+    "degree": "MSc",
+    "student": "D.C.N. Hesselman",
+    "derekRole": "mentor",
+    "keywords": [
+      "Environmental Perception",
+      "Single-room-home",
+      "Wellbeing",
+      "working from home"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:4d7fccfa-4c3b-4a31-ab23-3cf537f8be30"
+  },
+  {
+    "uuid": "uuid:d57d831a-0c34-4822-9005-63fee99ff2c4",
+    "title": "NeuroAesthetic Resonance",
+    "subtitle": "Designing for Multi-sensory Optimisation through EEG and Continuous Aesthetic Ratings",
+    "description": "The brain is the foundation of human experience. Our sensory and emotional perceptions of the world around us are all based in neural activity. But does physical brain activity correspond with subjective aesthetic experience? Is it possible to optimise for both?  My project seeks to answer this question by framing…",
+    "year": 2021,
+    "date": "2021-2-26",
+    "degree": "MSc",
+    "student": "C.R. Beardow",
+    "derekRole": "mentor",
+    "keywords": [
+      "Brain-computer Interface",
+      "Data-driven Design",
+      "Empirical Aesthetics"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:d57d831a-0c34-4822-9005-63fee99ff2c4"
+  },
+  {
+    "uuid": "uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf",
+    "title": "AI for Experience: Designing with Generative Adversarial Networks to evoke climate fascination",
+    "subtitle": null,
+    "description": "Our world climate is an incredibly complex and ever-changing system. The reality of climate change and the consequential pressure to act fast to reduce greenhouse gas emissions requires immediate attention. And yet, despite this unprecedented urgency, active public engagement needed to motivate meaningful change is…",
+    "year": 2021,
+    "date": "2021-2-26",
+    "degree": "MSc",
+    "student": "F.A. Ueberschär",
+    "derekRole": "mentor",
+    "keywords": [
+      "Artificial Intelligence",
+      "Climate engagement",
+      "Generative Adversarial Network",
+      "Installation design",
+      "Playful Interactions",
+      "Satellite Imagery"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf"
+  },
+  {
+    "uuid": "uuid:cf23bf47-e74f-4e4c-8cbd-f7e14b81e3b4",
+    "title": "The Market of Breath: A design strategy to productize breathwork meditation through tactile vibrations",
+    "subtitle": null,
+    "description": "Keeping a healthy work/life balance can be a daunting task in today’s overstimulated society. For many of us, a regular day can feel like running on a treadmill. This results in fast, restricted and shallow breathing throughout the day. Whereas, the right breathing rhythm can have a profound impact on our (mental)…",
+    "year": 2021,
+    "date": "2021-1-22",
+    "degree": "MSc",
+    "student": "J.E. Oberdorf, J.J. Harwig",
+    "derekRole": "mentor",
+    "keywords": [
+      "Breathing rhythms",
+      "Design Strategy",
+      "Haptics",
+      "Mental Health",
+      "Neural Entrainment",
+      "Phantom Vibrations",
+      "Rumination",
+      "Tactile Vibrations"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:cf23bf47-e74f-4e4c-8cbd-f7e14b81e3b4"
+  },
+  {
+    "uuid": "uuid:7d5b182f-08b5-4e50-9466-546ab803b5d2",
+    "title": "Empowering smart city residents through legibility",
+    "subtitle": "A Digital Tool to Discover Smart City Projects",
+    "description": "The role that smart technologies play and the data they generate is becoming central in cities; cities are adopting technologies as a new way of governance and making policies based on data. Increasingly, governments and companies implement data-driven strategies, and the number of sensors in the public space is…",
+    "year": 2020,
+    "date": "2020-9-29",
+    "degree": "MSc",
+    "student": "P.A. Esquivel Duran",
+    "derekRole": "mentor",
+    "keywords": [
+      "Amsterdam",
+      "Artificial Intelligence and Design",
+      "Design for Interaction",
+      "Ethics",
+      "Internet of Things",
+      "Sensors",
+      "Smart City",
+      "legibility"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:7d5b182f-08b5-4e50-9466-546ab803b5d2"
+  },
+  {
+    "uuid": "uuid:8b6344a2-5781-49a9-a6fb-a413bd38e92c",
+    "title": "Design knowledge sharing platform for designers",
+    "subtitle": null,
+    "description": "Knowledge sharing brings overall value to organisations in the growth of the business and its people. For designers, sharing stimulates creativity and encourages personal development via collective sharing within the community, making happier individuals and by extension, a happier team. For knowledge sharing to…",
+    "year": 2020,
+    "date": "2020-9-29",
+    "degree": "MSc",
+    "student": "E.C. Wu",
+    "derekRole": "mentor",
+    "keywords": [
+      "Consultancy",
+      "Interface Design",
+      "Knowledge sharing"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:8b6344a2-5781-49a9-a6fb-a413bd38e92c"
+  },
+  {
+    "uuid": "uuid:e4ea494f-54f9-43b9-8d0d-c3714870f66c",
+    "title": "Humanizing Algorithmic Matching in an Online Dating App",
+    "subtitle": null,
+    "description": "When building online systems designers have to make many decisions that impact user experience. One of said choices is whether certain interactions are automated or remain human. To make matters more complicated, they can also decide to make certain interactions seem automated or human. Making the right decision has…",
+    "year": 2020,
+    "date": "2020-9-11",
+    "degree": "MSc",
+    "student": "M.P. van der Woude",
+    "derekRole": "mentor",
+    "keywords": [
+      "Dehumanization",
+      "HCI",
+      "Human behavior",
+      "Humanization",
+      "Online systems"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e4ea494f-54f9-43b9-8d0d-c3714870f66c"
+  },
+  {
+    "uuid": "uuid:fad805a9-136b-49a7-a2e8-228b37ba597f",
+    "title": "Improving Search Relevance Feedback through Human Centered Design",
+    "subtitle": null,
+    "description": "Artificial intelligence (AI) is expected to play a transformational role in health and wellbeing. Search (i.e. information retrieval) technologies already play a significant role in healthcare research and practice. Relevance feedback in Search is vital for system evaluation and improvements. However, in small user…",
+    "year": 2020,
+    "date": "2020-8-26",
+    "degree": "MSc",
+    "student": "S. GU",
+    "derekRole": "mentor",
+    "keywords": [
+      "Healthcare",
+      "Human Centered Design",
+      "Relevance feedback",
+      "Search experience"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:fad805a9-136b-49a7-a2e8-228b37ba597f"
+  },
+  {
+    "uuid": "uuid:2f59024a-7719-4122-84ec-08cd16734b5f",
+    "title": "The Theory of Flow",
+    "subtitle": "Improving Human-Computer Interactions",
+    "description": "This project presents the study of flow (perfect focus) as a possible solution to the modern decrease in attention span, especially in young professionals. Two separate tests were conducted to study the possibility of measuring productivity as a correlation of focus levels. These led to the creation of a software…",
+    "year": 2020,
+    "date": "2020-7-23",
+    "degree": "MSc",
+    "student": "H.E.C. Crone",
+    "derekRole": "mentor",
+    "keywords": [
+      "App",
+      "Dell",
+      "Flow",
+      "Focus",
+      "Interaction Design",
+      "Tracking"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:2f59024a-7719-4122-84ec-08cd16734b5f"
+  },
+  {
+    "uuid": "uuid:f7c60e77-6c3a-4d33-8192-12ceeff43c48",
+    "title": "Designing a haptic interface from a vision-centred approach",
+    "subtitle": null,
+    "description": "Over the last few years, technological innovations led to the development of new haptic interfaces. SenseGlove, a Dutch technology start-up, developed an exoskeleton-based haptic interface capable of motion tracking and providing haptic feedback. The academic industry has been identified as a potential target group…",
+    "year": 2020,
+    "date": "2020-7-16",
+    "degree": "MSc",
+    "student": "B. Zaaijer",
+    "derekRole": "mentor",
+    "keywords": [
+      "Concept Design",
+      "Design",
+      "Future proof",
+      "Haptics",
+      "Researchers",
+      "Road mapping",
+      "User experience",
+      "User-centred"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:f7c60e77-6c3a-4d33-8192-12ceeff43c48"
+  },
+  {
+    "uuid": "uuid:d840839b-5033-480e-888c-09edc40e66d1",
+    "title": "AI-powered smartglasses for visually impaired people to achieve greater independence and social integration",
+    "subtitle": "Design of a concept for visually impaired people that uses human assistance substitution when artificial intelligence is not reliable",
+    "description": "Artificial Intelligence can extend human frontiers and complement our capabilities. This project presents AI-powered smart glasses that empower visually impaired people to achieve greater independence and social integration. Since AI is a developing discipline, we enhance reliability by providing the opportunity for…",
+    "year": 2020,
+    "date": "2020-3-6",
+    "degree": "MSc",
+    "student": "F. Metin",
+    "derekRole": "mentor",
+    "keywords": [
+      "Artificial Intelligence",
+      "Computer Vision",
+      "Human-Centered Design",
+      "Reciprocal Learning",
+      "Vision Impairment"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:d840839b-5033-480e-888c-09edc40e66d1"
+  },
+  {
+    "uuid": "uuid:5788379a-66df-478f-8395-8567ff6b9aab",
+    "title": "Well-being Driven Design",
+    "subtitle": "Creating a Meaningful Streaming-platform",
+    "description": "People are actively looking to pursue happiness by spending their precious time on meaningful experiences, which are often sought for in media entertainment as it is people’s most engaged in leisure activity today. However, current services fail to support them or even counter them, with their manipulative…",
+    "year": 2019,
+    "date": "2019-9-20",
+    "degree": "MSc",
+    "student": "M.S.R. Huijbregts",
+    "derekRole": "mentor",
+    "keywords": [
+      "Meaningful",
+      "Platform",
+      "Streaming",
+      "Well-being"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5788379a-66df-478f-8395-8567ff6b9aab"
+  },
+  {
+    "uuid": "uuid:7423644b-9fe2-46c7-91d1-c6e034ea01be",
+    "title": "Power of the Cubes",
+    "subtitle": null,
+    "description": "How can children become game designers instead of passive consumers in the era of digital democracy?  Company Smart Lumies has offered an answer to this question through the development of electronic “smart” cubes. Users of the toy will have access to an intuitive programming interface that they can use to program and…",
+    "year": 2018,
+    "date": "2018-8-24",
+    "degree": "MSc",
+    "student": "M. Karač",
+    "derekRole": "mentor",
+    "keywords": [
+      "Digital Democracy",
+      "Game Design",
+      "Smart Toys",
+      "idea generation"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:7423644b-9fe2-46c7-91d1-c6e034ea01be"
+  },
+  {
+    "uuid": "uuid:87304a88-e467-46f1-a60d-8891542e577d",
+    "title": "The quantified wheelchair",
+    "subtitle": null,
+    "description": "About 65 million global disable population require a wheelchair to keep mobility. However, long-term depending on wheelchairs has intensified the burden on the social economy and brought enormous challenges to wheelchair users health. Physical issues such as body pain, pressure sore, muscle injury and weakness, and…",
+    "year": 2018,
+    "date": "2018-8-13",
+    "degree": "MSc",
+    "student": "S. Liu",
+    "derekRole": "mentor",
+    "keywords": [
+      "Data driven design",
+      "Internet of Things",
+      "Quantified wheelchair",
+      "Rapid prototype",
+      "Self-tracking"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:87304a88-e467-46f1-a60d-8891542e577d"
+  },
+  {
+    "uuid": "uuid:21347cc6-d692-4560-9341-46e477a9a653",
+    "title": "Escape the Smart City",
+    "subtitle": "Critical pervasive game to question the AI-surveillance infrastructure in the smart city",
+    "description": "Escape the Smart City is a critical pervasive game for creating awareness about the implications of AI-surveillance technology in the smart city. It responds to growing concerns over the mass deployment of surveillance cameras that are enhanced with artificial intelligence (AI) which are turning the cities into…",
+    "year": 2018,
+    "date": "2018-10-17",
+    "degree": "MSc",
+    "student": "T. Kihara",
+    "derekRole": "mentor",
+    "keywords": [
+      "AI",
+      "Computer Vision",
+      "Critical Design",
+      "Critical Play",
+      "Pervasive Games",
+      "Smart City"
+    ],
+    "repoUrl": "https://resolver.tudelft.nl/uuid:21347cc6-d692-4560-9341-46e477a9a653"
+  }
+]

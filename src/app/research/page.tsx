@@ -1,6 +1,32 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import allTheses from "@/data/student-theses.json";
+
+type Thesis = {
+  uuid: string;
+  title: string;
+  subtitle: string | null;
+  description: string;
+  year: number | null;
+  degree: "MSc" | "BSc";
+  student: string;
+  derekRole: string;
+  keywords: string[];
+  repoUrl: string;
+};
+
+const thesesByYear: { year: number; items: Thesis[] }[] = (() => {
+  const grouped = new Map<number, Thesis[]>();
+  for (const t of allTheses as Thesis[]) {
+    const y = t.year ?? 0;
+    if (!grouped.has(y)) grouped.set(y, []);
+    grouped.get(y)!.push(t);
+  }
+  return [...grouped.entries()]
+    .sort((a, b) => b[0] - a[0])
+    .map(([year, items]) => ({ year, items }));
+})();
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -846,11 +872,15 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        {/* Supervised Students */}
+        {/* Supervised Students — featured */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
-            Supervised Students (TU Delft)
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+            Featured Student Work
           </h2>
+          <p className="text-text-secondary text-sm mb-6">
+            Highlighted theses with notable outcomes — publications, startup
+            launches, or distinctions. See the full archive below.
+          </p>
           <div className="space-y-4">
             {supervisedStudents.map((student) => (
               <div
@@ -893,6 +923,74 @@ export default function ResearchPage() {
                       {student.description}
                     </p>
                   </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Complete Thesis Archive — auto-generated from TU Delft Pure */}
+        <section className="mb-16">
+          <div className="mb-6">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+              Complete Thesis Archive
+            </h2>
+            <p className="text-text-secondary text-sm">
+              {allTheses.length} student theses supervised at TU Delft
+              ({allTheses.filter((t) => t.degree === "MSc").length} MSc,{" "}
+              {allTheses.filter((t) => t.degree === "BSc").length} BSc).
+              Source: <a
+                href="https://research.tudelft.nl/en/persons/jd-lomas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-rust hover:underline"
+              >
+                TU Delft Pure
+              </a>.
+            </p>
+          </div>
+          <div className="space-y-8">
+            {thesesByYear.map(({ year, items }) => (
+              <div key={year}>
+                <h3 className="font-[family-name:var(--font-inter)] text-sm font-medium text-text-muted mb-4 sticky top-20 bg-[var(--bg-cream)] py-2">
+                  {year} <span className="text-text-muted">({items.length})</span>
+                </h3>
+                <div className="space-y-3 pl-4 border-l-2 border-[var(--border-color)]">
+                  {items.map((t) => (
+                    <div key={t.uuid} className="pb-3">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span
+                          className={`badge text-xs ${
+                            t.degree === "MSc" ? "badge-violet" : "badge-sage"
+                          }`}
+                        >
+                          {t.degree}
+                        </span>
+                        <span className="text-xs text-text-muted">
+                          {t.derekRole}
+                        </span>
+                      </div>
+                      <a
+                        href={t.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-text-primary text-sm font-medium leading-snug hover:text-rust transition-colors no-underline"
+                      >
+                        {t.title}
+                        {t.subtitle && (
+                          <span className="text-text-secondary font-normal">
+                            : {t.subtitle}
+                          </span>
+                        )}
+                      </a>
+                      <p className="text-text-muted text-xs mt-1">{t.student}</p>
+                      {t.description && (
+                        <p className="text-text-secondary text-xs mt-1 leading-relaxed">
+                          {t.description}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
