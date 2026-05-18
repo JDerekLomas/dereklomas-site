@@ -276,7 +276,8 @@ const press = [
 const recognition = [
   "ACM CHI 2017 — Honorable Mention Award",
   "PopTech Social Innovation Fellow (2009)",
-  "Ashoka Changemakers Innovation Award",
+  "Aegis Graham Bell Award for Innovation in AI for Education (2024, Smart Paper / EdOptimize)",
+  "UNESCO AI in Learning Assessment Challenge Winner (2024, Smart Paper)",
   "Recognition from Sesame Street, the White House, the MacArthur Foundation, and DARPA for educational-game work",
 ];
 
