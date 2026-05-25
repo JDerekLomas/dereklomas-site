@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Photo Gallery",
@@ -214,6 +215,32 @@ export default function GalleryPage() {
               </div>
             ))}
           </div>
+        </section>
+
+        {/* Archive galleries */}
+        <section className="mb-16">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+            Archives
+          </h2>
+          <Link
+            href="/gallery/social-architectures"
+            className="block bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] hover:shadow-sm transition-all group no-underline p-6"
+          >
+            <div>
+              <h3 className="text-lg font-medium text-text-primary group-hover:text-rust transition-colors mb-1">
+                Social Architectures →
+              </h3>
+              <p className="text-sm text-text-muted font-[family-name:var(--font-inter)] mb-2">
+                UC San Diego MFA · 2006–2007 · 71 images
+              </p>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                Visual documentation from a project workspace exploring how
+                the physical environment shapes public behavior — bus stop
+                living rooms, the Invisible Shape of University Past
+                memorial, labyrinth, garden installations.
+              </p>
+            </div>
+          </Link>
         </section>
 
         {/* Footer */}
