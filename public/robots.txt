@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://dereklomas.me/sitemap.xml
+Sitemap: https://dereklomas.me/video-sitemap.xml
