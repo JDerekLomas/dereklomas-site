@@ -11,12 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/projects`, lastModified: new Date(), priority: 0.9 },
     { url: `${baseUrl}/research`, lastModified: new Date(), priority: 0.9 },
     { url: `${baseUrl}/writing`, lastModified: new Date(), priority: 0.9 },
+    { url: `${baseUrl}/talks`, lastModified: new Date(), priority: 0.8 },
+    { url: `${baseUrl}/gallery`, lastModified: new Date(), priority: 0.7 },
+    { url: `${baseUrl}/gallery/social-architectures`, lastModified: new Date(), priority: 0.6 },
     { url: `${baseUrl}/lab`, lastModified: new Date(), priority: 0.7 },
     { url: `${baseUrl}/press`, lastModified: new Date(), priority: 0.6 },
+    { url: `${baseUrl}/cv`, lastModified: new Date(), priority: 0.7 },
     { url: `${baseUrl}/about`, lastModified: new Date(), priority: 0.7 },
+    { url: `${baseUrl}/research/harmony-of-opposites`, lastModified: new Date(), priority: 0.6 },
   ];
 
   const blogPosts = [
+    { slug: "simulating-ocean-currents", date: "2026-04-24" },
     { slug: "teaching-biology-in-3d", date: "2026-03-02" },
     { slug: "why-terminals-cant-edit", date: "2026-03-02" },
     { slug: "building-a-digital-library-with-ai", date: "2026-02-27" },
