@@ -54,7 +54,7 @@ export function GET(): Response {
   );
   const data: VideoData = JSON.parse(raw);
 
-  const entries = data.videos
+  const videoElements = data.videos
     .map((v) => {
       const watchUrl = `https://www.youtube.com/watch?v=${v.id}`;
       const embedUrl = `https://www.youtube.com/embed/${v.id}`;
@@ -70,9 +70,7 @@ export function GET(): Response {
       const seconds = durationToSeconds(v.duration);
       const pubDate = normalizeDate(v.published);
 
-      return `  <url>
-    <loc>${BASE}/talks</loc>
-    <video:video>
+      return `    <video:video>
       <video:thumbnail_loc>${thumb}</video:thumbnail_loc>
       <video:title>${title}</video:title>
       <video:description>${desc}</video:description>
@@ -89,15 +87,17 @@ export function GET(): Response {
       <video:family_friendly>yes</video:family_friendly>
       <video:platform relationship="allow">web mobile tv</video:platform>
       <video:uploader info="${BASE}/talks">Derek Lomas</video:uploader>
-    </video:video>
-  </url>`;
+    </video:video>`;
     })
     .join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-${entries}
+  <url>
+    <loc>${BASE}/talks</loc>
+${videoElements}
+  </url>
 </urlset>`;
 
   return new Response(xml, {
