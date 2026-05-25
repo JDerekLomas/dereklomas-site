@@ -121,6 +121,23 @@ const featuredPublications = [
 // Recent publications by year
 const recentPublications = [
   {
+    year: 2026,
+    papers: [
+      {
+        title:
+          "Parametric Analysis of Feature-Specific Neural Coding During Music Imagery and Perception",
+        authors: "Lomas D, et al.",
+        venue: "ICASSP 2026 — IEEE International Conference on Acoustics, Speech and Signal Processing",
+      },
+      {
+        title:
+          "Canonical Correlation Approach for Predicting Music Aesthetic Ratings from EEG Sensors",
+        authors: "Lomas D, et al.",
+        venue: "IEEE Applied Sensing Conference (APSCON) 2026",
+      },
+    ],
+  },
+  {
     year: 2025,
     papers: [
       {
@@ -167,6 +184,11 @@ const recentPublications = [
         title: "Automated Surgical Step Recognition in Transurethral Bladder Tumor Resection Using AI",
         authors: "Deol ES, Tollefson MK, Antolin A, Zohar M, Bar O, Ben-Ayoun D, Mynderse LA, Lomas DJ, et al.",
         venue: "Frontiers in Artificial Intelligence",
+      },
+      {
+        title: "Evaluating the Alignment of AI with Human Emotions",
+        authors: "Lomas JD, van der Maden W, et al.",
+        venue: "Advanced Design Research 2 (2), 88-97",
       },
     ],
   },
@@ -274,6 +296,12 @@ const recentPublications = [
         authors: "Ritter S, Heffernan N, Williams JJ, Lomas D, Motz B, Basu Mallick D, et al.",
         venue: "L@S 2022",
       },
+      {
+        title:
+          "Electroencephalography (EEG) Dataset During Naturalistic Music Listening Comprising Different Genres",
+        authors: "Pandey P, Sharma G, Miyapuram KP, Subramanian R, Lomas D",
+        venue: "Data in Brief 45, 108663",
+      },
     ],
   },
   {
@@ -337,6 +365,11 @@ const earlierPublications = [
         title: "Workshop Proposal: Educational A/B Testing at Scale",
         authors: "Ritter S, Heffernan N, Williams JJ, Settles B, Grimaldi P, Lomas D",
         venue: "L@S 2020",
+      },
+      {
+        title: "Classifying Songs with EEG",
+        authors: "Sonawane D, Miyapuram KP, Lomas DJ",
+        venue: "arXiv preprint arXiv:2010.04087",
       },
     ],
   },
@@ -492,6 +525,16 @@ const earlierPublications = [
         title: "Some Consideration on the (In)Effectiveness of Residential Energy Feedback Systems",
         authors: "Pierce J, Fan C, Lomas D, Marcu G, Paulos E",
         venue: "ACM Conference on Designing Interactive Systems",
+      },
+    ],
+  },
+  {
+    year: 2009,
+    papers: [
+      {
+        title: "The Social Movement Laboratory: A Catalog of Hybrid Science-Art Research",
+        authors: "Lomas D",
+        venue: "UC San Diego (MFA, Visual Arts)",
       },
     ],
   },
@@ -785,7 +828,7 @@ export default function ResearchPage() {
         {/* Recent publications by year */}
         <section className="mb-16">
           <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
-            Recent Publications (2021-2025)
+            Recent Publications (2021-2026)
           </h2>
           <div className="space-y-8">
             {recentPublications.map((yearGroup) => (
