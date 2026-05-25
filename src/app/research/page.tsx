@@ -190,6 +190,18 @@ const recentPublications = [
         authors: "Lomas JD, van der Maden W, et al.",
         venue: "Advanced Design Research 2 (2), 88-97",
       },
+      {
+        title:
+          "Developing the Healthy Actions and Lifestyles to Avoid Dementia (Hispanos y el ALTo a la Demencia) Program",
+        authors: "Moukarzel S, Zlatar ZZ, Hartman SJ, Lomas D, Feldman HH, Banks SJ, et al.",
+        venue: "Alzheimer's & Dementia: Translational Research & Clinical Interventions 10",
+      },
+      {
+        title:
+          "Decoding Listener Identity: Person Identification from High-Frequency EEG Rhythms during Music Perception",
+        authors: "Pandey P, Jha A, Miyapuram KP, Lomas D",
+        venue: "TechRxiv 2024 (0614)",
+      },
     ],
   },
   {
@@ -229,6 +241,18 @@ const recentPublications = [
         title: "Decoding Individual and Shared Experiences of Media Perception Using CNN Architectures",
         authors: "Johri R, Pandey P, Miyapuram KP, Lomas JD",
         venue: "MIUA 2023",
+      },
+      {
+        title:
+          "Detecting Moments of Distraction During Meditation Practice Based on Changes in the EEG Signal",
+        authors: "Pandey P, Rodriguez-Larios J, Miyapuram KP, Lomas D",
+        venue: "IEEE Applied Sensing Conference (APSCON) 2023",
+      },
+      {
+        title:
+          "Stronger Correlation of Music Features with Brain Signals Predicts Increased Levels of Enjoyment",
+        authors: "Pandey P, Bedmutha PS, Miyapuram KP, Lomas D",
+        venue: "IEEE Applied Sensing Conference (APSCON) 2023",
       },
     ],
   },
@@ -302,6 +326,23 @@ const recentPublications = [
         authors: "Pandey P, Sharma G, Miyapuram KP, Subramanian R, Lomas D",
         venue: "Data in Brief 45, 108663",
       },
+      {
+        title:
+          "Towards the Development of Personalized and Generalized Interfaces for Brain Signals Across Different Styles of Meditation",
+        authors: "Singh S, Pandey P, Chaudhary S, Miyapuram KP, Lomas J",
+        venue: "13th Indian Conference on Computer Vision, Graphics & Image Processing (ICVGIP)",
+      },
+      {
+        title:
+          "MyWellnessCheck: Designing a Student and Staff Wellbeing Feedback Loop to Inform University Policy and Governance",
+        authors: "Lomas JD, van der Maden W",
+        venue: "Proceedings of Relating Systems Thinking and Design (RSD10) 2021 Symposium",
+      },
+      {
+        title: "Quantum Computing: From Hardware to Society",
+        authors: "Vermaas PE, Wimmer MT, Lomas JD, Almudever CG, Scappucci G",
+        venue: "Delft University of Technology",
+      },
     ],
   },
   {
@@ -342,6 +383,28 @@ const recentPublications = [
         authors: "Ritter S, Heffernan NT, Williams JJ, Lomas D, Bicknell K",
         venue: "L@S 2021",
       },
+      {
+        title: "MUSIN-G: Music Listening-Genre EEG Dataset",
+        authors: "Miyapuram KP, Pandey P, Ahmad N, Shiraguppi BR, Sharma E, et al.",
+        venue: "OpenNeuro",
+      },
+      {
+        title:
+          "The Impact of COVID-19 on University Teaching and Learning: Evidence for the Central Importance of Student and Staff Well-being",
+        authors: "Lomas D, Matzat U, Stevens T, Pei L, Rouwenhorst C, den Brok P, et al.",
+        venue: "4TU. Centre for Engineering Education",
+      },
+      {
+        title:
+          "Designing Data-Informed Intelligent Systems to Create Positive Impact: Design Methods, Questions and Recommendations",
+        authors: "Lomas JD, Patel N, Forlizzi JL",
+        venue: "Relating Systems Thinking and Design (RSD10) Symposium, 154-170",
+      },
+      {
+        title: "Proceedings of the Workshop on Process Analysis Methods for Educational Data",
+        authors: "Patel N, Lomas D, Shah T (eds.)",
+        venue: "CEUR Workshop Proceedings 3051",
+      },
     ],
   },
 ];
@@ -371,6 +434,12 @@ const earlierPublications = [
         authors: "Sonawane D, Miyapuram KP, Lomas DJ",
         venue: "arXiv preprint arXiv:2010.04087",
       },
+      {
+        title:
+          "Should We Add a Progress Meter? How A/B Testing Can Support Rapid Cycles of Data-Informed Design",
+        authors: "Lomas D, Raval D, Ritter S, Dumoulin D, Geraedts P, Maljers V, Mens I, et al.",
+        venue: "ACM Learning at Scale — Workshop on Educational A/B Testing",
+      },
     ],
   },
   {
@@ -390,6 +459,12 @@ const earlierPublications = [
         title: "Gamified Mobile Cognitive Tests: Preliminary Feasibility in Persons with Bipolar Disorder",
         authors: "Filip T, Kamarsu S, Lomas D, Eyler L, Depp C, Moore R",
         venue: "Archives of Clinical Neuropsychology",
+      },
+      {
+        title:
+          "Continuous Improvement: How Systems Design Can Benefit the Data-Driven Design Community",
+        authors: "Lomas J, Patel N, Forlizzi J",
+        venue: "Proceedings of RSD7, Relating Systems Thinking and Design 7",
       },
     ],
   },
@@ -456,6 +531,23 @@ const earlierPublications = [
         authors: "Lomas D",
         venue: "She Ji",
       },
+      {
+        title:
+          "Accelerating Theory Development with Large Online Experiments: Towards an Interaction Design Science",
+        authors: "Lomas D",
+        venue: "Human Computer Interaction Consortium (HCIC)",
+      },
+    ],
+  },
+  {
+    year: 2014,
+    papers: [
+      {
+        title:
+          "Reducing Anxiety: Training Attentional Disengagement from Threat Using a Modified Spatial Cueing Task",
+        authors: "Eltiti S, Siefke JJ, Lomas D, Williams J",
+        venue: "SOJ Psychology 1 (3), 1-8",
+      },
     ],
   },
   {
@@ -500,6 +592,11 @@ const earlierPublications = [
         title: "Internet Scale Experimental Design and Deployment for Educational Games Using BrainPOP",
         authors: "Stamper J, Lomas D, Ching D, Linch K, Ritter S",
         venue: "Games+Learning+Society",
+      },
+      {
+        title: "Using Time Pressure to Promote Mathematical Fluency",
+        authors: "Ritter S, Nixon T, Lomas D, Stamper J, Ching D",
+        venue: "International Conference on Intelligent Tutoring Systems (ITS)",
       },
     ],
   },
