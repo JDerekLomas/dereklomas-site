@@ -126,6 +126,30 @@
         "description": "Success means living a happy, meaningful life — what psychologists call 'well-being'",
         "date": "2015-07-31",
         "url": "https://medium.com/@dereklomas/what-is-success-really-26b7c5918aad"
+      },
+      {
+        "title": "What is Intelligence?",
+        "description": "There is no commonly accepted definition of intelligence — yet a better understanding might support the design of a more successful human future.",
+        "date": "2015-06-25",
+        "url": "https://medium.com/playpower-labs/what-is-intelligence-92205f5e96eb",
+        "publication": "Playpower Labs",
+        "readTime": "16 min"
+      },
+      {
+        "title": "Why I'm Designing Technologies to Develop Human Intelligence",
+        "description": "How my biography inspired me to attempt a truly epic design challenge: building technologies that help develop human intelligence.",
+        "date": "2015-06-24",
+        "url": "https://medium.com/playpower-labs/why-i-m-designing-technologies-to-develop-human-intelligence-3921ab5f067f",
+        "publication": "Playpower Labs",
+        "readTime": "7 min"
+      },
+      {
+        "title": "Why We Need a \"User Model\" of the Mind",
+        "description": "On the hardest problem in science — producing a model of the human mind that does justice to the full range of awareness.",
+        "date": "2015-06-02",
+        "url": "https://medium.com/playpower-labs/why-we-need-a-better-user-model-of-the-brain-8f09b3632959",
+        "publication": "Playpower Labs",
+        "readTime": "4 min"
       }
     ]
   },
@@ -139,7 +163,7 @@
   ],
   "stats": {
     "substackArticles": 13,
-    "mediumArticles": 5,
-    "totalArticles": 18
+    "mediumArticles": 8,
+    "totalArticles": 21
   }
 }
