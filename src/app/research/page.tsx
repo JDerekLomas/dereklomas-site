@@ -14,6 +14,8 @@ type Thesis = {
   derekRole: string;
   keywords: string[];
   repoUrl: string;
+  image?: string;
+  pdf?: string;
 };
 
 const thesesByYear: { year: number; items: Thesis[] }[] = (() => {
@@ -1097,38 +1099,68 @@ export default function ResearchPage() {
                 </h3>
                 <div className="space-y-3 pl-4 border-l-2 border-[var(--border-color)]">
                   {items.map((t) => (
-                    <div key={t.uuid} className="pb-3">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <span
-                          className={`badge text-xs ${
-                            t.degree === "MSc" ? "badge-violet" : "badge-sage"
-                          }`}
+                    <div key={t.uuid} className="pb-3 flex gap-3">
+                      {t.image && (
+                        <a
+                          href={t.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="shrink-0"
                         >
-                          {t.degree}
-                        </span>
-                        <span className="text-xs text-text-muted">
-                          {t.derekRole}
-                        </span>
-                      </div>
-                      <a
-                        href={t.repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-text-primary text-sm font-medium leading-snug hover:text-rust transition-colors no-underline"
-                      >
-                        {t.title}
-                        {t.subtitle && (
-                          <span className="text-text-secondary font-normal">
-                            : {t.subtitle}
-                          </span>
-                        )}
-                      </a>
-                      <p className="text-text-muted text-xs mt-1">{t.student}</p>
-                      {t.description && (
-                        <p className="text-text-secondary text-xs mt-1 leading-relaxed">
-                          {t.description}
-                        </p>
+                          <Image
+                            src={t.image}
+                            alt={t.title}
+                            width={128}
+                            height={86}
+                            className="w-32 h-[86px] object-cover rounded-md border border-[var(--border-color)]"
+                          />
+                        </a>
                       )}
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <span
+                            className={`badge text-xs ${
+                              t.degree === "MSc" ? "badge-violet" : "badge-sage"
+                            }`}
+                          >
+                            {t.degree}
+                          </span>
+                          <span className="text-xs text-text-muted">
+                            {t.derekRole}
+                          </span>
+                        </div>
+                        <a
+                          href={t.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-text-primary text-sm font-medium leading-snug hover:text-rust transition-colors no-underline"
+                        >
+                          {t.title}
+                          {t.subtitle && (
+                            <span className="text-text-secondary font-normal">
+                              : {t.subtitle}
+                            </span>
+                          )}
+                        </a>
+                        <p className="text-text-muted text-xs mt-1">
+                          {t.student}
+                        </p>
+                        {t.description && (
+                          <p className="text-text-secondary text-xs mt-1 leading-relaxed">
+                            {t.description}
+                          </p>
+                        )}
+                        {t.pdf && (
+                          <a
+                            href={t.pdf}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-rust text-xs hover:underline mt-1 inline-block"
+                          >
+                            Download PDF
+                          </a>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>

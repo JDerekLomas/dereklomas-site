@@ -17,7 +17,9 @@
       "Scaffolding",
       "Toolkit"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:c787ac32-2945-46d2-967c-2156eb70d5f6"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:c787ac32-2945-46d2-967c-2156eb70d5f6",
+    "image": "/images/theses/maik.jpg",
+    "pdf": "/papers/theses/maik.pdf"
   },
   {
     "uuid": "uuid:63a9a918-8074-4cf4-83c2-22fc8df28654",
@@ -57,7 +59,9 @@
       "LLM",
       "Vibe-Coding"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:e8ad364e-e2d4-41bc-bd20-3455e1749654"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e8ad364e-e2d4-41bc-bd20-3455e1749654",
+    "image": "/images/theses/ai-learning-system.jpg",
+    "pdf": "/papers/theses/ai-learning-system.pdf"
   },
   {
     "uuid": "uuid:5a40bff1-0b91-4522-b1df-54c7384fd609",
@@ -203,7 +207,9 @@
       "Toolkit",
       "method"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:a147269d-c437-4695-be71-a8dc31085aaa"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:a147269d-c437-4695-be71-a8dc31085aaa",
+    "image": "/images/theses/future-framing.jpg",
+    "pdf": "/papers/theses/future-framing.pdf"
   },
   {
     "uuid": "uuid:5fa2a662-3e60-4f79-ac28-4c4a6e4aacaf",
@@ -228,7 +234,9 @@
       "creativity",
       "workshop design"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:5fa2a662-3e60-4f79-ac28-4c4a6e4aacaf"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:5fa2a662-3e60-4f79-ac28-4c4a6e4aacaf",
+    "image": "/images/theses/plai.jpg",
+    "pdf": "/papers/theses/plai.pdf"
   },
   {
     "uuid": "uuid:a94dcdb5-afe7-4d6e-85db-1985785c3c81",
@@ -291,7 +299,9 @@
       "product attachment",
       "prototyping"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:083276b5-1580-482c-a36b-94576e15c2c2"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:083276b5-1580-482c-a36b-94576e15c2c2",
+    "image": "/images/theses/lamps.jpg",
+    "pdf": "/papers/theses/lamps.pdf"
   },
   {
     "uuid": "uuid:c436a6dd-8e23-4779-aabb-477e0337a7d0",
@@ -578,7 +588,9 @@
       "digital distraction",
       "lean startup"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:b4cff558-72d8-4d16-a7f9-ff26a86bba22",
+    "image": "/images/theses/distraction-barrier.jpg",
+    "pdf": "/papers/theses/distraction-barrier.pdf"
   },
   {
     "uuid": "uuid:5abd9325-2a37-4da2-aff5-ed9b257975e3",
@@ -709,7 +721,9 @@
       "Data-driven Design",
       "Empirical Aesthetics"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:d57d831a-0c34-4822-9005-63fee99ff2c4"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:d57d831a-0c34-4822-9005-63fee99ff2c4",
+    "image": "/images/theses/neuroaesthetic-resonance.jpg",
+    "pdf": "/papers/theses/neuroaesthetic-resonance.pdf"
   },
   {
     "uuid": "uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf",
@@ -729,7 +743,9 @@
       "Playful Interactions",
       "Satellite Imagery"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:731b92cc-ec9e-4543-a608-c0edbdb14aaf",
+    "image": "/images/theses/climate-gan.jpg",
+    "pdf": "/papers/theses/climate-gan.pdf"
   },
   {
     "uuid": "uuid:cf23bf47-e74f-4e4c-8cbd-f7e14b81e3b4",
@@ -809,7 +825,9 @@
       "Humanization",
       "Online systems"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:e4ea494f-54f9-43b9-8d0d-c3714870f66c"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:e4ea494f-54f9-43b9-8d0d-c3714870f66c",
+    "image": "/images/theses/dating-app.jpg",
+    "pdf": "/papers/theses/dating-app.pdf"
   },
   {
     "uuid": "uuid:fad805a9-136b-49a7-a2e8-228b37ba597f",
@@ -888,7 +906,9 @@
       "Reciprocal Learning",
       "Vision Impairment"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:d840839b-5033-480e-888c-09edc40e66d1"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:d840839b-5033-480e-888c-09edc40e66d1",
+    "image": "/images/theses/smartglasses.jpg",
+    "pdf": "/papers/theses/smartglasses.pdf"
   },
   {
     "uuid": "uuid:5788379a-66df-478f-8395-8567ff6b9aab",
@@ -963,6 +983,8 @@
       "Pervasive Games",
       "Smart City"
     ],
-    "repoUrl": "https://resolver.tudelft.nl/uuid:21347cc6-d692-4560-9341-46e477a9a653"
+    "repoUrl": "https://resolver.tudelft.nl/uuid:21347cc6-d692-4560-9341-46e477a9a653",
+    "image": "/images/theses/escape-smart-city.jpg",
+    "pdf": "/papers/theses/escape-smart-city.pdf"
   }
 ]
