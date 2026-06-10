@@ -103,7 +103,7 @@ export default async function TwitterImage() {
               marginTop: 16,
             }}
           >
-            Tenured Assistant Professor of Positive AI at TU Delft
+            Tenured Professor of Positive AI at TU Delft
           </div>
         </div>
 
