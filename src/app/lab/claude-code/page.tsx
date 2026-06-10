@@ -238,7 +238,7 @@ function Callout({
 
 function ToolCard({ tool }: { tool: Tool }) {
   return (
-    <div className="p-4 bg-card rounded-lg border border-[var(--border-color)] hover:border-violet/30 transition-all">
+    <div className="p-4 bg-card rounded-lg border border-[var(--border-color)] hover:border-rust/30 transition-all">
       <div className="flex items-start justify-between gap-3 mb-1.5">
         <h4 className="font-[family-name:var(--font-inter)] text-sm font-semibold text-text-primary">
           {tool.name}
@@ -249,7 +249,7 @@ function ToolCard({ tool }: { tool: Tool }) {
               href={tool.repo}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-violet transition-colors"
+              className="text-text-muted hover:text-rust transition-colors"
               title="GitHub"
             >
               <svg
@@ -267,7 +267,7 @@ function ToolCard({ tool }: { tool: Tool }) {
               href={tool.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-muted hover:text-violet transition-colors"
+              className="text-text-muted hover:text-rust transition-colors"
               title="Link"
             >
               <svg
@@ -295,7 +295,7 @@ function ToolCard({ tool }: { tool: Tool }) {
         {tool.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-0.5 bg-violet/10 text-violet text-[11px] font-[family-name:var(--font-inter)] font-medium rounded"
+            className="px-2 py-0.5 bg-warm text-text-muted text-[11px] font-[family-name:var(--font-inter)] font-medium rounded"
           >
             {tag}
           </span>
@@ -316,7 +316,7 @@ export default function ClaudeCodePage() {
           <div className="flex items-center gap-3 mb-6">
             <Link
               href="/lab"
-              className="text-text-muted hover:text-violet text-sm font-[family-name:var(--font-inter)] no-underline"
+              className="text-text-muted hover:text-rust text-sm font-[family-name:var(--font-inter)] no-underline"
             >
               Lab
             </Link>
@@ -415,7 +415,7 @@ claude`}</CodeBlock>
             <p>
               Claude will create files, install dependencies, and tell you how
               to preview the result. For a Next.js project, it usually runs{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 npm run dev
               </code>{" "}
               automatically.
@@ -475,7 +475,7 @@ claude`}</CodeBlock>
           <div className="text-text-secondary text-[16px] leading-relaxed space-y-4">
             <p>
               The single most powerful customization is a{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 CLAUDE.md
               </code>{" "}
               file. It&apos;s a markdown file that tells Claude how to work with
@@ -484,7 +484,7 @@ claude`}</CodeBlock>
             </p>
             <p>
               Create one at{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 ~/.claude/CLAUDE.md
               </code>{" "}
               for global preferences, or in any project root for
@@ -521,7 +521,7 @@ claude`}</CodeBlock>
           </h2>
           <Callout label="Important">
             Never put API keys in{" "}
-            <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+            <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
               .env
             </code>{" "}
             files when using AI coding tools. Claude can read your files —
@@ -533,7 +533,7 @@ claude`}</CodeBlock>
                 The simple approach:
               </strong>{" "}
               export secrets in your shell profile. Claude can use{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 $OPENAI_API_KEY
               </code>{" "}
               as an environment variable without ever seeing the value.
@@ -599,11 +599,11 @@ export SUPABASE_URL="https://..."
               <p>
                 Claude Code has a context window — think of it as working
                 memory. Use{" "}
-                <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+                <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                   /compact
                 </code>{" "}
                 to compress context when it gets long.{" "}
-                <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+                <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                   /clear
                 </code>{" "}
                 to start fresh when switching tasks. Point Claude at specific
@@ -629,7 +629,7 @@ export SUPABASE_URL="https://..."
         {/* Advanced Section */}
         <section id="advanced" className="scroll-mt-24">
           <header className="mb-10">
-            <span className="inline-block px-3 py-1 bg-violet/10 text-violet text-xs font-[family-name:var(--font-inter)] font-medium rounded-full mb-4">
+            <span className="block text-xs font-[family-name:var(--font-inter)] font-medium uppercase tracking-wider text-text-muted mb-4">
               Advanced
             </span>
             <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium text-text-primary mb-3">
@@ -651,11 +651,11 @@ export SUPABASE_URL="https://..."
             <p className="text-text-secondary text-sm mb-5">
               Prompt files that teach Claude Code specialized workflows. Invoke
               with slash commands like{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 /input
               </code>{" "}
               or{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 /codevibing
               </code>
               . Install from{" "}
@@ -684,7 +684,7 @@ export SUPABASE_URL="https://..."
             <p className="text-text-secondary text-sm mb-5">
               Model Context Protocol servers give Claude access to external tools
               and data. Configure in{" "}
-              <code className="text-violet bg-violet/10 px-1.5 py-0.5 rounded text-xs">
+              <code className="text-rust bg-rust/10 px-1.5 py-0.5 rounded text-xs">
                 ~/.claude/mcp_servers.json
               </code>
               .
@@ -722,7 +722,7 @@ export SUPABASE_URL="https://..."
               paste this URL and Claude will browse the catalog and install what
               fits your project.
             </p>
-            <code className="block text-sm text-violet font-mono bg-[#1a1510] rounded px-3 py-2 select-all">
+            <code className="block text-sm text-[#c9b99a] font-mono bg-[#1a1510] rounded px-3 py-2 select-all">
               https://dereklomas.me/api/skills
             </code>
           </div>

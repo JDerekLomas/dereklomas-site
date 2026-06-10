@@ -131,7 +131,7 @@ export default function CreativePage() {
         {/* Main portrait */}
         <div className="relative z-10 flex flex-col items-center">
           <div
-            className="relative w-80 h-80 md:w-[500px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl cursor-pointer"
+            className="relative w-80 h-80 md:w-[500px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl cursor-pointer"
             onClick={() => setIsPlaying((prev) => !prev)}
           >
             {allImages.map((src, i) => (
@@ -155,7 +155,7 @@ export default function CreativePage() {
             {!isPlaying && (
               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
-                  <span className="text-3xl">▶</span>
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
                 </div>
               </div>
             )}
@@ -166,7 +166,7 @@ export default function CreativePage() {
             <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium mb-2">
               {currentSeries?.name}
             </h2>
-            <p className="text-gray-400">{currentSeries?.description}</p>
+            <p className="text-[#c9b99a]">{currentSeries?.description}</p>
           </div>
 
           {/* Progress dots */}
@@ -186,7 +186,7 @@ export default function CreativePage() {
         </div>
 
         {/* Keyboard hints */}
-        <div className="absolute bottom-8 left-0 right-0 text-center text-gray-500 text-sm">
+        <div className="absolute bottom-8 left-0 right-0 text-center text-[#8b7355] text-sm">
           ←→ navigate · space to pause · click portrait to toggle
         </div>
       </section>
@@ -197,11 +197,10 @@ export default function CreativePage() {
           <h2 className="font-[family-name:var(--font-cormorant)] text-4xl font-medium text-center mb-4">
             Identity Through AI&apos;s Lens
           </h2>
-          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            The same face, refracted through different aesthetic dimensions.
-            Each style reveals something different — the cyberpunk self, the
-            cosmic self, the classical self. Which one is real? All of them.
-            None of them.
+          <p className="text-[#c9b99a] text-center mb-12 max-w-2xl mx-auto">
+            The same photograph, restyled by an image model into eleven
+            different visual traditions. An experiment in how aesthetic
+            context changes the read of a face.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -215,7 +214,7 @@ export default function CreativePage() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
               >
-                <div className="aspect-square rounded-xl overflow-hidden bg-gray-800 relative">
+                <div className="aspect-square rounded-lg overflow-hidden bg-[#2a2118] relative">
                   {/* Cycling effect within each card */}
                   {series.images.map((src, i) => (
                     <div
@@ -238,7 +237,7 @@ export default function CreativePage() {
                 <h3 className="mt-3 font-medium text-white group-hover:text-[var(--accent-rust)] transition-colors">
                   {series.name}
                 </h3>
-                <p className="text-sm text-gray-500">{series.description}</p>
+                <p className="text-sm text-[#8b7355]">{series.description}</p>
               </div>
             ))}
           </div>
@@ -246,15 +245,15 @@ export default function CreativePage() {
       </section>
 
       {/* Source note */}
-      <footer className="py-8 px-6 border-t border-gray-800">
-        <div className="max-w-2xl mx-auto text-center text-gray-500 text-sm">
+      <footer className="py-8 px-6 border-t border-[#2a2118]">
+        <div className="max-w-2xl mx-auto text-center text-[#8b7355] text-sm">
           <p>
             Generated from{" "}
             <a
               href="https://linkedin.com/in/dereklomas"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white underline"
+              className="text-[#c9b99a] hover:text-[#f0e8d8] underline"
             >
               LinkedIn profile photo
             </a>{" "}

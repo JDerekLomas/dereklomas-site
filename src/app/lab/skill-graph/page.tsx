@@ -200,7 +200,7 @@ export default function SkillGraphPage() {
       .attr('y', (d) => margin.top + gradeToRow(d) * rowHeight)
       .attr('width', width - margin.left - margin.right + 20)
       .attr('height', rowHeight)
-      .attr('fill', (_d, i) => (i % 2 === 0 ? '#1f2937' : '#111827'))
+      .attr('fill', (_d, i) => (i % 2 === 0 ? '#241c13' : '#1a1510'))
       .attr('opacity', 0.5);
 
     g.append('g')
@@ -227,7 +227,7 @@ export default function SkillGraphPage() {
       .attr('markerHeight', 5)
       .append('path')
       .attr('d', 'M 0,-5 L 10,0 L 0,5')
-      .attr('fill', '#4b5563');
+      .attr('fill', '#5a4a38');
 
     const link = g.append('g')
       .selectAll('path')
@@ -245,7 +245,7 @@ export default function SkillGraphPage() {
         return `M ${source.x} ${source.y} Q ${source.x + controlOffset} ${midY} ${target.x} ${target.y}`;
       })
       .attr('fill', 'none')
-      .attr('stroke', (d) => (d.isNew ? '#f59e0b' : '#4b5563'))
+      .attr('stroke', (d) => (d.isNew ? '#f59e0b' : '#5a4a38'))
       .attr('stroke-width', 1)
       .attr('stroke-opacity', 0.4)
       .attr('marker-end', 'url(#arrowhead)');
@@ -268,13 +268,13 @@ export default function SkillGraphPage() {
     node.append('circle')
       .attr('r', (d) => Math.max(4, Math.sqrt((d.composite || 0.1) * 50) + 3))
       .attr('fill', (d) => getGradeColor(d.gradeLevel))
-      .attr('stroke', '#fff')
+      .attr('stroke', '#fdfcf9')
       .attr('stroke-width', 1.5)
       .attr('opacity', 0.9);
 
     const highlightEdgesForNode = (nodeId: string | null) => {
       if (!nodeId) {
-        link.attr('stroke', (d) => (d.isNew ? '#f59e0b' : '#4b5563'))
+        link.attr('stroke', (d) => (d.isNew ? '#f59e0b' : '#5a4a38'))
           .attr('stroke-width', 1).attr('stroke-opacity', 0.4);
         return;
       }
@@ -283,7 +283,7 @@ export default function SkillGraphPage() {
         const tid = typeof l.target === 'string' ? l.target : l.target.id;
         if (sid === nodeId) return '#22c55e';
         if (tid === nodeId) return '#3b82f6';
-        return l.isNew ? '#f59e0b' : '#4b5563';
+        return l.isNew ? '#f59e0b' : '#5a4a38';
       }).attr('stroke-width', (l) => {
         const sid = typeof l.source === 'string' ? l.source : l.source.id;
         const tid = typeof l.target === 'string' ? l.target : l.target.id;
@@ -357,17 +357,17 @@ export default function SkillGraphPage() {
         </p>
       </div>
 
-      <div className="flex-1 relative mx-6 mb-6 rounded-lg overflow-hidden border border-[var(--border-color)] bg-gray-900" style={{ minHeight: '600px' }}>
+      <div className="flex-1 relative mx-6 mb-6 rounded-lg overflow-hidden border border-[var(--border-color)] bg-[#1a1510]" style={{ minHeight: '600px' }}>
         {/* Controls */}
-        <div className="absolute top-3 left-3 z-10 bg-gray-800/95 backdrop-blur rounded-lg p-3 shadow-lg max-w-[200px]">
-          <div className="text-xs text-gray-400 mb-1">Filter by Grade</div>
+        <div className="absolute top-3 left-3 z-10 bg-[#2a2118]/95 backdrop-blur rounded-lg p-3 shadow-lg max-w-[200px]">
+          <div className="text-xs text-[#8b7355] mb-1">Filter by Grade</div>
           <div className="flex flex-wrap gap-1 mb-2">
             {grades.map((grade) => (
               <button
                 key={grade}
                 onClick={() => toggleGrade(grade)}
                 className={`w-7 h-7 rounded text-xs font-medium transition-colors ${
-                  selectedGrades.has(grade) ? 'text-gray-900' : 'bg-gray-700 text-gray-500'
+                  selectedGrades.has(grade) ? 'text-[#1a1510]' : 'bg-[#3a2f22] text-[#8b7355]'
                 }`}
                 style={{ backgroundColor: selectedGrades.has(grade) ? getGradeColor(grade) : undefined }}
               >
@@ -375,7 +375,7 @@ export default function SkillGraphPage() {
               </button>
             ))}
           </div>
-          <label className="flex items-center gap-2 text-xs text-gray-300">
+          <label className="flex items-center gap-2 text-xs text-[#c9b99a]">
             <input
               type="checkbox"
               checked={showOnlyConnected}
@@ -384,27 +384,27 @@ export default function SkillGraphPage() {
             />
             Connected only
           </label>
-          <div className="text-[10px] text-gray-500 mt-2">Scroll to zoom, drag to pan</div>
+          <div className="text-[10px] text-[#8b7355] mt-2">Scroll to zoom, drag to pan</div>
         </div>
 
         {/* Node info */}
         {displayNode && (
-          <div className="absolute top-3 right-3 z-10 bg-gray-800/95 backdrop-blur rounded-lg p-3 shadow-lg max-w-[260px] text-white">
+          <div className="absolute top-3 right-3 z-10 bg-[#2a2118]/95 backdrop-blur rounded-lg p-3 shadow-lg max-w-[260px] text-[#f0e8d8]">
             <div className="font-bold text-sm leading-tight mb-1">{displayNode.name}</div>
-            <div className="text-xs text-gray-400 mb-2">
+            <div className="text-xs text-[#8b7355] mb-2">
               Grade {displayNode.gradeLevel} &middot; {displayNode.domain}
             </div>
             <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-xs">
-              <div><span className="text-gray-500">Importance:</span> <span className="font-mono">{(displayNode.composite || 0).toFixed(2)}</span></div>
-              <div><span className="text-gray-500">Fanout:</span> <span className="font-mono">{(displayNode.fanout || 0).toFixed(2)}</span></div>
-              <div><span className="text-gray-500">Prerequisites:</span> <span className="font-mono">{displayNode.prerequisiteCount || 0}</span></div>
-              <div><span className="text-gray-500">Dependents:</span> <span className="font-mono">{displayNode.dependentCount || 0}</span></div>
+              <div><span className="text-[#8b7355]">Importance:</span> <span className="font-mono">{(displayNode.composite || 0).toFixed(2)}</span></div>
+              <div><span className="text-[#8b7355]">Fanout:</span> <span className="font-mono">{(displayNode.fanout || 0).toFixed(2)}</span></div>
+              <div><span className="text-[#8b7355]">Prerequisites:</span> <span className="font-mono">{displayNode.prerequisiteCount || 0}</span></div>
+              <div><span className="text-[#8b7355]">Dependents:</span> <span className="font-mono">{displayNode.dependentCount || 0}</span></div>
             </div>
           </div>
         )}
 
         {/* Legend */}
-        <div className="absolute bottom-3 left-3 z-10 bg-gray-800/95 backdrop-blur rounded-lg p-2 shadow-lg text-white">
+        <div className="absolute bottom-3 left-3 z-10 bg-[#2a2118]/95 backdrop-blur rounded-lg p-2 shadow-lg text-[#f0e8d8]">
           <div className="flex flex-wrap gap-2 mb-1">
             {grades.map((grade) => (
               <div key={grade} className="flex items-center gap-1">
@@ -413,14 +413,14 @@ export default function SkillGraphPage() {
               </div>
             ))}
           </div>
-          <div className="text-[10px] text-gray-500 space-y-0.5">
+          <div className="text-[10px] text-[#8b7355] space-y-0.5">
             <div className="flex items-center gap-2"><div className="w-4 h-0.5 bg-blue-500" /><span>Prerequisites</span></div>
             <div className="flex items-center gap-2"><div className="w-4 h-0.5 bg-green-500" /><span>Dependents</span></div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="absolute bottom-3 right-3 z-10 bg-gray-800/95 backdrop-blur rounded-lg p-2 shadow-lg text-[10px] text-gray-400">
+        <div className="absolute bottom-3 right-3 z-10 bg-[#2a2118]/95 backdrop-blur rounded-lg p-2 shadow-lg text-[10px] text-[#8b7355]">
           {displayNodes.length} skills &middot; {displayEdges.length} prereqs
         </div>
 
