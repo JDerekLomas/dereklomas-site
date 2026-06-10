@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllSlugs } from "@/data/projects";
+import { getArchiveIndex } from "@/lib/archive";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://dereklomas.me";
@@ -53,5 +54,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...blogPosts, ...projectPages, ...labPages];
+  const archivePages = getArchiveIndex().map((post) => ({
+    url: `${baseUrl}/blog/archive/${post.slug}`,
+    lastModified: new Date(post.date),
+    priority: 0.4,
+  }));
+
+  return [
+    ...staticPages,
+    ...blogPosts,
+    ...projectPages,
+    ...labPages,
+    ...archivePages,
+  ];
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { getArchiveIndex } from "@/lib/archive";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -480,6 +481,39 @@ export default function WritingPage() {
             </div>
           </section>
         )}
+
+        {/* Full archive */}
+        <section id="archive" className="mb-16 scroll-mt-24">
+          <div className="mb-6">
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+              Archive
+            </h2>
+            <p className="text-sm text-text-secondary mt-1">
+              Every essay from Substack and Medium, 2015&ndash;2024, preserved
+              here in full
+            </p>
+          </div>
+          <ul className="space-y-3">
+            {getArchiveIndex().map((post) => (
+              <li key={post.slug} className="border-b border-light pb-3 last:border-b-0">
+                <Link
+                  href={`/blog/archive/${post.slug}`}
+                  className="flex gap-4 items-baseline no-underline group"
+                >
+                  <span className="text-muted font-sans text-sm shrink-0 w-20">
+                    {post.date.slice(0, 4)}
+                  </span>
+                  <span className="text-secondary group-hover:text-rust transition-colors">
+                    {post.title}
+                  </span>
+                  <span className="text-muted font-sans text-xs shrink-0 ml-auto capitalize">
+                    {post.platform}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         {/* Topics */}
         <section className="p-8 bg-warm rounded-lg border border-[var(--border-color)]">

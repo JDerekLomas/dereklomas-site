@@ -353,6 +353,41 @@ a:hover {
   color: var(--text-muted);
 }
 
+.prose img {
+  border-radius: 8px;
+  margin: 2em auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 3em 0;
+}
+
+.prose h1 {
+  font-size: 32px;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose pre {
+  background: #1a1510;
+  color: #c9b99a;
+  border-radius: 8px;
+  padding: 1.25em;
+  overflow-x: auto;
+  font-size: 14px;
+  margin: 1.5em 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
 /* Comments */
 .cusdis-container {
   margin-top: 3em;
