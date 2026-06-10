@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { readFileSync } from "fs";
 import { join } from "path";
 
@@ -154,6 +155,27 @@ export default function TalksPage() {
             </a>
           </p>
         </header>
+
+        {/* Source Library launch transcript */}
+        <section className="mb-16">
+          <Link
+            href="/talks/source-library-launch"
+            className="block bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] hover:shadow-sm transition-all no-underline p-6 md:p-8"
+          >
+            <p className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-rust mb-2">
+              New · Listen with aligned transcript
+            </p>
+            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
+              The Source Library: Beta Launch
+            </h2>
+            <p className="text-text-secondary leading-relaxed max-w-2xl">
+              Launching sourcelibrary.org at the Embassy of the Free Mind in
+              Amsterdam — translating the Renaissance with AI, from Ficino to
+              15,000 books in 55 languages. A 54-minute talk with word-aligned
+              audio: click any sentence to listen from there.
+            </p>
+          </Link>
+        </section>
 
         {/* Featured */}
         {featured.length > 0 && (
