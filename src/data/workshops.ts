@@ -20,6 +20,14 @@ export const workshops: Workshop[] = [
     url: "https://www.embassyofthefreemind.com",
   },
   {
+    title: "Smart Girls",
+    venue: "Smart Girls community",
+    location: "Amsterdam",
+    cadence: "Women entrepreneurs",
+    description:
+      "Hands-on vibe coding with women entrepreneurs and creatives — getting started with Claude Code to build their own tools and ideas. The clearest example of the mission: putting AI-assisted building in the hands of people who'd benefit most but are least likely to be told it's for them.",
+  },
+  {
     title: "AI & Experience Design — Masterclass",
     venue: "TU Delft",
     location: "Delft, Netherlands",
