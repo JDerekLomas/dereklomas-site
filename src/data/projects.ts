@@ -9,6 +9,7 @@ export interface Project {
   gallery?: string[];
   video?: string; // YouTube video ID
   url?: string;
+  relatedLinks?: { label: string; href: string }[];
   featured?: boolean;
 }
 
@@ -37,6 +38,9 @@ export const allProjects: Project[] = [
     tags: ["Quantum", "AI Agents", "Vibe Coding", "TU Delft"],
     image: "/images/projects/quantum-vibecoding.png",
     url: "https://quantumvibecoding.org",
+    relatedLinks: [
+      { label: "Read the write-up", href: "/blog/replicating-quantum-papers-with-ai" },
+    ],
     featured: true,
   },
   // Personal projects

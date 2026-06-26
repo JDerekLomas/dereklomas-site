@@ -79,8 +79,10 @@ export default function QuantumPost() {
             Over the past two weeks, working at TU Delft with{" "}
             <a href="https://www.quantum-inspire.com/" target="_blank" rel="noopener noreferrer">Quantum Inspire</a>,
             I ran this experiment. Starting February 9th, the agent replicated six papers spanning 2014&ndash;2023, tested 27 quantitative
-            claims across four hardware backends, and ran 105+ individual experiments. The results are live at{" "}
-            <a href="https://quantuminspire.vercel.app" target="_blank" rel="noopener noreferrer">quantuminspire.vercel.app</a>.
+            claims across four hardware backends, and ran 105+ individual experiments. The full results, interactive
+            visualizations, and the open-source tooling are live at{" "}
+            <a href="https://quantumvibecoding.org" target="_blank" rel="noopener noreferrer">quantumvibecoding.org</a>{" "}
+            (see the <Link href="/projects/quantum-vibecoding">project page</Link>).
           </p>
 
           <p>

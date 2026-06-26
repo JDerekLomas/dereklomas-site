@@ -102,17 +102,28 @@ export default async function ProjectDetailPage({ params }: Props) {
           ))}
         </div>
 
-        {/* External link */}
-        {project.url && (
-          <div className="mt-8">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-rust text-white font-[family-name:var(--font-inter)] text-sm font-medium rounded-lg hover:bg-rust-hover transition-colors no-underline"
-            >
-              Visit Project &rarr;
-            </a>
+        {/* Links */}
+        {(project.url || (project.relatedLinks && project.relatedLinks.length > 0)) && (
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            {project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-rust text-white font-[family-name:var(--font-inter)] text-sm font-medium rounded-lg hover:bg-rust-hover transition-colors no-underline"
+              >
+                Visit Project &rarr;
+              </a>
+            )}
+            {project.relatedLinks?.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-rust-hover transition-colors no-underline font-[family-name:var(--font-inter)]"
+              >
+                {link.label} &rarr;
+              </Link>
+            ))}
           </div>
         )}
 
