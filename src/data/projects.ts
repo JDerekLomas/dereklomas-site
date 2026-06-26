@@ -13,6 +13,19 @@ export interface Project {
 }
 
 export const allProjects: Project[] = [
+  {
+    slug: "quantum-resonance",
+    title: "Quantum Resonance",
+    description:
+      "Interactive art exhibit shown at UNESCO for the International Year of Quantum. Uses cymatics — visible sound vibrations — to make quantum physics tangible through resonant standing waves and interference patterns.",
+    fullDescription:
+      "Quantum Resonance is an interactive art exhibit that explores how fundamental aspects of wave behavior — resonance and interference — shape both the quantum world and the classical wave patterns of cymatics. Visitors experience how particular frequencies of sound generate geometric standing-wave patterns in water, emerging from the constructive and destructive interference of acoustic waves. The same interference patterns appear in quantum probability waves and play a key role in quantum computing, so the exhibit serves as an artistic bridge that illustrates quantum wave effects at human scale. Created with Martijn Weber and developed with Diederick Croese, Deborah Nas, the Centre for Quantum & Society, and Quantum Delta NL, the work was presented at UNESCO as part of the International Year of Quantum Science and Technology — part of Derek's ongoing effort to humanize complex technologies and make quantum physics accessible to general audiences.",
+    category: "Design",
+    tags: ["Quantum", "Cymatics", "Installation", "UNESCO"],
+    image: "/images/projects/quantum-resonance.jpg",
+    url: "https://quantum2025.org/",
+    featured: true,
+  },
   // Personal projects
   {
     slug: "prompt-archaeology",
