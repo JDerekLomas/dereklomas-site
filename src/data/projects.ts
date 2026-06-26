@@ -26,6 +26,19 @@ export const allProjects: Project[] = [
     url: "https://www.unesco.org/en/articles/opening-ceremony-international-year-quantum-science-and-technology",
     featured: true,
   },
+  {
+    slug: "quantum-vibecoding",
+    title: "Quantum Vibecoding",
+    description:
+      "AI as the interface between humans and quantum. AI agents replicated 6 landmark quantum papers on 3 real chips through natural language — 93% of claims held, with zero quantum code written by hand.",
+    fullDescription:
+      "Quantum Vibecoding is an open research initiative from TU Delft exploring how AI can make quantum computing accessible by letting people run real experiments on real hardware just by describing them in natural language. Across 445 user sessions on 3 real quantum chips, AI agents replicated the claims of 6 landmark quantum papers — 93% held up — without a human writing quantum code by hand. The study also found general-purpose models (Claude) outperformed specialized fine-tuned quantum models at code generation (70.9% accuracy with retrieval-augmented generation). The site offers hands-on access (get started in under 15 minutes), 20+ interactive visualizations (Bloch sphere, entanglement, measurement), annotated prompts and methodology, a downloadable paper, and an open-source MCP server for Quantum Inspire. Built in collaboration with Quantum Inspire and QuTech — the entire site and research infrastructure were created through human–AI collaboration with Claude Code.",
+    category: "Research",
+    tags: ["Quantum", "AI Agents", "Vibe Coding", "TU Delft"],
+    image: "/images/projects/quantum-vibecoding.png",
+    url: "https://quantumvibecoding.org",
+    featured: true,
+  },
   // Personal projects
   {
     slug: "prompt-archaeology",
