@@ -23,7 +23,7 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["Quantum", "Cymatics", "Installation", "UNESCO"],
     image: "/images/projects/quantum-resonance.jpg",
-    url: "https://quantum2025.org/",
+    url: "https://www.unesco.org/en/articles/opening-ceremony-international-year-quantum-science-and-technology",
     featured: true,
   },
   // Personal projects
