@@ -68,7 +68,7 @@ export default function PreviewB() {
                 Derek Lomas
               </h1>
               <p style={{ margin: "0.15rem 0 0", fontSize: "0.8rem", color: "#888", fontFamily: "var(--font-inter), sans-serif" }}>
-                Professor of Positive AI, TU Delft
+                Professor, TU Delft · Positive AI
               </p>
             </div>
           </div>

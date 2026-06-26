@@ -103,7 +103,7 @@ export default async function OGImage() {
               marginTop: 16,
             }}
           >
-            Professor of Positive AI at TU Delft
+            Professor at TU Delft · Researching Positive AI
           </div>
         </div>
 

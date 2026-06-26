@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
   description:
-    "Academic CV — J. Derek Lomas, PhD. Professor of Positive AI at TU Delft.",
+    "Academic CV — J. Derek Lomas, PhD. Professor at TU Delft researching Positive AI.",
 };
 
 const academic = [
@@ -321,8 +321,8 @@ export default function CVPage() {
             J. Derek Lomas, PhD
           </h1>
           <p className="text-text-secondary text-lg mb-4">
-            Professor of Positive AI · TU Delft, Industrial
-            Design Engineering, Design Aesthetics Section
+            Professor · TU Delft, Industrial Design Engineering,
+            Design Aesthetics Section
           </p>
           <div className="text-text-muted text-sm space-y-1 font-[family-name:var(--font-inter)]">
             <p>

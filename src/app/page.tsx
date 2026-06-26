@@ -134,15 +134,15 @@ export default function Home() {
           </div>
           <p className="text-lg text-secondary leading-relaxed">
             I design AI systems that enhance human wellbeing and
-            create resonant experiences. Professor of{" "}
+            create resonant experiences. Professor at{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Positive AI at TU Delft
-            </a>
-            , founder of three ed-tech companies reaching 5M+ students, and
+              TU Delft
+            </a>{" "}
+            researching Positive AI, founder of three ed-tech companies reaching 5M+ students, and
             builder of{" "}
             <Link href="/projects/source-library">
               Source Library

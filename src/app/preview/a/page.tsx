@@ -72,11 +72,11 @@ export default function PreviewA() {
         </div>
 
         <p style={{ fontSize: "1.2rem", lineHeight: 1.75, color: "#444" }}>
-          I&rsquo;m a professor of{" "}
+          I&rsquo;m a professor at{" "}
           <a href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d" target="_blank" rel="noopener noreferrer" style={{ color: "#9e4a3a", textDecorationColor: "rgba(158,74,58,0.3)" }}>
-            Positive AI at TU Delft
+            TU Delft
           </a>
-          , where I research how to design AI systems that enhance human wellbeing. My work in educational technology has reached over five million students. I also{" "}
+          , where I research Positive AI — how to design AI systems that enhance human wellbeing. My work in educational technology has reached over five million students. I also{" "}
           <Link href="/projects/source-library" style={{ color: "#9e4a3a", textDecorationColor: "rgba(158,74,58,0.3)" }}>
             digitize rare historical manuscripts
           </Link>{" "}
