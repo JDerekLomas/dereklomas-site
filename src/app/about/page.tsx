@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cognitive scientist, AI researcher, and entrepreneur. Tenured professor of Positive AI at TU Delft.",
+    "Cognitive scientist, AI researcher, and entrepreneur. Professor of Positive AI at TU Delft.",
 };
 
 export default function AboutPage() {
@@ -36,7 +36,7 @@ export default function AboutPage() {
         {/* Bio narrative */}
         <div className="space-y-6 text-text-secondary leading-relaxed mb-16">
           <p>
-            I'm a tenured professor of{" "}
+            I'm a professor of{" "}
             <strong className="text-text-primary">Positive AI</strong> at{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
