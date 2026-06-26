@@ -165,18 +165,6 @@ export const allProjects: Project[] = [
     tags: ["Wellbeing", "Haptics", "AI", "TU Delft"],
     image: "/images/projects/feel-the-vibe.png",
   },
-  {
-    slug: "xwhysi",
-    title: "XWHYSI",
-    description:
-      "Milo Lomas music portfolio with 30 AI-generated psychedelic video backgrounds. Electronic music meets generative art.",
-    fullDescription:
-      "XWHYSI is the music portfolio of Milo Lomas, featuring electronic music paired with 30 AI-generated psychedelic video backgrounds. Each track is accompanied by a unique visual created using generative AI tools, blending electronic sound design with surreal, evolving imagery.",
-    category: "Music",
-    tags: ["SoundCloud", "Video Generation", "Creative"],
-    image: "/images/projects/xwhysi.png",
-    url: "https://xwhysi.com",
-  },
   // TU Delft projects
   {
     slug: "my-wellness-check",
