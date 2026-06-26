@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { workshops } from "@/data/workshops";
 
 export const metadata: Metadata = {
   title: "Talks & Videos",
@@ -175,6 +176,69 @@ export default function TalksPage() {
               audio: click any sentence to listen from there.
             </p>
           </Link>
+        </section>
+
+        {/* Vibe Coding Workshops */}
+        <section className="mb-16">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
+            Vibe Coding Workshops
+          </h2>
+          <p className="text-text-secondary leading-relaxed max-w-3xl mb-3">
+            Since 2022, Derek has taught people to build real software with AI —
+            no programming background required. The mission is to reach the
+            people who stand to gain the most from these tools but are least
+            likely to pick them up: women entrepreneurs, non-technical founders,
+            and anyone who&rsquo;s been told that coding isn&rsquo;t for them.
+            <em> Who is writing code these days? Everyone.</em>
+          </p>
+          <p className="text-sm text-text-muted mb-6">
+            Want a workshop for your community or organization?{" "}
+            <Link href="/contact" className="text-rust hover:underline no-underline">
+              Get in touch →
+            </Link>
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {workshops.map((w) => {
+              const inner = (
+                <>
+                  <div className="flex items-baseline justify-between gap-3 mb-1">
+                    <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-text-primary">
+                      {w.title}
+                    </h3>
+                    {w.cadence && (
+                      <span className="shrink-0 text-xs text-text-muted font-[family-name:var(--font-inter)]">
+                        {w.cadence}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm font-[family-name:var(--font-inter)] text-rust mb-2">
+                    {w.venue} · {w.location}
+                  </p>
+                  <p className="text-sm text-text-secondary leading-relaxed">
+                    {w.description}
+                  </p>
+                </>
+              );
+              return w.url ? (
+                <a
+                  key={w.title}
+                  href={w.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-card rounded-lg border border-[var(--border-color)] hover:border-[var(--border-medium)] hover:shadow-sm transition-all no-underline p-5"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div
+                  key={w.title}
+                  className="bg-card rounded-lg border border-[var(--border-color)] p-5"
+                >
+                  {inner}
+                </div>
+              );
+            })}
+          </div>
         </section>
 
         {/* Featured */}
