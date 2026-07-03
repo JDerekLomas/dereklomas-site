@@ -34,11 +34,10 @@ export default function Rsvp45() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Zeyada&display=swap');`}</style>
       <main style={styles.sheet}>
         <div style={styles.name}>Derek&rsquo;s</div>
-        <div style={styles.word}>Birthday</div>
-        <div style={styles.num}>#45</div>
-        <div style={styles.epigraph}>&ldquo;as before, so after&rdquo;</div>
+        <div style={styles.word}>Birthday Party</div>
+        <div style={styles.num}>45</div>
         <div style={styles.details}>
-          Friday, July 10 &mdash; from 9:30 PM till 3:00 AM
+          Friday, July 10 &mdash; from 9:30 PM till 4:50 AM
           <br />
           dancing &middot; sauna &amp; jacuzzi &middot; shoeless
           <br />
@@ -52,7 +51,7 @@ export default function Rsvp45() {
                 You are inscribed in the book of guests,{" "}
                 <em>{name.trim()}</em>.
                 <br />
-                The address will find you. Solve et coagula!
+                The address will find you. Let&rsquo;s celebrate Life together!
               </>
             ) : (
               <>
@@ -103,7 +102,7 @@ export default function Rsvp45() {
             )}
           </form>
         )}
-        <div style={styles.marginalia}>a rare gathering!</div>
+        <div style={styles.marginalia}>bring thy towel!</div>
       </main>
     </div>
   );
@@ -137,13 +136,12 @@ const styles: Record<string, React.CSSProperties> = {
   },
   word: {
     fontFamily: "'IM Fell English SC', serif",
-    fontSize: 26,
-    letterSpacing: 10,
-    paddingLeft: 10,
+    fontSize: 24,
+    letterSpacing: 6,
+    paddingLeft: 6,
     marginBottom: 6,
   },
   num: { fontSize: 54, lineHeight: 1.1 },
-  epigraph: { fontStyle: "italic", fontSize: 19, marginTop: 4 },
   details: { fontSize: 17, lineHeight: 1.5, margin: "18px 0 26px" },
   form: { display: "flex", flexDirection: "column", gap: 14, textAlign: "left" },
   label: { fontSize: 17, display: "flex", flexDirection: "column", gap: 4 },
