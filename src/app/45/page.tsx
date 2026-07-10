@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function Rsvp45() {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [attending, setAttending] = useState("yes");
   const [note, setNote] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">(
@@ -21,7 +22,7 @@ export default function Rsvp45() {
       const res = await fetch("/api/rsvp45", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, attending, note }),
+        body: JSON.stringify({ name, email, attending, note }),
       });
       setStatus(res.ok ? "done" : "error");
     } catch {
@@ -69,6 +70,17 @@ export default function Rsvp45() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 maxLength={120}
+                required
+              />
+            </label>
+            <label style={styles.label}>
+              Thy email &mdash; whither the address shall be sent
+              <input
+                style={styles.input}
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                maxLength={200}
                 required
               />
             </label>

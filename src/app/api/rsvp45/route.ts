@@ -20,13 +20,14 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const name = String(body.name ?? "").trim().slice(0, 120);
+    const email = String(body.email ?? "").trim().slice(0, 200);
     const attending = body.attending === "yes" ? "yes" : "no";
     const note = String(body.note ?? "").trim().slice(0, 500);
     if (!name) {
       return NextResponse.json({ error: "Name required" }, { status: 400 });
     }
     const col = await getCollection();
-    await col.insertOne({ name, attending, note, createdAt: new Date() });
+    await col.insertOne({ name, email, attending, note, createdAt: new Date() });
     return NextResponse.json({ success: true });
   } catch (e) {
     console.error("rsvp45 POST failed:", e);
