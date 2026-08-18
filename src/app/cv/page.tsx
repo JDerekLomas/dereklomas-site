@@ -259,7 +259,7 @@ const teaching = [
 ];
 
 const press = [
-  { year: "2026", body: "Trouw — “Derek Lomas: ‘Ik hoop dat we met positieve AI een nieuwe renaissance kunnen bewerkstelligen’,” interview by Anniek van den Brand, Vrije Geesten series (August 14, 2026)" },
+  { year: "2026", body: "Trouw (NL) — “Derek Lomas: ‘I hope that with positive AI we can bring about a new renaissance’,” interview by Anniek van den Brand, Vrije Geesten (Free Spirits) series, August 14, 2026" },
   { year: "2024", body: "World Bank AI Repository (RKSMBK case study); ThePrint/ANI — “Smart Paper Recognized by UNESCO”; Tools Competition — Smart Paper / Playpower Labs deployments across 65,000 Rajasthan schools" },
   { year: "2023", body: "TU Delft Delft Design Stories — “Positive Artificial Intelligence Vibes”; BoomLive — “In Rajasthan Schools, AI Is Teacher And Examiner” (Smart Paper)" },
   { year: "2021", body: "New Scientist, Digital Trends, Lifewire, Inner Detail — coverage of EEG-based song-identification research" },
