@@ -12,8 +12,8 @@ const academic = [
     body: (
       <>
         <strong>Industrial Design Engineering, TU Delft.</strong> Tenured
-        Assistant Professor, Design Aesthetics Section. Research on aligning
-        technology with humanity.
+        Assistant Professor, Department of Human-Centered Design (Design
+        Aesthetics Section). Research on aligning technology with humanity.
       </>
     ),
   },
@@ -66,30 +66,28 @@ const ventures = [
     description:
       "CEO and Chief Learning Scientist. Award-winning learning games used by millions of students. Data-science and game-design contracts with Pearson, Houghton-Mifflin Harcourt, AltSchool, BrainPOP, Scientific Learning, Carnegie Learning. Grants from Gates, MacArthur, and Schmidt foundations.",
     url: "https://www.playpowerlabs.com",
-  },
-  {
-    name: "Playpower Games",
-    description:
-      "Free K–8 math games platform, Common Core / TEKS aligned, with live Kahoot-style quizzes; integrates with Google Classroom, Clever, ClassLink.",
-    url: "https://playpowergames.com",
+    short: "PlaypowerLabs.com",
   },
   {
     name: "EdOptimize / Smart Paper",
     description:
       "Computer-vision platform turning hand-completed worksheets into instant feedback. 5M+ students reached across India.",
     url: "https://smartpaperapp.com",
+    short: "SmartPaperApp.com",
   },
   {
     name: "NeuroUX",
     description:
       "HIPAA/GDPR-compliant cognitive assessment and Ecological Momentary Assessment (EMA) platform with wearables integrations (Fitbit, Garmin, Apple Watch, ActiGraph).",
     url: "https://getneuroux.com",
+    short: "GetNeuroUX.com",
   },
   {
     name: "Source Library",
     description:
       "Open digital archive of pre-1700 Hermetic, alchemical, and natural-magic texts. 12,347 books · 11,218 new English translations · 152 languages.",
     url: "https://sourcelibrary.org",
+    short: "SourceLibrary.org",
   },
 ];
 
@@ -226,7 +224,7 @@ const talks = [
   { year: "2026", venue: "Embassy of the Free Mind, Amsterdam", title: "Vibe Coding Workshops — recurring series at the BPH" },
   { year: "2025", venue: "Embassy of the Free Mind, Amsterdam", title: "Workshop on AI, Creativity and Esotericism (sold out, July 4)" },
   { year: "2026", venue: "Design Thinking Zeal (online)", title: "Humanist AI: Translating the Ancient World" },
-  { year: "2025", venue: "Internet Archive, San Francisco", title: "AI coaching around World Digital Preservation Day" },
+  { year: "2025", venue: "Internet Archive, San Francisco / Internet Archive Europe", title: "AI coaching around World Digital Preservation Day" },
   { year: "2025", venue: "UNESCO HQ, Paris", title: "Quantum Resonance — interactive exhibit, Opening Ceremony of the UN International Year of Quantum (Feb 4–5)" },
   { year: "2025", venue: "UNESCO", title: "Smart Paper for Learning Assessment" },
   { year: "2025", venue: "OZORA Festival, Hungary", title: "The Nature of Artificial Intelligence; Vibes, Resonance and Harmony in the Age of AI" },
@@ -261,6 +259,7 @@ const teaching = [
 ];
 
 const press = [
+  { year: "2026", body: "Trouw — “Derek Lomas: ‘Ik hoop dat we met positieve AI een nieuwe renaissance kunnen bewerkstelligen’,” interview by Anniek van den Brand, Vrije Geesten series (August 14, 2026)" },
   { year: "2024", body: "World Bank AI Repository (RKSMBK case study); ThePrint/ANI — “Smart Paper Recognized by UNESCO”; Tools Competition — Smart Paper / Playpower Labs deployments across 65,000 Rajasthan schools" },
   { year: "2023", body: "TU Delft Delft Design Stories — “Positive Artificial Intelligence Vibes”; BoomLive — “In Rajasthan Schools, AI Is Teacher And Examiner” (Smart Paper)" },
   { year: "2021", body: "New Scientist, Digital Trends, Lifewire, Inner Detail — coverage of EEG-based song-identification research" },
@@ -321,8 +320,8 @@ export default function CVPage() {
             J. Derek Lomas, PhD
           </h1>
           <p className="text-text-secondary text-lg mb-4">
-            Professor · TU Delft, Industrial Design Engineering,
-            Design Aesthetics Section
+            Professor · TU Delft, Department of Human-Centered Design,
+            Faculty of Industrial Design Engineering
           </p>
           <div className="text-text-muted text-sm space-y-1 font-[family-name:var(--font-inter)]">
             <p>
@@ -402,6 +401,14 @@ export default function CVPage() {
                     <span className="text-text-muted font-normal">
                       {" "}
                       ({v.years})
+                    </span>
+                  )}
+                  {v.short && (
+                    <span className="text-text-muted font-normal">
+                      {" · "}
+                      <a href={v.url} target="_blank" rel="noopener noreferrer">
+                        {v.short}
+                      </a>
                     </span>
                   )}
                 </p>
