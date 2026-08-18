@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 export const metadata: Metadata = {
   title: "About",
@@ -73,10 +74,10 @@ export default function AboutPage() {
           <p>
             Beyond my professional work, I built{" "}
             <Link href="/projects/source-library">Source Library</Link> — an
-            open archive of <strong className="text-text-primary">12,347</strong>{" "}
+            open archive of <strong className="text-text-primary">{SOURCE_LIBRARY.books}</strong>{" "}
             rare historical texts from the 15th–18th centuries, with{" "}
-            <strong className="text-text-primary">11,218</strong> new English
-            translations across 152 languages. The collection emphasizes
+            <strong className="text-text-primary">{SOURCE_LIBRARY.translations}</strong> new English
+            translations across {SOURCE_LIBRARY.languages} languages. The collection emphasizes
             Hermetic, alchemical, kabbalistic, and natural-magic traditions
             alongside early scientific thought, and is freely available at{" "}
             <a

@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 export const metadata: Metadata = {
+  // Job posting; keep out of search once filled.
+  robots: { index: false, follow: false },
   title: "Executive Assistant — Fundraising & Operations",
   description:
     "Part-time EA role in Amsterdam supporting the Ancient Wisdom Trust and PlayPower Labs. Fundraising, grant writing, AI tools, and cultural preservation.",
@@ -111,10 +114,9 @@ export default function EAJobPage() {
                 >
                   Source Library
                 </a>
-                : 2,517 texts catalogued, 225 translated, all open-access.
-                Patrick Collison (co-founder of Stripe) is a founding patron.
-                We&rsquo;re raising funds to scan and translate 5,000 more
-                books.
+                : {SOURCE_LIBRARY.books} books catalogued,{" "}
+                {SOURCE_LIBRARY.translations} translated, all open-access.
+                We&rsquo;re raising funds to scan and translate thousands more.
               </p>
             </div>
 

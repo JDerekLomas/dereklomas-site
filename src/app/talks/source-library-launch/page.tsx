@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import AlignedTranscript from "@/components/AlignedTranscript";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 export const metadata: Metadata = {
   title: "The Source Library: Beta Launch",
   description:
-    "Audio-aligned transcript of Derek Lomas's Source Library beta launch talk at the Embassy of the Free Mind, Amsterdam — AI translation of the Renaissance, Ficino, Pico, and 15,000 books in 55 languages.",
+    "Audio-aligned transcript of Derek Lomas's Source Library beta launch talk at the Embassy of the Free Mind, Amsterdam — AI translation of the Renaissance, Ficino, Pico, and 22,069 books in 114 languages.",
   openGraph: {
     title: "The Source Library: Beta Launch — Embassy of the Free Mind",
     description:
-      "Listen along with a word-aligned transcript: translating the Renaissance with AI, from Ficino's statue to 7 billion words in 55 languages.",
+      "Listen along with a word-aligned transcript: translating the Renaissance with AI, from Ficino's statue to 7 billion words in 114 languages.",
   },
 };
 
@@ -33,7 +34,7 @@ export default function SourceLibraryLaunchPage() {
           >
             sourcelibrary.org
           </a>{" "}
-          — 15,000 historical books in 55 languages, with AI translations
+          — {SOURCE_LIBRARY.books} historical books in {SOURCE_LIBRARY.languages} languages, with AI translations
           presented beside the original page scans. The transcript below is
           aligned to the recording: click any word, timestamp, or margin note
           to jump the audio there.

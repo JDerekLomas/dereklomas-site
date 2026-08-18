@@ -1,5 +1,14 @@
 User-agent: *
 Allow: /
 
+# Unlinked personal or working pages. These also carry noindex metadata;
+# this is belt-and-braces so they stay out of search if the URLs get shared.
+Disallow: /45
+Disallow: /review
+Disallow: /review-creative
+Disallow: /creative
+Disallow: /preview/
+Disallow: /ea
+
 Sitemap: https://dereklomas.me/sitemap.xml
 Sitemap: https://dereklomas.me/video-sitemap.xml

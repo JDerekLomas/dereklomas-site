@@ -323,9 +323,9 @@ export default function SecondRenaissancePost() {
 
           <p>
             You can watch a compressed replay of a Second Renaissance building session at{" "}
-            <a href="https://codevibing.com/session/secondrenaissance" target="_blank" rel="noopener noreferrer">
+            
               codevibing.com
-            </a>
+            
             .
           </p>
 

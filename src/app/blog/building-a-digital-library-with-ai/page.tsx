@@ -369,9 +369,9 @@ export default function SourceLibraryPost() {
 
           <p>
             You can watch a compressed replay of a Source Library building session at{" "}
-            <a href="https://codevibing.com/session/sourcelibrary" target="_blank" rel="noopener noreferrer">
+            
               codevibing.com
-            </a>
+            
             .
           </p>
 

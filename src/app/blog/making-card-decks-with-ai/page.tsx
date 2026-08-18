@@ -353,17 +353,17 @@ export default function CardDecksPost() {
 
           <p>
             You can watch compressed replays of the building sessions at{" "}
-            <a href="https://codevibing.com/session/alchemy" target="_blank" rel="noopener noreferrer">
+            
               codevibing.com
-            </a>{" "}
+            {" "}
             (the Alchemy Deck,{" "}
-            <a href="https://codevibing.com/session/futures" target="_blank" rel="noopener noreferrer">
+            
               Futures Oracle
-            </a>
+            
             , and{" "}
-            <a href="https://codevibing.com/session/therapycards" target="_blank" rel="noopener noreferrer">
+            
               MFT therapy deck
-            </a>
+            
             ).
           </p>
 

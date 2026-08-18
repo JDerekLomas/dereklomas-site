@@ -673,7 +673,7 @@ const supervisedStudents = [
     name: "Dinuo Liao",
     degree: "MSc",
     year: 2023,
-    distinction: "Cum Laude (9.5/10)",
+    distinction: "Cum Laude",
     title: "Generative AI & Tangible Products: Human-AI Synergy in 3D-printed Lamp Design",
     description: "Explored LoRA fine-tuning with human aesthetic feedback to enhance AI-generated product designs, with methods for converting designs into 3D-printable objects.",
   },

@@ -32,7 +32,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dereklomas.me"),
   title: {
-    default: "Positive AI & Digital Humanities",
+    default: "Derek Lomas — Positive AI & Digital Humanities",
     template: "%s | Derek Lomas",
   },
   description:

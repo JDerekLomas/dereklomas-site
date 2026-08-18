@@ -85,7 +85,7 @@ const ventures = [
   {
     name: "Source Library",
     description:
-      "Open digital archive of pre-1700 Hermetic, alchemical, and natural-magic texts. 12,347 books · 11,218 new English translations · 152 languages.",
+      "Open digital archive of pre-1700 Hermetic, alchemical, and natural-magic texts. 22,069 books · 17,814 new English translations · 114 languages.",
     url: "https://sourcelibrary.org",
     short: "SourceLibrary.org",
   },
@@ -320,8 +320,8 @@ export default function CVPage() {
             J. Derek Lomas, PhD
           </h1>
           <p className="text-text-secondary text-lg mb-4">
-            Professor · TU Delft, Department of Human-Centered Design,
-            Faculty of Industrial Design Engineering
+            Tenured Assistant Professor of Positive AI · TU Delft, Department of
+            Human-Centered Design, Faculty of Industrial Design Engineering
           </p>
           <div className="text-text-muted text-sm space-y-1 font-[family-name:var(--font-inter)]">
             <p>

@@ -21,8 +21,8 @@ export function SiteSchema() {
     },
     sameAs: [
       "https://github.com/JDerekLomas",
-      "https://scholar.google.com/citations?user=6lQ7gMkAAAAJ",
-      "https://x.com/dereklomas",
+      "https://scholar.google.com/citations?user=hbPBXXoAAAAJ",
+      "https://x.com/cognotron",
     ],
     knowsAbout: [
       "Artificial Intelligence",

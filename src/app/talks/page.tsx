@@ -3,6 +3,7 @@ import Link from "next/link";
 import { readFileSync } from "fs";
 import { join } from "path";
 import { workshops } from "@/data/workshops";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 export const metadata: Metadata = {
   title: "Talks & Videos",
@@ -172,7 +173,7 @@ export default function TalksPage() {
             <p className="text-text-secondary leading-relaxed max-w-2xl">
               Launching sourcelibrary.org at the Embassy of the Free Mind in
               Amsterdam — translating the Renaissance with AI, from Ficino to
-              15,000 books in 55 languages. A 54-minute talk with word-aligned
+              {SOURCE_LIBRARY.books} books in {SOURCE_LIBRARY.languages} languages. A 54-minute talk with word-aligned
               audio: click any sentence to listen from there.
             </p>
           </Link>

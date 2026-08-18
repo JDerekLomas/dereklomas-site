@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { allProjects } from "@/data/projects";
+import type { Metadata } from "next";
+
+// Abandoned homepage design mockup.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /**
  * Variant A: "Bookish Scholar" — Robin Sloan inspired

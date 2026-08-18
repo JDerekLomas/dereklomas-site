@@ -61,9 +61,9 @@ export const allProjects: Project[] = [
     slug: "source-library",
     title: "Source Library",
     description:
-      "12,347 rare historical texts from the 15th–18th centuries, 11,218 translated into English across 152 languages — the largest open archive of Hermetic, alchemical, and pre-modern scientific writing.",
+      "22,069 rare historical texts from the 15th–18th centuries, 17,814 translated into English across 114 languages — the largest open archive of Hermetic, alchemical, and pre-modern scientific writing.",
     fullDescription:
-      "Source Library is a digital humanities project dedicated to digitizing and translating rare historical texts. The live collection now spans 12,347 books by 5,095+ authors in 152 languages — including 11,218 fresh AI-assisted English translations, 94,811 illustrations, and 14,249 artworks. The corpus emphasizes Hermetic, alchemical, kabbalistic, neoplatonic, and natural-magic traditions alongside early scientific thought, with a Gemini-based OCR + translation pipeline that has processed roughly 1.67 million pages for around $3,400 total.",
+      "Source Library is a digital humanities project dedicated to digitizing and translating rare historical texts. The live collection now spans 22,069 books by 5,095+ authors in 114 languages — including 17,814 fresh AI-assisted English translations (5,813 translated for the first time) and 15,320 artworks. The corpus emphasizes Hermetic, alchemical, kabbalistic, neoplatonic, and natural-magic traditions alongside early scientific thought, with a Gemini-based OCR + translation pipeline that has processed roughly 1.67 million pages for around $3,400 total.",
     category: "Esoteric",
     tags: ["Next.js", "MongoDB", "Gemini OCR", "Digital Humanities"],
     image: "/images/projects/source-library.jpg",

@@ -98,6 +98,14 @@ export default function InputWidget({
   const commentInputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
+    // This is a local authoring tool. It used to reveal itself on the live
+    // site to anyone who appended ?input to a URL, which put click-to-edit
+    // controls over published pages for any visitor who guessed the param.
+    if (process.env.NODE_ENV === "production") {
+      setIsVisible(false);
+      return;
+    }
+
     const host = window.location.hostname;
     const params = new URLSearchParams(window.location.search);
     const hasInputParam = params.has("input");

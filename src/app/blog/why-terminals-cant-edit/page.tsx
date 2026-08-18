@@ -112,7 +112,7 @@ export default function WhyTerminalsCantEditPage() {
             <a href="https://en.wikipedia.org/wiki/VT100" target="_blank" rel="noopener noreferrer">DEC VT100</a>,
             released in the late &rsquo;70s. The VT100 was a physical device &mdash;
             a screen and keyboard connected to a remote computer via a{" "}
-            <a href="https://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-003_VT100_User_Guide_Jun82.pdf" target="_blank" rel="noopener noreferrer">serial cable</a>.
+            <a href="http://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-002_VT100_User_Guide_Jan79.pdf" target="_blank" rel="noopener noreferrer">serial cable</a>.
             The computer sent characters down the wire. The VT100 drew them. The user typed. The VT100 sent those keystrokes
             back up the wire. That was the entire contract.
           </p>
@@ -377,7 +377,7 @@ export default function WhyTerminalsCantEditPage() {
               <a href="https://en.wikipedia.org/wiki/VT100" target="_blank" rel="noopener noreferrer">DEC VT100</a> &mdash; Wikipedia
             </li>
             <li>
-              <a href="https://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-003_VT100_User_Guide_Jun82.pdf" target="_blank" rel="noopener noreferrer">VT100 User Guide</a> &mdash; DEC, 1982 (bitsavers.org)
+              <a href="http://bitsavers.org/pdf/dec/terminal/vt100/EK-VT100-UG-002_VT100_User_Guide_Jan79.pdf" target="_blank" rel="noopener noreferrer">VT100 User Guide</a> &mdash; DEC, 1982 (bitsavers.org)
             </li>
             <li>
               <a href="https://www.linusakesson.net/programming/tty/" target="_blank" rel="noopener noreferrer">The TTY Demystified</a> &mdash; Linus &Aring;kesson

@@ -1,8 +1,16 @@
 const posts = [
   {
+    slug: "simulating-ocean-currents",
+    title: "Simulating Ocean Currents from One Equation",
+    description:
+      "The Gulf Stream, Kuroshio Current, and Antarctic Circumpolar Current all emerge from a single equation. I built a GPU-accelerated simulator that lets you watch it happen — and reshape the continents while it runs.",
+    date: "2026-04-24",
+    tag: "Simulation",
+  },
+  {
     slug: "teaching-biology-in-3d",
     title:
-      "Teaching Biology in 3D: Building Interactive Cell Viewers with Blender and Three.js",
+      "Teaching Biology in 3D: Building Interactive Cell Viewers with Three.js",
     description:
       "An atlas of interactive 3D cell models where students rotate, zoom, and click on organelles to learn how they work.",
     date: "2026-03-02",

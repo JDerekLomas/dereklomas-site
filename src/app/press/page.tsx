@@ -8,6 +8,15 @@ export const metadata: Metadata = {
 
 const pressItems = [
   {
+    title:
+      "Derek Lomas: \u2018I hope that with positive AI we can bring about a new renaissance\u2019",
+    outlet: "Trouw",
+    date: "Aug 2026",
+    url: "https://www.trouw.nl/religie-filosofie/derek-lomas-ik-hoop-dat-we-met-positieve-ai-een-nieuwe-renaissance-kunnen-bewerkstelligen~b4dbb20f/",
+    type: "Feature" as const,
+    note: "Interview by Anniek van den Brand, Vrije Geesten series (in Dutch)",
+  },
+  {
     title: "15 Million MCQ Worksheets Scanned in 5 Days — Rajasthan State Assessment Milestone",
     outlet: "Smart Paper / EdOptimize",
     date: "Dec 2025",
@@ -143,14 +152,12 @@ const pressItems = [
     title: "$12 Computer for the Developing World",
     outlet: "NPR",
     date: "2010",
-    url: "https://www.npr.org/sections/alltechconsidered/2010/03/12_computer_for_the_developing.html",
     type: "Feature" as const,
   },
   {
     title: "Can a $12 Computer Change the World?",
     outlet: "CNN",
     date: "2010",
-    url: "https://www.cnn.com/2010/TECH/03/22/playpower.computers/",
     type: "Feature" as const,
   },
   {
@@ -165,7 +172,7 @@ const pressItems = [
       "UC San Diego Students Seek to Improve Education with $12 Computers",
     outlet: "Calit2",
     date: "2009",
-    url: "http://www.calit2.net/newsroom/release.php?id=1472",
+    url: "https://www.calit2.net/newsroom/release.php?id=1472",
     type: "Feature" as const,
   },
   {
@@ -192,7 +199,7 @@ const pressItems = [
 ];
 
 const talks = [
-  // 2026 — Upcoming / current
+  // 2026
   {
     title: "Vibe Coding Workshop",
     venue: "IT University of Copenhagen (HCI Design Section)",
@@ -252,7 +259,7 @@ const talks = [
     venue: "UNESCO",
     date: "2025",
     description:
-      "Talk at UNESCO on Smart Paper — a low-cost AI tool to assess math and literacy skills now used by 4.7M+ students across India.",
+      "Talk at UNESCO on Smart Paper — a low-cost AI tool to assess math and literacy skills now used by 5M+ students across India.",
   },
   {
     title: "The Nature of Artificial Intelligence",

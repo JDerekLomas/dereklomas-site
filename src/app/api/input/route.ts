@@ -5,7 +5,17 @@ import path from "path";
 
 const INPUT_FILE = path.join(process.cwd(), "input.json");
 
+// These handlers back the local content-feedback widget and write to a file in
+// the working directory. They were reachable in production — including an
+// unauthenticated DELETE that truncates the store. Vercel's filesystem is
+// read-only so it failed rather than being exploitable, but a public delete
+// handler shouldn't be deployed at all. The tool is local-only by design.
+const notFound = () =>
+  NextResponse.json({ error: "Not found" }, { status: 404 });
+const isProd = process.env.NODE_ENV === "production";
+
 export async function GET() {
+  if (isProd) return notFound();
   try {
     if (!existsSync(INPUT_FILE)) {
       return NextResponse.json([]);
@@ -18,6 +28,7 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  if (isProd) return notFound();
   try {
     const item = await request.json();
 
@@ -39,6 +50,7 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE() {
+  if (isProd) return notFound();
   try {
     await writeFile(INPUT_FILE, "[]");
     return NextResponse.json({ success: true });

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { allProjects } from "@/data/projects";
 import CyclingPortrait from "@/components/CyclingPortrait";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 type RecentItem = {
   date: string;
@@ -17,7 +18,7 @@ const recentNews: RecentItem[] = [
   },
   {
     date: "Apr 2026",
-    text: "Source Library passes 12,347 books and 11,218 new English translations across 152 languages",
+    text: `Source Library passes ${SOURCE_LIBRARY.books} books and ${SOURCE_LIBRARY.translations} new English translations across ${SOURCE_LIBRARY.languages} languages`,
     href: "https://sourcelibrary.org",
     external: true,
   },
@@ -47,8 +48,8 @@ const stats = [
   { value: "75+", label: "publications" },
   { value: "1,500+", label: "citations" },
   { value: "5M+", label: "students reached" },
-  { value: "12,347", label: "rare texts digitized" },
-  { value: "11,218", label: "new translations" },
+  { value: SOURCE_LIBRARY.books, label: "rare texts digitized" },
+  { value: SOURCE_LIBRARY.translations, label: "new translations" },
 ];
 
 const currentlyItems = [
