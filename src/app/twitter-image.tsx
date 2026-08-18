@@ -103,7 +103,7 @@ export default async function TwitterImage() {
               marginTop: 16,
             }}
           >
-            Professor at TU Delft · Researching Positive AI
+            Assistant Professor at TU Delft · Researching Positive AI
           </div>
         </div>
 

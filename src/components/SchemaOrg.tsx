@@ -40,7 +40,7 @@ export function SiteSchema() {
     url: BASE_URL,
     name: "Derek Lomas",
     description:
-      "Professor at TU Delft researching Positive AI. Enhancing wellbeing through AI, education, and humanistic design.",
+      "Assistant Professor at TU Delft researching Positive AI. Enhancing wellbeing through AI, education, and humanistic design.",
     author: { "@id": `${BASE_URL}/#person` },
   };
 

@@ -6,7 +6,7 @@ import { SOURCE_LIBRARY } from "@/data/stats";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Cognitive scientist, AI researcher, and entrepreneur. Professor at TU Delft researching Positive AI.",
+    "Cognitive scientist, AI researcher, and entrepreneur. Assistant Professor at TU Delft researching Positive AI.",
 };
 
 export default function AboutPage() {

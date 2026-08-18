@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
   description:
-    "Academic CV — J. Derek Lomas, PhD. Professor at TU Delft researching Positive AI.",
+    "Academic CV — J. Derek Lomas, PhD. Assistant Professor at TU Delft researching Positive AI.",
 };
 
 const academic = [
