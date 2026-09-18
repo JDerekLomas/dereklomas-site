@@ -9,6 +9,7 @@ Disallow: /review-creative
 Disallow: /creative
 Disallow: /preview/
 Disallow: /ea
+Disallow: /rubric
 
 Sitemap: https://dereklomas.me/sitemap.xml
 Sitemap: https://dereklomas.me/video-sitemap.xml
