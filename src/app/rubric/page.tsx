@@ -220,7 +220,8 @@ export default function RubricExplainer() {
             The 2018 rubric already met that. The IDE TER requires two examiners at the defence and that the student
             can ascertain how the result was reached; it never names a rubric. The MSc programmes were last
             accredited in 2019, and the cycle is six years, so the next assessment is due around now. That, more
-            than any rule, is the likely reason for the timing.
+            than any rule, is the likely reason for the timing (
+            <A href="/rubric/research-regulatory.md">notes</A>).
           </p>
           <p>
             <strong>How comparable schools do it.</strong> Every peer found uses a rubric. None hides the points:
