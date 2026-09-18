@@ -171,6 +171,47 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
+        <H2>What it costs in time</H2>
+        <Prose>
+          <p>
+            The briefing does not estimate supervisor time. The figures below are my estimate for one
+            graduation project, per supervisor, for the assessment step only (the project itself is unchanged).
+            They assume a supervisor who knows the instrument; first-time use adds the mandatory session and
+            learning the tool. Correct them if your experience differs.
+          </p>
+        </Prose>
+        <div className="mt-6 overflow-hidden rounded-lg border" style={{ borderColor: "var(--border-light)", background: "var(--bg-white)" }}>
+          <div className="grid grid-cols-[1fr_5rem_5rem] gap-2 border-b px-4 py-2 text-xs uppercase tracking-wider" style={{ borderColor: "var(--border-light)", color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>
+            <div>Step</div>
+            <div className="text-right">2018</div>
+            <div className="text-right" style={{ color: "var(--accent-rust)" }}>New</div>
+          </div>
+          {TIME.map((row) => (
+            <div key={row.step} className="grid grid-cols-[1fr_5rem_5rem] gap-2 border-b px-4 py-2.5 text-[0.95rem]" style={{ borderColor: "var(--border-light)" }}>
+              <div>{row.step}</div>
+              <div className="text-right tabular-nums" style={{ fontFamily: "var(--font-inter)" }}>{row.old}</div>
+              <div className="text-right tabular-nums" style={{ fontFamily: "var(--font-inter)" }}>{row.new}</div>
+            </div>
+          ))}
+          <div className="grid grid-cols-[1fr_5rem_5rem] gap-2 px-4 py-2.5 text-[0.95rem] font-medium">
+            <div>Per supervisor, per project</div>
+            <div className="text-right tabular-nums" style={{ fontFamily: "var(--font-inter)" }}>≈ 1 h</div>
+            <div className="text-right tabular-nums" style={{ fontFamily: "var(--font-inter)", color: "var(--accent-rust)" }}>2 to 2½ h</div>
+          </div>
+        </div>
+        <Prose>
+          <p>
+            So the assessment step roughly doubles, from about an hour to a little over two, mostly because
+            each supervisor now scores and writes comments alone before the discussion, and the discussion
+            then has to reconcile two forms. A supervisor with six graduations a year spends six to nine
+            extra hours. Per hundred graduations, with two supervisors each, that is 200 to 300 extra hours
+            of academic time a year. One-off: the mandatory session (assume two hours) plus an hour to learn
+            the tool, for every supervisor. What is bought with that time is a written, independent
+            substantiation per objective, which the 2018 form did not require. Whether that is worth it is a
+            fair question to put to the Boards.
+          </p>
+        </Prose>
+
         <H2>The eight learning objectives</H2>
         <ol className="mt-4 space-y-2 pl-6 text-[1.02rem] leading-relaxed" style={{ listStyle: "decimal" }}>
           {LOS.map((lo) => (
@@ -380,6 +421,16 @@ const COMPARISON = [
     old: "Form in MyCase, appears in the finalisation phase.",
     new: "Interactive tool linked from MyCase; the completed rubric is exported as a PDF and uploaded to MyCase.",
   },
+];
+
+// Minutes per supervisor per project, assessment step only. Estimates.
+const TIME = [
+  { step: "Read the descriptors and score (2018: 12 rows on a grade scale; new: 19 descriptors, one level per objective)", old: "15 min", new: "30 min" },
+  { step: "Write a substantiating comment per objective (new: required for all 8)", old: "10 min", new: "30 min" },
+  { step: "Supervisory team discussion (2018: one joint pass; new: reconcile two independent forms)", old: "30 min", new: "40 min" },
+  { step: "Final assessment form and written feedback (new: a second, joint completion)", old: "—", new: "20 min" },
+  { step: "Justify a deviation from the computed grade, when applicable", old: "—", new: "10 min" },
+  { step: "Export the PDF and upload to MyCase", old: "—", new: "5 min" },
 ];
 
 const LOS = [
