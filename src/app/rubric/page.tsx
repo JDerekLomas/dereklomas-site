@@ -1,24 +1,31 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CONCERNS } from "./concerns";
 
 // Explainer for the IDE MSc graduation rubric that applies to projects
-// starting 23 September 2026, with a form where colleagues can register a
-// response (including support). Unlinked from navigation; colleagues get
-// dereklomas.me/rubric. Responses go to /api/rubric-sign.
+// starting 23 September 2026. Unlinked from navigation; colleagues get
+// dereklomas.me/rubric. Source documents are served from /public/rubric.
+// Colleagues with a concern can add their name; that goes to /api/rubric-sign.
 
 type Signatory = { name: string; department: string; role: string };
-type Tally = Record<string, number>;
 
 const DEPARTMENTS = ["HCD", "DOS", "SDE", "ESA", "Other"];
 const ROLES = ["Professor", "Associate professor", "Assistant professor", "Lecturer", "PhD candidate", "Postdoc", "Support staff", "Student", "Other"];
 
-async function fetchResponses(): Promise<{ total: number; names: Signatory[]; tally: Tally } | null> {
+const DOCS = [
+  { title: "2018 rubric (ID4x95), the one in use until now", href: "/rubric/rubric-2018.pdf", note: "Also Appendix A of the official student manual", noteHref: "https://filelist.tudelft.nl/Studentenportal/Faculteitspecifiek/IO/Onderwijs/graduation/Downloads/MyCase%20afstuderen/IDE%20MSc%20Graduation%20student%20manual.pdf#page=30" },
+  { title: "Supervisor briefing on the new rubric, 18 September 2026", href: "/rubric/briefing-2026-09-18.pdf", note: "The only document supervisors have received about the new rubric" },
+  { title: "Final concept, 28 January 2026", href: "/rubric/concept-2026-01-28.pdf", note: "The version shown at the February walk-in sessions" },
+  { title: "First review draft (Rev2), 16 January 2026", href: "/rubric/draft-rev2-2026-01-16.pdf", note: "Sent to a small reviewer group" },
+  { title: "Final attainment levels 2025–26 (TER, Appendix 2)", href: "https://filelist.tudelft.nl/Studentenportal/Faculteitspecifiek/IO/Onderwijs/Regelgeving/MSc%20IDE%20TER%20and%20RGfBE%202025-2026.pdf#page=48", note: "What the new rubric must assess" },
+  { title: "Final attainment levels 2023–24 (TER, Appendix 2)", href: "https://filelist.tudelft.nl/Studentenportal/Faculteitspecifiek/IO/Onderwijs/Regelgeving/MSc%20IDE%20TER%20and%20RGfBE%202023-2024.pdf#page=31", note: "What the 2018 rubric was written against" },
+];
+
+async function fetchSignatures(): Promise<{ total: number; names: Signatory[] } | null> {
   try {
     const res = await fetch("/api/rubric-sign", { cache: "no-store" });
     const data = await res.json();
-    return { total: data.total ?? 0, names: data.names ?? [], tally: data.tally ?? {} };
+    return { total: data.total ?? 0, names: data.names ?? [] };
   } catch {
     return null;
   }
@@ -29,7 +36,6 @@ export default function RubricExplainer() {
   const [email, setEmail] = useState("");
   const [department, setDepartment] = useState("HCD");
   const [role, setRole] = useState("Assistant professor");
-  const [concerns, setConcerns] = useState<string[]>([]);
   const [comment, setComment] = useState("");
   const [showName, setShowName] = useState(true);
   const [website, setWebsite] = useState(""); // honeypot
@@ -37,22 +43,16 @@ export default function RubricExplainer() {
   const [errorMsg, setErrorMsg] = useState("");
   const [total, setTotal] = useState<number | null>(null);
   const [names, setNames] = useState<Signatory[]>([]);
-  const [tally, setTally] = useState<Tally>({});
 
   function load() {
-    fetchResponses().then((data) => {
-      if (!data) return; // counters are decorative; the explainer still reads
+    fetchSignatures().then((data) => {
+      if (!data) return; // the counter is decorative; the explainer still reads
       setTotal(data.total);
       setNames(data.names);
-      setTally(data.tally);
     });
   }
 
   useEffect(load, []);
-
-  function toggle(key: string) {
-    setConcerns((c) => (c.includes(key) ? c.filter((k) => k !== key) : [...c, key]));
-  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -63,7 +63,7 @@ export default function RubricExplainer() {
       const res = await fetch("/api/rubric-sign", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, department, role, concerns, comment, showName, website }),
+        body: JSON.stringify({ name, email, department, role, comment, showName, website }),
       });
       if (res.ok) {
         setStatus("done");
@@ -94,11 +94,76 @@ export default function RubricExplainer() {
             From <strong>23 September 2026</strong>, MSc graduation projects that start are assessed with a new
             rubric. Projects already running keep the 2018 one; MyCase shows which applies. Supervisor sessions
             follow in October and November. The five-page briefing is all supervisors have received; the full
-            rubric is in the Teachers&rsquo; Manual and a MyCase tool.
+            rubric is in the Teachers&rsquo; Manual and in a MyCase tool.
           </p>
           <p>
-            Any change to how we grade feels wrong at first because we know the old form. This page is meant to
-            make the change clear enough that your response, for or against, is about the substance.
+            Any change to how we grade feels wrong at first because we know the old form. This page tries to
+            explain what changes and why, so that your view, for or against, is about the substance. Read the
+            documents yourself; they are short.
+          </p>
+        </Prose>
+
+        <H2>The documents</H2>
+        <ul className="mt-4 space-y-3">
+          {DOCS.map((d) => (
+            <li key={d.href} className="text-[1.02rem] leading-snug">
+              <a href={d.href} className="underline decoration-1 underline-offset-2" style={{ color: "var(--accent-rust)" }} target="_blank" rel="noopener">
+                {d.title}
+              </a>
+              <div className="text-sm" style={{ color: "var(--text-muted)" }}>
+                {d.note}
+                {d.noteHref && (
+                  <>
+                    {" "}(<a href={d.noteHref} className="underline" target="_blank" rel="noopener">link</a>)
+                  </>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <H2>Why the rubric was redesigned</H2>
+        <Prose>
+          <p>
+            <strong>The programmes changed first.</strong> In September 2024 the three MSc programmes were
+            revised, and with them the final attainment levels (FALs): the eleven statements in the Teaching
+            and Examination Regulations of what an IDE graduate can do. The 2018 rubric was written against the
+            old FALs, which spoke of products, embodiment design, ergonomics and aesthetics. The new FALs speak
+            of design practices, design rationale, &ldquo;possible, sustainable and just futures&rdquo;,
+            creativity in framing and prototyping, reflexivity, and the role of design at societal and
+            planetary levels. A graduation project is where the faculty shows that graduates meet the FALs, so
+            its assessment has to map onto them. Accreditation panels check exactly this mapping, which is why
+            the briefing includes a FAL-to-objective table.
+          </p>
+          <p>
+            <strong>The 2018 form had known weaknesses.</strong> The briefing names four. It had seven grade
+            columns but only five distinct descriptors, so the 7 and 8 columns, and the 9 and 10 columns, shared
+            one text. Its aggregation rule was never written down (&ldquo;the final grade is not necessarily the
+            mean of the parts&rdquo;). Its weighting was never declared. And the grades sat in the column
+            headers, so assessors read the number before the descriptor. Each of these makes grades less
+            comparable between supervisory teams, and harder to explain to a student who appeals.
+          </p>
+          <p>
+            <strong>Each new mechanism answers one of those problems.</strong> Four clearly distinct levels
+            replace seven columns with five texts. A published formula and equal weights replace an unwritten
+            rule. Hiding the points is a bias measure: assessors judge the descriptor first and see the grade
+            afterwards, which is meant to reduce anchoring on a number. Independent scoring by both supervisors
+            is a reliability measure: two separate judgements, then a discussion, give a more defensible grade
+            than one conversation in which the first opinion voiced tends to win. The requirement to
+            substantiate a deviation from the computed grade keeps the team&rsquo;s final say while making it
+            visible.
+          </p>
+          <p>
+            <strong>One rubric for three programmes.</strong> DfI, IPD and SPD share the same generic FALs, so
+            the team built one rubric, generic enough for all three, and moved the programme-specific flavour
+            into the comments. This is why the criteria are phrased abstractly, and why a supervisor in one
+            programme may feel their kind of project is not described.
+          </p>
+          <p>
+            <strong>A first step in something larger.</strong> The briefing says the current graduation
+            structure is &ldquo;no longer considered sustainable&rdquo; and that a broader reform is being
+            developed. The rubric is described as a step within that. What the reform involves has not been
+            said.
           </p>
         </Prose>
 
@@ -126,15 +191,17 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
-        <H2>Was the redesign required?</H2>
+        <H2>Which changes the FALs required, and which were choices</H2>
         <Prose>
           <p>
-            Partly. The 2024 programme revision brought new final attainment levels, and the 2018 rubric had no
-            criterion for prototyping and iteration, reflection, or the societal role of design. The new rubric
-            adds those three. The rest, the four-level scale, hidden points, a computed grade, double
-            independent assessment, and dropping desirability, feasibility and viability as named criteria, are
-            the team&rsquo;s design choices. Nothing in the attainment levels required them, and nothing forbids
-            keeping the old criteria.
+            Set the 2018 rubric against the 2025&ndash;26 FALs and most of it still maps: knowledge, methods,
+            complexity, communication, stakeholders, planning, autonomy, an implementation-ready result. Three
+            things were genuinely missing: prototyping and iteration, reflection, and the societal role of
+            design. The new rubric adds those. The four-level scale, hidden points, the formula, double
+            independent assessment, and dropping desirability, feasibility and viability as named criteria are
+            the team&rsquo;s answers to the weaknesses above, not requirements of the FALs. The FALs do not
+            forbid keeping the old criteria; SPD&rsquo;s own FALs still name viability and feasibility. Note that
+            the words aesthetic and ergonomic disappeared from the FALs in 2024, before the rubric was written.
           </p>
         </Prose>
 
@@ -143,9 +210,8 @@ export default function RubricExplainer() {
           <p>
             My estimate for the assessment step, per supervisor per project: about one hour under the 2018
             rubric, two to two and a half under the new one. The extra time is scoring and writing comments
-            alone before the discussion, then reconciling two forms. Six graduations a year means six to nine
-            extra hours. What it buys is a written, independent substantiation per objective, which the old form
-            never asked for.
+            alone before the discussion, then reconciling two forms. What it buys is a written, independent
+            substantiation per objective, which the old form never asked for.
           </p>
         </Prose>
 
@@ -153,34 +219,23 @@ export default function RubricExplainer() {
         <ul className="mt-3 space-y-1.5 pl-5 text-[1.02rem] leading-relaxed" style={{ listStyle: "disc" }}>
           <li>The text of the nineteen descriptors, and whether desirability, feasibility, viability or aesthetics appear in them.</li>
           <li>The points-to-grade table (the briefing refers to an appendix that was not attached).</li>
-          <li>What changed since the concept reviewed in January and February, and why.</li>
-          <li>What the &ldquo;broader reform of the graduation structure&rdquo; announced alongside it will involve.</li>
+          <li>What changed between the January concept and this version, and why it was not re-circulated.</li>
+          <li>What the broader reform of the graduation structure will involve.</li>
         </ul>
 
-        {/* Response form */}
+        {/* Concern sign-on */}
         <section className="mt-14 rounded-lg border p-6 sm:p-8" style={{ borderColor: "var(--border-medium)", background: "var(--bg-warm)" }}>
-          <h2 className="text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>Your response</h2>
+          <h2 className="text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>If this leaves you with a concern</h2>
           <p className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-            Tick what applies. Responses and comments go to the Board of Education and the Board of Examiners in
-            early October. Your email keeps it to one response per person and is never shown.
+            Add your name and, if you like, a comment. I will pass the names and comments to the Board of
+            Education and the Board of Examiners in early October. Your email keeps it to one entry per person
+            and is never shown.
           </p>
 
           {status === "done" ? (
             <p className="mt-6 text-lg" style={{ color: "var(--accent-rust)" }}>Thank you, {name.trim()}. Recorded.</p>
           ) : (
-            <form onSubmit={submit} className="mt-6 space-y-5">
-              <fieldset className="space-y-2">
-                {CONCERNS.map((c) => (
-                  <label key={c.key} className="flex items-start gap-2 text-[0.98rem]">
-                    <input type="checkbox" className="mt-1.5" checked={concerns.includes(c.key)} onChange={() => toggle(c.key)} />
-                    <span>{c.label}</span>
-                  </label>
-                ))}
-              </fieldset>
-              <label className="block text-sm">
-                <span style={labelStyle}>Comment (optional)</span>
-                <textarea style={{ ...inputStyle, minHeight: 70, resize: "vertical" }} value={comment} onChange={(e) => setComment(e.target.value)} maxLength={1000} />
-              </label>
+            <form onSubmit={submit} className="mt-6 space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-sm">
                   <span style={labelStyle}>Name</span>
@@ -203,6 +258,10 @@ export default function RubricExplainer() {
                   </select>
                 </label>
               </div>
+              <label className="block text-sm">
+                <span style={labelStyle}>Your concern (optional)</span>
+                <textarea style={{ ...inputStyle, minHeight: 70, resize: "vertical" }} value={comment} onChange={(e) => setComment(e.target.value)} maxLength={1000} />
+              </label>
               {/* Honeypot: hidden from people, filled by bots */}
               <input tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} style={{ position: "absolute", left: -9999, opacity: 0 }} aria-hidden="true" />
               <label className="flex items-center gap-2 text-sm">
@@ -210,44 +269,32 @@ export default function RubricExplainer() {
                 <span style={{ color: "var(--text-secondary)" }}>List my name below</span>
               </label>
               <button className="rounded px-5 py-2.5 text-sm font-medium text-white disabled:opacity-60" style={{ background: "var(--accent-rust)", fontFamily: "var(--font-inter)" }} disabled={status === "sending"}>
-                {status === "sending" ? "Sending…" : "Send"}
+                {status === "sending" ? "Sending…" : "Add my name"}
               </button>
               {status === "error" && <p className="text-sm" style={{ color: "var(--accent-rust)" }}>{errorMsg}. Please try again.</p>}
             </form>
           )}
-        </section>
 
-        <section className="mt-12">
-          <h2 className="text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>
-            Responses
-            {total !== null && <span className="ml-3 text-base" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>{total}</span>}
-          </h2>
-          {total ? (
-            <ul className="mt-4 space-y-1.5">
-              {CONCERNS.map((c) => (
-                <li key={c.key} className="flex items-baseline gap-3 text-[0.95rem]">
-                  <span className="w-8 shrink-0 text-right tabular-nums" style={{ fontFamily: "var(--font-inter)", color: "var(--accent-rust)" }}>{tally[c.key] ?? 0}</span>
-                  <span style={{ color: "var(--text-secondary)" }}>{c.label}</span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="mt-3 text-sm" style={{ color: "var(--text-muted)" }}>None yet.</p>
-          )}
-          {names.length > 0 && (
-            <ul className="mt-6 grid gap-x-8 gap-y-1 sm:grid-cols-2">
-              {names.map((s, i) => (
-                <li key={i} className="text-[1.0rem]">
-                  {s.name}<span className="text-sm" style={{ color: "var(--text-muted)" }}> · {s.role}, {s.department}</span>
-                </li>
-              ))}
-            </ul>
+          {total !== null && total > 0 && (
+            <div className="mt-8">
+              <div className="text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>
+                {total} {total === 1 ? "colleague has" : "colleagues have"} added their name
+              </div>
+              {names.length > 0 && (
+                <ul className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2">
+                  {names.map((s, i) => (
+                    <li key={i} className="text-[1.0rem]">
+                      {s.name}<span className="text-sm" style={{ color: "var(--text-muted)" }}> · {s.role}, {s.department}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           )}
         </section>
 
         <p className="mt-16 text-sm leading-relaxed" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>
-          Compiled by Derek Lomas (HCD) from the briefing of 18 September 2026, the January concept, the 2018
-          rubric and the IDE MSc Teaching and Examination Regulations. Corrections:{" "}
+          Compiled by Derek Lomas (HCD) from the documents linked above. Corrections:{" "}
           <a href="mailto:j.d.lomas@tudelft.nl" className="underline">j.d.lomas@tudelft.nl</a>.
         </p>
       </main>

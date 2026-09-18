@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { MongoClient } from "mongodb";
-import { CONCERN_KEYS } from "@/app/rubric/concerns";
 
-// Responses to the rubric explainer at /rubric. Documents live in the
+// Names of colleagues with a concern, from the explainer at /rubric. Documents live in the
 // `ide_rubric_signatures` collection of the default database on MONGODB_URI.
 // One signature per email address (re-signing updates the earlier one).
 //
-// GET            -> count, tally per concern, public names (opted in only)
+// GET            -> count + public names (only those who opted in)
 // GET ?key=...   -> full export including emails (RUBRIC_KEY, falls back to RSVP45_KEY)
 
 let client: MongoClient | null = null;
@@ -45,9 +44,6 @@ export async function POST(request: NextRequest) {
     const email = String(body.email ?? "").trim().toLowerCase().slice(0, 200);
     const department = DEPARTMENTS.includes(body.department) ? body.department : "Other";
     const role = ROLES.includes(body.role) ? body.role : "Other";
-    const concerns = Array.isArray(body.concerns)
-      ? body.concerns.filter((k: unknown) => typeof k === "string" && CONCERN_KEYS.includes(k)).slice(0, 20)
-      : [];
     const comment = String(body.comment ?? "").trim().slice(0, 1000);
     const showName = body.showName !== false;
     if (!name) {
@@ -63,7 +59,7 @@ export async function POST(request: NextRequest) {
     await col.updateOne(
       { email },
       {
-        $set: { name, department, role, concerns, comment, showName, updatedAt: new Date() },
+        $set: { name, department, role, comment, showName, updatedAt: new Date() },
         $setOnInsert: { createdAt: new Date() },
       },
       { upsert: true }
@@ -91,10 +87,6 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ total: all.length, signatures: all });
     }
     const total = await col.countDocuments();
-    const tally: Record<string, number> = {};
-    for (const key of CONCERN_KEYS) {
-      tally[key] = await col.countDocuments({ concerns: key });
-    }
     const names = await col
       .find(
         { showName: true },
@@ -102,9 +94,9 @@ export async function GET(request: NextRequest) {
       )
       .sort({ createdAt: 1 })
       .toArray();
-    return NextResponse.json({ total, tally, names });
+    return NextResponse.json({ total, names });
   } catch (e) {
     console.error("rubric-sign GET failed:", e);
-    return NextResponse.json({ total: 0, tally: {}, names: [] });
+    return NextResponse.json({ total: 0, names: [] });
   }
 }
