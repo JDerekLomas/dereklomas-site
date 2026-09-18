@@ -253,6 +253,65 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
+        <H2>The deeper issue: judgement, not objectivity</H2>
+        <Prose>
+          <p>
+            Assessing a graduation project is a judgement. The question is not whether to remove the
+            subjectivity, which cannot be done, but where to put it so that it can be seen and argued with. The
+            new rubric puts it inside nineteen level choices and a formula. The research on rubrics says that
+            does not make it go away. Bloxham and colleagues (2016) interviewed markers using detailed shared
+            criteria and titled the result &ldquo;Let&rsquo;s stop the pretence of consistent marking&rdquo;.
+            Sadler (2014) argues that achievement standards cannot be fully codified and that the attempt
+            displaces the judgement it claims to capture. Torrance (2007) shows that explicit criteria breed
+            &ldquo;criteria compliance&rdquo;, work and grading aimed at the boxes. Shay (2005), studying design
+            assessment, found assessors perform a double reading, one against the criteria and one as a
+            professional, and that the second resolves the real disagreements. Yorke (2011) calls the
+            points-and-decimals apparatus the &ldquo;measurement fallacy&rdquo;. The strongest defence of rubrics,
+            Panadero and Jonsson (2020), rebuts the polemical critics but treats these studies as the credible
+            evidence base (
+            <A href="/rubric/research-rubric-critique.md">citations</A>).
+          </p>
+          <p>
+            <strong>What produces consistent grades is calibrated people.</strong> Sadler (2013) and
+            O&rsquo;Donovan, Sadler and Reimann (2024) set out the alternative: assessors who have argued about
+            the same exemplars until they share a sense of what a 7, an 8 and a 9 look like. The Australian
+            &ldquo;Achievement Matters&rdquo; exercise (Watty et al. 2014) measured the effect: agreement improved
+            through the calibration sessions, not through the standards documents. The closest Dutch study
+            (Hsiao et al. 2023) found that double marking alone left large disagreement; it was training plus a
+            reconciliation conversation that worked. Written reasoning is not a weaker cousin of a number: PhD
+            examiner reports (Holbrook and Bourke) and narrative assessment in medicine (Ginsburg et al.) show
+            written justification to be reliable and defensible on appeal (
+            <A href="/rubric/research-calibration.md">citations</A>).
+          </p>
+          <p>
+            <strong>What a 9 should mean.</strong> TU Delft&rsquo;s own grading guidance says that &ldquo;a 10, or
+            even a 9, is not often awarded&rdquo; and that Delft holds &ldquo;even higher standards&rdquo;. On the
+            same page it reports the distribution of grades for MSc students graduating 2019 to 2022: a 9 for
+            27 percent and a 10 for 4 percent, so 31 percent at 9 or above (
+            <A href="https://filelist.tudelft.nl/TUDelft/Onderwijs/Toelating_en_aanmelding/Exchange/updated_files/TU%20Delft%20grading%20scale%20MSc%20students.pdf">source</A>;
+            it is university-wide and does not separate graduation grades). No IDE-specific figure for
+            graduation projects is public; it exists in MyCase and the Board of Examiners could publish it. If
+            roughly a third of projects receive a 9 or higher, the question is whether a third of the work is
+            &ldquo;very good&rdquo; by the faculty&rsquo;s own scale, and that is a calibration question no
+            formula answers. Under the new formula, assuming the passing range is linear from 32 points to 88, a
+            project at level three on every objective scores 7.6, each objective at the top level adds 0.3, and a
+            9 requires the top level on five of eight objectives. So the new rubric will only produce fewer 9s
+            if supervisors are sparing with its top level. That depends on what they think the top level means,
+            which is exactly what calibration, not points, would settle (
+            <A href="/rubric/research-grade-inflation.md">notes</A>).
+          </p>
+          <p>
+            <strong>What the evidence suggests instead.</strong> A short set of criteria that names what a design
+            project is for. A yearly calibration session in which supervisors grade the same three to five past
+            projects and argue about them before seeing the reference grades. A written justification for every
+            grade, tied to evidence in the work, with extra scrutiny at 9 and above. Independent double
+            assessment with a conversation to reconcile, which the new rubric does include. And publication of
+            the grade distribution each year, so the faculty can see whether its 9 still means what it says. The
+            cost is one shared session a year plus the conversation on borderline cases, which is less per project
+            than double-scoring nineteen descriptors.
+          </p>
+        </Prose>
+
         <H2>The case against</H2>
         <Prose>
           <p>
