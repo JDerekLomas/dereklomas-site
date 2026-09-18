@@ -312,6 +312,64 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
+        <H2>Three more angles</H2>
+        <Prose>
+          <p>
+            <strong>Students now write with AI.</strong> When researchers slipped fully AI-written answers into a
+            live UK degree, 94 percent went undetected and they scored above the real students (Scarfe et al.
+            2024). Across seven Australian universities the vulnerability tracked the format, not the discipline:
+            text judged against criteria is the easiest thing to satisfy (Nikolic et al. 2023). Where a grader
+            and a language model agree most closely is exactly on rubric-anchored scores, and least on holistic
+            expert judgement (Flod&eacute;n 2025). The field&rsquo;s response is to ask not &ldquo;did they
+            cheat&rdquo; but &ldquo;is the grade still valid&rdquo; (Dawson, Bearman, Dollinger and Boud 2024),
+            to move weight onto process evidence and the live defence (Lodge et al. 2023, for the Australian
+            regulator; Sotiriadou et al. 2020 on interactive orals), and to treat the student&rsquo;s own
+            evaluative judgement as the scarce competence (Bearman et al. 2024). Two honest caveats: the strong
+            evidence is from exams and essays, not design projects, and AI-assisted writing is not lower in
+            quality (Noy and Zhang 2023), so the lever is provenance and reasoning, not prose. A rubric with
+            nineteen written descriptors is, structurally, the ideal target for a model; a supervisor who has
+            watched the project for six months is not (
+            <A href="/rubric/research-ai-assessment.md">citations</A>).
+          </p>
+          <p>
+            <strong>What design educators have found.</strong> Sch&ouml;n (1987) built the theory of the reflective
+            practitioner on an architecture studio and located the assessment of design ability in the live
+            dialogue between coach and student. Nelson and Stolterman (2012) describe design competence as some
+            ten kinds of judgement exercised at once, which resist decomposition into criteria. Orr and Shreeve
+            (2018), from years of studying art and design assessment, found that explicit criteria mostly serve as
+            post-hoc rationalisations of judgements already made, and that ambiguity is structural to creative
+            education, not a defect. Dorst (2008) argues the most valuable expert move is reframing the problem,
+            which a rubric of fixed objectives cannot reward unless it says so. On the other side, Anthony
+            (1991), in the largest empirical study of design juries, found them unreliable and swayed by
+            presentation skill, fatigue and power, which is the honest case for structure and documentation;
+            and Blair (2006) found that vague holistic comments are useless as feedback, which is the honest case
+            for descriptors. A useful audit from this literature: good studio assessment attends to product,
+            process, person and press, and rubrics tend to over-weight product (de la Harpe et al. 2009). The
+            feasibility, desirability, viability triad, incidentally, is Vitruvius&rsquo;s firmitas, utilitas,
+            venustas restated; the new rubric keeps the first two and drops delight (
+            <A href="/rubric/research-design-assessment.md">citations</A>).
+          </p>
+          <p>
+            <strong>The humanist tradition.</strong> Biesta (2010) asks whether we measure what we value or value
+            what we can measure; Muller (2018) names metric fixation, the belief that judgement can be replaced
+            by standardised numbers; Espeland and Sauder (2016) show what commensuration, turning unlike things
+            into one number, does to institutions; and Strathern&rsquo;s version of Goodhart&rsquo;s law, that a
+            measure which becomes a target stops being a measure, applies to any threshold students can see.
+            The older tradition made the same point from the other side. Aristotle&rsquo;s phronesis is judgement
+            of the particular case, which no rule anticipates. Kant held that aesthetic judgement is exemplary,
+            not determinate: it is taught by examples, not derived from a rule. Gadamer revived the humanist
+            sensus communis, a shared sense of the fitting formed in a community, which is what calibration
+            among supervisors builds. Quintilian told teachers to judge a pupil&rsquo;s ingenium together with
+            their iudicium, talent with judgement, and Cicero&rsquo;s decorum, the trained sense of what fits the
+            occasion, is desirability by an older name. Vives advised teachers to compare their judgements of
+            pupils with one another. And the graduation defence itself descends from the Renaissance
+            disputatio: the faculty already owns the humanist form of examination. Grafton and Jardine (1982)
+            supply the warning that closes the circle: even the school of Guarino, the model humanist school,
+            decayed from cultivating judgement into rote drill, because drill is easier to administer (
+            <A href="/rubric/research-humanism.md">citations</A>).
+          </p>
+        </Prose>
+
         <H2>The case against</H2>
         <Prose>
           <p>
