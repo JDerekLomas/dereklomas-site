@@ -205,6 +205,69 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
+        <H2>The case against</H2>
+        <Prose>
+          <p>
+            The strongest objection is not that the old rubric was fine. It is that the new one solves
+            measurement problems by taking judgement away from the people best placed to exercise it, without
+            evidence that the measurement problems were doing harm.
+          </p>
+        </Prose>
+        <ul className="mt-4 space-y-3 pl-5 text-[1.02rem] leading-relaxed" style={{ listStyle: "disc" }}>
+          <li>
+            <strong>It measures the wrong thing more precisely.</strong> The 2018 rubric asked whether the result
+            was feasible, desirable and viable, which is what a design project is for. The new one asks whether
+            eight learning objectives were demonstrated. A student can iterate, reflect, navigate complexity and
+            communicate well and still produce something nobody wants. No row in the new form catches that, and
+            nothing credits real value created in the world.
+          </li>
+          <li>
+            <strong>A formula cannot weigh what matters in a given project.</strong> Equal weights mean Methods, with
+            one criterion, counts as much as Iteration, with three, and a research-led project is balanced the
+            same way as an embodiment-led one. The 2018 form&rsquo;s unwritten rule let experienced coaches weigh
+            the parts to the project. Requiring written justification to deviate from the number makes the
+            computed grade the default and expertise the exception.
+          </li>
+          <li>
+            <strong>Hidden points move anchoring rather than removing it.</strong> Assessors will know the 2, 4, 7,
+            11 mapping within a semester. What the hiding does achieve is that a supervisor cannot see, while
+            scoring, whether the levels chosen add up to the grade the project deserves. That is a loss of
+            calibration presented as a bias measure.
+          </li>
+          <li>
+            <strong>Independent scoring treats disagreement as noise.</strong> Chair and mentor see different things
+            because they played different roles. The joint conversation integrated those views. The new process
+            scores them apart and reconciles afterwards, at about double the time, to reach the same integrated
+            judgement.
+          </li>
+          <li>
+            <strong>The evidence is missing.</strong> No one has shown that 2018 grades varied between teams, that
+            appeals were being lost, or that students found the form opaque. The briefing lists design
+            weaknesses of the form, not harms observed in the grades. A change this large should be able to
+            point to one.
+          </li>
+          <li>
+            <strong>Process.</strong> Reviewers saw a concept in February with visible grade columns and
+            student-chosen impact dimensions. The version in force has neither, was not shown to those who gave
+            feedback, and lands five days before it applies, with the training afterwards.
+          </li>
+        </ul>
+        <Prose>
+          <p>
+            Weaker objections, not worth leading with: that it takes more time (any written substantiation
+            does); that form and aesthetics are missing (that was lost in the 2024 attainment levels, not here);
+            that it is bureaucracy-driven (likely true of the motive, but the mechanisms must be argued on
+            their merits).
+          </p>
+          <p>
+            <strong>And the case for.</strong> The old form let the strongest personality in the room set the
+            grade. &ldquo;Not necessarily the mean of the parts&rdquo; is indefensible to a student who appeals.
+            Written substantiation per objective is better feedback than most students received. The new rubric
+            is the standard answer to those problems. The open question is whether this faculty&rsquo;s
+            supervisors were the problem the standard answer assumes.
+          </p>
+        </Prose>
+
         <H2>Time</H2>
         <Prose>
           <p>
