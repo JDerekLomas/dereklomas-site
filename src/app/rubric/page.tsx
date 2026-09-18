@@ -205,6 +205,53 @@ export default function RubricExplainer() {
           </p>
         </Prose>
 
+        <H2>What the evidence says</H2>
+        <Prose>
+          <p>
+            <strong>What the rules require.</strong> The NVAO accreditation framework asks only that assessment be
+            &ldquo;valid, reliable and sufficiently independent&rdquo; and transparent; the word rubric does not
+            appear in it, and it does not require double examiners or written justification (
+            <A href="https://www.nvao.net/files/attachments/.139/Assessment_Framework_for_the_Higher_Education_Accreditation_System_of_the_Netherlands_2018.pdf">framework, standards 3 and 4</A>).
+            TU Delft&rsquo;s own assessment framework goes further: every graduation manual must contain a rubric with
+            descriptors for the just-sufficient level and the level of the learning objectives, and its rubric guide
+            recommends three to five criteria and an analytic layout (
+            <A href="https://www.tudelft.nl/en/teaching-support/educational-advice/assess/guidelines/assessment-framework/assessment-policies-in-the-faculty">policy</A>,{" "}
+            <A href="https://www.tudelft.nl/en/teaching-support/educational-advice/assess/projects-and-assignments/design-rubric">guide</A>).
+            The 2018 rubric already met that. The IDE TER requires two examiners at the defence and that the student
+            can ascertain how the result was reached; it never names a rubric. The MSc programmes were last
+            accredited in 2019, and the cycle is six years, so the next assessment is due around now. That, more
+            than any rule, is the likely reason for the timing.
+          </p>
+          <p>
+            <strong>How comparable schools do it.</strong> Every peer found uses a rubric. None hides the points:
+            Wageningen, TU Delft Aerospace, Mechanical Engineering and Applied Sciences all show the grade bands on
+            the form. None uses equal weights across all criteria; Aerospace weights 30/20/20/15/15, Wageningen
+            40/50/5/5, and Applied Sciences states that the grade &ldquo;is not an average with fixed
+            weights&rdquo;. A published formula exists at Aerospace and Twente, but there it simply is the grade;
+            no peer treats a computed grade as a default that examiners must justify departing from. Independent
+            scoring by two assessors does have a precedent, at Wageningen. Eindhoven&rsquo;s Industrial Design
+            uses four levels and a panel verdict with no arithmetic; Aalto grades holistically and names the
+            quality of the design component as a criterion. Dropping feasibility, desirability and viability by
+            name is in line with engineering faculties, and out of line with design schools (
+            <A href="/rubric/research-peers.md">notes and links</A>).
+          </p>
+          <p>
+            <strong>What the research says.</strong> Reviews support the direction: analytic, specific rubrics with
+            training improve reliability (Jonsson &amp; Svingby 2007), and visible numbers anchor judgements, so
+            hiding them has a rationale. Three findings cut the other way. Sadler (2009) shows that preset
+            criteria cannot capture multi-criterion judgement and that assessors produce systematic anomalies
+            when a formula is imposed, which is why the deviation clause will be used, not rarely. A 2023 study
+            found examiners with a shared rubric reaching the same grade for different reasons and different
+            grades for the same reason, and warns that rubrics create a false impression of consistency.
+            Haagsman et al. (2021) found that under nominally equal weighting, examiners still weight some
+            criteria far more than others in practice. In design education specifically, Orr &amp; Bloxham
+            (2013) and Cowdroy &amp; de Graaff (2005) find that assessors rely on tacit expertise beyond the
+            criteria and that creativity resists preset levels. No study tests whether requiring written
+            justification for deviations changes grading behaviour (
+            <A href="/rubric/research-literature.md">citations</A>).
+          </p>
+        </Prose>
+
         <H2>The case against</H2>
         <Prose>
           <p>
@@ -239,6 +286,12 @@ export default function RubricExplainer() {
             because they played different roles. The joint conversation integrated those views. The new process
             scores them apart and reconciles afterwards, at about double the time, to reach the same integrated
             judgement.
+          </li>
+          <li>
+            <strong>Two mechanisms have no precedent.</strong> Among the peer rubrics found, none hides the points and
+            none makes a computed grade the default that examiners must justify departing from. Equal weighting
+            across all criteria is also unlike any peer. The new rubric is conventional in having levels and
+            descriptors, and unusual in exactly the mechanisms that shift judgement to the formula.
           </li>
           <li>
             <strong>The evidence is missing.</strong> No one has shown that 2018 grades varied between teams, that
@@ -402,6 +455,14 @@ const COMPARISON = [
     new: "No cap; delay is part of the planning descriptors.",
   },
 ];
+
+function A({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a href={href} className="underline decoration-1 underline-offset-2" style={{ color: "var(--accent-rust)" }} target="_blank" rel="noopener">
+      {children}
+    </a>
+  );
+}
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="mt-11 text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>{children}</h2>;
