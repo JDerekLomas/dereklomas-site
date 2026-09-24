@@ -130,7 +130,7 @@ export default function RubricFieldGuide() {
         <p className="text-sm uppercase tracking-widest" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>
           A field guide · for IDE graduation supervisors
         </p>
-        <h1 className="mt-3 text-4xl leading-tight sm:text-5xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 500 }}>
+        <h1 className="mt-3 text-4xl leading-tight sm:text-5xl" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>
           The new graduation rubric, explained, with feelings
         </h1>
         <p className="mt-4 text-lg" style={{ color: "var(--text-secondary)", fontStyle: "italic" }}>
@@ -265,12 +265,12 @@ export default function RubricFieldGuide() {
           <div className="mt-5 flex flex-wrap items-baseline gap-x-6 gap-y-1 border-t pt-4" style={{ borderColor: "var(--border-light)" }}>
             <div>
               <span className="text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>Points </span>
-              <span className="text-2xl tabular-nums" style={{ fontFamily: "var(--font-cormorant)" }}>{points}</span>
+              <span className="text-2xl tabular-nums" style={{ fontFamily: "var(--font-display)" }}>{points}</span>
               <span className="text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}> / 88</span>
             </div>
             <div>
               <span className="text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}>Grade </span>
-              <span className="text-4xl tabular-nums" style={{ fontFamily: "var(--font-cormorant)", color: grade >= 6 ? "var(--accent-rust)" : "var(--text-muted)" }}>{grade.toFixed(1)}</span>
+              <span className="text-4xl tabular-nums" style={{ fontFamily: "var(--font-display)", color: grade >= 6 ? "var(--accent-rust)" : "var(--text-muted)" }}>{grade.toFixed(1)}</span>
               <span className="text-sm" style={{ color: "var(--text-muted)", fontFamily: "var(--font-inter)" }}> rounds to {(Math.round(grade * 2) / 2).toFixed(1)}</span>
             </div>
           </div>
@@ -486,7 +486,7 @@ export default function RubricFieldGuide() {
 
         {/* Sign the scroll */}
         <section className="mt-14 rounded-lg border p-6 sm:p-8" style={{ borderColor: "var(--border-medium)", background: "var(--bg-warm)" }}>
-          <h2 className="text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>Sign the scroll</h2>
+          <h2 className="text-2xl" style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}>Sign the scroll</h2>
           <p className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
             If you read this far and still have a concern, add your name and, if you like, the concern. Names
             and comments go to the Board of Education and the Board of Examiners in early October. Your email
@@ -605,7 +605,7 @@ function Stat({ label, value, note, accent }: { label: string; value: string; no
   return (
     <div className="rounded-md border p-3" style={{ borderColor: "var(--border-light)" }}>
       <div className="text-xs uppercase tracking-wider" style={{ color: accent ? "var(--accent-rust)" : "var(--text-muted)", fontFamily: "var(--font-inter)" }}>{label}</div>
-      <div className="mt-1 text-2xl tabular-nums" style={{ fontFamily: "var(--font-cormorant)" }}>{value}</div>
+      <div className="mt-1 text-2xl tabular-nums" style={{ fontFamily: "var(--font-display)" }}>{value}</div>
       <div className="mt-1 text-xs leading-snug" style={{ color: "var(--text-muted)" }}>{note}</div>
     </div>
   );
@@ -620,7 +620,7 @@ function A({ href, children }: { href: string; children: React.ReactNode }) {
 }
 
 function H2({ children }: { children: React.ReactNode }) {
-  return <h2 className="mt-12 text-2xl" style={{ fontFamily: "var(--font-cormorant)", fontWeight: 600 }}>{children}</h2>;
+  return <h2 className="mt-12 text-2xl" style={{ fontFamily: "var(--font-display)", fontWeight: 600 }}>{children}</h2>;
 }
 
 function Prose({ children }: { children: React.ReactNode }) {

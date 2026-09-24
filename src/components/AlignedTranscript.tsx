@@ -175,7 +175,7 @@ export default function AlignedTranscript({
         .tr-para { margin: 0 0 14px; position: relative; line-height: 1.65; }
         .tr-para:last-child { margin-bottom: 0; }
         .tr-note {
-          font-family: var(--font-cormorant), Georgia, serif;
+          font-family: var(--font-display), Georgia, serif;
           font-style: italic; font-weight: 600;
           font-size: 16.5px; line-height: 1.35;
           color: var(--accent-rust);

@@ -46,19 +46,18 @@ export default async function ProjectDetailPage({ params }: Props) {
   const badgeClass = categoryBadge[project.category] || "badge-slate";
 
   return (
-    <div className="min-h-screen py-24 px-6">
-      <div className="max-w-3xl mx-auto">
-        {/* Back link */}
+    <div className="min-h-screen pb-24">
+      {/* Big picture first: video or image across the full content width */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 pt-6 md:pt-10">
         <Link
           href="/projects"
-          className="text-sm text-text-secondary hover:text-rust transition-colors no-underline font-[family-name:var(--font-inter)]"
+          className="text-sm text-secondary hover:text-primary transition-colors no-underline font-sans"
         >
           &larr; All Projects
         </Link>
 
-        {/* Video or Image */}
         {project.video ? (
-          <div className="mt-6 aspect-video bg-black rounded-lg overflow-hidden border border-[var(--border-color)]">
+          <div className="mt-6 aspect-video bg-black overflow-hidden">
             <iframe
               src={`https://www.youtube.com/embed/${project.video}`}
               title={project.title}
@@ -68,25 +67,28 @@ export default async function ProjectDetailPage({ params }: Props) {
             />
           </div>
         ) : project.image ? (
-          <div className="mt-6 aspect-video bg-warm rounded-lg overflow-hidden border border-[var(--border-color)]">
+          <div className="mt-6 bg-warm overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full max-h-[78vh] object-cover"
             />
           </div>
         ) : null}
+      </div>
 
+      <div className="max-w-3xl mx-auto px-6 pt-4">
         {/* Header */}
         <div className="mt-8">
           <span className={`badge ${badgeClass}`}>{project.category}</span>
-          <h1 className="mt-3 font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary">
+          <h1 className="mt-4 text-4xl md:text-6xl font-medium text-primary">
             {project.title}
           </h1>
         </div>
 
         {/* Description */}
-        <div className="mt-8 text-text-secondary leading-relaxed text-lg">
+        <div className="mt-8 text-secondary leading-relaxed text-lg md:text-xl">
           <p>{project.fullDescription || project.description}</p>
         </div>
 
@@ -110,7 +112,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-rust text-white font-[family-name:var(--font-inter)] text-sm font-medium rounded-lg hover:bg-rust-hover transition-colors no-underline"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--text-primary)] text-black font-sans text-sm font-medium hover:bg-white transition-colors no-underline"
               >
                 Visit Project &rarr;
               </a>
@@ -133,7 +135,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {project.gallery.map((src, i) => (
               <div
                 key={src}
-                className="bg-warm rounded-lg overflow-hidden border border-[var(--border-color)]"
+                className="bg-warm overflow-hidden"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img

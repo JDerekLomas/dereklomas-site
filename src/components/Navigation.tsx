@@ -25,33 +25,41 @@ export function Navigation() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur-sm border-b border-light print:hidden">
-      <nav className="max-w-4xl mx-auto px-6 py-4">
+    <header className="sticky top-0 z-50 bg-black/75 backdrop-blur-md print:hidden">
+      <nav className="max-w-7xl mx-auto px-6 md:px-10 py-5">
         <div className="flex items-center justify-between">
-          <Link href="/" className="font-display text-2xl font-medium no-underline">
+          <Link href="/" className="font-display text-xl font-medium text-primary no-underline">
             Derek Lomas
           </Link>
 
-          <ul className="hidden md:flex items-center gap-8 font-sans text-sm">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`no-underline transition-colors ${
-                    isActive(item.href)
-                      ? "text-rust font-medium"
-                      : "text-secondary hover:text-rust"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden lg:flex items-center gap-7 font-sans text-sm">
+            <ul className="flex items-center gap-6">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`no-underline underline-offset-4 transition-colors ${
+                      isActive(item.href)
+                        ? "text-primary underline decoration-[var(--text-primary)]"
+                        : "text-secondary hover:text-primary"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/contact"
+              className="no-underline border border-[var(--border-medium)] text-secondary px-4 py-2 hover:border-[var(--text-primary)] hover:text-primary transition-colors"
+            >
+              Contact me
+            </Link>
+          </div>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-secondary hover:text-primary"
+            className="lg:hidden p-2 text-secondary hover:text-primary"
             aria-label="Toggle menu"
           >
             <svg
@@ -82,16 +90,16 @@ export function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <ul className="md:hidden mt-4 pb-4 space-y-4 font-sans text-sm border-t border-light pt-4">
-            {navItems.map((item) => (
+          <ul className="lg:hidden mt-4 pb-4 space-y-4 font-sans text-base border-t border-light pt-4">
+            {[...navItems, { href: "/contact", label: "Contact" }].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block no-underline transition-colors ${
                     isActive(item.href)
-                      ? "text-rust font-medium"
-                      : "text-secondary hover:text-rust"
+                      ? "text-primary font-medium"
+                      : "text-secondary hover:text-primary"
                   }`}
                 >
                   {item.label}

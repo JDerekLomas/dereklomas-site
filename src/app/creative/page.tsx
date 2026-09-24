@@ -163,7 +163,7 @@ export default function CreativePage() {
 
           {/* Current style info */}
           <div className="mt-8 text-center">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium mb-2">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium mb-2">
               {currentSeries?.name}
             </h2>
             <p className="text-[#c9b99a]">{currentSeries?.description}</p>
@@ -194,7 +194,7 @@ export default function CreativePage() {
       {/* Grid of all styles */}
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl font-medium text-center mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-4xl font-medium text-center mb-4">
             Identity Through AI&apos;s Lens
           </h2>
           <p className="text-[#c9b99a] text-center mb-12 max-w-2xl mx-auto">

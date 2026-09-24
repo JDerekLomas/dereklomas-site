@@ -113,7 +113,7 @@ export default function ReviewCreativePage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <header className="mb-8 text-center">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium text-white mb-2">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl font-medium text-white mb-2">
             Creative AI Portraits
           </h1>
           <p className="text-gray-400 text-sm">

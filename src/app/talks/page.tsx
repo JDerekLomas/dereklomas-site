@@ -138,7 +138,7 @@ export default function TalksPage() {
     <div className="min-h-screen py-16 px-6">
       <div className="max-w-5xl mx-auto">
         <header className="mb-12">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Talks &amp; Videos
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
@@ -167,7 +167,7 @@ export default function TalksPage() {
             <p className="font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-wider text-rust mb-2">
               New · Listen with aligned transcript
             </p>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
               The Source Library: Beta Launch
             </h2>
             <p className="text-text-secondary leading-relaxed max-w-2xl">
@@ -181,7 +181,7 @@ export default function TalksPage() {
 
         {/* Vibe Coding Workshops */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-medium text-text-primary mb-2">
             Vibe Coding Workshops
           </h2>
           <p className="text-text-secondary leading-relaxed max-w-3xl mb-3">
@@ -203,7 +203,7 @@ export default function TalksPage() {
               const inner = (
                 <>
                   <div className="flex items-baseline justify-between gap-3 mb-1">
-                    <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-text-primary">
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-medium text-text-primary">
                       {w.title}
                     </h3>
                     {w.cadence && (
@@ -245,7 +245,7 @@ export default function TalksPage() {
         {/* Featured */}
         {featured.length > 0 && (
           <section className="mb-16">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
               Featured
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -262,7 +262,7 @@ export default function TalksPage() {
           if (!videos || videos.length === 0) return null;
           return (
             <section key={cat} className="mb-16">
-              <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-2">
                 {CATEGORY_LABEL[cat] || cat}
               </h2>
               <p className="text-sm text-text-secondary mb-6">

@@ -232,7 +232,7 @@ export default function WritingPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Writing
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -245,7 +245,7 @@ export default function WritingPage() {
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
                 Blog
               </h2>
               <p className="text-sm text-text-secondary mt-1">
@@ -300,7 +300,7 @@ export default function WritingPage() {
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
                 {writing.substack.name}
               </h2>
               <p className="text-sm text-text-secondary mt-1">
@@ -329,7 +329,7 @@ export default function WritingPage() {
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+              <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
                 Medium
               </h2>
               <p className="text-sm text-text-secondary mt-1">
@@ -359,7 +359,7 @@ export default function WritingPage() {
           <section className="mb-16">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
                   Talks &amp; Lectures
                 </h2>
                 <p className="text-sm text-text-secondary mt-1">
@@ -430,7 +430,7 @@ export default function WritingPage() {
           <section className="mb-16">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
                   Other Videos
                 </h2>
                 <p className="text-sm text-text-secondary mt-1">
@@ -485,7 +485,7 @@ export default function WritingPage() {
         {/* Full archive */}
         <section id="archive" className="mb-16 scroll-mt-24">
           <div className="mb-6">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary">
               Archive
             </h2>
             <p className="text-sm text-text-secondary mt-1">
@@ -517,7 +517,7 @@ export default function WritingPage() {
 
         {/* Topics */}
         <section className="p-8 bg-warm rounded-lg border border-[var(--border-color)]">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-xl font-medium text-text-primary mb-4">
             Topics I Write About
           </h2>
           <div className="flex flex-wrap gap-2">

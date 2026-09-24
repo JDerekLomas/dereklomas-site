@@ -160,7 +160,7 @@ export default function SocialArchitecturesPage() {
           >
             ← Back to Gallery
           </Link>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Social Architectures
           </h1>
           <p className="text-sm text-text-muted font-[family-name:var(--font-inter)] mb-6">
@@ -192,7 +192,7 @@ export default function SocialArchitecturesPage() {
 
         {groups.map((g) => (
           <section key={g.title} className="mb-16">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-2">
               {g.title}
             </h2>
             {g.description && (

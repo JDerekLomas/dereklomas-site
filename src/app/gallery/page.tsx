@@ -55,7 +55,7 @@ export default function GalleryPage() {
     <div className="min-h-screen py-16 px-6">
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Photo Gallery
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
@@ -65,7 +65,7 @@ export default function GalleryPage() {
 
         {/* Real Photos */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Photos
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -89,7 +89,7 @@ export default function GalleryPage() {
 
         {/* AI Portraits - Cartoon */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             AI Illustrated
           </h2>
           <p className="text-text-secondary mb-6">
@@ -115,7 +115,7 @@ export default function GalleryPage() {
 
         {/* AI Portraits - Latent Space */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             AI Latent Space
           </h2>
           <p className="text-text-secondary mb-6">
@@ -141,7 +141,7 @@ export default function GalleryPage() {
 
         {/* AI Portraits - Resonance */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             AI Resonance
           </h2>
           <p className="text-text-secondary mb-6">
@@ -167,7 +167,7 @@ export default function GalleryPage() {
 
         {/* AI Portraits - Hermetic */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             AI Hermetic
           </h2>
           <p className="text-text-secondary mb-6">
@@ -193,7 +193,7 @@ export default function GalleryPage() {
 
         {/* AI Portraits - Renaissance */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             AI Renaissance
           </h2>
           <p className="text-text-secondary mb-6">
@@ -219,7 +219,7 @@ export default function GalleryPage() {
 
         {/* Archive galleries */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Archives
           </h2>
           <Link

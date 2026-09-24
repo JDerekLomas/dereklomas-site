@@ -207,7 +207,7 @@ function Step({
       <div className="absolute left-0 top-0 w-9 h-9 rounded-full bg-rust text-white text-sm font-[family-name:var(--font-inter)] font-semibold flex items-center justify-center">
         {number}
       </div>
-      <h3 className="font-[family-name:var(--font-cormorant)] text-xl font-medium text-text-primary mb-3 pt-1">
+      <h3 className="font-[family-name:var(--font-display)] text-xl font-medium text-text-primary mb-3 pt-1">
         {title}
       </h3>
       <div className="text-text-secondary text-[15px] leading-relaxed space-y-4">
@@ -322,7 +322,7 @@ export default function ClaudeCodePage() {
             </Link>
             <span className="text-text-faint">/</span>
           </div>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-5">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-5">
             Getting Started with Claude Code
           </h1>
           <p className="text-xl text-text-secondary max-w-2xl leading-relaxed">
@@ -345,7 +345,7 @@ export default function ClaudeCodePage() {
       <div className="max-w-3xl mx-auto px-6 pb-20">
         {/* What it is */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-4">
             What is Claude Code?
           </h2>
           <div className="text-text-secondary text-[16px] leading-relaxed space-y-4">
@@ -366,7 +366,7 @@ export default function ClaudeCodePage() {
 
         {/* Getting Started Steps */}
         <section id="start" className="mb-16 scroll-mt-24">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-8">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-8">
             Your First Ten Minutes
           </h2>
 
@@ -469,7 +469,7 @@ claude`}</CodeBlock>
 
         {/* CLAUDE.md */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-4">
             Making It Yours
           </h2>
           <div className="text-text-secondary text-[16px] leading-relaxed space-y-4">
@@ -516,7 +516,7 @@ claude`}</CodeBlock>
 
         {/* Secrets */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-4">
             Handling Secrets
           </h2>
           <Callout label="Important">
@@ -566,12 +566,12 @@ export SUPABASE_URL="https://..."
 
         {/* Working patterns */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-4">
             Patterns That Work
           </h2>
           <div className="text-text-secondary text-[16px] leading-relaxed space-y-6">
             <div>
-              <h3 className="font-[family-name:var(--font-cormorant)] text-lg font-medium text-text-primary mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-text-primary mb-2">
                 Think in outcomes, not instructions
               </h3>
               <p>
@@ -582,7 +582,7 @@ export SUPABASE_URL="https://..."
               </p>
             </div>
             <div>
-              <h3 className="font-[family-name:var(--font-cormorant)] text-lg font-medium text-text-primary mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-text-primary mb-2">
                 Short prompts after context is set
               </h3>
               <p>
@@ -593,7 +593,7 @@ export SUPABASE_URL="https://..."
               </p>
             </div>
             <div>
-              <h3 className="font-[family-name:var(--font-cormorant)] text-lg font-medium text-text-primary mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-text-primary mb-2">
                 Context management
               </h3>
               <p>
@@ -611,7 +611,7 @@ export SUPABASE_URL="https://..."
               </p>
             </div>
             <div>
-              <h3 className="font-[family-name:var(--font-cormorant)] text-lg font-medium text-text-primary mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-text-primary mb-2">
                 Iterate fast, deploy early
               </h3>
               <p>
@@ -632,7 +632,7 @@ export SUPABASE_URL="https://..."
             <span className="block text-xs font-[family-name:var(--font-inter)] font-medium uppercase tracking-wider text-text-muted mb-4">
               Advanced
             </span>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-3xl font-medium text-text-primary mb-3">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium text-text-primary mb-3">
               Going Deeper
             </h2>
             <p className="text-text-secondary max-w-2xl">
@@ -730,7 +730,7 @@ export SUPABASE_URL="https://..."
 
         {/* Footer CTA */}
         <div className="text-center py-12 mt-16 bg-warm rounded-lg border border-[var(--border-color)]">
-          <p className="font-[family-name:var(--font-cormorant)] text-xl text-text-primary mb-3">
+          <p className="font-[family-name:var(--font-display)] text-xl text-text-primary mb-3">
             All tools are open source
           </p>
           <p className="text-text-secondary text-sm max-w-md mx-auto mb-6">
