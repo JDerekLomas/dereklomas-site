@@ -128,7 +128,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative aspect-[8/9] overflow-hidden bg-warm">
             <Image
-              src="/images/headshot-bw.webp"
+              src="/images/portrait-door-bw.webp"
               alt="Derek Lomas"
               fill
               priority
