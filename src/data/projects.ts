@@ -15,6 +15,19 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
+    slug: "cloud-layer",
+    title: "The Cloud Layer",
+    description:
+      "Every cloud on Earth, as five weather satellites saw it, ten minutes at a time.",
+    fullDescription:
+      "Five weather satellites hang over the equator, each watching its side of the planet and looking again every ten minutes. Their views are joined into one sky on a globe you can turn, zoom and play back over the last days. The land is this week's clearest look from the same satellites; the light, the stars and the Moon follow the moment shown. With gratitude to NOAA, JAXA, EUMETSAT and NASA, who build, fly and share these instruments.",
+    category: "Design",
+    tags: ["Weather Satellites", "Live Data", "Globe"],
+    image: "/images/projects/cloud-layer.jpg",
+    url: "https://earthai-scales.vercel.app/globe/",
+    featured: true,
+  },
+  {
     slug: "quantum-resonance",
     title: "Quantum Resonance",
     description:
