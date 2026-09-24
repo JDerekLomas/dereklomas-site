@@ -12,12 +12,17 @@ type RecentItem = {
 
 const recentNews: RecentItem[] = [
   {
+    date: "Sep 2026",
+    text: "The Cloud Layer: every cloud on Earth, from five weather satellites",
+    href: "/projects/cloud-layer",
+  },
+  {
     date: "May 2026",
     text: "New paper: Parametric Analysis of Feature-Specific Neural Coding During Music Imagery and Perception (IEEE)",
     href: "/research",
   },
   {
-    date: "Apr 2026",
+    date: "Sep 2026",
     text: `Source Library passes ${SOURCE_LIBRARY.books} books and ${SOURCE_LIBRARY.translations} new English translations across ${SOURCE_LIBRARY.languages} languages`,
     href: "https://sourcelibrary.org",
     external: true,
@@ -56,6 +61,14 @@ const currentlyItems = [
   {
     title: "Positive AI at TU Delft",
     body: "Designing AI systems that promote wellbeing — supervising PhD work on aesthetic alignment, EEG-based meditation feedback, and AI-as-design-research-instrument.",
+  },
+  {
+    title: "MakeMode",
+    body: "Building a sovereign AI coding agent on European infrastructure, so anyone in a school, lab or company can turn an idea into working software.",
+  },
+  {
+    title: "The Cloud Layer",
+    body: "A globe of every cloud on Earth, as five weather satellites saw it, ten minutes at a time.",
   },
   {
     title: "Source Library",
@@ -148,7 +161,7 @@ export default function Home() {
             <Link href="/projects/source-library">
               Source Library
             </Link>
-            {" "}— an open archive of 12,000+ rare historical texts with 11,000+
+            {" "}— an open archive of 40,000+ historical texts with 17,000+
             new English translations.
           </p>
 
@@ -174,7 +187,7 @@ export default function Home() {
           <div className="flex items-baseline justify-between mb-8 gap-4 flex-wrap">
             <h2 className="text-2xl font-medium">Currently</h2>
             <span className="font-[family-name:var(--font-inter)] text-xs uppercase tracking-wider text-text-muted">
-              May 2026
+              September 2026
             </span>
           </div>
           <div className="space-y-6">

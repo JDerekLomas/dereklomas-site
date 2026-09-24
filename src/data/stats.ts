@@ -11,12 +11,12 @@
  */
 
 export const SOURCE_LIBRARY = {
-  books: "22,069",
-  translations: "17,814",
-  firstTranslations: "5,813",
+  books: "41,927",
+  translations: "17,159",
+  firstTranslations: "5,027",
   languages: "114",
   /** Verified against sourcelibrary.org on this date. */
-  asOf: "August 2026",
+  asOf: "September 2026",
 } as const;
 
 export const PLAYPOWER = {

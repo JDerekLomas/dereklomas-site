@@ -1,3 +1,5 @@
+import { SOURCE_LIBRARY } from "@/data/stats";
+
 export interface Project {
   slug: string;
   title: string;
@@ -25,6 +27,19 @@ export const allProjects: Project[] = [
     tags: ["Weather Satellites", "Live Data", "Globe"],
     image: "/images/projects/cloud-layer.jpg",
     url: "https://earthai-scales.vercel.app/globe/",
+    featured: true,
+  },
+  {
+    slug: "makemode",
+    title: "MakeMode",
+    description:
+      "A sovereign AI coding agent for a whole organization — simple enough for someone who has never coded, serious enough for an engineer, on European infrastructure.",
+    fullDescription:
+      "MakeMode lets people turn an idea into real, working software by describing it. One account covers a workspace of surfaces: build an app, chat in rooms where the agent builds alongside you, and write documents and boards with the model as a collaborator. It runs entirely on European infrastructure (Scaleway, France), GDPR-native, with nothing leaving the EU. It started with design students and is growing toward schools, labs and company staff.",
+    category: "AI",
+    tags: ["AI Agents", "Coding", "EU Sovereign"],
+    image: "/images/projects/makemode.jpg",
+    url: "https://makemode.eu",
     featured: true,
   },
   {
@@ -74,9 +89,9 @@ export const allProjects: Project[] = [
     slug: "source-library",
     title: "Source Library",
     description:
-      "22,069 rare historical texts from the 15th–18th centuries, 17,814 translated into English across 114 languages — the largest open archive of Hermetic, alchemical, and pre-modern scientific writing.",
+      `${SOURCE_LIBRARY.books} historical texts in ${SOURCE_LIBRARY.languages} languages, ${SOURCE_LIBRARY.translations} translated into English — the largest open archive of Hermetic, alchemical, and pre-modern scientific writing.`,
     fullDescription:
-      "Source Library is a digital humanities project dedicated to digitizing and translating rare historical texts. The live collection now spans 22,069 books by 5,095+ authors in 114 languages — including 17,814 fresh AI-assisted English translations (5,813 translated for the first time) and 15,320 artworks. The corpus emphasizes Hermetic, alchemical, kabbalistic, neoplatonic, and natural-magic traditions alongside early scientific thought, with a Gemini-based OCR + translation pipeline that has processed roughly 1.67 million pages for around $3,400 total.",
+      `Source Library is a digital humanities project dedicated to digitizing and translating rare historical texts. The live collection spans ${SOURCE_LIBRARY.books} books in ${SOURCE_LIBRARY.languages} languages — including ${SOURCE_LIBRARY.translations} AI-assisted English translations (${SOURCE_LIBRARY.firstTranslations} translated for the first time) and 15,840 artworks. The corpus emphasizes Hermetic, alchemical, kabbalistic, neoplatonic, and natural-magic traditions alongside early scientific thought, read and translated by a Gemini-based OCR and translation pipeline.`,
     category: "Esoteric",
     tags: ["Next.js", "MongoDB", "Gemini OCR", "Digital Humanities"],
     image: "/images/projects/source-library.jpg",
