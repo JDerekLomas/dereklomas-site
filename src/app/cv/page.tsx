@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SOURCE_LIBRARY } from "@/data/stats";
 
 export const metadata: Metadata = {
   title: "Curriculum Vitae",
@@ -85,7 +86,7 @@ const ventures = [
   {
     name: "Source Library",
     description:
-      "Open digital archive of pre-1700 Hermetic, alchemical, and natural-magic texts. 22,069 books · 17,814 new English translations · 114 languages.",
+      `Open digital archive of Hermetic, alchemical, and natural-magic texts. ${SOURCE_LIBRARY.books} books · ${SOURCE_LIBRARY.translations} new English translations · ${SOURCE_LIBRARY.languages} languages.`,
     url: "https://sourcelibrary.org",
     short: "SourceLibrary.org",
   },
