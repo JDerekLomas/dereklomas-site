@@ -67,7 +67,8 @@ export default async function ProjectDetailPage({ params }: Props) {
             />
           </div>
         ) : project.loop ? (
-          <div className="mt-6 bg-black overflow-hidden">
+          <div className="mt-6 overflow-hidden">
+            {/* The loop sits at its own shape: a square clip is not letterboxed in a full-width black frame */}
             <video
               src={project.loop}
               poster={loopPoster(project.loop)}
@@ -76,7 +77,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               loop
               playsInline
               aria-label={project.title}
-              className="w-full max-h-[78vh] object-contain"
+              className="block mx-auto max-w-full max-h-[78vh] h-auto"
             />
             {project.loopCredit && (
               <p className="px-1 pt-2 pb-1 font-sans text-xs text-muted bg-cream">

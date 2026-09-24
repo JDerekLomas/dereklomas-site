@@ -41,7 +41,7 @@ export const allProjects: Project[] = [
       "MakeMode lets people turn an idea into real, working software by describing it. One account covers a workspace of surfaces: build an app, chat in rooms where the agent builds alongside you, and write documents and boards with the model as a collaborator. It runs entirely on European infrastructure (Scaleway, France), GDPR-native, with nothing leaving the EU. It started with design students and is growing toward schools, labs and company staff.",
     category: "AI",
     tags: ["AI Agents", "Coding", "EU Sovereign"],
-    image: "/images/projects/makemode.jpg",
+    image: "/images/projects/makemode-tile.jpg",
     url: "https://makemode.eu",
     featured: true,
   },
@@ -196,7 +196,7 @@ export const allProjects: Project[] = [
       "The VIBE Research Lab at TU Delft explores how vibration, harmony, and resonance can enhance human wellbeing. Projects include AI-powered vibrating blankets for sleep, vibroacoustic sound healing installations (exhibited at Dutch Design Week 2019), and EEG-based studies of aesthetic experience. The lab applies classical theories of harmony to modern interaction design, using AI to personalize sensory experiences.",
     category: "Research",
     tags: ["Wellbeing", "Haptics", "AI", "TU Delft"],
-    image: "/images/projects/feel-the-vibe.png",
+    image: "/images/projects/gallery/feel-the-vibe/02.jpeg",
   },
   // TU Delft projects
   {

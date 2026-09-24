@@ -138,7 +138,7 @@ export default function Home() {
           </div>
           <div>
             <h1 className="text-[2.1rem] leading-[1.12] sm:text-5xl md:text-[3.4rem] md:leading-[1.08] font-normal text-primary">
-              <em className="italic">Derek Lomas</em> is a tenured professor of{" "}
+              <em className="italic">Derek Lomas</em> is an assistant professor of{" "}
               <span className="text-gradient whitespace-nowrap">Positive AI</span> at{" "}
               <a
                 href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
@@ -148,8 +148,9 @@ export default function Home() {
               >
                 TU Delft
               </a>
-              , working on bridging Human-Centered Design and Artificial
-              Intelligence.
+              , working on bridging{" "}
+              <span className="whitespace-nowrap">Human-Centered</span> Design and
+              Artificial Intelligence.
             </h1>
             <p className="mt-8 text-lg text-secondary leading-relaxed max-w-xl">
               Founder of three ed-tech companies reaching 5M+ students, and
@@ -166,7 +167,7 @@ export default function Home() {
         {/* Stat strip */}
         <ul className="max-w-7xl mx-auto mt-16 md:mt-24 grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-6 border-t border-light pt-8">
           {stats.map((stat) => (
-            <li key={stat.label}>
+            <li key={stat.label} className="last:col-span-2 sm:last:col-span-1">
               <div className="font-display text-3xl md:text-4xl font-light text-primary leading-none">
                 {stat.value}
               </div>
