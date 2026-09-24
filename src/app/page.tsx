@@ -139,7 +139,7 @@ export default function Home() {
           <div>
             <h1 className="text-[2.1rem] leading-[1.12] sm:text-5xl md:text-[3.4rem] md:leading-[1.08] font-normal text-primary">
               <em className="italic">Derek Lomas</em> is a tenured professor of{" "}
-              <span className="text-gradient">Positive AI</span> at{" "}
+              <span className="text-gradient whitespace-nowrap">Positive AI</span> at{" "}
               <a
                 href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
                 target="_blank"

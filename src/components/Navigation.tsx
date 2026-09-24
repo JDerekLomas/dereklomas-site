@@ -26,8 +26,8 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 bg-black/75 backdrop-blur-md print:hidden">
-      <nav className="max-w-7xl mx-auto px-6 md:px-10 py-5">
-        <div className="flex items-center justify-between">
+      <nav className="px-6 md:px-10 py-5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link href="/" className="font-display text-xl font-medium text-primary no-underline">
             Derek Lomas
           </Link>
