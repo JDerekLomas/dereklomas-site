@@ -72,21 +72,23 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-newsreader), Georgia, serif;
 }
 
-/* Links */
-a {
-  color: inherit;
-  text-decoration-color: var(--border-medium);
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s, color 0.2s;
+/* Links. These sit in the base layer so that Tailwind's (layered) text-* utilities
+   on a link still win; an unlayered `a { color }` would silently override them. */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration-color: var(--border-medium);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.2s, color 0.2s;
+  }
+
+  a:hover {
+    color: var(--accent-rust);
+    text-decoration-color: var(--accent-rust);
+  }
 }
 
-a:hover {
-  color: var(--accent-rust);
-  text-decoration-color: var(--accent-rust);
-}
-
-/* Solid button on a link. The bare `a` rules above are unlayered, so they beat
-   Tailwind's layered text-* utilities; a class wins on specificity instead. */
+/* Solid button on a link */
 a.btn-solid {
   background: var(--text-primary);
   color: var(--bg-cream);
