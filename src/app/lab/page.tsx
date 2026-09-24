@@ -50,7 +50,7 @@ export default function LabPage() {
     <div className="min-h-screen py-16 px-6">
       <div className="max-w-2xl mx-auto">
         <header className="mb-12">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Lab
           </h1>
           <p className="text-lg text-text-secondary">
@@ -70,7 +70,7 @@ export default function LabPage() {
                 className="block no-underline group"
               >
                 <div className="flex items-baseline gap-3">
-                  <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary group-hover:text-rust transition-colors">
+                  <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary group-hover:text-rust transition-colors">
                     {experiment.title}
                   </h2>
                   <span className="text-muted font-sans text-xs shrink-0">

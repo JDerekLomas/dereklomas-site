@@ -54,7 +54,7 @@ export default async function ArchivePostPage({
           >
             &larr; Writing archive
           </Link>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mt-6 mb-4 leading-tight">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mt-6 mb-4 leading-tight">
             {post.title}
           </h1>
           <p className="font-[family-name:var(--font-inter)] text-sm text-text-muted">

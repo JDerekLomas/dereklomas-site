@@ -348,7 +348,7 @@ export default function SkillGraphPage() {
         <Link href="/lab" className="text-sm text-text-muted hover:text-rust transition-colors mb-4 inline-block">
           &larr; Back to Lab
         </Link>
-        <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium text-text-primary mb-2">
+        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-medium text-text-primary mb-2">
           Math Skill Progression Graph
         </h1>
         <p className="text-text-secondary max-w-2xl">

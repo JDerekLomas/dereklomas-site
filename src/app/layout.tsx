@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Newsreader, Inter } from "next/font/google";
+import { Inter_Tight, Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import InputWidget from "@/components/InputWidget";
 import { SiteSchema } from "@/components/SchemaOrg";
 
-const cormorant = Cormorant_Garamond({
+// Display face for headings; Newsreader stays for long-form reading (.prose)
+const display = Inter_Tight({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-cormorant",
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -90,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#0a0a09]">
       <head>
         <link
           rel="alternate"
@@ -100,7 +101,7 @@ export default function RootLayout({
         />
         <SiteSchema />
       </head>
-      <body className={`${cormorant.variable} ${newsreader.variable} ${inter.variable} min-h-screen flex flex-col`}>
+      <body className={`${display.variable} ${newsreader.variable} ${inter.variable} min-h-screen flex flex-col`}>
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />

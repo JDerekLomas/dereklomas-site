@@ -792,7 +792,7 @@ export default function ResearchPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Publications
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed mb-6">
@@ -827,7 +827,7 @@ export default function ResearchPage() {
 
         {/* Research areas */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Research Areas
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -848,7 +848,7 @@ export default function ResearchPage() {
 
         {/* Featured publications - Jon Barron style */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-8">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-8">
             Featured Publications
           </h2>
           <div className="space-y-8">
@@ -926,7 +926,7 @@ export default function ResearchPage() {
 
         {/* Recent publications by year */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Recent Publications (2021-2026)
           </h2>
           <div className="space-y-8">
@@ -971,7 +971,7 @@ export default function ResearchPage() {
 
         {/* Earlier publications */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Earlier Publications (2007-2020)
           </h2>
           <div className="space-y-8">
@@ -1016,7 +1016,7 @@ export default function ResearchPage() {
 
         {/* Supervised Students — featured */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-2">
             Featured Student Work
           </h2>
           <p className="text-text-secondary text-sm mb-6">
@@ -1074,7 +1074,7 @@ export default function ResearchPage() {
         {/* Complete Thesis Archive — auto-generated from TU Delft Pure */}
         <section className="mb-16">
           <div className="mb-6">
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-2">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-2">
               Complete Thesis Archive
             </h2>
             <p className="text-text-secondary text-sm">
@@ -1171,7 +1171,7 @@ export default function ResearchPage() {
 
         {/* PhD Thesis */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Dissertation
           </h2>
           <div className="p-6 bg-warm rounded-lg border border-[var(--border-color)]">
@@ -1194,7 +1194,7 @@ export default function ResearchPage() {
 
         {/* Affiliations */}
         <section>
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Academic Affiliations
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">

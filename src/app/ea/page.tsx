@@ -19,7 +19,7 @@ export default function EAJobPage() {
           <p className="font-sans text-sm uppercase tracking-widest text-[var(--text-muted)] mb-4">
             Open Position
           </p>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-[var(--text-primary)] mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-[var(--text-primary)] mb-4">
             Executive Assistant
           </h1>
           <p className="text-xl text-[var(--text-secondary)]">
@@ -85,12 +85,12 @@ export default function EAJobPage() {
 
           {/* Organizations */}
           <section>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--text-primary)] mb-6">
               About the Work
             </h2>
 
             <div className="p-6 rounded-lg border border-[var(--border-light)] bg-[var(--bg-warm)] mb-6">
-              <h3 className="font-[family-name:var(--font-cormorant)] text-xl text-[var(--text-primary)] mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--text-primary)] mb-2">
                 Ancient Wisdom Trust
               </h3>
               <p className="text-sm">
@@ -121,7 +121,7 @@ export default function EAJobPage() {
             </div>
 
             <div className="p-6 rounded-lg border border-[var(--border-light)] bg-[var(--bg-warm)]">
-              <h3 className="font-[family-name:var(--font-cormorant)] text-xl text-[var(--text-primary)] mb-2">
+              <h3 className="font-[family-name:var(--font-display)] text-xl text-[var(--text-primary)] mb-2">
                 PlayPower Labs
               </h3>
               <p className="text-sm">
@@ -136,7 +136,7 @@ export default function EAJobPage() {
 
           {/* Responsibilities */}
           <section>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--text-primary)] mb-6">
               What You&rsquo;ll Do
             </h2>
 
@@ -296,7 +296,7 @@ export default function EAJobPage() {
 
           {/* Who You Are */}
           <section>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--text-primary)] mb-6">
               Who You Are
             </h2>
             <div className="space-y-3 text-sm">
@@ -367,7 +367,7 @@ export default function EAJobPage() {
 
           {/* Compensation */}
           <section>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--text-primary)] mb-6">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--text-primary)] mb-6">
               Compensation & Practicalities
             </h2>
             <div className="space-y-4">
@@ -421,7 +421,7 @@ export default function EAJobPage() {
 
           {/* Apply */}
           <section>
-            <h2 className="font-[family-name:var(--font-cormorant)] text-2xl text-[var(--text-primary)] mb-4">
+            <h2 className="font-[family-name:var(--font-display)] text-2xl text-[var(--text-primary)] mb-4">
               Interested?
             </h2>
             <p className="mb-6 text-sm">

@@ -15,7 +15,7 @@ export default function AboutPage() {
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <header className="mb-8">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-6">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-6">
             About Me
           </h1>
         </header>
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
         {/* Education */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Education
           </h2>
           <div className="space-y-4">
@@ -143,7 +143,7 @@ export default function AboutPage() {
 
         {/* Get in Touch */}
         <section id="contact" className="scroll-mt-24">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-4">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-4">
             Get in Touch
           </h2>
           <p className="text-text-secondary mb-6">

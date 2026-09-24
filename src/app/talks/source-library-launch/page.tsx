@@ -19,7 +19,7 @@ export default function SourceLibraryLaunchPage() {
   return (
     <div className="min-h-screen pb-24 px-6">
       <header className="max-w-2xl mx-auto pt-16 pb-8 text-center">
-        <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-3">
+        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-3">
           The Source Library: Beta Launch
         </h1>
         <p className="font-[family-name:var(--font-inter)] text-sm text-text-muted tracking-wide">

@@ -63,7 +63,7 @@ export default function StudentsPage() {
 
   return (
     <main className="max-w-3xl mx-auto px-6 pt-28 pb-20">
-      <h1 className="font-[family-name:var(--font-cormorant)] text-4xl font-medium text-text-primary mb-3">
+      <h1 className="font-[family-name:var(--font-display)] text-4xl font-medium text-text-primary mb-3">
         Students
       </h1>
       <p className="text-text-secondary mb-12 leading-relaxed">
@@ -82,7 +82,7 @@ export default function StudentsPage() {
 
       {/* Doctoral students */}
       <section className="mb-14">
-        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
           Doctoral Students
         </h2>
         <div className="space-y-4">
@@ -114,7 +114,7 @@ export default function StudentsPage() {
 
       {/* Graduation thesis archive */}
       <section>
-        <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
           Graduation Theses
         </h2>
         <div className="space-y-8">

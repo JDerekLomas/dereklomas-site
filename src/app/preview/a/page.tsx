@@ -48,7 +48,7 @@ export default function PreviewA() {
         }}
       >
         <div style={{ maxWidth: "40rem", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-          <Link href="/preview/a" style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.5rem", fontWeight: 500, textDecoration: "none", color: "#1a1612" }}>
+          <Link href="/preview/a" style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: "1.5rem", fontWeight: 500, textDecoration: "none", color: "#1a1612" }}>
             Derek Lomas
           </Link>
           <nav style={{ display: "flex", gap: "2rem", fontFamily: "var(--font-inter), sans-serif", fontSize: "0.8rem", letterSpacing: "0.05em", textTransform: "uppercase" }}>
@@ -68,7 +68,7 @@ export default function PreviewA() {
             <Image src="/images/headshot.png" alt="Derek Lomas" width={72} height={72} style={{ width: "100%", height: "100%", objectFit: "cover" }} priority />
           </div>
           <div>
-            <h1 style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "2.25rem", fontWeight: 400, margin: 0, lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: "2.25rem", fontWeight: 400, margin: 0, lineHeight: 1.1 }}>
               Derek Lomas
             </h1>
             <p style={{ margin: "0.25rem 0 0", fontSize: "0.85rem", color: "#9e4a3a", fontFamily: "var(--font-inter), sans-serif", fontWeight: 500 }}>
@@ -131,7 +131,7 @@ export default function PreviewA() {
             <li key={item.slug} style={{ padding: "1rem 0", borderBottom: "1px solid #f0ece4" }}>
               <Link href={`/projects/${item.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "0.75rem" }}>
-                  <span style={{ fontFamily: "var(--font-cormorant), Georgia, serif", fontSize: "1.2rem", fontWeight: 500, color: "#1a1612" }}>
+                  <span style={{ fontFamily: "var(--font-display), Georgia, serif", fontSize: "1.2rem", fontWeight: 500, color: "#1a1612" }}>
                     {item.title}
                   </span>
                   <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "0.7rem", color: "#aaa", textTransform: "uppercase", letterSpacing: "0.05em" }}>

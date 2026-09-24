@@ -228,7 +228,7 @@ export default function RiversPage() {
         <Link href="/lab" className="text-sm text-text-muted hover:text-rust transition-colors mb-4 inline-block">
           &larr; Back to Lab
         </Link>
-        <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-medium text-text-primary mb-2">
+        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl font-medium text-text-primary mb-2">
           Rivers of Esoteric Life
         </h1>
         <p className="text-text-secondary max-w-2xl">
@@ -261,7 +261,7 @@ export default function RiversPage() {
           {/* Main viz */}
           <div className="flex-1 min-w-0">
             <div className="flex items-baseline gap-4 mb-4">
-              <span className="font-[family-name:var(--font-cormorant)] text-6xl font-semibold text-rust leading-none">{currentYear}</span>
+              <span className="font-[family-name:var(--font-display)] text-6xl font-semibold text-rust leading-none">{currentYear}</span>
               {currentStats && (
                 <span className="text-sm text-text-secondary">
                   <span className="font-medium">{currentStats.total}</span> works this decade

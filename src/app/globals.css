@@ -1,30 +1,36 @@
 @import "tailwindcss";
 
 /* Design tokens */
+/* Dark gallery palette. Token names predate the dark theme ("cream",
+   "white") and are kept so every page switches with them; read them as
+   roles: cream = page, warm = raised surface, white = card. */
 :root {
-  /* Warm paper palette */
-  --bg-cream: #fdfcf9;
-  --bg-warm: #f5f0e8;
-  --bg-white: #fff;
-  --bg-dark: #1a1612;
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg-cream: #0a0a09;
+  --bg-warm: #151513;
+  --bg-white: #171715;
+  --bg-dark: #000;
 
   /* Text colors */
-  --text-primary: #1a1612;
-  --text-secondary: #444;
-  --text-muted: #888;
-  --text-faint: #aaa;
+  --text-primary: #f3f1ec;
+  --text-secondary: #bdb9b0;
+  --text-muted: #8a867e;
+  --text-faint: #5c5953;
 
-  /* Accent colors */
-  --accent-rust: #9e4a3a;
-  --accent-rust-hover: #8a3f32;
-  --accent-gold: #c9a86c;
-  --accent-sage: #8b9a7d;
-  --accent-slate: #546b8a;
-  --accent-violet: #7c5db5;
+  /* Accent colors, lifted to read on black */
+  --accent-rust: #e8896d;
+  --accent-rust-hover: #f2a58d;
+  --accent-gold: #d6b67a;
+  --accent-sage: #a9b89b;
+  --accent-slate: #8fa6c6;
+  --accent-violet: #a98ce0;
 
   /* Borders */
-  --border-light: #e8e4dc;
-  --border-medium: #d4cfc4;
+  --border-light: #262522;
+  --border-medium: #3a3834;
+  --border-color: var(--border-light);
 }
 
 /* Base styles */
@@ -35,8 +41,8 @@ html {
 body {
   background: var(--bg-cream);
   color: var(--text-primary);
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-size: 18px;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,9 +50,9 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), -apple-system, sans-serif;
   font-weight: 400;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--text-primary);
   text-wrap: balance;
@@ -58,7 +64,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .font-display {
-  font-family: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-display), -apple-system, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .font-body {
@@ -80,7 +87,7 @@ a:hover {
 
 /* Selection */
 ::selection {
-  background: rgba(158, 74, 58, 0.15);
+  background: rgba(232, 137, 109, 0.3);
 }
 
 /* Focus states */
@@ -104,6 +111,8 @@ a:hover {
 .bg-warm { background: var(--bg-warm); }
 .bg-white { background: var(--bg-white); }
 .bg-dark { background: var(--bg-dark); }
+.bg-rust { background: var(--accent-rust); }
+.bg-rust-hover:hover, .hover\:bg-rust-hover:hover { background: var(--accent-rust-hover); }
 .bg-card { background: var(--bg-white); }
 
 .border-light { border-color: var(--border-light); }
@@ -117,7 +126,7 @@ a:hover {
   font-family: var(--font-inter), sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #fff;
+  color: #0a0a09;
   background: var(--accent-rust);
   padding: 12px 24px;
   border-radius: 6px;
@@ -127,7 +136,7 @@ a:hover {
 
 .btn-primary:hover {
   background: var(--accent-rust-hover);
-  color: #fff;
+  color: #0a0a09;
   text-decoration: none;
 }
 
@@ -165,7 +174,7 @@ a:hover {
 
 .card:hover {
   border-color: var(--border-medium);
-  box-shadow: 0 4px 12px rgba(26, 22, 18, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .card-warm {
@@ -195,11 +204,19 @@ a:hover {
   border-radius: 100px;
 }
 
-.badge-rust { background: rgba(158, 74, 58, 0.1); color: var(--accent-rust); }
-.badge-gold { background: rgba(201, 168, 108, 0.2); color: #8a7340; }
-.badge-sage { background: rgba(139, 154, 125, 0.2); color: #5c6b52; }
-.badge-slate { background: rgba(84, 107, 138, 0.2); color: var(--accent-slate); }
-.badge-violet { background: rgba(124, 93, 181, 0.1); color: var(--accent-violet); }
+.badge-rust { background: rgba(232, 137, 109, 0.14); color: var(--accent-rust); }
+.badge-gold { background: rgba(214, 182, 122, 0.14); color: var(--accent-gold); }
+.badge-sage { background: rgba(169, 184, 155, 0.14); color: var(--accent-sage); }
+.badge-slate { background: rgba(143, 166, 198, 0.14); color: var(--accent-slate); }
+.badge-violet { background: rgba(169, 140, 224, 0.14); color: var(--accent-violet); }
+
+/* The blue-to-magenta wash used for "Positive AI" on derek-lomas.com */
+.text-gradient {
+  background: linear-gradient(90deg, #6d8dff 0%, #b05cff 50%, #ff4fa3 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 /* Animation keyframes */
 @keyframes fade-in-up {
@@ -309,7 +326,7 @@ a:hover {
 
 .prose a {
   color: var(--accent-rust);
-  text-decoration-color: rgba(158, 74, 58, 0.3);
+  text-decoration-color: rgba(232, 137, 109, 0.4);
 }
 
 .prose ul, .prose ol {
@@ -334,7 +351,7 @@ a:hover {
 
 .prose code {
   font-size: 0.85em;
-  background: rgba(26, 22, 18, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   padding: 2px 6px;
   border-radius: 4px;
   font-family: var(--font-inter), monospace;
@@ -400,6 +417,20 @@ a:hover {
    screen whitespace, and keeps entries from splitting across page breaks.
    Used when exporting the CV to PDF. */
 @media print {
+  /* paper is white: put the light palette back */
+  :root {
+    color-scheme: light;
+    --bg-cream: #fff;
+    --bg-warm: #f5f0e8;
+    --bg-white: #fff;
+    --text-primary: #111;
+    --text-secondary: #333;
+    --text-muted: #666;
+    --text-faint: #999;
+    --border-light: #ddd;
+    --border-medium: #bbb;
+  }
+
   @page {
     margin: 14mm 15mm 13mm 15mm;
   }

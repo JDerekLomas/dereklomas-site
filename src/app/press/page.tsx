@@ -389,7 +389,7 @@ export default function PressPage() {
     <div className="min-h-screen py-16 px-6">
       <div className="max-w-2xl mx-auto">
         <header className="mb-8">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-4">
             Press & Talks
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed">
@@ -399,7 +399,7 @@ export default function PressPage() {
 
         {/* Press */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Press & Media
           </h2>
           <div className="space-y-4">
@@ -441,7 +441,7 @@ export default function PressPage() {
 
         {/* Talks */}
         <section className="mb-16">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-2xl font-medium text-text-primary mb-6">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl font-medium text-text-primary mb-6">
             Selected Talks
           </h2>
           <div className="space-y-4">
@@ -471,7 +471,7 @@ export default function PressPage() {
 
         {/* Contact CTA */}
         <div className="p-8 bg-warm rounded-lg border border-[var(--border-color)] text-center">
-          <p className="font-[family-name:var(--font-cormorant)] text-xl text-text-primary mb-2">
+          <p className="font-[family-name:var(--font-display)] text-xl text-text-primary mb-2">
             Media Inquiries
           </p>
           <p className="text-text-secondary text-sm mb-4">

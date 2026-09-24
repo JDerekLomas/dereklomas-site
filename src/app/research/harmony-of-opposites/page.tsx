@@ -22,7 +22,7 @@ export default function HarmonyOfOppositesPage() {
         <p className="font-[family-name:var(--font-inter)] text-xs font-medium tracking-widest uppercase text-[var(--text-muted)] mb-4">
           Chapter in Book
         </p>
-        <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-[42px] md:leading-[1.15] font-medium text-[var(--text-primary)] mb-6">
+        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[42px] md:leading-[1.15] font-medium text-[var(--text-primary)] mb-6">
           The Harmony of Opposites in Design and Philosophy
         </h1>
         <p className="text-lg text-[var(--text-secondary)] mb-2">
@@ -935,7 +935,7 @@ export default function HarmonyOfOppositesPage() {
 
 function SectionHeading({ number, title }: { number: string; title: string }) {
   return (
-    <h2 className="font-[family-name:var(--font-cormorant)] text-[20px] font-semibold text-[var(--text-primary)] mt-8 mb-3 break-after-avoid">
+    <h2 className="font-[family-name:var(--font-display)] text-[20px] font-semibold text-[var(--text-primary)] mt-8 mb-3 break-after-avoid">
       {number && <span className="font-[family-name:var(--font-inter)] text-[13px] tracking-wider mr-2">{number}.</span>}
       {title}
     </h2>

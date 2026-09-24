@@ -292,7 +292,7 @@ function Section({
 }) {
   return (
     <section id={id} className="mb-12 scroll-mt-24">
-      <h2 className="font-[family-name:var(--font-cormorant)] text-2xl md:text-3xl font-medium text-text-primary mb-5 pb-2 border-b border-[var(--border-color)]">
+      <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-medium text-text-primary mb-5 pb-2 border-b border-[var(--border-color)]">
         {title}
       </h2>
       {children}
@@ -317,7 +317,7 @@ export default function CVPage() {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <header className="mb-12 print:mb-8">
-          <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-medium text-text-primary mb-2">
+          <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl font-medium text-text-primary mb-2">
             J. Derek Lomas, PhD
           </h1>
           <p className="text-text-secondary text-lg mb-4">

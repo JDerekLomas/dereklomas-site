@@ -4,10 +4,10 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
-        <p className="text-6xl font-[family-name:var(--font-cormorant)] font-medium text-text-muted mb-4">
+        <p className="text-6xl font-[family-name:var(--font-display)] font-medium text-text-muted mb-4">
           404
         </p>
-        <h1 className="text-2xl font-[family-name:var(--font-cormorant)] font-medium text-text-primary mb-4">
+        <h1 className="text-2xl font-[family-name:var(--font-display)] font-medium text-text-primary mb-4">
           Page not found
         </h1>
         <p className="text-text-secondary mb-8 max-w-md">
