@@ -10,6 +10,7 @@ export interface Project {
   image?: string;
   gallery?: string[];
   video?: string; // YouTube video ID
+  loop?: string; // short silent looping clip (mp4), shown in place of `image` where there is room
   url?: string;
   relatedLinks?: { label: string; href: string }[];
   featured?: boolean;
@@ -26,6 +27,7 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["Weather Satellites", "Live Data", "Globe"],
     image: "/images/projects/cloud-layer.jpg",
+    loop: "/video/cloud-layer-loop.mp4",
     url: "https://earthai-scales.vercel.app/globe/",
     featured: true,
   },

@@ -49,6 +49,20 @@ export function ProjectCard({
         </div>
       )}
 
+      {project.loop && (
+        <video
+          src={project.loop}
+          poster={project.image}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover motion-reduce:hidden transition duration-700 ease-out group-hover:scale-[1.03]"
+        />
+      )}
+
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent" />
 
       <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">

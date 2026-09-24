@@ -202,6 +202,18 @@ export default function Home() {
                 className="object-cover transition duration-1000 ease-out group-hover:scale-[1.02]"
               />
             )}
+            {feature.loop && (
+              <video
+                src={feature.loop}
+                poster={feature.image}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover motion-reduce:hidden transition duration-1000 ease-out group-hover:scale-[1.02]"
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-12">
               <p className="font-sans text-xs uppercase tracking-[0.16em] text-white/60 mb-3">

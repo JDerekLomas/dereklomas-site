@@ -66,6 +66,19 @@ export default async function ProjectDetailPage({ params }: Props) {
               className="w-full h-full"
             />
           </div>
+        ) : project.loop ? (
+          <div className="mt-6 bg-black overflow-hidden">
+            <video
+              src={project.loop}
+              poster={project.image}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-label={project.title}
+              className="w-full max-h-[78vh] object-cover"
+            />
+          </div>
         ) : project.image ? (
           <div className="mt-6 bg-warm overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
