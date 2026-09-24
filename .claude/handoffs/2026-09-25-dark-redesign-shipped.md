@@ -9,17 +9,23 @@
   Gallery entries ending in `.mp4` render as silent loops; poster = same path with `.jpg`.
 - MakeMode tile is a purpose-made 4:3 card (`makemode-tile.jpg`) from the MakeMode brand kit.
 
-## Known trap
-- `globals.css` has unlayered `a { color: inherit }` / `a:hover` rules. In Tailwind v4 those beat every
-  layered `text-*` utility on links. Fixed for the project-page button via `a.btn-solid`. A proper fix is
-  moving the base anchor rules into `@layer base`, but that changes link colours site-wide; do it as a
-  deliberate pass with a full visual check.
+## Anchor rules (done, second round)
+- The global `a` / `a:hover` rules now live in `@layer base`, so Tailwind `text-*` utilities on links win.
+  Verified by full-page pixel diff of 15 routes, preview vs production: <0.02% differing pixels everywhere.
+  `a.btn-solid` stays as the solid-button class.
 
 ## Verification recipe
 - Chrome extension / DevTools MCP may be down. Playwright in `~/sourcelibrary` with
   `chromium.launch({ channel: 'chrome' })` works; scroll before full-page shots or lazy tiles are blank.
   Memory: `site-screenshot-fallback`.
 
+## Multi-loop galleries (done, second round)
+- Landshapes: four 12 s loops from Ueberschär's YouTube pieces (Abrupt `8Ypel6EW-yM`, Circular
+  `_h9-d76JUBE`, DDW 2021 `8M8vglHzGuY`), seam cross-faded with ffmpeg xfade; credit line under the hero.
+- Cloud Layer: `scripts/capture-cloud-layer-loop.mjs` run twice (LAT=58 VIEW_OFF=-55; LAT=-30 VIEW_OFF=-95,
+  FRAMES=300), overlap-blended into `cloud-layer-north.mp4` / `cloud-layer-south.mp4`. Raw frames in
+  `globe/` (gitignored). Each capture is ~15 min with a visible Chrome window.
+- Loop recipe for a segment that never repeats: take 13 s, main = [1,13), tail 1 s xfades into [0,1).
+
 ## Possible next
-- Landshapes and Cloud Layer could take the same multi-loop gallery treatment.
-- Page weight on /projects/quantum-resonance is ~18 MB of video; drop cyan or blue-on-blue if it matters.
+- /projects/quantum-resonance and /projects/landshapes each carry ~15–18 MB of video; drop a clip if slow.
