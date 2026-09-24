@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { allProjects } from "@/data/projects";
+import { allProjects, loopPoster } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SOURCE_LIBRARY } from "@/data/stats";
 
@@ -205,7 +205,7 @@ export default function Home() {
             {feature.loop && (
               <video
                 src={feature.loop}
-                poster={feature.image}
+                poster={loopPoster(feature.loop)}
                 autoPlay
                 muted
                 loop

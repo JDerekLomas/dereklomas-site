@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { allProjects, getProjectBySlug, getAllSlugs } from "@/data/projects";
+import { allProjects, getProjectBySlug, getAllSlugs, loopPoster } from "@/data/projects";
 
 const categoryBadge: Record<string, string> = {
   AI: "badge-violet",
@@ -70,7 +70,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="mt-6 bg-black overflow-hidden">
             <video
               src={project.loop}
-              poster={project.image}
+              poster={loopPoster(project.loop)}
               autoPlay
               muted
               loop
@@ -78,6 +78,11 @@ export default async function ProjectDetailPage({ params }: Props) {
               aria-label={project.title}
               className="w-full max-h-[78vh] object-cover"
             />
+            {project.loopCredit && (
+              <p className="px-1 pt-2 pb-1 font-sans text-xs text-muted bg-cream">
+                {project.loopCredit}
+              </p>
+            )}
           </div>
         ) : project.image ? (
           <div className="mt-6 bg-warm overflow-hidden">

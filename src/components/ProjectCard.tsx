@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Project } from "@/data/projects";
+import { loopPoster, type Project } from "@/data/projects";
 
 export type { Project };
 
@@ -52,7 +52,7 @@ export function ProjectCard({
       {project.loop && (
         <video
           src={project.loop}
-          poster={project.image}
+          poster={loopPoster(project.loop)}
           autoPlay
           muted
           loop

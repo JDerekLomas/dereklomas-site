@@ -10,7 +10,8 @@ export interface Project {
   image?: string;
   gallery?: string[];
   video?: string; // YouTube video ID
-  loop?: string; // short silent looping clip (mp4), shown in place of `image` where there is room
+  loop?: string; // short silent looping clip (mp4), shown in place of `image` where there is room; its first frame sits beside it as .jpg
+  loopCredit?: string; // who made the footage, when it isn't Derek's own
   url?: string;
   relatedLinks?: { label: string; href: string }[];
   featured?: boolean;
@@ -54,6 +55,8 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["Quantum", "Cymatics", "Installation", "UNESCO"],
     image: "/images/projects/quantum-resonance.jpg",
+    loop: "/video/quantum-resonance-loop.mp4",
+    gallery: ["/images/projects/quantum-resonance.jpg"],
     url: "https://www.unesco.org/en/articles/opening-ceremony-international-year-quantum-science-and-technology",
     featured: true,
   },
@@ -288,6 +291,8 @@ export const allProjects: Project[] = [
     category: "Design",
     tags: ["GANs", "Climate", "Google AI"],
     image: "/images/projects/landshapes.jpg",
+    loop: "/video/landshapes-loop.mp4",
+    loopCredit: "Footage: Frederik Ueberschär, “Landshapes | Calm” (2021)",
     gallery: [
       "/images/projects/gallery/landshapes/01.png",
       "/images/projects/gallery/landshapes/02.jpg",
@@ -411,6 +416,11 @@ export const allProjects: Project[] = [
     ],
   },
 ];
+
+/** The still that stands in for a loop until it plays: its first frame, saved beside it. */
+export function loopPoster(loop: string): string {
+  return loop.replace(/\.mp4$/, ".jpg");
+}
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return allProjects.find((p) => p.slug === slug);
