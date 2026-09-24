@@ -76,7 +76,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               loop
               playsInline
               aria-label={project.title}
-              className="w-full max-h-[78vh] object-cover"
+              className="w-full max-h-[78vh] object-contain"
             />
             {project.loopCredit && (
               <p className="px-1 pt-2 pb-1 font-sans text-xs text-muted bg-cream">
