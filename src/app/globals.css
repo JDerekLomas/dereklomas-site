@@ -85,6 +85,17 @@ a:hover {
   text-decoration-color: var(--accent-rust);
 }
 
+/* Solid button on a link. The bare `a` rules above are unlayered, so they beat
+   Tailwind's layered text-* utilities; a class wins on specificity instead. */
+a.btn-solid {
+  background: var(--text-primary);
+  color: var(--bg-cream);
+}
+a.btn-solid:hover {
+  background: #fff;
+  color: #000;
+}
+
 /* Selection */
 ::selection {
   background: rgba(232, 137, 109, 0.3);

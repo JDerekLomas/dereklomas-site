@@ -131,7 +131,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--text-primary)] text-black font-sans text-sm font-medium hover:bg-white transition-colors no-underline"
+                className="btn-solid inline-flex items-center gap-2 px-5 py-2.5 font-sans text-sm font-medium transition-colors no-underline"
               >
                 Visit Project &rarr;
               </a>
