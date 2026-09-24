@@ -151,20 +151,34 @@ export default async function ProjectDetailPage({ params }: Props) {
         {/* Gallery */}
         {project.gallery && project.gallery.length > 0 && (
           <div className="mt-12 space-y-4">
-            {project.gallery.map((src, i) => (
-              <div
-                key={src}
-                className="bg-warm overflow-hidden"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`${project.title} — image ${i + 1}`}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
-            ))}
+            {project.gallery.map((src, i) =>
+              src.endsWith(".mp4") ? (
+                // A silent loop in the gallery: same poster convention as `loop`
+                <div key={src} className="bg-warm overflow-hidden">
+                  <video
+                    src={src}
+                    poster={loopPoster(src)}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label={`${project.title} — clip ${i + 1}`}
+                    className="w-full h-auto"
+                  />
+                </div>
+              ) : (
+                <div key={src} className="bg-warm overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={`${project.title} — image ${i + 1}`}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+              )
+            )}
           </div>
         )}
       </div>

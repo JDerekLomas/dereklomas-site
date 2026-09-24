@@ -8,7 +8,7 @@ export interface Project {
   category: string;
   tags: string[];
   image?: string;
-  gallery?: string[];
+  gallery?: string[]; // images, or .mp4 silent loops (poster = same path as .jpg)
   video?: string; // YouTube video ID
   loop?: string; // short silent looping clip (mp4), shown in place of `image` where there is room; its first frame sits beside it as .jpg
   loopCredit?: string; // who made the footage, when it isn't Derek's own
@@ -58,9 +58,10 @@ export const allProjects: Project[] = [
     loop: "/video/quantum-resonance-loop.mp4",
     loopCredit: "Cymatics footage: Martijn Weber, Quantum Resonance (2024)",
     gallery: [
-      "/images/projects/gallery/quantum-resonance/01-magenta.jpg",
-      "/images/projects/gallery/quantum-resonance/02-blue.jpg",
-      "/images/projects/gallery/quantum-resonance/03-cyan.jpg",
+      "/video/quantum-resonance-blue.mp4",
+      "/video/quantum-resonance-cyan.mp4",
+      "/video/quantum-resonance-magenta-blue.mp4",
+      "/video/quantum-resonance-blue-blue.mp4",
       "/images/projects/quantum-resonance.jpg",
     ],
     url: "https://www.unesco.org/en/articles/opening-ceremony-international-year-quantum-science-and-technology",
