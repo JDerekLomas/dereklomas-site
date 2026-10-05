@@ -50,7 +50,7 @@ const SECTIONS: Section[] = [
         id: "mdz",
         area: "Source Library",
         text: "Reply to MDZ Munich: their 9-question form for IP-based IIIF access",
-        note: "Check point 9 before sending. It has to match how the site really shows BSB images.",
+        note: "Point 9 checked against the live site (5 Oct): BSB book pages load images straight from MDZ's IIIF server; gallery and artwork crops are served from our own storage. The draft says both openly instead of signing a blanket 'no third parties'.",
         href: GMAIL + "thread-f:1877840467797437756",
         draft: {
           to: "mdz@bsb-muenchen.de (reply in thread, cc team@sourcelibrary.org)",
@@ -66,7 +66,7 @@ Thank you for the quick and helpful reply. Here is the information you asked for
 6. Other institutions: none. The project is run by the Embassy of the Free Mind in Amsterdam.
 7. Data: page images only (no OCR), at full resolution through the IIIF Image API; about 3.8 million images from about 14,000 volumes. We can send the list of identifiers.
 8. IP address: 46.224.122.120 (one server; requests carry a contact User-Agent).
-9. Confirmed: we will not pass the downloaded files on to third parties. They are used only within the project described above: kept as preservation copies, used to produce the transcriptions and translations, and shown on sourcelibrary.org next to the translation, with a credit and a link to the record on digitale-sammlungen.de, as we do now.
+9. We confirm that we will not pass the downloaded files on to third parties, as a dataset or in bulk. To be open about how the images appear on our site: our reader currently shows BSB page images directly from your IIIF server, and once the copy is complete we would like to show them from our own copy instead, which takes that load off your servers. We also cut out illustrations from pages and show them in our image gallery. Both are public, open-access pages on sourcelibrary.org, each credited to the BSB and linked to its record on digitale-sammlungen.de. If any of this goes beyond what point 9 allows, please tell us, and we will keep the copies for preservation and checking only.
 
 You are welcome to publish points 1, 3, 4 and 5 on the BSB website.
 
@@ -100,6 +100,22 @@ What we would like to know from you and Ryan:
 Happy to sit down for 15 minutes this week if that's quicker. I'm away from 10 to 22 October.
 
 Best,
+Derek`,
+        },
+      },
+      {
+        id: "sheji",
+        area: "TU Delft",
+        text: "She Ji review: accepted 28 June, due 12 July, now 12 weeks late. The co-editor wrote to you personally on 16 Sep",
+        note: "SHEJI-D-26-00119, 'From Aesthetic Guardianship to Co-Evolution' (GenAI in visual communication design firms). The PDF is in ~/Downloads/SHEJI-D-26-00119.pdf. Either commit to a date you can keep before the 10th, or withdraw today; both beat silence. Withdraw version: 'I am sorry, I can't complete it after all; please release me so you can invite another reviewer.' Elsevier's reviewer policy forbids uploading the manuscript to AI tools, so the reading is yours.",
+        draft: {
+          to: "Jin Ma (majin.sheji@icloud.com)",
+          subject: "Re: Invitation to review for She Ji",
+          body: `Dear Jin,
+
+My apologies for the long silence. I do have the review link, and I'm sorry to have held up the authors. I will submit my review of SHEJI-D-26-00119 by Friday 9 October. If you would rather reassign it now, I completely understand. Just let me know.
+
+Best wishes,
 Derek`,
         },
       },
