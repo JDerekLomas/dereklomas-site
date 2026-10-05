@@ -181,7 +181,7 @@ Derek Lomas`,
     ],
   },
   {
-    title: "Replies owed",
+    title: "Replies owed: the urgent ones",
     why: "People who are waiting on you. Each one has a draft: copy it, adjust, send.",
     items: [
       {
@@ -315,6 +315,182 @@ Best regards,
 Derek Lomas`,
         },
       },
+    ],
+  },
+  {
+    title: "More people waiting: Source Library and the Embassy",
+    why: "From your personal Gmail and the sourcelibrary inbox. Each is a thread where someone else wrote last and you haven't answered.",
+    items: [
+      {
+        id: "kress",
+        area: "Source Library",
+        text: "Maria Marqués: status of the Kress Foundation LOI (she asked 14 Sep; the deadline was 30 Sep)",
+        note: "Tell her whether it went in. If it didn't, name the next cycle so she can plan.",
+      },
+      {
+        id: "stefan",
+        area: "Source Library",
+        text: "Stefan Pernar: asked on 4 Sep whether his manuscript links didn't work ('Rights?')",
+        note: "Jasha says he is flying in to discuss a research project with you. Worth a proper answer before you meet.",
+      },
+      { id: "wereldhart", area: "Source Library", text: "Sophie Hutten: 'Exit Stichting Wereldhart, Memorix Maior and website' (29 Sep)", note: "Read it; it sounds like a decision about the foundation's systems." },
+      {
+        id: "paul",
+        area: "Source Library",
+        text: "Paul Dijstelberge: forward him the Freemasons invitation (16 Sep), and answer 'Derek?' about the two Huygens professors",
+      },
+      { id: "aricia", area: "Source Library", text: "Aricia: look at her draft presentation for the November talk (Canva link in her 22 Sep mail) and pick a date with Paul" },
+      {
+        id: "wellcome",
+        area: "Source Library",
+        text: "Wellcome Collection (J. Cates, 1 Sep): they blocked our crawler for the load it caused. You forwarded it to Laura, but never answered them",
+        note: "A short apology and the rate you will keep to, like the MDZ letter, keeps that door open.",
+      },
+      { id: "manlyhall", area: "Source Library", text: "Manly P. Hall Society archivist (11 Sep): long, warm feedback on Source Library. Forwarded to Laura, no reply to him" },
+      { id: "gerda", area: "Source Library", text: "Gerda Henkel Stiftung (1 Sep): replied to your introduction. Read it and answer" },
+      {
+        id: "martijn",
+        area: "Source Library",
+        text: "Martijn Verspaget: built something on Source Library, nudged you on 17 Sep ('still had a moment?')",
+        note: "He asked for WhatsApp: +31 6 53494478.",
+        draft: {
+          to: "martijnverspaget1@gmail.com",
+          body: `Hi Martijn,
+
+Sorry, this slipped while I was travelling. I'd love to see what you've built. I'll WhatsApp you today to find a time this week; otherwise it will be after 22 October, as I'm away until then.
+
+Derek`,
+        },
+      },
+      {
+        id: "maik",
+        area: "Source Library",
+        text: "Maik (Steelhenge): coffee with Jasha about Burning Man 2027, asked 17 Sep",
+        draft: {
+          to: "maik@steelhenge.nl; cc jvanderwel@efm.amsterdam",
+          subject: "Re: Meet-up Burning Man",
+          body: `Hi Maik and Jasha,
+
+Yes, let's do it. I'm at the Embassy on Thursday 9 October for the vibe coding session from 15:00. Could we have coffee there at 14:00? Otherwise it will be after 22 October.
+
+Derek`,
+        },
+      },
+      {
+        id: "malte",
+        area: "Source Library",
+        text: "Malte Risto (1 Sep): a personal follow-up to his AI-written email; unanswered",
+      },
+      { id: "kausch", area: "Source Library", text: "Jack Kausch: wants a talk title and summary, and which third Saturday of the month suits you" },
+      { id: "mahmoud", area: "Source Library", text: "Mahmoud Marei (4 Oct): Nile Magazine accepted his article; he asks for your advice on it" },
+      { id: "marisa", area: "Source Library", text: "Marisa Bass (Yale, 6 Sep): a warm reply to your update. A two-line thanks" },
+      { id: "luke", area: "Source Library", text: "Luke Barrington: 'Any updates from Google? A discount, or a grant?'" },
+    ],
+  },
+  {
+    title: "More people waiting: MakeMode",
+    why: "Emma's legal thread is the one that matters this week.",
+    items: [
+      {
+        id: "emma-ts",
+        area: "MakeMode",
+        text: "Emma's latest term-sheet draft (5 Oct, sent to Rogier, you in cc)",
+        note: "37.5/37.5, no supervisory board at closing, milestone consequences in art. 12, closing conditional on management agreements. Still open, in her words: each founder's role and title, and the milestones. Read and answer her, so the version you send Judith is the agreed one.",
+      },
+      {
+        id: "barentskrans-kyc",
+        area: "Legal",
+        text: "BarentsKrans (Anouk, 22 Sep): fill in their RegLab due-diligence form, and send the name and KvK number of your holding company",
+      },
+    ],
+  },
+  {
+    title: "More people waiting: Playpower",
+    why: "Client work; several have money attached.",
+    items: [
+      {
+        id: "soliant-attest",
+        area: "Ops",
+        text: "Jeffrey Huffman (Soliant, 1 Oct): two fields missing from your attestation for their auditor",
+        note: "Only send this if it's true. Check the roster he attached first.",
+        draft: {
+          to: "Jeffrey.Huffman@soliant.com",
+          subject: "Re: Playpowerlabs attestation",
+          body: `Hi Jeffrey,
+
+1. Yes, the confirmation covers the 22 PlayPowerLabs accounts on the roster you attached.
+2. It covers the quarter ended 30 September 2026.
+
+Best,
+Derek`,
+        },
+      },
+      {
+        id: "soliant-sf",
+        area: "Ops",
+        text: "Jeffrey: who from Playpower attends the San Francisco meetup, 21–23 Oct? (asked 28 Sep)",
+        note: "He suggests Kenil, Meet and Davarsh for E2E Agentic; Chris and Ali want the product and design team. Julika asked whether you're back Sunday at 9:00.",
+      },
+      { id: "quests", area: "Ops", text: "Sudatt: 'check in on Quests' (1 Oct) and the Bio Quests accessibility questions from Savvas (23 Sep)", note: "Check whether Sudatt needs a decision from you." },
+      { id: "kishan", area: "Ops", text: "Kishan: Savvas estimates and vendor setup (unread, 15 and 24 Sep). Probably handled; check" },
+      { id: "kiddom", area: "Ops", text: "Kiddom (Stephanie Butler, 25 Sep): wants a call about licensing data for their Paper Score OCR" },
+      { id: "mercor", area: "Ops", text: "Mercor (8 Sep): data licensing partnership. Answer yes or no" },
+    ],
+  },
+  {
+    title: "More people waiting: TU Delft and academia",
+    why: "Co-authors and students first.",
+    items: [
+      {
+        id: "cehao",
+        area: "TU Delft",
+        text: "Cehao Yu (PolyU, 23 Sep): the lamp-AI paper for IJHCS is drafted, you as senior author; he wants comments",
+        draft: {
+          to: "cehao.yu@polyu.edu.hk; cc liaodinuo98@gmail.com",
+          subject: "Re: Lamp AI paper draft — comments welcome",
+          body: `Dear Cehao and Dinuo,
+
+Wonderful news, and thank you for carrying it this far. I'm happy to be senior author. I'm travelling from 10 to 22 October, so realistically you'll have my comments by the end of October. If there's a section where my input matters most, tell me and I'll start there. A walk-through call in the week of 26 October would also be great.
+
+Best,
+Derek`,
+        },
+      },
+      {
+        id: "caiseal",
+        area: "TU Delft",
+        text: "Caiseal Beardow: the defence date, Mon 25 or Wed 27 January. Check you answered",
+      },
+      {
+        id: "amy",
+        area: "TU Delft",
+        text: "Amy Cole Vreeland (Harvard, Fulbright): wants a meeting about the TU Delft affiliation letter (28 Sep)",
+        note: "She also messaged you on WhatsApp.",
+      },
+      {
+        id: "reyhaneh",
+        area: "TU Delft",
+        text: "Reyhaneh Mohammadi (26 Sep): wants a route to a PhD, as a visitor or contract researcher",
+        note: "You asked what she was thinking, and she answered. Kindest is a clear yes, no, or a pointer to vacancies.",
+      },
+      { id: "iiit", area: "TU Delft", text: "IIIT Hyderabad (Vasudeva Varma, 15 Sep): invitation to their international advisory committee" },
+      { id: "sijia", area: "TU Delft", text: "Sijia Bakker-Wu (16 Sep): advisory board for her education fellowship proposal" },
+    ],
+  },
+  {
+    title: "Home and family (Julika is on these)",
+    why: "Only what needs your answer or your presence.",
+    items: [
+      {
+        id: "poundwise",
+        area: "Ops",
+        text: "Thu 8 Oct, 11:00: Poundwise meeting",
+        note: "Bring MT940 files for August and September. Mark de Jong is still waiting on your answers to his two items from July; Julika told him you'd reply.",
+      },
+      { id: "insurance", area: "Ops", text: "Lomas collection insurance: José asks whether the modern books (after 1800) are included. Decide so the loan agreement can close before the autumn holiday" },
+      { id: "milo", area: "Ops", text: "Milo: the High Tech High support meeting and the host-family search (Chris White is asking HTH International)" },
+      { id: "merida", area: "Ops", text: "Wed 14 Oct, 13:18: arrive in Mérida (Claudia Madrazo)" },
+      { id: "vve", area: "Ops", text: "VvE Maasstraat: pick 11 or 12 November for the maintenance-plan meeting" },
     ],
   },
   {
