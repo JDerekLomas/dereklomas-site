@@ -1,5 +1,5 @@
-// Renders public/video/cloud-layer-loop.mp4: one day of real clouds on the Cloud Layer globe
-// (https://earthai-scales.vercel.app/globe/), the Earth turning once under a fixed Sun.
+// Renders public/video/cloud-layer-loop.mp4: one day of real clouds on the Earth Love globe
+// (https://earthlove.live/globe/), the Earth turning once under a fixed Sun.
 //
 // The page is paused and stepped by hand (cloud frame + blend + view per output frame), so the
 // motion is exact regardless of how fast the machine renders. Needs a real GPU: it opens a
@@ -24,7 +24,7 @@ const b = await puppeteer.launch({executablePath:'/Applications/Google Chrome.ap
   args:[`--window-size=${W},${H+140}`,'--autoplay-policy=no-user-gesture-required']});
 const p = await b.newPage();
 await p.setViewport({width:W,height:H,deviceScaleFactor:1});
-await p.goto('https://earthai-scales.vercel.app/globe/#nointro',{waitUntil:'load',timeout:90000});
+await p.goto('https://earthlove.live/globe/#nointro',{waitUntil:'load',timeout:90000});
 await p.waitForFunction(()=>window.__dbg && window.__dbg.presented()>0,{timeout:90000});
 await p.addStyleTag({content:`
   .stage{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:99999!important}

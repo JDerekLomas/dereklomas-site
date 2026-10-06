@@ -19,18 +19,21 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
-    slug: "cloud-layer",
-    title: "The Cloud Layer",
+    slug: "earth-love",
+    title: "Earth Love",
     description:
-      "Every cloud on Earth, as five weather satellites saw it, ten minutes at a time.",
+      "Every cloud on Earth, as five weather satellites saw it, ten minutes at a time, on a globe you can turn and play back.",
     fullDescription:
-      "Five weather satellites hang over the equator, each watching its side of the planet and looking again every ten minutes. Their views are joined into one sky on a globe you can turn, zoom and play back over the last days. The land is this week's clearest look from the same satellites; the light, the stars and the Moon follow the moment shown. With gratitude to NOAA, JAXA, EUMETSAT and NASA, who build, fly and share these instruments.",
+      "Five weather satellites hang over the equator, each watching its side of the planet and looking again every ten minutes. Their views are joined into one sky on a globe you can turn, zoom and play back, from the archive that begins in August 2026 to seventy-five minutes ago. Only the cloud is a recording; the land, the light, the stars and the Moon are computed for the moment shown, and the page says which is which. The same sky is open to AI agents: keyless endpoints draw a picture, a filmstrip or a video of any place and time, and an MCP connector lets Claude show the clouds right in the chat. With gratitude to NOAA, JAXA, EUMETSAT and NASA, who build, fly and share these instruments.",
     category: "Design",
-    tags: ["Weather Satellites", "Live Data", "Globe"],
+    tags: ["Weather Satellites", "Live Data", "Globe", "MCP"],
     image: "/images/projects/cloud-layer.jpg",
     loop: "/video/cloud-layer-loop.mp4",
     gallery: ["/video/cloud-layer-north.mp4", "/video/cloud-layer-south.mp4"],
-    url: "https://earthai-scales.vercel.app/globe/",
+    url: "https://earthlove.live/globe/",
+    relatedLinks: [
+      { label: "For AI agents: API and MCP connector", href: "https://earthlove.live/llms.txt" },
+    ],
     featured: true,
   },
   {

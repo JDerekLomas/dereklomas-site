@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const UPDATED = "Mon 5 Oct 2026";
 
-type Area = "MakeMode" | "Legal" | "Source Library" | "Folium" | "TU Delft" | "Cloudlayer" | "Ops";
+type Area = "MakeMode" | "Legal" | "Source Library" | "Folium" | "TU Delft" | "Earth Love" | "Ops";
 
 type Draft = {
   to: string;
@@ -32,7 +32,7 @@ type Section = {
 
 const SL = "https://github.com/Embassy-of-the-Free-Mind/sourcelibrary-v2/pull/";
 const MM = "https://github.com/JDerekLomas/makemode/pull/";
-const CL = "https://github.com/JDerekLomas/cloudlayer/pull/";
+const CL = "https://github.com/JDerekLomas/earthlove/pull/";
 const GMAIL = "https://mail.google.com/mail/?authuser=derek@sourcelibrary.org#all/";
 
 const SECTIONS: Section[] = [
@@ -539,10 +539,10 @@ Derek`,
       },
       { id: "sl-tengyur", area: "Source Library", text: "Publish the Tengyur draft or not (#5497, figures in PR #5788)", href: SL + "5788" },
       { id: "sl-mongol", area: "Source Library", text: "Mongolian Kanjur: can it be read by machine before we pay to OCR 83K pages?" },
-      { id: "cl-holds", area: "Cloudlayer", text: "HOLD PRs #293 (nav and site map) and #310 (poles)", href: CL + "293" },
+      { id: "cl-holds", area: "Earth Love", text: "HOLD PRs #293 (nav and site map) and #310 (poles)", href: CL + "293" },
       {
         id: "cl-globe",
-        area: "Cloudlayer",
+        area: "Earth Love",
         text: "Look at the globe for a minute: does the lightning move with the clouds?",
         href: "https://earthai-storm.vercel.app/globe/",
       },
@@ -579,7 +579,7 @@ const AREA_COLOR: Record<Area, string> = {
   "Source Library": "var(--accent-sage)",
   Folium: "var(--accent-violet)",
   "TU Delft": "var(--accent-slate)",
-  Cloudlayer: "var(--accent-slate)",
+  "Earth Love": "var(--accent-slate)",
   Ops: "var(--text-muted)",
 };
 

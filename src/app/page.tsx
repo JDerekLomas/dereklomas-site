@@ -13,9 +13,9 @@ type RecentItem = {
 
 const recentNews: RecentItem[] = [
   {
-    date: "Sep 2026",
-    text: "The Cloud Layer: every cloud on Earth, from five weather satellites",
-    href: "/projects/cloud-layer",
+    date: "Oct 2026",
+    text: "Earth Love: every cloud on Earth, from five weather satellites — now open to AI agents",
+    href: "/projects/earth-love",
   },
   {
     date: "May 2026",
@@ -68,7 +68,7 @@ const currentlyItems = [
     body: "Building a sovereign AI coding agent on European infrastructure, so anyone in a school, lab or company can turn an idea into working software.",
   },
   {
-    title: "The Cloud Layer",
+    title: "Earth Love",
     body: "A globe of every cloud on Earth, as five weather satellites saw it, ten minutes at a time.",
   },
   {
@@ -84,7 +84,7 @@ const currentlyItems = [
 // The homepage gallery: the newest work up front as a full-width feature,
 // then a mosaic of projects chosen because their pictures are strong.
 // Order matters — it maps onto the tile spans in `mosaicSpans` below.
-const FEATURE_SLUG = "cloud-layer";
+const FEATURE_SLUG = "earth-love";
 const MOSAIC_SLUGS = [
   "quantum-resonance",
   "source-library",
