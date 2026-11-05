@@ -72,7 +72,7 @@ export default function BlenderCellPost() {
           </p>
 
           <p>
-            <a href="https://github.com/JDerekLomas/blendercell" target="_blank" rel="noopener noreferrer">
+            <a href="https://blendercell.vercel.app/cells.html" target="_blank" rel="noopener noreferrer">
               CellAtlas
             </a>{" "}
             is an attempt to fix this. I started building it in early December 2025, and three months later
@@ -346,7 +346,11 @@ export default function BlenderCellPost() {
           </p>
 
           <p>
-            The atlas is live and open source at{" "}
+            The atlas is{" "}
+            <a href="https://blendercell.vercel.app/cells.html" target="_blank" rel="noopener noreferrer">
+              live
+            </a>{" "}
+            and open source at{" "}
             <a href="https://github.com/JDerekLomas/blendercell" target="_blank" rel="noopener noreferrer">
               github.com/JDerekLomas/blendercell
             </a>

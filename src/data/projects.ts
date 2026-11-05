@@ -158,6 +158,22 @@ export const allProjects: Project[] = [
     ],
   },
   {
+    slug: "cell-atlas",
+    title: "Cell Atlas",
+    description:
+      "Interactive 3D cells you can rotate, zoom into and click on in any browser, with biological processes animating in real time.",
+    fullDescription:
+      "Most students meet the cell as a flat diagram. Cell Atlas is a growing set of 3D models that run in any web browser: students rotate a cell, zoom into its organelles, click on structures to learn what they do, and watch processes animate in real time. Each cell is built procedurally in Three.js, and the code is open source.",
+    category: "Education",
+    tags: ["Three.js", "Biology", "3D", "Open Source"],
+    image: "/images/blog/blendercell.png",
+    url: "https://blendercell.vercel.app/cells.html",
+    relatedLinks: [
+      { label: "How it was built", href: "/blog/teaching-biology-in-3d" },
+      { label: "Source code", href: "https://github.com/JDerekLomas/blendercell" },
+    ],
+  },
+  {
     slug: "steamquest",
     title: "STEAMQuest",
     description:
