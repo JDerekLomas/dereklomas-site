@@ -1,0 +1,57 @@
+import{S as nt,C as at,J as st,P as ot,W as it,A as rt,O as lt,b as ct,D as V,c as dt,G as ut,V as B,z as ht,l as mt,f as pt,a1 as gt,e as ft}from"./OrbitControls-DsVUz1Vb.js";let x,g,M,P,I,yt=new ht,H=[],f=[],T=[],R=[],C=[],q=null;const i={lsystem:{iterations:8,baseAngle:22,angleVariation:3,rule:"F[+A][-A]FA",branchProbability:.95,asymmetryFactor:.15,depthBias:.05},spatial:{planarBias:.3,spiralTwist:.05,gravitationalDrift:0,curvatureFactor:.02,curvatureNoise:.015},anastomosis:{enabled:!0,distance:3.5,threshold:.7,reinforcementFactor:1.5},attractors:[{position:[6,2,6],strength:2,radius:8},{position:[-6,2,-6],strength:2,radius:8}],attractorInfluence:.3,radius:{murrayExponent:3,murrayRatio:Math.pow(2,-1/3),baseRadius:.02,radiusScale:1,radiusNoise:.01,depthTaperFactor:.95},growth:{speed:.15,cascadeDelay:.08,sizeMultiplierMax:6,sizeMultiplierTanh:.3,maxSegments:1e3},pulse:{frequency:2.5,amplitude:.2,propulsionAmount:.08,phaseStagger:.05},visual:{baseColor:16771899,flowHighColor:16766720,baseOpacity:.95,cylinderSegments:16}};function wt(){x=new nt,x.background=new at(0),x.fog=new st(0,200,500),g=new ot(60,window.innerWidth/window.innerHeight,.1,1e3),g.position.set(0,20,40),M=new it({antialias:!0,alpha:!0}),M.setSize(window.innerWidth,window.innerHeight),M.setPixelRatio(Math.min(window.devicePixelRatio,2)),M.toneMapping=rt,M.toneMappingExposure=1.3,document.getElementById("canvas-container").appendChild(M.domElement),P=new lt(g,M.domElement),P.enableDamping=!0,P.dampingFactor=.05,P.minDistance=10,P.maxDistance=80,P.autoRotate=!0,P.autoRotateSpeed=.8,xt(),vt(),At(),bt(),_(),Z()}function bt(){if(typeof dat>"u")return;const s=new dat.GUI({width:350,name:"Physarum Parameters"}),n=s.addFolder("L-System");n.add(i.lsystem,"iterations",5,12,1).onChange(()=>h()),n.add(i.lsystem,"baseAngle",10,45,1).onChange(()=>h()),n.add(i.lsystem,"angleVariation",0,10,.5).onChange(()=>h()),n.add(i.lsystem,"branchProbability",.5,1,.05).onChange(()=>h()),n.add(i.lsystem,"asymmetryFactor",0,.5,.05).onChange(()=>h()),n.open();const t=s.addFolder("Spatial");t.add(i.spatial,"planarBias",0,1,.1).onChange(()=>h()),t.add(i.spatial,"spiralTwist",0,.2,.01).onChange(()=>h()),t.add(i.spatial,"gravitationalDrift",-.5,.5,.05).onChange(()=>h()),t.add(i.spatial,"curvatureFactor",0,.1,.01).onChange(()=>h());const e=s.addFolder("Anastomosis");e.add(i.anastomosis,"enabled").onChange(()=>h()),e.add(i.anastomosis,"distance",1,8,.5).onChange(()=>h()),e.add(i.anastomosis,"threshold",0,1,.1).onChange(()=>h()),e.add(i.anastomosis,"reinforcementFactor",1,3,.1).onChange(()=>h());const r=s.addFolder("Attractors");r.add(i,"attractorInfluence",0,1,.1).onChange(()=>h()),i.attractors.forEach((d,p)=>{const a=r.addFolder(`Attractor ${p+1}`);a.add(d,"strength",0,5,.5).onChange(()=>h()),a.add(d,"radius",1,15,1).onChange(()=>h())});const o=s.addFolder("Radius & Growth");o.add(i.radius,"baseRadius",.01,.1,.01).onChange(()=>h()),o.add(i.radius,"radiusScale",.5,2,.1).onChange(()=>h()),o.add(i.radius,"depthTaperFactor",.8,1,.02).onChange(()=>h()),o.add(i.growth,"sizeMultiplierMax",2,10,.5),o.add(i.growth,"sizeMultiplierTanh",.1,1,.1);const l=s.addFolder("Pulsing");l.add(i.pulse,"frequency",.5,10,.5),l.add(i.pulse,"amplitude",0,.5,.05),l.add(i.pulse,"propulsionAmount",0,.2,.01);const u={"Dense Mycelium":()=>{i.lsystem.iterations=10,i.lsystem.baseAngle=15,i.spatial.planarBias=.5,i.anastomosis.distance=2.5,h()},"Sparse Explorer":()=>{i.lsystem.iterations=6,i.lsystem.baseAngle=35,i.spatial.planarBias=.2,i.spatial.spiralTwist=.1,h()},"Balanced Growth":()=>{i.lsystem.iterations=8,i.lsystem.baseAngle=22,i.spatial.planarBias=.3,i.anastomosis.distance=3.5,h()}},c=s.addFolder("Presets");Object.keys(u).forEach(d=>{c.add(u,d)}),s.close()}function h(){I.clear(),f=[],T=[],R=[],H=[],X()}function xt(){const s=new ct(16777215,.1);x.add(s);const n=new V(16771899,1.3);n.position.set(20,25,15),n.castShadow=!0,x.add(n);const t=new V(16761095,.7);t.position.set(-20,5,-15),x.add(t);const e=new V(16771899,.9);e.position.set(0,-15,25),x.add(e);const r=new dt(16771899,.8,100);r.position.set(0,0,0),x.add(r)}function vt(){I=new ut,X(),x.add(I)}function zt(){const s=`
+    uniform float uGrowthProgress;
+    uniform float uSizeMultiplier;
+    uniform float uPulsePhase;
+    uniform float uBaseRadius;
+
+    varying float vFlowIntensity;
+    varying float vGrowthProgress;
+
+    void main() {
+      // Scale geometry based on growth and size multiplier
+      vec3 scaled = position;
+
+      // Radius grows with size multiplier and pulsing
+      float pulseAmount = abs(sin(uPulsePhase)) * 0.2;
+      float radiusScale = uBaseRadius * uSizeMultiplier * (1.0 + pulseAmount);
+
+      // Apply radius to x,z (circular cross-section)
+      scaled.x *= radiusScale * uGrowthProgress;
+      scaled.z *= radiusScale * uGrowthProgress;
+
+      // Length grows to 1.0 then stays
+      float lengthGrowthCap = min(uGrowthProgress, 1.0);
+      scaled.y *= lengthGrowthCap;
+
+      vFlowIntensity = radiusScale;
+      vGrowthProgress = uGrowthProgress;
+
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(scaled, 1.0);
+    }
+  `,n=`
+    uniform float uPulsePhase;
+
+    varying float vFlowIntensity;
+    varying float vGrowthProgress;
+
+    void main() {
+      // Base slime color (yellow)
+      vec3 baseColor = vec3(1.0, 0.92, 0.23); // #ffeb3b
+
+      // Pulse creates brightness variation
+      float pulse = abs(sin(uPulsePhase));
+      float brightness = 0.65 + pulse * 0.3;
+
+      // Flow-based coloring (brighter = more flow)
+      vec3 flowColor = mix(
+        vec3(1.0, 0.92, 0.23),
+        vec3(1.0, 0.96, 0.3),
+        vFlowIntensity * 0.5
+      );
+
+      // Opacity varies with pulse and growth
+      float opacity = 0.95 * brightness * min(vGrowthProgress, 1.0);
+
+      gl_FragColor = vec4(flowColor, opacity);
+    }
+  `;return new gt({vertexShader:s,fragmentShader:n,uniforms:{uGrowthProgress:{value:0},uSizeMultiplier:{value:1},uPulsePhase:{value:0},uBaseRadius:{value:.02}},transparent:!0,side:ft,wireframe:!1})}function U(){let n=0;return f.forEach((t,e)=>{const l=1/(1/(Math.pow(t.radius,4)+.001)*1);C[e]=l,n+=l}),n>0&&(C=C.map(t=>t/n)),C}function Mt(){f.forEach((n,t)=>{const e=C[t]||0;e>.01&&(n.radius+=1e-5*e)})}function X(){q=new mt(1,1,1,16,1),Et().forEach((n,t)=>{n.forEach((e,r)=>{const o=Math.floor(Math.log2(t+1)),l=Math.pow(2,-1/3),d=.02*Math.pow(l,o),p=zt();f.push({segment:e,radius:d,material:p,mesh:null,branchOrder:o}),T.push(0),C.push(0)})}),f.forEach((n,t)=>{const e=n.segment,r=e.x2-e.x1,o=e.y2-e.y1,l=e.z2-e.z1,u=Math.sqrt(r*r+o*o+l*l),c=new pt(q,n.material);c.position.set((e.x1+e.x2)/2,(e.y1+e.y2)/2,(e.z1+e.z2)/2);const d=new B(r,o,l).normalize(),p=new B(0,1,0),a=new B().crossVectors(p,d).normalize(),y=Math.acos(p.dot(d));a.length()>.001&&c.quaternion.setFromAxisAngle(a,y),c.userData.segmentLength=u,n.mesh=c,f[t]=n,R[t]={x:c.position.x,y:c.position.y,z:c.position.z},I.add(c),H.push(c)}),U()}function Pt(s,n,t,e){let r=0,o=0;return t.forEach(l=>{const u=l.position[0]-s,c=l.position[1]-n,d=Math.sqrt(u*u+c*c);if(d<l.radius){const p=(1-d/l.radius)*l.strength,a=Math.atan2(c,u);r+=a*p,o+=p}}),o>0?r/o*e:0}function St(s,n,t,e,r){const o=[];return e.forEach(l=>{const u=(l.x1+l.x2)/2,c=(l.y1+l.y2)/2,d=(l.z1+l.z2)/2,p=u-s,a=c-n,y=d-t,w=Math.sqrt(p*p+a*a+y*y);w<r&&w>.1&&o.push({segment:l,distance:w})}),o.sort((l,u)=>l.distance-u.distance)}function Ft(s,n,t){s.radius&&(s.radius*=t),n.radius&&(n.radius*=t),s.connected=!0,n.connected=!0}function Et(s=i.lsystem.iterations,n=i.lsystem.baseAngle){const t=i,e=t.lsystem.angleVariation,r=t.lsystem.branchProbability,o=t.lsystem.asymmetryFactor,l=t.attractors,u=t.attractorInfluence,c=t.spatial.planarBias,d=t.spatial.spiralTwist,p=t.spatial.gravitationalDrift;let a={x:0,y:0,z:0,angle:90,depth:0,stack:[]},y=[],w=0;function G(b,E){let v=b;const S={A:t.lsystem.rule};for(let A=0;A<E;A++){let z="";for(let m of v)m==="A"&&Math.random()>r?z+="F":z+=S[m]||m;v=z}return v}function J(b){const E=[];let v=n*Math.PI/180,S=[];for(let A=0;A<b.length;A++){const z=b[A];if(z==="F"){const m=.5/Math.pow(2,.5),K=(Math.random()-.5)*(e*Math.PI/180),Q=a.angle+K,j=Pt(a.x,a.y,l,u),W=Q+j;let L=a.x+m*Math.cos(W),N=a.y+m*Math.sin(W),F=a.z;if(F*=1-c,a.depth>0){const k=a.depth*d,tt=L*Math.cos(k)-F*Math.sin(k),et=L*Math.sin(k)+F*Math.cos(k);L=tt,F=et}F+=p*m;const O={x1:a.x,y1:a.y,z1:a.z,x2:L,y2:N,z2:F,order:0,depth:a.depth,id:w++};S.push(O),y.push(O),a.x=L,a.y=N,a.z=F}else if(z==="+"){const m=(Math.random()-.5)*o;a.angle-=v*(1+m)}else if(z==="-"){const m=(Math.random()-.5)*o;a.angle+=v*(1+m)}else if(z==="[")a.stack.push({x:a.x,y:a.y,z:a.z,angle:a.angle,depth:a.depth}),a.depth++;else if(z==="]"){S.length>0&&(E.push(S),S=[]),a.depth--;const m=a.stack.pop();m&&(a.x=m.x,a.y=m.y,a.z=m.z,a.angle=m.angle,a.depth=m.depth)}}return S.length>0&&E.push(S),E}const Y=G("A",s),$=J(Y);return t.anastomosis.enabled&&y.forEach(b=>{St(b.x2,b.y2,b.z2,y,t.anastomosis.distance).slice(0,2).forEach(({segment:v})=>{b.id!==v.id&&Math.random()<t.anastomosis.threshold&&Ft(b,v,t.anastomosis.reinforcementFactor)})}),$}function Z(){requestAnimationFrame(Z);const s=yt.getElapsedTime();f&&f.length>0&&(Math.floor(s*60)%10===0&&(U(),Mt()),f.forEach((r,o)=>{const l=o/f.length*.08,u=s-l;let c=Math.max(0,u*.15);const d=1+5*Math.tanh(c*.3);if(T[o]=Math.min(c,1),r.mesh&&r.material.uniforms){r.material.uniforms.uGrowthProgress.value=c,r.material.uniforms.uSizeMultiplier.value=d,r.material.uniforms.uBaseRadius.value=r.radius;const p=(s+o*.05)*2.5;r.material.uniforms.uPulsePhase.value=p;const y=Math.sin(p)*.08,w=r.segment,G=new B(w.x2-w.x1,w.y2-w.y1,w.z2-w.z1).normalize();r.mesh.position.x=R[o].x+G.x*y,r.mesh.position.y=R[o].y+G.y*y,r.mesh.position.z=R[o].z+G.z*y}})),I&&(I.rotation.z+=5e-4),_(),P.update(),M.render(x,g)}function At(){window.addEventListener("resize",()=>{g.aspect=window.innerWidth/window.innerHeight,g.updateProjectionMatrix(),M.setSize(window.innerWidth,window.innerHeight)});const s=document.getElementById("start-btn"),n=document.getElementById("intro-modal"),t=document.getElementById("ui-overlay");s.addEventListener("click",()=>{n.classList.add("hidden"),t.classList.remove("hidden"),D(g.position,{x:0,y:5,z:18},1500)});const e=document.getElementById("info-btn"),r=document.getElementById("info-modal"),o=document.getElementById("close-info-btn");e.addEventListener("click",()=>{r.classList.toggle("hidden")}),o.addEventListener("click",()=>{r.classList.add("hidden")});const l=document.getElementById("zoom-in-btn"),u=document.getElementById("zoom-out-btn");l.addEventListener("click",()=>{const d=new B;g.getWorldDirection(d),g.position.addScaledVector(d,2)}),u.addEventListener("click",()=>{const d=new B;g.getWorldDirection(d),g.position.addScaledVector(d,-2)}),document.getElementById("reset-btn").addEventListener("click",()=>{D(g.position,{x:0,y:8,z:20},1e3),P.target.set(0,0,0)})}function _(){const s=g.position.length().toFixed(1);if(document.getElementById("cam-distance").textContent=s,f&&f.length>0){let n=0,t=0;T.forEach(o=>{n+=o,o>0&&o<1&&t++});const e=Math.round(n/f.length*100);document.getElementById("body-growth").textContent=e+"%",document.getElementById("tentacles-growing").textContent=t+" branches";const r=Math.round(50+e/100*50);document.getElementById("pulse-intensity").textContent=r+"%"}}function D(s,n,t){const e={x:s.x,y:s.y,z:s.z},r=performance.now();function o(){const l=performance.now()-r,u=Math.min(l/t,1),c=1-Math.pow(1-u,3);s.x=e.x+(n.x-e.x)*c,s.y=e.y+(n.y-e.y)*c,s.z=e.z+(n.z-e.z)*c,u<1&&requestAnimationFrame(o)}o()}wt();

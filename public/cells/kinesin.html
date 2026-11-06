@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kinesin Motor - Molecular Transport Visualization</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+      background: #050510;
+    }
+    #canvas-container {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .glass {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
+    .glass-strong {
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+    @keyframes walk-pulse {
+      0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.5); }
+    }
+    .walk-pulse {
+      animation: walk-pulse 1s ease-in-out infinite;
+    }
+  </style>
+  <script type="module" crossorigin src="/cells/assets/kinesin-OElakDL2.js"></script>
+  <link rel="modulepreload" crossorigin href="/cells/assets/OrbitControls-DsVUz1Vb.js">
+</head>
+<body class="bg-slate-950 text-white">
+  <div id="canvas-container"></div>
+
+  <!-- Intro Modal -->
+  <div id="intro-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70">
+    <div class="glass-strong rounded-2xl p-8 max-w-lg w-full text-center">
+      <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-purple-900/50 flex items-center justify-center walk-pulse">
+        <svg class="w-12 h-12 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <h1 class="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+        Kinesin Motor Protein
+      </h1>
+      <p class="text-slate-300 mb-6 leading-relaxed">
+        Watch a molecular motor "walk" along a microtubule, carrying cargo across the cell.
+        Kinesin uses ATP hydrolysis to power its hand-over-hand stepping motion toward
+        the plus end of microtubules.
+      </p>
+      <div class="grid grid-cols-3 gap-4 mb-6 text-sm">
+        <div class="bg-slate-800/50 rounded-lg p-3">
+          <div class="text-purple-400 font-bold text-lg">8 nm</div>
+          <div class="text-slate-400">Step size</div>
+        </div>
+        <div class="bg-slate-800/50 rounded-lg p-3">
+          <div class="text-purple-400 font-bold text-lg">~100</div>
+          <div class="text-slate-400">Steps/second</div>
+        </div>
+        <div class="bg-slate-800/50 rounded-lg p-3">
+          <div class="text-purple-400 font-bold text-lg">1 ATP</div>
+          <div class="text-slate-400">Per step</div>
+        </div>
+      </div>
+      <button id="start-btn" class="w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+        Begin Exploration
+      </button>
+    </div>
+  </div>
+
+  <!-- UI Overlay -->
+  <div id="ui-overlay" class="fixed inset-0 z-40 pointer-events-none hidden">
+    <!-- Top bar -->
+    <div class="absolute top-4 left-4 right-4 flex justify-between items-start pointer-events-auto">
+      <a href="cells.html" class="glass rounded-xl px-4 py-2 flex items-center gap-2 hover:bg-slate-800/80 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        <span class="text-sm font-medium">Cell Atlas</span>
+      </a>
+      <div class="glass rounded-xl px-4 py-2">
+        <h2 class="text-lg font-bold text-purple-400">Kinesin</h2>
+        <p class="text-xs text-slate-400">Molecular Motor</p>
+      </div>
+      <!-- ATP Counter -->
+      <div class="glass rounded-xl px-4 py-2 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-amber-500/30 flex items-center justify-center">
+          <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+        </div>
+        <div>
+          <div class="text-xs text-slate-400">ATP Used</div>
+          <div class="text-xl font-bold text-amber-400" id="atp-counter">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom controls -->
+    <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-auto">
+      <!-- Info button -->
+      <button id="info-btn" class="glass rounded-xl p-3 hover:bg-slate-800/80 transition-colors">
+        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </button>
+
+      <!-- Center controls -->
+      <div class="glass rounded-xl px-4 py-3 flex gap-4">
+        <button id="zoom-in-btn" class="p-2 hover:bg-slate-700/50 rounded-lg transition-colors" title="Zoom In">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+          </svg>
+        </button>
+        <button id="zoom-out-btn" class="p-2 hover:bg-slate-700/50 rounded-lg transition-colors" title="Zoom Out">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
+          </svg>
+        </button>
+        <div class="w-px bg-slate-600"></div>
+        <button id="walk-btn" class="px-3 py-2 hover:bg-slate-700/50 rounded-lg transition-colors text-purple-400 font-medium bg-purple-600/30" title="Toggle Walking">
+          Pause
+        </button>
+        <div class="w-px bg-slate-600"></div>
+        <button id="reset-btn" class="p-2 hover:bg-slate-700/50 rounded-lg transition-colors" title="Reset View">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Legend -->
+      <div class="glass rounded-xl p-3">
+        <div class="text-xs text-slate-400 mb-2">Components</div>
+        <div class="space-y-1 text-xs">
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-cyan-400"></div>
+            <span>Microtubule</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+            <span>Kinesin heads</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+            <span>ATP / Cargo</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+            <span>+ end</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+            <span>− end</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Info Modal -->
+  <div id="info-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 hidden">
+    <div class="glass-strong rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+      <div class="flex justify-between items-start mb-4">
+        <h2 class="text-2xl font-bold text-purple-400">Kinesin Motor Mechanism</h2>
+        <button id="close-info-btn" class="p-2 hover:bg-slate-700/50 rounded-lg transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-slate-300">
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">The Microtubule Track</h3>
+          <p class="text-sm leading-relaxed">
+            Microtubules are hollow cylinders made of 13 protofilaments, each a chain of
+            α/β-tubulin dimers. Kinesin walks along a single protofilament, stepping from
+            one β-tubulin to the next. The 8nm step size matches exactly one tubulin dimer.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">Hand-Over-Hand Walking</h3>
+          <p class="text-sm leading-relaxed">
+            Kinesin has two motor domain "heads" connected by flexible neck linkers to a
+            coiled-coil stalk. The heads alternate: one stays bound while the other swings
+            forward in an arc, landing 16nm ahead (net 8nm progress per head).
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">The ATP Cycle</h3>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-amber-400">1. ATP Binding</div>
+              <p class="text-slate-400">Neck linker docks, swinging rear head forward</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-cyan-400">2. Hydrolysis</div>
+              <p class="text-slate-400">ATP → ADP + Pi while new head searches for binding site</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-red-400">3. Pi Release</div>
+              <p class="text-slate-400">Front head binds, rear head releases from track</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-purple-400">4. ADP Release</div>
+              <p class="text-slate-400">New binding allows ATP to enter, restarting cycle</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">Processivity</h3>
+          <p class="text-sm leading-relaxed">
+            Kinesin is highly processive - one motor can take ~100 steps before detaching.
+            This is crucial for long-distance transport. The "gating" mechanism ensures
+            one head is always bound, preventing the cargo from diffusing away.
+          </p>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">Cellular Functions</h3>
+          <div class="grid grid-cols-2 gap-3 text-sm">
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-amber-400">Vesicle Transport</div>
+              <p class="text-slate-400">Moves secretory vesicles, endosomes, and lysosomes</p>
+            </div>
+            <div class="bg-slate-800/50 rounded-lg p-3">
+              <div class="font-semibold text-emerald-400">Mitosis</div>
+              <p class="text-slate-400">Moves chromosomes during cell division</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="text-lg font-semibold text-purple-300 mb-2">Key Numbers</h3>
+          <div class="bg-slate-800/50 rounded-lg p-3 text-sm">
+            <ul class="space-y-1 text-slate-400">
+              <li>• Step size: 8 nm (one tubulin dimer)</li>
+              <li>• Speed: ~800 nm/s (100 steps/s)</li>
+              <li>• Force: ~6 pN (can carry organelles)</li>
+              <li>• Efficiency: ~50% (mechanical/chemical energy)</li>
+              <li>• Run length: ~1 μm before detaching</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

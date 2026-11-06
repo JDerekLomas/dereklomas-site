@@ -167,7 +167,7 @@ export const allProjects: Project[] = [
     category: "Education",
     tags: ["Three.js", "Biology", "3D", "Open Source"],
     image: "/images/blog/blendercell.png",
-    url: "https://blendercell.vercel.app/cells.html",
+    url: "https://dereklomas.me/cells/cells.html",
     relatedLinks: [
       { label: "How it was built", href: "/blog/teaching-biology-in-3d" },
       { label: "Source code", href: "https://github.com/JDerekLomas/blendercell" },
