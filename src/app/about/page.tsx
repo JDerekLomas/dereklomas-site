@@ -37,7 +37,7 @@ export default function AboutPage() {
         {/* Bio narrative */}
         <div className="space-y-6 text-text-secondary leading-relaxed mb-16">
           <p>
-            I'm a professor at{" "}
+            I'm an assistant professor at{" "}
             <a
               href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d"
               target="_blank"

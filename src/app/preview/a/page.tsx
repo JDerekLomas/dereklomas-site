@@ -78,7 +78,7 @@ export default function PreviewA() {
         </div>
 
         <p style={{ fontSize: "1.2rem", lineHeight: 1.75, color: "#444" }}>
-          I&rsquo;m a professor at{" "}
+          I&rsquo;m an assistant professor at{" "}
           <a href="https://www.tudelft.nl/en/ide/about-ide/people/lomas-j-d" target="_blank" rel="noopener noreferrer" style={{ color: "#9e4a3a", textDecorationColor: "rgba(158,74,58,0.3)" }}>
             TU Delft
           </a>
